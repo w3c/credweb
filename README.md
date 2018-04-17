@@ -1,5 +1,8 @@
 General/admin repo for [Credible Web Community Group](https://www.w3.org/community/credibility/)
 
+Survey on approaches: [Survey](https://goo.gl/forms/aPUWPZD9doTUYT3A3) [Survey results](https://goo.gl/Zonrju)
+
+
 Meetings:
 
 * 2018-04-25 [Agenda TBD]
