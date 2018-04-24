@@ -21,6 +21,7 @@ helpful in assessing agreement and making consensus decisions.
 Zoom app for most platforms: <https://zoom.us/j/988170706>
 
 Or Telephone:
+
     * Meeting ID: 988 170 706, All dial-ins: <https://zoom.us/u/xglThTko>
     * Brazil: +55 11 4680 6788 tap: +551146806788,,,988170706# 
     * France: +33 (0) 1 8288 0188 tap: +330182880188,,,988170706# 
@@ -32,5 +33,5 @@ Or Telephone:
 
 ### Zulip
 
-Zulip web app: <https://credweb.zulipchat.com/#> or try a [native app](https://zulipchat.com/apps/). If you have not received your zulip invitation, please email team-credweb-chairs@w3.org
+Zulip web app: <https://credweb.zulipchat.com/#> or try a [native app](https://zulipchat.com/apps/). If you have not received your zulip invitation, please email <team-credweb-chairs@w3.org>
     
