@@ -3,7 +3,7 @@
 nearby: [People in group](https://www.w3.org/community/credibility/participants),
 [W3C page for group (including JOIN button)](https://www.w3.org/community/credibility/),
 [Website](https://credweb.org),
-[Github](https://w3c.github.com/credweb).
+[Github admin repo](https://github.com/w3c/credweb).
 
 Please join using both zoom (for video and/or audio) and zulip
 (for text chat).  If you're not confident in your setup, please
