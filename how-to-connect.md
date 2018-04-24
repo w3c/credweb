@@ -5,19 +5,18 @@ nearby: [People in group](https://www.w3.org/community/credibility/participants)
 [Website](https://credweb.org),
 [Github](https://w3c.github.com/credweb).
 
-
-### Start Time
-
-Meetings start promptly at 10:05am SFO, 1:05pm New York, 6:05pm London,
-7:05pm Paris; and runs for up to 85 minutes, depending on
-business.
-
 Please join using both zoom (for video and/or audio) and zulip
 (for text chat).  If you're not confident in your setup, please
 try connecting 5-10 minutes early to make sure your camera,
-microphone, headset, etc is working properly. Being on camera is
-helpful in assessing agreement and making consensus decisions.
+microphone, headset, etc is working properly. <b>Being on camera is
+helpful</b> in assessing agreement and making consensus decisions.
     
+### Start Time
+
+Meetings start promptly at 10:05am San Francisco, 1:05pm New York,
+6:05pm London, 7:05pm Paris, and runs for up to 85 minutes, depending
+on business.
+
 ### Zoom
 
 Zoom app for most platforms: <https://zoom.us/j/988170706>
