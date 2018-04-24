@@ -2,7 +2,9 @@
 
 nearby: [People in group](https://www.w3.org/community/credibility/participants),
 [W3C page for group (including JOIN button)](https://www.w3.org/community/credibility/),
-[website](https://credweb.org)
+[Website](https://credweb.org),
+[Github](https://w3c.github.com/credweb).
+
 
 ### Start Time
 
