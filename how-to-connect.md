@@ -1,8 +1,8 @@
 ## How to Connect to a Meeting: Credible Web Community Group
 
-nearby: [people in group](https://www.w3.org/community/credibility/participants),
-[join the group](https://www.w3.org/community/credibility/),
-[website](https://github.com/w3c/credweb)
+nearby: [People in group](https://www.w3.org/community/credibility/participants),
+[W3C page for group (including JOIN button)](https://www.w3.org/community/credibility/),
+[website](https://credweb.org)
 
 ### Start Time
 
