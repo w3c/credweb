@@ -5,6 +5,8 @@ See mission, members, and how to join at [W3C group page](https://www.w3.org/com
 
 Group website at <https://credweb.org>.
 
+![group photo from 25 April 2018 meeting](./photos/people-2018-04-15-850.png)
+
 ### Drafts
 
 * (not yet reviewed) [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
