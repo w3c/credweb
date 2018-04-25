@@ -5,9 +5,14 @@ See mission, members, and how to join at [W3C group page](https://www.w3.org/com
 
 Group website at <https://credweb.org>.
 
-Survey on approaches: [Survey](https://goo.gl/forms/aPUWPZD9doTUYT3A3) and [Survey results](https://goo.gl/Zonrju)
+### Drafts
 
-Meetings: Wednesdays 1705-1830 UTC [how to connect](how-to-connect.md)
+* (not yet reviewed) [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
+* (not yet reviewed) Survey on approaches: [Survey](https://goo.gl/forms/aPUWPZD9doTUYT3A3) and [Survey results](https://goo.gl/Zonrju)
+
+### Meetings
+
+Wednesdays 1705-1830 UTC [how to connect](how-to-connect.md)
 
 * 2018-04-25 [Agenda](agenda/20180425.md)
 
