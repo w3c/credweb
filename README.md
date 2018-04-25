@@ -1,11 +1,10 @@
+<img style="float: right" src="./photos/people-2018-04-15-850.png" alt="group phroto" />
 
 ## W3C Credible Web Community Group
 
 See mission, members, and how to join at [W3C group page](https://www.w3.org/community/credibility/)
 
-Group website at <https://credweb.org>.
-
-![group photo from 25 April 2018 meeting](./photos/people-2018-04-15-850.png)
+Group website at <https://credweb.org> (driven by [github pages](https://github.com/w3c/credweb)).
 
 ### Drafts
 
