@@ -1,4 +1,4 @@
-<img style="float: right" src="./photos/people-2018-04-15-850.png" alt="group phroto" />
+<img style="float: right" src="./photos/people-2018-04-15-500.png" alt="group phroto" />
 
 ## W3C Credible Web Community Group
 
