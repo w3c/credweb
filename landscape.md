@@ -42,7 +42,9 @@ Reputation (Trust Networks)
 * Allow user to pick their roots of trust, making a "personal walled garden"
 * Help users navigate and assess trustworthiness of sources
 * Trust = Accuracy (truth) + Benevolence + Competence
-* Bootstrap from: followers?  co-authoring? 
+* Bootstrap from: followers?  co-authoring?
+* Danger in asymmetry, as negative info seen as more salient
+* Danger in coerced statements (eg need for secret ballot)
 
 Out Of Scope
 ============
