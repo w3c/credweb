@@ -19,9 +19,9 @@ Wednesdays 1705-1830 UTC [how to connect](how-to-connect.md)
 * 2018-05-02 [Agenda](agenda/20180502.md)
 
 ----
-* 2018-04-25 [Agenda](agenda/20180425.md), [minutes](./minutes/20180418.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-04-25)
+* 2018-04-25 [Agenda](agenda/20180425.md), [minutes](./minutes/20180425.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-04-25)
 * 2018-04-18 [Agenda](agenda/20180418.md), [minutes](./minutes/20180418.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-04-18)
-* 2018-04-11 [Agenda](agenda/20180411.md), [minutes](./minutes/20180418.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-04-11)
+* 2018-04-11 [Agenda](agenda/20180411.md), [minutes](./minutes/20180411.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-04-11)
 * 2017-11-10 [Agenda](https://www.w3.org/wiki/File:Credibility-2017-11-10-agenda.pdf), [Minutes](https://www.w3.org/community/credibility/wiki/2017-11-10-minutes)
 * 2017-11-08 [TPAC Breakout Minutes](https://www.w3.org/community/credibility/wiki/2017-11-08-minutes)
 
