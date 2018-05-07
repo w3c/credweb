@@ -27,11 +27,12 @@ We have a script that parses the Zulip logs into human-readable static minutes f
 As the scribe, you can interrupt a speaker any time to:
 
 * Ask for their name
+  * Since we're using Zoom for the call, if you have the 'gallery view' open alongside Zulip, it's pretty easy to tell who is speaking.
 * Ask for clarification of a point
 * Ask them to repeat something
 * Ask for an acronym expansion or jargon decoding, etc.
 
-Since we're using Zoom for the call, if you have the 'gallery view' open alongside Zulip, it's pretty easy to tell who is speaking.
+If you need to speak, please ask someone else to scribe you! (It's very hard to speak and scribe at the same time.)
 
 ## Scribe responsibilities
 
