@@ -16,7 +16,7 @@ Group website at <https://credweb.org> (driven by [github pages](https://github.
 
 Wednesdays 1705-1830 UTC [how to connect](how-to-connect.md)
 
-* 2018-05-09 [Agenda TBD](agenda/20180509.md)
+* 2018-05-09 [Agenda](agenda/20180509.md)
 
 ----
 * 2018-05-02 [Agenda](agenda/20180502.md), [minutes](./minutes/20180502.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-05-02)
