@@ -23,7 +23,7 @@ Polls: [Weekly meeting time](https://doodle.com/poll/n5udgwf3vrm3q2sw), [July me
 * 2018-05-16 [Agenda TBD - focus on fact-checking](agenda/20180516.md)
 
 ----
-* 2018-05-09 [Agenda](agenda/20180509.md), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-05-09)
+* 2018-05-09 [Agenda](agenda/20180509.md), [minutes](./minutes/20180509.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-05-09)
 * 2018-05-02 [Agenda](agenda/20180502.md), [minutes](./minutes/20180502.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-05-02)
 * 2018-04-25 [Agenda](agenda/20180425.md), [minutes](./minutes/20180425.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-04-25)
 * 2018-04-18 [Agenda](agenda/20180418.md), [minutes](./minutes/20180418.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-04-18)
