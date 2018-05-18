@@ -25,13 +25,14 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 DTSTAMP:20180424T082636Z
-DTSTART;TZID=America/New_York:20180425T130000
-DTEND;TZID=America/New_York:20180425T143000
+DTSTART;TZID=America/New_York:20180523T130500
+DTEND;TZID=America/New_York:20180523T143000
 SUMMARY:CredWeb CG
 RRULE:FREQ=WEEKLY;UNTIL=20180530T183000;INTERVAL=1;BYDAY=WE
 UID:ZOOM988170706
 TZID:America/New_York
-DESCRIPTION:Credible Web CG meetings: https://credweb.org\n\nJoin from PC\, Mac\, Linux\, iOS or Android: https://zoo
+DESCRIPTION:Credible Web CG meetings: https://credweb.org\n\n
+ Join from PC\, Mac\, Linux\, iOS or Android: https://zoo
  m.us/j/988170706\n\nOr iPhone one-tap :\n    US: +16699006833\,\,9881707
  06#  or +19294362866\,\,988170706# \nOr Telephone:\n    Dial(for higher 
  quality\, dial a number based on your current location): \n        US: +
