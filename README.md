@@ -15,7 +15,7 @@ Group website at <https://credweb.org> (driven by [github pages](https://github.
 
 Wednesdays 1705-1830 UTC [how to connect](how-to-connect.md)
 
-Polls: [Weekly meeting time](https://doodle.com/poll/n5udgwf3vrm3q2sw), [July meeting dates](https://doodle.com/poll/qudimieecq8kapdn)
+Polls: [Weekly meeting time](https://doodle.com/poll/n5udgwf3vrm3q2sw), [July meeting dates](https://doodle.com/poll/qudimieecq8kapdn)<br/>
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
 
