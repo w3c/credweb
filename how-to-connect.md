@@ -17,7 +17,8 @@ Meetings start promptly at 10:05am San Francisco, 1:05pm New York,
 6:05pm London, 7:05pm Paris, and runs for up to 85 minutes, depending
 on business.
 
-[iCalendar data](credweb.ics)
+Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics)
+
 
 ### Zoom
 
