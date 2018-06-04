@@ -20,7 +20,7 @@ Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5e
 
 
 * 2018-06-06 No Meeting
-* 2018-06-04 (1605 UTC) Subgroup on Inspection [Agenda TBD](agenda/20180604.md)
+* 2018-06-04 (1605 UTC) Subgroup on Inspection [Agenda](agenda/20180604.md)
 * 2018-05-31 [Agenda, main topic Reputation](agenda/20180530.md) 
 
 ---
