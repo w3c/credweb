@@ -20,7 +20,7 @@ Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5e
 
 
 * 2018-06-13 Wed Main group [Agenda TBD](agenda/20180613.md)
-* 2018-06-11 Mon (1605 UTC) Subgroup on Inspection [Agenda TBD](agenda/20180611.md)
+* 2018-06-11 Mon (1605 UTC) Subgroup on Inspection [Agenda](agenda/20180611.md)
 * 2018-06-06 Wed No Main group meeting
 
 ---
