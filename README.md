@@ -19,13 +19,19 @@ Polls: [Weekly meeting time](https://doodle.com/poll/n5udgwf3vrm3q2sw), [July me
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
 
-* 2018-06-27 Wed Main group (Agenda TBD)
+* 2018-07-26 / 2018-07-27 Face to Face meeting SF [Register/Regrets](https://www.w3.org/2002/09/wbs/103073/credweb-f2f2/)
+* 2018-07-25 Wed _No Main group meeting_ (day before F2F)
+* 2018-07-18 Wed Main group Agenda-TBD
+* 2018-07-11 Wed Main group Agenda-TBD
+* 2018-07-04 Wed _No Main group meeting_ (US holiday)
+* 2018-06-27 Wed Main group [Agenda](agenda/20180627.md)
 
 ---
 
+* 2018-06-20 Wed _No Main group meeting_ (GFV conflict)
 * 2018-06-13 Wed Main group [Agenda](agenda/20180613.md)
 * 2018-06-11 Mon (1605 UTC) Subgroup on Inspection [Agenda](agenda/20180611.md)
-* 2018-06-06 Wed No Main group meeting
+* 2018-06-06 Wed No Main group meeting (Shorenstein conflict)
 * 2018-06-04 (1605 UTC) Subgroup on Inspection [Agenda](agenda/20180604.md), [minutes](./minutes/20180604.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-06-04)
 * 2018-05-30 [Agenda, main topic Reputation](agenda/20180530.md) , [minutes](./minutes/20180530.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-05-30)
 * 2018-05-23 [Agenda, main topic Fact Checking](agenda/20180523.md), [minutes](./minutes/20180523.html), [chat log](https://credweb.zulipchat.com/#narrow/stream/114583-meeting/topic/2018-05-23)
