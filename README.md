@@ -22,12 +22,12 @@ Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5e
 * 2018-07-26 / 2018-07-27 Face to Face meeting SF [Register/Regrets](https://www.w3.org/2002/09/wbs/103073/credweb-f2f2/)
 * 2018-07-25 Wed _No Main group meeting_ (day before F2F)
 * 2018-07-18 Wed Main group Agenda-TBD
-* 2018-07-11 Wed Main group Agenda-TBD
-* 2018-07-04 Wed _No Main group meeting_ (US holiday)
-* 2018-07-02 Mon Area-1 Inspection SubGroup Meeting  [Agenda](agenda/20180702.md)
+* 2018-07-11 Wed Main group [Agenda](agenda/20180711.md)
 
 ---
 
+* 2018-07-04 Wed _No Main group meeting_ (US holiday)
+* 2018-07-02 Mon Area-1 Inspection SubGroup Meeting  [Agenda](agenda/20180702.md)
 * 2018-06-27 Wed Main group [Agenda](agenda/20180627.md), [not-yet-real minutes](./minutes/20180627.md)
 * 2018-06-20 Wed _No Main group meeting_ (GlobalFact conflict)
 * 2018-06-13 Wed Main group [Agenda](agenda/20180613.md), [minutes](./minutes/20180613.md)
