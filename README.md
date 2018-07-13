@@ -22,7 +22,7 @@ Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5e
 * 2018-07-26 / 2018-07-27 Face to Face meeting SF [Register/Regrets](https://www.w3.org/2002/09/wbs/103073/credweb-f2f2/), [Agenda](agenda/20180726.md)
 * 2018-07-25 Wed _No Main group meeting_ (day before F2F)
 * 2018-07-18 Wed Main group Agenda-TBD
-* 2018-07-16 Mon Subgroup on Inspection Agenda: outbound-links, [Agenda](agenda/20170616.md)
+* 2018-07-16 Mon Subgroup on Inspection Agenda: outbound-links, [Agenda](agenda/20170716.md)
 
 ---
 
