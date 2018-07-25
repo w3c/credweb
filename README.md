@@ -13,18 +13,18 @@ Group website at <https://credweb.org> (driven by [github pages](https://github.
 
 ### Meetings
 
-Wednesdays 1705-1830 UTC [how to connect](how-to-connect.md)
+Most meetings use <https://zoom.us/j/988170706>. Please try to be on-camera, if possible. For more, see [how to connect](how-to-connect.md)
 
-Polls: [Weekly meeting time](https://doodle.com/poll/n5udgwf3vrm3q2sw), [July meeting dates](https://doodle.com/poll/qudimieecq8kapdn)<br/>
+Regulary weekly meetings are Wednesdays 1705-1830 UTC (based on [Weekly meeting time poll](https://doodle.com/poll/n5udgwf3vrm3q2sw))
+
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
-
-* 2018-07-26 / 2018-07-27 Face to Face meeting SF [Register/Regrets](https://www.w3.org/2002/09/wbs/103073/credweb-f2f2/), [Agenda](agenda/20180726.md)
+* 2018-07-26 / 2018-07-27 **Face to Face meeting SF**, [Agenda](agenda/20180726.md)
 * 2018-07-25 Wed _No Main group meeting_ (day before F2F)
-* 2018-07-23 Mon _No Subgroup-1 group meeting_ 
 
 ---
 
+* 2018-07-23 Mon _No Subgroup-1 group meeting_ 
 * 2018-07-18 Wed Main group [Agenda](agenda/20180718.md), [minutes](./minutes/20180718.md)
 * 2018-07-16 Mon Area-1 Inspection subgroup [Agenda](agenda/20180716.md), [minutes](./minutes/20180716.md)
 * 2018-07-11 Wed Main group [Agenda](agenda/20180711.md), [minutes](./minutes/20180711.md)
