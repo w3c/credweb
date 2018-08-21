@@ -20,11 +20,12 @@ Regulary weekly meetings are Wednesdays 1705-1830 UTC (based on [Weekly meeting 
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
 * Upcoming face-to-face: [f2f3](f2f3) (October in Lyon, France)
-* 2018-08-16 Area-1 Inspection subgroup (with CredCo) Noon US/Eastern, Agenda TBD
-* 2018-08-15 Wed Main group [Agenda](agenda/20180815.md)
+* 2018-08-22 Wed Main group [Agenda](agenda/20180822.md)
 
 ---
 
+* 2018-08-16 Area-1 Inspection subgroup (with CredCo) Noon US/Eastern, [agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0003.html), [minutes](https://docs.google.com/document/d/1kjb7_qHhW1m2GMDPxnedcrJVyMSPSIQPMnxpgsU6lus)
+* 2018-08-15 Wed Main group [Agenda](agenda/20180815.md), [minutes](./minutes/20180815.md)
 * 2018-07-26 / 2018-07-27 **Face to Face meeting SF**, [Agenda](f2f2.md), [DRAFT minutes](./minutes/f2f2.md)
 * 2018-07-25 Wed _No Main group meeting_ (day before F2F)
 * 2018-07-23 Mon _No Subgroup-1 group meeting_ 
