@@ -18,6 +18,6 @@ Some Issues and Possible Answers (from MisinfoCon DC breakout)
 7. Do bloggers and knitting magazines have to live up to this?
   * Have categories, with different levels of expense & security
 8. This might be a throwback to the world of “gatekeepers”
-  * Maybe we have even stronger gatekeepers now (platforms); with standards it would be an open process/multistakeholder 
-9 . This might exclude legit publishers
+  * Maybe we have even stronger gatekeepers now (platforms); with standards it would be an open process/multistakeholder
+9. This might exclude legit publishers
 10. Every approved source looks the same, making it hard for humans to distinguish
