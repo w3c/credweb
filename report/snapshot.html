@@ -31,6 +31,11 @@
   ] */
   }
   </script>
+  <style type="text/css">
+    /* NOT SURE IF THESE NAMES ARE STABLE OR NOT.   BEWARD.  */
+    .c10 {font-weight:700}
+    .c14 {font-style:italic}
+  </style>
 </head>
 <body class="c25">
   <div id="abstract">
@@ -49,9 +54,9 @@
     </div>
   </div>
   <section>
-    <h1 class="c12" id="h.hoc6clg2vmn6"><span class="c15">
+    <h1 class="c19" id="h.hoc6clg2vmn6"><span class="c13">
     Introduction</span></h1>
-    <p class="c9"><span class="c2">Can you tell, when you're
+    <p class="c0"><span class="c1">Can you tell, when you're
     looking at a random web page, whether you should trust it? When
     scanning a page of search results, do you know which matches
     come from legitimate sources and which are scams? When reading
@@ -62,12 +67,12 @@
     unknowingly share falsehoods to your community? &nbsp;What if
     you are misled into making bad decisions for yourself and the
     people you care about?</span></p>
-    <p class="c3"></p>
-    <p class="c9"><span>The</span> <span class="c8"><a class="c7"
+    <p class="c0 c3"></p>
+    <p class="c0"><span>The</span> <span class="c4"><a class="c8"
     href=
-    "https://www.google.com/url?q=https://credweb.org&amp;sa=D&amp;ust=1535234412314000">
+    "https://www.google.com/url?q=https://credweb.org&amp;sa=D&amp;ust=1535240195126000">
     Credible Web Community Group</a></span><span>&nbsp;formed at
-    W3C</span><span class="c2">, the organization which develops
+    W3C</span><span class="c1">, the organization which develops
     technical standards for the web, to look for technological
     solutions for this “credibility assessment” problem. It's not
     that we think tech can solve every problem, especially ones as
@@ -76,9 +81,9 @@
     probably serve people better. For some of us, creating better
     approaches to credibility assessment seems like a good way to
     help.</span></p>
-    <p class="c3"></p>
-    <p class="c9"><span>This document is a</span> <span class=
-    "c13 c22">work in progress</span><span class="c2">&nbsp;and
+    <p class="c0 c3"></p>
+    <p class="c0"><span>This document is a</span> <span class=
+    "c23 c10">work in progress</span><span class="c1">&nbsp;and
     edits are welcome. &nbsp;The document collects ideas, mostly
     following discussion at meetings of the group. For simplicity
     and to keep the focus on improving the ideas,
@@ -87,16 +92,16 @@
     details are available in meeting minutes and in other
     documents.</span></p>
     <section>
-      <h2 class="c6" id="h.v8boqqhafijm"><span></span>
+      <h2 class="c5" id="h.v8boqqhafijm"><span></span>
       <span>Terminology</span></h2>
-      <ul class="c5 lst-kix_g5l2yxrvwkjr-0 start">
-        <li class="c9 c10"><span>(Content)</span> <span class=
-        "c13">Consumer</span><span class="c2">: person who is
+      <ul class="c9 lst-kix_g5l2yxrvwkjr-0 start">
+        <li class="c0 c2"><span>(Content)</span> <span class=
+        "c10">Consumer</span><span class="c1">: person who is
         receiving and experiencing some content. &nbsp;Similar to:
         Audience Member, Reader, Viewer, Listener,
         Receiver</span></li>
-        <li class="c9 c10"><span>(Content)</span> <span class=
-        "c13">Provider</span><span class="c2">: person or
+        <li class="c0 c2"><span>(Content)</span> <span class=
+        "c10">Provider</span><span class="c1">: person or
         organization who provided the consumer with some content.
         There may be a supply chain of providers, creating and
         assembling content before it reaches the consumer. Often
@@ -104,13 +109,13 @@
         credibility assessments about) a single apparent provider.
         &nbsp;Similar to: Producer, Creator, Author,
         Publisher</span></li>
-        <li class="c9 c10"><span>(Credibility)</span> <span class=
-        "c13">Facilitator</span><span class="c2">: &nbsp;person or
+        <li class="c0 c2"><span>(Credibility)</span> <span class=
+        "c10">Facilitator</span><span class="c1">: &nbsp;person or
         organization who is helping the consumer decide what to
         trust. &nbsp;Similar to: Moderator, Fact-Checker, Forum or
         Comments Editor.</span></li>
-        <li class="c9 c10"><span>(Web-Based Communication)</span>
-        <span class="c13">Platform</span><span class="c2">:
+        <li class="c0 c2"><span>(Web-Based Communication)</span>
+        <span class="c10">Platform</span><span class="c1">:
         technological system, and by extension the person or
         organization who maintains and controls it, which is
         providing the above parties with the infrastructure which
@@ -118,38 +123,38 @@
         Content Management Systems (CMSs), Web Browsers, Search
         Engines, and News Feeds.</span></li>
       </ul>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.rcs17hj6bu6r"><span class="c15">
+    <h1 class="c19" id="h.rcs17hj6bu6r"><span class="c13">
     Scope</span></h1>
-    <p class="c9"><span class="c2">Web-centric technical solutions
+    <p class="c0"><span class="c1">Web-centric technical solutions
     which requires standardization</span></p>
-    <p class="c3"></p>
-    <p class="c9"><span class="c2">The web isn't everything but
+    <p class="c0 c3"></p>
+    <p class="c0"><span class="c1">The web isn't everything but
     it's arguably the knowledge backbone of the world today.
     &nbsp;Everything can and usually does tie back to the web to
     some degree, so if the web is a reliable source of accuracy,
     that should help quite a bit.</span></p>
-    <p class="c3"></p>
-    <p class="c9"><span>Data interchange vocabularies are the
+    <p class="c0 c3"></p>
+    <p class="c0"><span>Data interchange vocabularies are the
     likely main area to standardize. See below,</span> <span class=
-    "c8"><a class="c7" href="#h.wpcxeg3cugmx">Potential New Web
+    "c4"><a class="c8" href="#h.wpcxeg3cugmx">Potential New Web
     Standards</a></span></p>
-    <p class="c3"></p>
-    <p class="c9"><span class="c2">Browser functionality is another
+    <p class="c0 c3"></p>
+    <p class="c0"><span class="c1">Browser functionality is another
     possibility, but the bar is much higher, and none of the
     current proposals require that to function, although it would
     certainly help with deployment.</span></p>
   </section>
   <section>
-    <h1 class="c12" id="h.bjkr6l1byyj4"><span class="c15"> First,
+    <h1 class="c19" id="h.bjkr6l1byyj4"><span class="c13"> First,
     Do No Harm: Hazards of Intervention</span></h1>
     <section>
-      <h2 class="c6" id="h.2cd6cv1rre9i"><span class="c4">
+      <h2 class="c5" id="h.2cd6cv1rre9i"><span class="c7">
       Censorship</span></h2>
-      <p class="c9"><span class="c2">The regulation of content
+      <p class="c0"><span class="c1">The regulation of content
       (called "censorship" in some contexts) is controversial.
       Nearly every country in the world considers publication of
       certain kinds of material immoral and illegal (such as child
@@ -159,14 +164,14 @@
       may be laughably clear, but in general a computer system
       designed to allow one kind of content to be blocked can also
       be used to block all the other kinds.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Additionally, the people and
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Additionally, the people and
       computing systems involved in a potentially-problematic
       communication may be spread out over time and place, each
       subject to different cultural views and applicable legal
       authorities.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Perhaps the best path forward
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Perhaps the best path forward
       is to aim for systems which allow users to publish and view
       any available content they chose, but also to enable those
       individuals to be held accountable if they break the laws
@@ -175,9 +180,9 @@
       as journalists.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.qayku97gyi0m"><span class="c4">
+      <h2 class="c5" id="h.qayku97gyi0m"><span class="c7">
       Centralization</span></h2>
-      <p class="c9"><span class="c2">Some proposals require or
+      <p class="c0"><span class="c1">Some proposals require or
       facilitate centralization, such as the idea of establishing
       and enforcing uniform standards for journalism. &nbsp;These
       approaches have some appeal and might be effective, but
@@ -189,56 +194,56 @@
       platform.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.1g77pcw323di"><span class="c4">
+      <h2 class="c5" id="h.1g77pcw323di"><span class="c7">
       Tribalism, Echo Chambers, Filter Bubbles</span></h2>
-      <p class="c9"><span class="c2">Some proposals are likely to
+      <p class="c0"><span class="c1">Some proposals are likely to
       increase the degree to which consumers see only the content
       they want to see or their community wants them to see,
       regardless of its accuracy.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">One theory on addressing this
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">One theory on addressing this
       is to make clear to users when they are inside their bubble
       (their personal walled garden) and to allow them to easily
       step outside of it, whenever they want. The theory is that
       people won’t always choose to be sheltered, but will instead
       sometimes be looking for adventure, or something, “outside
       the wall”. &nbsp;</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span>It has also been suggested that
+      <p class="c0 c3"></p>
+      <p class="c0"><span>It has also been suggested that
       prediction markets incentivize accurate broad knowledge,
       leading people outside their bubbles, and that commerce/trade
       in general motivates people to connect between “tribes” and
       help people get along regardless of “tribe”.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.erwe81uzigvy"><span class="c4">
+      <h2 class="c5" id="h.erwe81uzigvy"><span class="c7">
       Other Unintended consequences</span></h2>
-      <p class="c9"><span class="c2">eg Facebook result that
+      <p class="c0"><span class="c1">eg Facebook result that
       warning labels on false news increased increased engagement,
       so test thoroughly before deploying at scale. &nbsp;That’s
       very hard to do in decentralized/open systems.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.vcnrv18hbkbk"><span class="c4">
+      <h2 class="c5" id="h.vcnrv18hbkbk"><span class="c7">
       Review Board</span></h2>
-      <p class="c9"><span class="c2">People are notoriously bad at
+      <p class="c0"><span class="c1">People are notoriously bad at
       seeing the downsides of work they support. As such, an
       adversarial approval process -- where work must be reviewed
       by disinterested and potentially hostile parties before it
       can proceed -- is often useful to vet work that needs to be
       of high quality.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span>It may be wise to set up a Review Board
+      <p class="c0 c3"></p>
+      <p class="c0"><span>It may be wise to set up a Review Board
       to oversee potential interventions around credibility. Models
-      for this include</span> <span class="c8"><a class="c7" href=
-      "https://www.google.com/url?q=https://en.wikipedia.org/wiki/Institutional_review_board&amp;sa=D&amp;ust=1535234412319000">
+      for this include</span> <span class="c4"><a class="c8" href=
+      "https://www.google.com/url?q=https://en.wikipedia.org/wiki/Institutional_review_board&amp;sa=D&amp;ust=1535240195132000">
       IRBs</a></span><span>, approval processes for medical
-      treatments, and</span> <span class="c8"><a class="c7" href=
-      "https://www.google.com/url?q=https://www.w3.org/Guide/process/charter.html%23horizontal-review&amp;sa=D&amp;ust=1535234412319000">
+      treatments, and</span> <span class="c4"><a class="c8" href=
+      "https://www.google.com/url?q=https://www.w3.org/Guide/process/charter.html%23horizontal-review&amp;sa=D&amp;ust=1535240195133000">
       W3C's Horizontal Review process</a></span><span class=
-      "c2">.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span>Such a review board might be useful for
+      "c1">.</span></p>
+      <p class="c0 c3"></p>
+      <p class="c0"><span>Such a review board might be useful for
       vendor-specific interventions as well as standards-based
       ones, and could bring considerable credibility to the process
       if staffed with people respected by diverse
@@ -246,18 +251,18 @@
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.ij0k32jlsndm"><span class="c15">
+    <h1 class="c19" id="h.ij0k32jlsndm"><span class="c13">
     Granularity: Which Entities Are You Assessing for
     Credibility?</span></h1>
-    <p class="c9"><span class="c2">People necessarily make
+    <p class="c0"><span class="c1">People necessarily make
     credibility assessments about content items and about the
     people who provided the content. It seems likely they make
     these assessments across a wide range of
     granularities.</span></p>
     <section>
-      <h2 class="c6" id="h.5uftu3raaxuh"><span> People and
+      <h2 class="c5" id="h.5uftu3raaxuh"><span> People and
       Organizations (Content Providers)</span></h2>
-      <p class="c9"><span class="c2">For example, Harvard
+      <p class="c0"><span class="c1">For example, Harvard
       University would be large-granularity source, comprising many
       people over several centuries, but still having some degree
       of aggregate credibility. &nbsp;In contrast, in considering
@@ -268,12 +273,12 @@
       might be much more credible when speaking about issues
       concerning the Internet and Society than about 12th century
       French poetry.</span></p>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
     <section>
-      <h2 class="c6" id="h.st1avm3jie2h"><span> Content and
+      <h2 class="c5" id="h.st1avm3jie2h"><span> Content and
       Claims</span></h2>
-      <p class="c9"><span class="c2">Reasoning about the
+      <p class="c0"><span class="c1">Reasoning about the
       credibility of content similarly requires working with a
       range of granularities. For example, we might consider the
       credibility of a snapshot of Wikipedia, or of a particular
@@ -281,30 +286,30 @@
       claim.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.anvuxde13i6n"><span> Complications
+      <h2 class="c5" id="h.anvuxde13i6n"><span> Complications
       due to the Web</span></h2>
-      <p class="c9"><span>In general, working with metadata about
+      <p class="c0"><span>In general, working with metadata about
       web content, it often works to design for web pages, then
       extend the granularity up to origins (loosely, domain names)
       and down to fragments (loosely, portions of a page or
       portions of media shown on the page). &nbsp;Note that the Web
-      Annotation framework</span> <span class="c8"><a class="c7"
+      Annotation framework</span> <span class="c4"><a class="c8"
       href=
-      "https://www.google.com/url?q=https://www.w3.org/TR/selectors-states/%23json-examples-converted-to-fragment-identifiers&amp;sa=D&amp;ust=1535234412321000">
+      "https://www.google.com/url?q=https://www.w3.org/TR/selectors-states/%23json-examples-converted-to-fragment-identifiers&amp;sa=D&amp;ust=1535240195135000">
       specifies a way</a></span><span>&nbsp;</span><span class=
-      "c2">to make essentially any portion of any version of a page
+      "c1">to make essentially any portion of any version of a page
       be its own addressable fragment, although that it not yet
       widely implemented.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Sites which aggregate content
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Sites which aggregate content
       from other providers, including social media sites, will need
       special consideration, as will sites which analyze or review
       other content, sometimes including false content as an
       example or evidence.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span>Credibility ratings for a web page may at
+      <p class="c0 c3"></p>
+      <p class="c0"><span>Credibility ratings for a web page may at
       first seem to be just about whether the</span> <span class=
-      "c11">content</span><span>&nbsp;is trustworthy, but in
+      "c14">content</span><span>&nbsp;is trustworthy, but in
       practice websites can change their content or even secretly
       show different content to different observers, so the
       trustworthiness of the site maintainer is a factor as well.
@@ -315,20 +320,20 @@
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.4nvodw32hqjj"><span class="c15">
+    <h1 class="c19" id="h.4nvodw32hqjj"><span class="c13">
     Assessment Strategies: How Can You Tell What To
     Believe?</span></h1>
-    <p class="c9"><span class="c2">Techniques for assessing
+    <p class="c0"><span class="c1">Techniques for assessing
     credibility can be grouped roughly into the following four
     types of strategies. &nbsp;These grouping were originally based
     on particular projects which focused on only one of the areas.
     &nbsp;Each of these strategies could be applied with a wide
     range of computer assistance, and some technologies will likely
     combine elements of several strategies.</span></p>
-    <p class="c3"></p>
-    <ol class="c5 lst-kix_p7q2rab08g0j-0 start" start="1">
-      <li class="c9 c10"><span class=
-      "c13">Inspection.</span><span class="c2">&nbsp;Look closely
+    <p class="c0 c3"></p>
+    <ol class="c9 lst-kix_p7q2rab08g0j-0 start" start="1">
+      <li class="c0 c2"><span class=
+      "c10">Inspection.</span><span class="c1">&nbsp;Look closely
       at the content (and the page where it appears) for the
       presence of features which are statistically associated with
       low or high credibility. This may be the primary strategy
@@ -336,22 +341,22 @@
       assessment accuracy can be significantly improved with
       computer assistance and suitable grounding
       research.</span></li>
-      <li class="c9 c10"><span class=
-      "c13">Corroboration.</span><span class="c2">&nbsp;Identify
+      <li class="c0 c2"><span class=
+      "c10">Corroboration.</span><span class="c1">&nbsp;Identify
       salient claims made (or implied, or relied upon) in the
       content and check other sources which offer an assessment of
       the claim (eg fact-checks), or related claims, or evidence
       helping the consumer accurately assess the claim.
       &nbsp;</span></li>
-      <li class="c9 c10"><span class=
-      "c13">Reputation.</span><span class="c2">&nbsp;Assess the
+      <li class="c0 c2"><span class=
+      "c10">Reputation.</span><span class="c1">&nbsp;Assess the
       credibility of a content provider by gathering statements
       about them from other high-credibility providers. &nbsp;This
       can be done recursively, forming a reputation network from a
       few known and trusted “root” providers to help assess many
       unknown and suspect ones. &nbsp;</span></li>
-      <li class="c9 c10"><span class=
-      "c13">Transparency.</span><span class="c2">&nbsp;Consider
+      <li class="c0 c2"><span class=
+      "c10">Transparency.</span><span class="c1">&nbsp;Consider
       what the provider says about themselves and their content.
       &nbsp;For instance, content may be labeled as opinion or even
       satire, and providers may label themselves as partisan or
@@ -363,106 +368,106 @@
     </ol>
   </section>
   <section>
-    <h1 class="c12" id="h.7vnom1uxezjj"><span> User Experience
+    <h1 class="c19" id="h.7vnom1uxezjj"><span> User Experience
     (UX)</span></h1>
-    <p class="c9"><span class="c2">Users might experience
+    <p class="c0"><span class="c1">Users might experience
     credibility assessment tools in a variety of ways,
     including:</span></p>
-    <p class="c3 c23"></p>
-    <ul class="c5 lst-kix_uek7ruoavnqn-0 start">
-      <li class="c9 c10"><span class="c2">as a browser
+    <p class="c0 c3 c21"></p>
+    <ul class="c9 lst-kix_uek7ruoavnqn-0 start">
+      <li class="c0 c2"><span class="c1">as a browser
       extension</span></li>
-      <li class="c9 c10"><span class="c2">built into a
+      <li class="c0 c2"><span class="c1">built into a
       browser</span></li>
-      <li class="c9 c10"><span class="c2">as a web app</span></li>
-      <li class="c9 c10"><span class="c2">as a native
+      <li class="c0 c2"><span class="c1">as a web app</span></li>
+      <li class="c0 c2"><span class="c1">as a native
       app</span></li>
-      <li class="c9 c10"><span class="c2">as part of a
+      <li class="c0 c2"><span class="c1">as part of a
       newsfeed</span></li>
-      <li class="c9 c10"><span class="c2">as part of a web search
+      <li class="c0 c2"><span class="c1">as part of a web search
       engine</span></li>
-      <li class="c9 c10"><span class="c2">as part of a website's
+      <li class="c0 c2"><span class="c1">as part of a website's
       search function</span></li>
     </ul>
-    <p class="c3"></p>
+    <p class="c0 c3"></p>
     <section>
-      <h2 class="c6" id="h.2322azaw5nmq"><span class="c4">
+      <h2 class="c5" id="h.2322azaw5nmq"><span class="c7">
       Consciousness and Initiative</span></h2>
-      <p class="c9"><span class="c2">We can divide the UX into
+      <p class="c0"><span class="c1">We can divide the UX into
       three main modes of interaction based on the user’s state of
       mind around credibility assessment.</span></p>
-      <h3 class="c19" id="h.qas3hox31x2c"><span class="c16">
+      <h3 class="c20" id="h.qas3hox31x2c"><span class="c26">
       Initiated by User</span></h3>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">These only help when the user
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">These only help when the user
       consciously wonders whether to trust the content.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Most of these are perhaps best
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Most of these are perhaps best
       done at the claim level, where the user indicates a specific
       questionable claim in the content, rather than a whole page
       or site.</span></p>
-      <p class="c3"></p>
-      <ul class="c5 lst-kix_q2jj5eze9rpe-0 start">
-        <li class="c9 c10"><span class="c2">request
+      <p class="c0 c3"></p>
+      <ul class="c9 lst-kix_q2jj5eze9rpe-0 start">
+        <li class="c0 c2"><span class="c1">request
         reputation/background information about site</span></li>
-        <li class="c9 c10"><span class="c2">request immediate check
+        <li class="c0 c2"><span class="c1">request immediate check
         (ie by software)</span></li>
-        <li class="c9 c10"><span class="c2">request a check soon
-        (ie by other people)</span></li>
-        <li class="c9 c10"><span class="c2">offer to pay for
-        quality fact-check</span></li>
-        <li class="c9 c10"><span class="c2">add annotation for
+        <li class="c0 c2"><span class="c1">request a check soon (ie
+        by other people)</span></li>
+        <li class="c0 c2"><span class="c1">offer to pay for quality
+        fact-check</span></li>
+        <li class="c0 c2"><span class="c1">add annotation for
         others to be skeptical</span></li>
-        <li class="c9 c10"><span class="c2">add annotation linking
+        <li class="c0 c2"><span class="c1">add annotation linking
         to fact checks</span></li>
-        <li class="c9 c10"><span class="c2">add annotation linking
+        <li class="c0 c2"><span class="c1">add annotation linking
         to relevant evidence</span></li>
       </ul>
-      <h3 class="c19" id="h.ktv5k7x4ynxc"><span class="c16">
+      <h3 class="c20" id="h.ktv5k7x4ynxc"><span class="c26">
       Alerting User</span></h3>
-      <p class="c9"><span class="c2">These risk triggering a
+      <p class="c0"><span class="c1">These risk triggering a
       backfire effect, as users may cling to false beliefs more
       when corrected. &nbsp;Proper presentation, such as
       attributing the correction to a user-selected trusted source
       might help with this.</span></p>
-      <p class="c3"></p>
-      <ul class="c5 lst-kix_ipamwkz7r9qh-0 start">
-        <li class="c9 c10"><span class="c2">offer fact checks in a
+      <p class="c0 c3"></p>
+      <ul class="c9 lst-kix_ipamwkz7r9qh-0 start">
+        <li class="c0 c2"><span class="c1">offer fact checks in a
         sidebar</span></li>
-        <li class="c9 c10"><span class="c2">add fact checks in flow
+        <li class="c0 c2"><span class="c1">add fact checks in flow
         of page</span></li>
-        <li class="c9 c10"><span class="c2">add interstitial
-        warning page, when content is assessed as
+        <li class="c0 c2"><span class="c1">add interstitial warning
+        page, when content is assessed as
         very-low-credibility</span></li>
-        <li class="c9 c10"><span class="c2">block out
+        <li class="c0 c2"><span class="c1">block out
         low-credibility content on page display with a warning,
         awaiting confirmation. Similar to content-warnings and
         spoiler-warnings on some sites.</span></li>
       </ul>
-      <h3 class="c19" id="h.10czfmxsvuq3"><span class="c16">
+      <h3 class="c20" id="h.10czfmxsvuq3"><span class="c26">
       Passively Guiding the User</span></h3>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Some of these could impinge on
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Some of these could impinge on
       the user's autonomy or confuse the user.</span></p>
-      <p class="c3"></p>
-      <ul class="c5 lst-kix_ow4u3wflie6v-0 start">
-        <li class="c9 c10"><span>B</span><span class="c2">lock the
+      <p class="c0 c3"></p>
+      <ul class="c9 lst-kix_ow4u3wflie6v-0 start">
+        <li class="c0 c2"><span>B</span><span class="c1">lock the
         content, acting as if it does not exist</span></li>
-        <li class="c9 c10"><span class="c2">Demote, so it appear
+        <li class="c0 c2"><span class="c1">Demote, so it appear
         much later in news feed or search results</span></li>
-        <li class="c9 c10"><span class="c2">Label with credibility
+        <li class="c0 c2"><span class="c1">Label with credibility
         level</span></li>
-        <li class="c9 c10"><span class="c2">Style content
+        <li class="c0 c2"><span class="c1">Style content
         differently based on credibility level</span></li>
-        <li class="c9 c10"><span class="c2">Suggest related content
+        <li class="c0 c2"><span class="c1">Suggest related content
         which is likely to be corrective</span></li>
       </ul>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
     <section>
-      <h2 class="c6" id="h.jp512yw2mt2f"><span class="c4">
+      <h2 class="c5" id="h.jp512yw2mt2f"><span class="c7">
       Identity and Privacy</span></h2>
-      <p class="c9"><span class="c2">Many of these actions have
+      <p class="c0"><span class="c1">Many of these actions have
       strong privacy and data ownership considerations. If these
       were built into the browser, where would the data end up
       shared? &nbsp;If these are built into anything else, how does
@@ -471,403 +476,402 @@
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.a1znaka91j8o"><span class="c15"> Threat
+    <h1 class="c19" id="h.a1znaka91j8o"><span class="c13"> Threat
     Models: How Might Attacks Impact You?</span></h1>
-    <p class="c9"><span class="c2">(This section needs some actual
+    <p class="c0"><span class="c1">(This section needs some actual
     threat modeling, still)</span></p>
     <section>
-      <h2 class="c6" id="h.c73erst6eh1i"><span class="c4">
+      <h2 class="c5" id="h.c73erst6eh1i"><span class="c7">
       Attacker Motivations</span></h2>
-      <ol class="c5 lst-kix_8pvuxogl8vjd-0 start" start="1">
-        <li class="c9 c10"><span class="c2">Ethical business, wants
+      <ol class="c9 lst-kix_8pvuxogl8vjd-0 start" start="1">
+        <li class="c0 c2"><span class="c1">Ethical business, wants
         long term business relationship. &nbsp;This is legitimate
         advertising.</span></li>
-        <li class="c9 c10"><span class="c2">Unethical or illegal
+        <li class="c0 c2"><span class="c1">Unethical or illegal
         business, wants money with little regard for
         consequences</span></li>
-        <li class="c9 c10"><span class="c2">Non-ideological
+        <li class="c0 c2"><span class="c1">Non-ideological
         political operative, wants legitimately-obtained authority
         (“tribal” power)</span></li>
-        <li class="c9 c10"><span class="c2">Ideological political
+        <li class="c0 c2"><span class="c1">Ideological political
         operative (activist), wants to change society in a specific
         way</span></li>
-        <li class="c9 c10"><span class="c2">Prankster, wants
+        <li class="c0 c2"><span class="c1">Prankster, wants
         amusement or personal attention,</span></li>
-        <li class="c9 c10"><span class="c2">Harmful person (troll,
+        <li class="c0 c2"><span class="c1">Harmful person (troll,
         stalker, hater, ...), wants personal sense of power,
         entertainment at the expense of others, personal vengeance,
         etc</span></li>
-        <li class="c9 c10"><span class="c2">Mentally unstable
+        <li class="c0 c2"><span class="c1">Mentally unstable
         person, unknown wants, presents erratic, irrational
         behavior.</span></li>
       </ol>
     </section>
     <section>
-      <h2 class="c6" id="h.srnu4vlrt8gx"><span class="c4">
+      <h2 class="c5" id="h.srnu4vlrt8gx"><span class="c7">
       Attacker Resource Levels</span></h2>
-      <ol class="c5 lst-kix_wmb33dr2a4uk-0 start" start="1">
-        <li class="c9 c10"><span class="c2">Unskilled individual
+      <ol class="c9 lst-kix_wmb33dr2a4uk-0 start" start="1">
+        <li class="c0 c2"><span class="c1">Unskilled individual
         with a brief impulse</span></li>
-        <li class="c9 c10"><span class="c2">… &lt;ranging to&gt;
+        <li class="c0 c2"><span class="c1">… &lt;ranging to&gt;
         ...</span></li>
-        <li class="c9 c10"><span class="c2">Nation with cyber
+        <li class="c0 c2"><span class="c1">Nation with cyber
         warfare capabilities engaged in authorized
         action</span></li>
       </ol>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
     <section>
-      <h2 class="c6" id="h.yj8yphmtgd7n"><span> Intended
+      <h2 class="c5" id="h.yj8yphmtgd7n"><span> Intended
       Impact</span></h2>
-      <ul class="c5 lst-kix_ji7yudwjti5r-0 start">
-        <li class="c9 c10"><span class="c2">Voting</span></li>
-        <li class="c9 c10"><span class="c2">Viewing ads</span></li>
-        <li class="c9 c10"><span class="c2">Social media
+      <ul class="c9 lst-kix_ji7yudwjti5r-0 start">
+        <li class="c0 c2"><span class="c1">Voting</span></li>
+        <li class="c0 c2"><span class="c1">Viewing ads</span></li>
+        <li class="c0 c2"><span class="c1">Social media
         behavior</span></li>
       </ul>
-      <ul class="c5 lst-kix_ji7yudwjti5r-1 start">
-        <li class="c1"><span class="c2">Engage</span></li>
-        <li class="c1"><span class="c2">Reply</span></li>
-        <li class="c1"><span class="c2">Share</span></li>
-        <li class="c1"><span class="c2">Like</span></li>
-        <li class="c1"><span class="c2">Report</span></li>
+      <ul class="c9 lst-kix_ji7yudwjti5r-1 start">
+        <li class="c0 c22"><span class="c1">Engage</span></li>
+        <li class="c0 c22"><span class="c1">Reply</span></li>
+        <li class="c0 c22"><span class="c1">Share</span></li>
+        <li class="c0 c22"><span class="c1">Like</span></li>
+        <li class="c0 c22"><span class="c1">Report</span></li>
       </ul>
-      <ul class="c5 lst-kix_ji7yudwjti5r-0">
-        <li class="c9 c10"><span class="c2">Offline social
-        behavior: spreading rumours, attending rallies</span></li>
-        <li class="c9 c10"><span class="c2">Consumer choices, what
+      <ul class="c9 lst-kix_ji7yudwjti5r-0">
+        <li class="c0 c2"><span class="c1">Offline social behavior:
+        spreading rumours, attending rallies</span></li>
+        <li class="c0 c2"><span class="c1">Consumer choices, what
         to buy</span></li>
-        <li class="c9 c10"><span class="c2">Donation choices, where
+        <li class="c0 c2"><span class="c1">Donation choices, where
         to give money</span></li>
-        <li class="c9 c10"><span class="c2">Lifestyle</span></li>
-        <li class="c9 c10"><span class="c2">Shape the narrative,
+        <li class="c0 c2"><span class="c1">Lifestyle</span></li>
+        <li class="c0 c2"><span class="c1">Shape the narrative,
         influencing how future stories are interpreted</span></li>
       </ul>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
     <section>
-      <h2 class="c6" id="h.1lqv13f2ek75"><span class="c4">
+      <h2 class="c5" id="h.1lqv13f2ek75"><span class="c7">
       Mental Attack Vectors</span></h2>
-      <ul class="c5 lst-kix_akdyjut7tid5-0 start">
-        <li class="c9 c10"><span class="c2">Emotional Hijacking -
+      <ul class="c9 lst-kix_akdyjut7tid5-0 start">
+        <li class="c0 c2"><span class="c1">Emotional Hijacking -
         Humans are great at making rational decisions, as long as
         they don’t care about the outcome</span></li>
-        <li class="c9 c10"><span class="c2">Setting the Initial
+        <li class="c0 c2"><span class="c1">Setting the Initial
         Frame</span></li>
-        <li class="c9 c10"><span class="c2">Tribalism</span></li>
-        <li class="c9 c10"><span class="c2">Fear, Uncertainty, and
+        <li class="c0 c2"><span class="c1">Tribalism</span></li>
+        <li class="c0 c2"><span class="c1">Fear, Uncertainty, and
         Doubt</span></li>
-        <li class="c9 c10"><span class="c2">Misleading with
+        <li class="c0 c2"><span class="c1">Misleading with
         Statistics - eg Humans are terrible at assessing the odds
         of unlikely events</span></li>
-        <li class="c9 c10"><span class="c2">Judging a book by its
+        <li class="c0 c2"><span class="c1">Judging a book by its
         cover - a good looking website can be extremely
         convincing</span></li>
-        <li class="c9 c10"><span class="c2">Confusingly similar
+        <li class="c0 c2"><span class="c1">Confusingly similar
         account names or domain names or brands</span></li>
       </ul>
     </section>
     <section>
-      <h2 class="c6" id="h.5logre8458bk"><span class="c4">
+      <h2 class="c5" id="h.5logre8458bk"><span class="c7">
       Technological Attack Vectors</span></h2>
-      <ul class="c5 lst-kix_nx3o94t1fu3i-0 start">
-        <li class="c9 c10"><span class="c2">Bots</span></li>
-        <li class="c9 c10"><span class="c2">Web
-        Tracking</span></li>
-        <li class="c9 c10"><span class="c2">IoT
+      <ul class="c9 lst-kix_nx3o94t1fu3i-0 start">
+        <li class="c0 c2"><span class="c1">Bots</span></li>
+        <li class="c0 c2"><span class="c1">Web Tracking</span></li>
+        <li class="c0 c2"><span class="c1">IoT
         hijacking</span></li>
       </ul>
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.3ggo9gzfv1jw"><span class="c15">
+    <h1 class="c19" id="h.3ggo9gzfv1jw"><span class="c13">
     Stakeholders: Who Might Care Enough To Do
     Something?</span></h1>
-    <p class="c9"><span>See</span> <span class="c8"><a class="c7"
+    <p class="c0"><span>See</span> <span class="c4"><a class="c8"
     href=
-    "https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1vWE3iOn6yxUsRJyS_mks83m0Gwv_7cK0WtVt-SNsYzY/edit%23gid%3D0&amp;sa=D&amp;ust=1535234412333000">
-    landscape spreadsheet</a></span><span class="c2">&nbsp;for
+    "https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1vWE3iOn6yxUsRJyS_mks83m0Gwv_7cK0WtVt-SNsYzY/edit%23gid%3D0&amp;sa=D&amp;ust=1535240195149000">
+    landscape spreadsheet</a></span><span class="c1">&nbsp;for
     now</span></p>
     <section>
-      <h2 class="c6" id="h.fxqpkimxqram"><span class="c4">
+      <h2 class="c5" id="h.fxqpkimxqram"><span class="c7">
       Related Projects</span></h2>
-      <p class="c9"><span class="c2">Maybe indicate active
+      <p class="c0"><span class="c1">Maybe indicate active
       liaisons, and describe relationship, and which strategies
       they connect to.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.fohxp55tfyfn"><span class="c4">
+      <h2 class="c5" id="h.fohxp55tfyfn"><span class="c7">
       Industries</span></h2>
     </section>
     <section>
-      <h2 class="c6" id="h.u5wbfe84bgm3"><span class="c4">
+      <h2 class="c5" id="h.u5wbfe84bgm3"><span class="c7">
       Organizations</span></h2>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.rmx3ty7g6ge9"><span class="c15">
+    <h1 class="c19" id="h.rmx3ty7g6ge9"><span class="c13">
     Deployment Strategies</span></h1>
-    <p class="c9"><span>Maybe flesh these out in terms of the
+    <p class="c0"><span>Maybe flesh these out in terms of the
     specific technical solutions</span></p>
-    <ul class="c5 lst-kix_rnborzuzj2h-0 start">
-      <li class="c9 c10"><span class="c2">Via providers to their
+    <ul class="c9 lst-kix_rnborzuzj2h-0 start">
+      <li class="c0 c2"><span class="c1">Via providers to their
       community; eg news site embeds credibility assessment tool in
       their web pages</span></li>
-      <li class="c9 c10"><span class="c2">Via cms plugin
+      <li class="c0 c2"><span class="c1">Via cms plugin
       providers</span></li>
-      <li class="c9 c10"><span class="c2">Via schools, to their
+      <li class="c0 c2"><span class="c1">Via schools, to their
       community</span></li>
-      <li class="c9 c10"><span class="c2">Via enterprise, to their
+      <li class="c0 c2"><span class="c1">Via enterprise, to their
       employees, including via standard machine configs</span></li>
-      <li class="c9 c10"><span class="c2">Via membership
+      <li class="c0 c2"><span class="c1">Via membership
       organization which can convince its members to install
       app/plugin</span></li>
-      <li class="c9 c10"><span class="c2">Via social graph, using
+      <li class="c0 c2"><span class="c1">Via social graph, using
       “help protect your community/friends” pitch</span></li>
-      <li class="c9 c10"><span class="c2">Implement in
+      <li class="c0 c2"><span class="c1">Implement in
       browser</span></li>
-      <li class="c9 c10"><span>Implement in platform</span></li>
+      <li class="c0 c2"><span>Implement in platform</span></li>
     </ul>
   </section>
   <section>
-    <h1 class="c12" id="h.2weumcgoexza"><span class="c15">
+    <h1 class="c19" id="h.2weumcgoexza"><span class="c13">
     Promising Technical Solutions: What Can Be Done?</span></h1>
-    <p class="c9"><span>These are grouped by</span> <span class=
-    "c8"><a class="c7" href="#h.4nvodw32hqjj">Assessment
-    Strategy</a></span><span class="c2">&nbsp;for
+    <p class="c0"><span>These are grouped by</span> <span class=
+    "c4"><a class="c8" href="#h.4nvodw32hqjj">Assessment
+    Strategy</a></span><span class="c1">&nbsp;for
     clarity.</span></p>
-    <p class="c3"></p>
-    <p class="c9"><span class="c2">[Maybe rephrase in terms of a
+    <p class="c0 c3"></p>
+    <p class="c0"><span class="c1">[Maybe rephrase in terms of a
     particular software products that could be built, and what the
     desired impact would be. &nbsp;Hopefully fill in, in time, with
     products that do that. &nbsp;Maybe useful for a hackathon,
     incubator, social investment fund.]</span></p>
-    <p class="c3"></p>
+    <p class="c0 c3"></p>
     <section>
-      <h2 class="c6" id="h.tri3dd872c3p"><span class="c4">
+      <h2 class="c5" id="h.tri3dd872c3p"><span class="c7">
       Inspection</span></h2>
-      <ol class="c5 lst-kix_qyn4ata6x06l-0 start" start="1">
-        <li class="c9 c10"><span class="c2">Tools can help humans
+      <ol class="c9 lst-kix_qyn4ata6x06l-0 start" start="1">
+        <li class="c0 c2"><span class="c1">Tools can help humans
         inspect content for known and potential credibility
         signals</span></li>
-        <li class="c9 c10"><span class="c2">That data can then be
+        <li class="c0 c2"><span class="c1">That data can then be
         shared, subject to privacy considerations, for multiple
         purposes.</span></li>
-        <li class="c9 c10"><span class="c2">Data from multiple
+        <li class="c0 c2"><span class="c1">Data from multiple
         annotators can be compared against each other and against
         standardized test data to assess how well the measurement
         process is working, in terms of both precision and
         accuracy, and to potentially detect problematic
         annotators.</span></li>
-        <li class="c9 c10"><span class="c2">Annotations on test
+        <li class="c0 c2"><span class="c1">Annotations on test
         content can be used to validate the connection between
         signals and the truth. Note the connection might be a
         positive correlation (signal indicates high credibility),
         negative correlation (signal indicates low credibility), or
         there might be a multifactor connection found by machine
         learning techniques.</span></li>
-        <li class="c9 c10"><span class="c2">This data can be used
+        <li class="c0 c2"><span class="c1">This data can be used
         directly to signal credibility levels to other
         consumers</span></li>
-        <li class="c9 c10"><span class="c2">It can also be used to
+        <li class="c0 c2"><span class="c1">It can also be used to
         train machine models which can then potentially also do the
         step 1 job</span></li>
       </ol>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">People in step 1 might be
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">People in step 1 might be
       motivated by:</span></p>
-      <ul class="c5 lst-kix_2qsufuje7pve-0 start">
-        <li class="c9 c10"><span class="c2">Being paid by platforms
+      <ul class="c9 lst-kix_2qsufuje7pve-0 start">
+        <li class="c0 c2"><span class="c1">Being paid by platforms
         or aggregated consumers</span></li>
-        <li class="c9 c10"><span class="c2">Volunteering in the
-        name of promoting truth/accuracy for their community or the
+        <li class="c0 c2"><span class="c1">Volunteering in the name
+        of promoting truth/accuracy for their community or the
         world</span></li>
-        <li class="c9 c10"><span class="c2">Helping themselves
+        <li class="c0 c2"><span class="c1">Helping themselves
         determine whether to trust the content</span></li>
       </ul>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Machines programmed/trained to
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Machines programmed/trained to
       do step 1 will probably be faster and cheaper, and might in
       time become more accurate and trustworthy. They will likely
       also have unpredictable failure modes (bugs, unexpected
       training artifacts) which might pose a security vulnerability
       to be considered.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Gameability: signals which are
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Gameability: signals which are
       financially prohibitive to fake</span></p>
-      <p class="c9"><span class="c2">&nbsp; - attacker can't use
+      <p class="c0"><span class="c1">&nbsp; - attacker can't use
       best tools (reduce income)</span></p>
-      <p class="c9"><span class="c2">&nbsp; - attacker needs
+      <p class="c0"><span class="c1">&nbsp; - attacker needs
       expensive people/tools to create (increase cost)</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.mtw2w6x2rcjp"><span class="c4">
+      <h2 class="c5" id="h.mtw2w6x2rcjp"><span class="c7">
       Corroboration</span></h2>
-      <p class="c9"><span>See issues and discussion at</span>
-      <span class="c8"><a class="c7" href=
-      "https://www.google.com/url?q=https://github.com/w3c/cred-claims&amp;sa=D&amp;ust=1535234412337000">
+      <p class="c0"><span>See issues and discussion at</span>
+      <span class="c4"><a class="c8" href=
+      "https://www.google.com/url?q=https://github.com/w3c/cred-claims&amp;sa=D&amp;ust=1535240195156000">
       https://github.com/w3c/cred-claims</a></span></p>
-      <p class="c3"></p>
-      <ol class="c5 lst-kix_tza58444q08m-0 start" start="1">
-        <li class="c9 c10"><span class="c2">Allow professional
+      <p class="c0 c3"></p>
+      <ol class="c9 lst-kix_tza58444q08m-0 start" start="1">
+        <li class="c0 c2"><span class="c1">Allow professional
         fact-checks to be published in machine readable form so
         they can more easily be matched, used in automated
         assessments, and shown to users when appropriate. (Already
         being done using claimreview)</span></li>
-        <li class="c9 c10"><span class="c2">Allow claim-extraction
+        <li class="c0 c2"><span class="c1">Allow claim-extraction
         processes to publish their output for broad consumption.
         This would be a feed of claims found in the media and
         judged to be of relatively high value for
         checking.</span></li>
-        <li class="c9 c10"><span class="c2">Allow users to express
+        <li class="c0 c2"><span class="c1">Allow users to express
         their desire for specific claims in some content to be
         checked. Might include offer to pay for
         results.</span></li>
-        <li class="c9 c10"><span class="c2">Allow relationships
+        <li class="c0 c2"><span class="c1">Allow relationships
         between claims to be expressed, such as rephrasings to be
         more precise and context-free vs more terse and
         context-sensitive, more in agreement vs disagreement with
         the claim itself, making a broader vs narrower claim,
         between natural languages, and opposites.</span></li>
-        <li class="c9 c10"><span class="c2">Allow structure of a
+        <li class="c0 c2"><span class="c1">Allow structure of a
         fact-check to be exposed as machine-readable, showing
         argumentation and secure links to the evidence</span></li>
-        <li class="c9 c10"><span class="c2">Allow end-users to
+        <li class="c0 c2"><span class="c1">Allow end-users to
         express what they feel or know relevant to a claim’s
         accuracy, in a way that might be reasonable aggregated
         toward accurate credibility assessment. It's important this
         not be simply popularity polling; important ideas, when
         they start, are usually believed by exactly one
         person.</span></li>
-        <li class="c9 c10"><span class="c2">Make it easy to view
+        <li class="c0 c2"><span class="c1">Make it easy to view
         reviews of related claims from many sources at once,
         including some data about the sources, such as assessed
         bias</span></li>
       </ol>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Some of these rely on emerging
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Some of these rely on emerging
       technologies:</span></p>
-      <p class="c3"></p>
-      <ul class="c5 lst-kix_t0nha8vdfhii-0 start">
-        <li class="c9 c10"><span class="c2">Claim extraction: given
+      <p class="c0 c3"></p>
+      <ul class="c9 lst-kix_t0nha8vdfhii-0 start">
+        <li class="c0 c2"><span class="c1">Claim extraction: given
         some natural language text, recognize fragments that are
         likely to be checkable claims</span></li>
-        <li class="c9 c10"><span class="c2">Claim matching: given
+        <li class="c0 c2"><span class="c1">Claim matching: given
         some claim text, find other claims which are likely to be
         highly relevant</span></li>
-        <li class="c9 c10"><span>Claim interpretation: given some
+        <li class="c0 c2"><span>Claim interpretation: given some
         natural language claim text, automatically perform relevant
         databases searches and calculations to check it</span></li>
       </ul>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
     <section>
-      <h2 class="c6" id="h.41t1lbapkm9n"><span class="c4">
+      <h2 class="c5" id="h.41t1lbapkm9n"><span class="c7">
       Reputation</span></h2>
-      <p class="c9"><span class="c2">@@cleanup</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">-- white lists</span></p>
-      <p class="c9"><span class="c2">-- auditing</span></p>
-      <p class="c9"><span class="c2">-- certification</span></p>
-      <p class="c9"><span class="c2">-- what do you say about
+      <p class="c0"><span class="c1">@@cleanup</span></p>
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">-- white lists</span></p>
+      <p class="c0"><span class="c1">-- auditing</span></p>
+      <p class="c0"><span class="c1">-- certification</span></p>
+      <p class="c0"><span class="c1">-- what do you say about
       others</span></p>
-      <p class="c9"><span class="c2">-- what do others say about
+      <p class="c0"><span class="c1">-- what do others say about
       some content</span></p>
-      <p class="c3"></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp; - Allow individuals and
+      <p class="c0 c3"></p>
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp; - Allow individuals and
       organizations to express their view on</span></p>
-      <p class="c9"><span class=
-      "c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;credibility
+      <p class="c0"><span class=
+      "c1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;credibility
       of others</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp; - Agree on certain
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp; - Agree on certain
       levels, eg "good faith participant"</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp; - Have certain trusted
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp; - Have certain trusted
       agencies which establish reliable identity of</span></p>
-      <p class="c9"><span class=
-      "c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publishers</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp; - Have certain trusted
+      <p class="c0"><span class=
+      "c1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publishers</span></p>
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp; - Have certain trusted
       agencies vet self-disclosure statements</span></p>
-      <p class="c3"></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp; * Software working on
+      <p class="c0 c3"></p>
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp; * Software working on
       your behalf can try to ascertain the reputation</span></p>
-      <p class="c9"><span class="c2">&nbsp; of each website you
+      <p class="c0"><span class="c1">&nbsp; of each website you
       visit based on what has been said about them by</span></p>
-      <p class="c9"><span class="c2">&nbsp; entities you select,
+      <p class="c0"><span class="c1">&nbsp; entities you select,
       and by intermediate parties in a social graph.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp;* Software can aggregate
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp;* Software can aggregate
       what others have said about a particular web</span></p>
-      <p class="c9"><span class="c2">&nbsp; page that bears on its
+      <p class="c0"><span class="c1">&nbsp; page that bears on its
       credibility</span></p>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
     <section>
-      <h2 class="c6" id="h.uczdbpambvtx"><span class="c4">
+      <h2 class="c5" id="h.uczdbpambvtx"><span class="c7">
       Transparency</span></h2>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">@@cleanup</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">-- what can one say about
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">@@cleanup</span></p>
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">-- what can one say about
       oneself to be more visibly trustworthy</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp; - Label article types
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp; - Label article types
       (eg opinion)</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp; - Label account types
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp; - Label account types
       (eg parody)</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp;</span></p>
-      <p class="c9"><span class="c2">&nbsp;* Software can highlight
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp;</span></p>
+      <p class="c0"><span class="c1">&nbsp;* Software can highlight
       sites which offer transparency disclosures</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp;* Software can highlight
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp;* Software can highlight
       aspects of the transparency disclosures which</span></p>
-      <p class="c9"><span class="c2">&nbsp; might be especially
+      <p class="c0"><span class="c1">&nbsp; might be especially
       relevant to you, based on your values or stated</span></p>
-      <p class="c9"><span class="c2">&nbsp; trust
+      <p class="c0"><span class="c1">&nbsp; trust
       concerns</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">&nbsp;* Software can
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">&nbsp;* Software can
       particularly highlight supportive and refutive
       claims</span></p>
-      <p class="c9"><span>&nbsp; from known 3rd parties about
+      <p class="c0"><span>&nbsp; from known 3rd parties about
       self-descriptive claims. (Combines with
       reputation)</span></p>
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.wpcxeg3cugmx"><span class="c15">
+    <h1 class="c19" id="h.wpcxeg3cugmx"><span class="c13">
     Potential New Web Standards</span></h1>
-    <p class="c9"><span>Each of the below potential standards is
+    <p class="c0"><span>Each of the below potential standards is
     intended to allow systems to interoperate by sharing data with
     common syntax and semantics. &nbsp;The expectation is that data
     sharing will be done in a manner compatible with of</span>
-    <span class="c8"><a class="c7" href=
-    "https://www.google.com/url?q=https://schema.org/&amp;sa=D&amp;ust=1535234412343000">
+    <span class="c4"><a class="c8" href=
+    "https://www.google.com/url?q=https://schema.org/&amp;sa=D&amp;ust=1535240195166000">
     schema.org</a></span><span>&nbsp;using W3C standard data
-    technologies like</span> <span class="c8"><a class="c7" href=
-    "https://www.google.com/url?q=https://www.w3.org/TR/json-ld/&amp;sa=D&amp;ust=1535234412343000">
+    technologies like</span> <span class="c4"><a class="c8" href=
+    "https://www.google.com/url?q=https://www.w3.org/TR/json-ld/&amp;sa=D&amp;ust=1535240195166000">
     JSON-LD</a></span><span>. These build on the underlying general
-    graph model of</span> <span class="c8"><a class="c7" href=
-    "https://www.google.com/url?q=https://www.w3.org/TR/rdf11-concepts/&amp;sa=D&amp;ust=1535234412344000">
+    graph model of</span> <span class="c4"><a class="c8" href=
+    "https://www.google.com/url?q=https://www.w3.org/TR/rdf11-concepts/&amp;sa=D&amp;ust=1535240195166000">
     RDF</a></span><span>&nbsp;and support related technologies like
-    the</span> <span class="c8"><a class="c7" href=
-    "https://www.google.com/url?q=https://www.w3.org/TR/sparql11-overview/&amp;sa=D&amp;ust=1535234412344000">
-    SPARQL</a></span><span class="c2">&nbsp;query language, but can
+    the</span> <span class="c4"><a class="c8" href=
+    "https://www.google.com/url?q=https://www.w3.org/TR/sparql11-overview/&amp;sa=D&amp;ust=1535240195167000">
+    SPARQL</a></span><span class="c1">&nbsp;query language, but can
     usually be used as ordinary JSON embedded in web pages. In each
     case, the purpose is to allow various independent systems to
     provide data feeds which can be easily and unambiguously
     understood by other systems across the Web.</span></p>
     <section>
-      <h2 class="c6" id="h.gy5qpmoxmiff"><span class="c4">
+      <h2 class="c5" id="h.gy5qpmoxmiff"><span class="c7">
       Inspection</span></h2>
-      <p class="c9"><span class="c2">Standard for expressing
+      <p class="c0"><span class="c1">Standard for expressing
       features of web pages and their content which bear on
       credibility and which are relatively expensive to fake. When
       humans are recognizing the features, this would allow their
@@ -878,85 +882,85 @@
       mentally assessing credibility.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.bb2miqm37qkl"><span class="c4">
+      <h2 class="c5" id="h.bb2miqm37qkl"><span class="c7">
       Corroboration</span></h2>
-      <p class="c9"><span class="c2">Standard for:</span></p>
-      <ul class="c5 lst-kix_wzojgfl8nlbp-0 start">
-        <li class="c9 c10"><span class="c2">Fact-checkers to
-        publish their work in a way which can be easily aggregated
-        (largely already done with ClaimReviw)</span></li>
-        <li class="c9 c10"><span class="c2">Representing the
+      <p class="c0"><span class="c1">Standard for:</span></p>
+      <ul class="c9 lst-kix_wzojgfl8nlbp-0 start">
+        <li class="c0 c2"><span class="c1">Fact-checkers to publish
+        their work in a way which can be easily aggregated (largely
+        already done with ClaimReviw)</span></li>
+        <li class="c0 c2"><span class="c1">Representing the
         argumentation structure of a fact-check, making it easier
         to re-check</span></li>
-        <li class="c9 c10"><span class="c2">People and machines to
+        <li class="c0 c2"><span class="c1">People and machines to
         indicate which claims they think should be
         fact-checked</span></li>
-        <li class="c9 c10"><span class="c2">Expressing sightings of
+        <li class="c0 c2"><span class="c1">Expressing sightings of
         a claim and connecting them with existing fact
         checks</span></li>
-        <li class="c9 c10"><span class="c2">Expressing retractions
+        <li class="c0 c2"><span class="c1">Expressing retractions
         (self-claim-check)</span></li>
       </ul>
     </section>
     <section>
-      <h2 class="c6" id="h.snmhmyeu59cm"><span class="c4">
+      <h2 class="c5" id="h.snmhmyeu59cm"><span class="c7">
       Reputation</span></h2>
-      <p class="c9"><span>Standards</span><span>&nbsp;for
-      reputation of providers</span><span class="c2">:</span></p>
-      <ul class="c5 lst-kix_echgz869gbfq-0 start">
-        <li class="c9 c10"><span>Expressing a list of approved
+      <p class="c0"><span>Standards</span><span>&nbsp;for
+      reputation of providers</span><span class="c1">:</span></p>
+      <ul class="c9 lst-kix_echgz869gbfq-0 start">
+        <li class="c0 c2"><span>Expressing a list of approved
         members of an organization (eg</span> <span class=
-        "c8"><a class="c7" href=
-        "https://www.google.com/url?q=https://github.com/IFCN/verified-signatories/blob/master/list&amp;sa=D&amp;ust=1535234412345000">
-        IFCN</a></span><span>,</span> <span class="c8"><a class=
-        "c7" href=
-        "https://www.google.com/url?q=https://www.w3.org/Consortium/Member/List&amp;sa=D&amp;ust=1535234412346000">
-        W3C</a></span><span class="c2">, or AP)</span></li>
-        <li class="c9 c10"><span class="c2">Expressing a list of
+        "c4"><a class="c8" href=
+        "https://www.google.com/url?q=https://github.com/IFCN/verified-signatories/blob/master/list&amp;sa=D&amp;ust=1535240195170000">
+        IFCN</a></span><span>,</span> <span class="c4"><a class=
+        "c8" href=
+        "https://www.google.com/url?q=https://www.w3.org/Consortium/Member/List&amp;sa=D&amp;ust=1535240195170000">
+        W3C</a></span><span class="c1">, or AP)</span></li>
+        <li class="c0 c2"><span class="c1">Expressing a list of
         employees, students, or other vetted
         individuals</span></li>
-        <li class="c9 c10"><span class="c2">Expressing that an
+        <li class="c0 c2"><span class="c1">Expressing that an
         organization or individual or some content has been vetted
         and approved for some particular
         quality/credential/certificate.</span></li>
-        <li class="c9 c10"><span class="c2">Expressing the identity
+        <li class="c0 c2"><span class="c1">Expressing the identity
         of the people behind a site</span></li>
-        <li class="c9 c10"><span class="c2">Expressing the partisan
+        <li class="c0 c2"><span class="c1">Expressing the partisan
         leanings of a provider, or other bias</span></li>
-        <li class="c9 c10"><span class="c2">Expressing the belief
+        <li class="c0 c2"><span class="c1">Expressing the belief
         that a provider acts in good faith in the service of
         accurate content, or fails to do so</span></li>
-        <li class="c9 c10"><span class="c2">… other reputational
+        <li class="c0 c2"><span class="c1">… other reputational
         information</span></li>
       </ul>
-      <p class="c3"></p>
-      <p class="c9"><span class="c2">Standards for reputation of
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c1">Standards for reputation of
       content:</span></p>
-      <ul class="c5 lst-kix_fx8d4diw7105-0 start">
-        <li class="c9 c10"><span class="c2">Expressing engagement
+      <ul class="c9 lst-kix_fx8d4diw7105-0 start">
+        <li class="c0 c2"><span class="c1">Expressing engagement
         metrics, allowing 3rd parties to see indicators of
         virality</span></li>
       </ul>
     </section>
     <section>
-      <h2 class="c6" id="h.1zfuop38heni"><span class="c4">
+      <h2 class="c5" id="h.1zfuop38heni"><span class="c7">
       Transparency</span></h2>
-      <p class="c9"><span>Some work already done with the</span>
-      <span class="c8"><a class="c7" href=
-      "https://www.google.com/url?q=https://thetrustproject.org/&amp;sa=D&amp;ust=1535234412348000">
-      Trust Project</a></span><span class="c2">&nbsp;and
+      <p class="c0"><span>Some work already done with the</span>
+      <span class="c4"><a class="c8" href=
+      "https://www.google.com/url?q=https://thetrustproject.org/&amp;sa=D&amp;ust=1535240195172000">
+      Trust Project</a></span><span class="c1">&nbsp;and
       schema.org. &nbsp;Unclear what else might be
       valuable.</span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.sckyfsyg61hc"><span class="c4">
+      <h2 class="c5" id="h.sckyfsyg61hc"><span class="c7">
       Other</span></h2>
-      <p class="c9"><span>Define a way for one provider to embed
+      <p class="c0"><span>Define a way for one provider to embed
       content from another without endorsement. This would be for
-      credibility a bit like</span> <span class="c8"><a class="c7"
+      credibility a bit like</span> <span class="c4"><a class="c8"
       href=
-      "https://www.google.com/url?q=https://en.wikipedia.org/wiki/Nofollow&amp;sa=D&amp;ust=1535234412348000">
-      nofollow</a></span><span class="c2">&nbsp;was for SEO.
+      "https://www.google.com/url?q=https://en.wikipedia.org/wiki/Nofollow&amp;sa=D&amp;ust=1535240195172000">
+      nofollow</a></span><span class="c1">&nbsp;was for SEO.
       &nbsp;An iframe would be the natural web way to do this, but
       3rd party content on social media doesn’t currently work that
       way. There is also the question whether the visited site can
@@ -966,68 +970,73 @@
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.44v9zb7xawl2"><span class="c15">
+    <h1 class="c19" id="h.44v9zb7xawl2"><span class="c13">
     Reading List</span></h1>
     <section>
-      <h2 class="c6" id="h.9h9dwq5xozdh"><span class="c4">
+      <h2 class="c5" id="h.9h9dwq5xozdh"><span class="c7">
       Getting Started</span></h2>
-      <p class="c9"><span class="c8"><a class="c7" href=
-      "https://www.google.com/url?q=https://docs.google.com/document/d/1OPghC4ra6QLhaHhW8QvPJRMKGEXT7KaZtG_7s5-UQrw/edit%23heading%3Dh.l3iqngk38nap&amp;sa=D&amp;ust=1535234412349000">
+      <p class="c0"><span class="c4"><a class="c8" href=
+      "https://www.google.com/url?q=https://docs.google.com/document/d/1OPghC4ra6QLhaHhW8QvPJRMKGEXT7KaZtG_7s5-UQrw/edit%23heading%3Dh.l3iqngk38nap&amp;sa=D&amp;ust=1535240195173000">
       Design Solutions for Fake News</a></span><span class=
-      "c2">&nbsp;is a sprawling (200+ page) crowd-sourced
+      "c1">&nbsp;is a sprawling (200+ page) crowd-sourced
       Google-Doc, initiated by Eli Pariser after the 2016 election
       of Donald Trump. &nbsp;It approaches many of the same ideas
       as this document, from some different angles.</span></p>
-      <p class="c3"></p>
-      <p class="c9"><span class="c8"><a class="c7" href=
-      "https://www.google.com/url?q=https://crestresearch.ac.uk/comment/pereira-partisan-brain-fake-news/&amp;sa=D&amp;ust=1535234412349000">
+      <p class="c0 c3"></p>
+      <p class="c0"><span class="c4"><a class="c8" href=
+      "https://www.google.com/url?q=https://crestresearch.ac.uk/comment/pereira-partisan-brain-fake-news/&amp;sa=D&amp;ust=1535240195174000">
       The Partisan Brain: Why People Are Attracted To Fake News And
       What To Do About It</a></span></p>
     </section>
     <section>
-      <h2 class="c6" id="h.d461wikn28pg"><span class="c4">
+      <h2 class="c5" id="h.d461wikn28pg"><span class="c7">
       Books</span></h2>
     </section>
     <section>
-      <h2 class="c6" id="h.8zd5evin4lng"><span class="c4">
+      <h2 class="c5" id="h.8zd5evin4lng"><span class="c7">
       Peer-Review Journals and Conferences</span></h2>
     </section>
     <section>
-      <h2 class="c6" id="h.j5cokdvcfbc"><span class="c4">
+      <h2 class="c5" id="h.j5cokdvcfbc"><span class="c7">
       Ongoing: Newsletters, Blogs, Podcasts, …</span></h2>
-      <ul class="c5 lst-kix_hyc1z9w5tvw-0 start">
-        <li class="c9 c10"><span>The</span> <span class=
-        "c8"><a class="c7" href=
-        "https://www.google.com/url?q=https://www.poynter.org/channels/fact-checking&amp;sa=D&amp;ust=1535234412350000">
+      <ul class="c9 lst-kix_hyc1z9w5tvw-0 start">
+        <li class="c0 c2"><span>The</span> <span class=
+        "c4"><a class="c8" href=
+        "https://www.google.com/url?q=https://www.poynter.org/channels/fact-checking&amp;sa=D&amp;ust=1535240195175000">
         &nbsp;International Fact-Checking Network @ Poynter
         (IFNC)</a></span><span>&nbsp;has a weekly</span>
-        <span class="c8"><a class="c7" href=
-        "https://www.google.com/url?q=http://go.pardot.com/l/273262/2018-05-29/5jcnr&amp;sa=D&amp;ust=1535234412350000">
+        <span class="c4"><a class="c8" href=
+        "https://www.google.com/url?q=http://go.pardot.com/l/273262/2018-05-29/5jcnr&amp;sa=D&amp;ust=1535240195175000">
         newsletter</a></span></li>
       </ul>
-      <ul class="c5 lst-kix_wjikl9hyzbop-0 start">
-        <li class="c9 c10"><span>The</span> <span class=
-        "c8"><a class="c7" href=
-        "https://www.google.com/url?q=http://www.niemanlab.org/&amp;sa=D&amp;ust=1535234412351000">
+      <ul class="c9 lst-kix_wjikl9hyzbop-0 start">
+        <li class="c0 c2"><span>The</span> <span class=
+        "c4"><a class="c8" href=
+        "https://www.google.com/url?q=http://www.niemanlab.org/&amp;sa=D&amp;ust=1535240195175000">
         Nieman Journalism Lab</a></span><span>&nbsp;at Harvard has
-        a weekly</span> <span class="c8"><a class="c7" href=
-        "https://www.google.com/url?q=http://www.niemanlab.org/subscribe/&amp;sa=D&amp;ust=1535234412351000">
+        a weekly</span> <span class="c4"><a class="c8" href=
+        "https://www.google.com/url?q=http://www.niemanlab.org/subscribe/&amp;sa=D&amp;ust=1535240195176000">
         newsletter</a></span><span>.</span></li>
       </ul>
-      <p class="c3"></p>
+      <p class="c0 c3"></p>
     </section>
   </section>
   <section>
-    <h1 class="c12" id="h.jg0o5v2af3r5"><span class="c15">
+    <h1 class="c19" id="h.jg0o5v2af3r5"><span class="c13">
     Acknowledgements</span></h1>
     <section>
-      <h2 class="c6" id="h.ceqaaaksazvr"><span class="c4">
+      <h2 class="c5" id="h.ceqaaaksazvr"><span class="c7">
       Regular Group Participants</span></h2>
     </section>
     <section>
-      <h2 class="c6" id="h.12uyfco0h36d"><span class="c4">
+      <h2 class="c5" id="h.12uyfco0h36d"><span class="c7">
       Review Comments</span></h2>
-      <p class="c3"></p>
+      <p class="c0"><span class="c1">Please add yourself here if
+      submitting review comments</span></p>
+      <ul class="c9 lst-kix_5muqinffazm7-0 start">
+        <li class="c0 c2"><span class="c1">Amy Guy</span></li>
+      </ul>
+      <p class="c0 c3"></p>
     </section>
   </section>
 </body>

@@ -6,10 +6,12 @@ if [ ! -f "$DOC" ]; then
     exit 1
 fi
 
-tidy -igq $DOC > s1.html 2> /dev/null
+# don't use -g because it strips spans we need like the one indicationg BOLD
+
+tidy -iq $DOC > s1.html 2> /dev/null
 
 ## UMMMM need to find a way to generalize this at some point!
-sed -n '/>1\. /,$p' < s1.html > s2.html
+sed -n '/<h1/,$p' < s1.html > s2.html
 
 sed 's|<h1 |</section></section><section><h1 |' < s2.html > s3.html
 #    will have extra close sometimes, which tidy will strip
@@ -20,7 +22,7 @@ sed 's|<h2 |</section><section><h2 |' < s3.html > s4.html
 # led s5.html
 #    manually remove the </section> before any h2  *.1
 
-perl -pe 's|</section>(<section><h2 id="(.*)">\d+\.1\.(.*))|$1|' < s4.html > s5a.html
+perl -pe 's|</section>(<section><h2 class=".*" id="(.*)"><span.*>\d+\.1\.(.*))|$1|' < s4.html > s5.html
 
 cat prefix.html s5.html > s6.html
 
