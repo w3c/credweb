@@ -1,0 +1,14 @@
+{
+  "name": "credweb-report",
+  "version": "0.0.1",
+  "description": "Build the credweb report from master gdoc",
+  "main": "report.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sandro Hawke (http://hawke.org/sandro)",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "gdoc2respec": "0.0.1"
+  }
+}

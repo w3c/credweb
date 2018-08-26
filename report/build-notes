@@ -1,8 +1,6 @@
 To convert the google doc to the HTML:
 
-1. Visit the google doc, currently at <https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8>
-2. Select File >> Download as Web Page >> HTML
-3. unzip the result here, and note the main filename
-4. sh gdoc2respec.sh that-filename.html > snapshot.html
-5. commit & push snapshot.html
+1. if necessary, install nodejs
+2. if necessary, do: npm install
+3. node report.js > snapshot.html
 
