@@ -39,13 +39,13 @@
     <h1 id="h.hoc6clg2vmn6">Introduction</h1>
     <p>Can you tell, when you&apos;re looking at a random web page, whether you should trust it? When scanning a page of search results, do you know which matches come from legitimate sources and which are scams? When reading a news feed, can you tell which items ought to be believed and which are slanted, manipulative, or outright lies? Perhaps most importantly, what happens when you inevitably guess wrong while making some of these credibility assessments, and you unknowingly share falsehoods to your community? &#xA0;What if you are misled into making bad decisions for yourself and the people you care about?</p>
     <p></p>
-    <p>The <a href="https://www.google.com/url?q=https://credweb.org&amp;sa=D&amp;ust=1535302534282000">Credible Web Community Group</a>&#xA0;formed at W3C, the organization which develops technical standards for the web, to look for technological solutions for this &#x201C;credibility assessment&#x201D; problem. It&apos;s not that we think tech can solve every problem, especially ones as deeply human and complex as this one, but it seems likely that some tech is making matters worse and that other designs could probably serve people better. For some of us, creating better approaches to credibility assessment seems like a good way to help.</p>
+    <p>The <a href="https://www.google.com/url?q=https://credweb.org&amp;sa=D&amp;ust=1535307140723000">Credible Web Community Group</a>&#xA0;formed at W3C, the organization which develops technical standards for the web, to look for technological solutions for this &#x201C;credibility assessment&#x201D; problem. It&apos;s not that we think tech can solve every problem, especially ones as deeply human and complex as this one, but it seems likely that some tech is making matters worse and that other designs could probably serve people better. For some of us, creating better approaches to credibility assessment seems like a good way to help.</p>
     <p></p>
     <p>This document is a work in progress&#xA0;and edits are welcome. &#xA0;The document collects ideas, mostly following discussion at meetings of the group. For simplicity and to keep the focus on improving the ideas, provenance/attribution information is generally omitted (that is, we don&#x2019;t attach ideas to people). In some cases such details are available in meeting minutes and in other documents.</p>
     <section>
         <h2 id="h.v8boqqhafijm">Terminology</h2>
         <p>Ecosystem Roles:</p>
-        <ul><li>(Content) <b>Consumer</b>: person who is receiving and experiencing some content. &#xA0;Similar to: Audience Member, Reader, Viewer, Listener, Receiver</li><li>(Content) <b>Provider</b>: person or organization who provided the consumer with some content. There may be a supply chain of providers, creating and assembling content before it reaches the consumer. Often this is invisible to the consumer, who perceives (and makes credibility assessments about) a single apparent provider. &#xA0;Similar to: Producer, Creator, Author, Publisher</li><li>(Credibility) <b>Facilitator</b>: &#xA0;person or organization who is helping the consumer decide what to trust. &#xA0;Similar to: Moderator, Fact-Checker, Forum or Comments Editor.</li><li>(Web-Based Communication) <b>Platform</b>: technological system, and by extension the person or organization who maintains and controls it, which is providing the above parties with the infrastructure which enables the content to pass among them. &#xA0;Includes Content Management Systems (CMSs), Web Browsers, Search Engines, and News Feeds.</li></ul>
+        <ul><li>(Content) <b>Consumer</b>: person who is receiving and experiencing some content. &#xA0;Similar to: Audience Member, Reader, Viewer, Listener, Receiver, User</li><li>(Content) <b>Provider</b>: person or organization who provided the consumer with some content. There may be a supply chain of providers, creating and assembling content before it reaches the consumer. Often this is invisible to the consumer, who perceives (and makes credibility assessments about) a single apparent provider. &#xA0;Similar to: Producer, Creator, Author, Publisher</li><li>(Credibility) <b>Facilitator</b>: &#xA0;person or organization who is helping the consumer decide what to trust. &#xA0;Similar to: Moderator, Fact-Checker, Forum or Comments Editor.</li><li>(Web-Based Communication) <b>Platform</b>: technological system, and by extension the person or organization who maintains and controls it, which is providing the above parties with the infrastructure which enables the content to pass among them. &#xA0;Includes Content Management Systems (CMSs), Web Browsers, Search Engines, and News Feeds.</li></ul>
         <p></p>
     </section>
 </section>
@@ -65,7 +65,10 @@
         <h2 id="h.2cd6cv1rre9i">Censorship</h2>
         <p>The regulation of content (called &quot;censorship&quot; in some contexts) is controversial. Nearly every country in the world considers publication of certain kinds of material immoral and illegal (such as child pornography). &#xA0;At the same time, many of the same countries express the value of free speech and a free press, sometimes in very broad language. To humans, the difference may be laughably clear, but in general a computer system designed to allow one kind of content to be blocked can also be used to block all the other kinds.</p>
         <p></p>
+        <p></p>
         <p>Additionally, the people and computing systems involved in a potentially-problematic communication may be spread out over time and place, each subject to different cultural views and applicable legal authorities.</p>
+        <p></p>
+        <p>[ explain the Web currently handles this by not blocking anything but making it hard to publish anonymously, and folks who want to publish anonymously have to trust someone else to protect their identity, eg a social media platform. &#xA0; And we think this architecture makes sense to continue.]</p>
         <p></p>
         <p>Perhaps the best path forward is to aim for systems which allow users to publish and view any available content they chose, but also to enable those individuals to be held accountable if they break the laws which apply to them. Legitimate needs for anonymity could be handled within such a scheme by using trusted proxies, such as journalists.</p>
     </section>
@@ -89,7 +92,7 @@
         <h2 id="h.vcnrv18hbkbk">Review Board</h2>
         <p>People are notoriously bad at seeing the downsides of work they support. As such, an adversarial approval process -- where work must be reviewed by disinterested and potentially hostile parties before it can proceed -- is often useful to vet work that needs to be of high quality.</p>
         <p></p>
-        <p>It may be wise to set up a Review Board to oversee potential interventions around credibility. Models for this include <a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Institutional_review_board&amp;sa=D&amp;ust=1535302534287000">IRBs</a>, approval processes for medical treatments, and <a href="https://www.google.com/url?q=https://www.w3.org/Guide/process/charter.html%23horizontal-review&amp;sa=D&amp;ust=1535302534288000">W3C&apos;s Horizontal Review process</a>.</p>
+        <p>It may be wise to set up a Review Board to oversee potential interventions around credibility. Models for this include <a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Institutional_review_board&amp;sa=D&amp;ust=1535307140730000">IRBs</a>, approval processes for medical treatments, and <a href="https://www.google.com/url?q=https://www.w3.org/Guide/process/charter.html%23horizontal-review&amp;sa=D&amp;ust=1535307140731000">W3C&apos;s Horizontal Review process</a>.</p>
         <p></p>
         <p>Such a review board might be useful for vendor-specific interventions as well as standards-based ones, and could bring considerable credibility to the process if staffed with people respected by diverse stakeholders.</p>
     </section>
@@ -108,7 +111,7 @@
     </section>
     <section>
         <h2 id="h.anvuxde13i6n">Complications due to the Web</h2>
-        <p>In general, working with metadata about web content, it often works to design for web pages, then extend the granularity up to origins (loosely, domain names) and down to fragments (loosely, portions of a page or portions of media shown on the page). &#xA0;Note that the Web Annotation framework <a href="https://www.google.com/url?q=https://www.w3.org/TR/selectors-states/%23json-examples-converted-to-fragment-identifiers&amp;sa=D&amp;ust=1535302534290000">specifies a way</a>&#xA0;to make essentially any portion of any version of a page be its own addressable fragment, although that it not yet widely implemented.</p>
+        <p>In general, working with metadata about web content, it often works to design for web pages, then extend the granularity up to origins (loosely, domain names) and down to fragments (loosely, portions of a page or portions of media shown on the page). &#xA0;Note that the Web Annotation framework <a href="https://www.google.com/url?q=https://www.w3.org/TR/selectors-states/%23json-examples-converted-to-fragment-identifiers&amp;sa=D&amp;ust=1535307140733000">specifies a way</a>&#xA0;to make essentially any portion of any version of a page be its own addressable fragment, although that it not yet widely implemented.</p>
         <p></p>
         <p>Sites which aggregate content from other providers, including social media sites, will need special consideration, as will sites which analyze or review other content, sometimes including false content as an example or evidence.</p>
         <p></p>
@@ -191,7 +194,7 @@
 </section>
 <section>
     <h1 id="h.3ggo9gzfv1jw">Stakeholders: Who Might Care Enough To Do Something?</h1>
-    <p>See <a href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1vWE3iOn6yxUsRJyS_mks83m0Gwv_7cK0WtVt-SNsYzY/edit%23gid%3D0&amp;sa=D&amp;ust=1535302534307000">landscape spreadsheet</a>&#xA0;for now</p>
+    <p>See <a href="https://www.google.com/url?q=https://docs.google.com/spreadsheets/d/1vWE3iOn6yxUsRJyS_mks83m0Gwv_7cK0WtVt-SNsYzY/edit%23gid%3D0&amp;sa=D&amp;ust=1535307140751000">landscape spreadsheet</a>&#xA0;for now</p>
     <section>
         <h2 id="h.fxqpkimxqram">Related Projects</h2>
         <p>Maybe indicate active liaisons, and describe relationship, and which strategies they connect to.</p>
@@ -206,8 +209,11 @@
 </section>
 <section>
     <h1 id="h.rmx3ty7g6ge9">Deployment Strategies</h1>
-    <p>Maybe flesh these out in terms of the specific technical solutions</p>
+    <p>[Maybe flesh these out in terms of the specific technical solutions ]</p>
+    <p></p>
     <ul><li>Via providers to their community; eg news site embeds credibility assessment tool in their web pages</li><li>Via cms plugin providers</li><li>Via schools, to their community</li><li>Via enterprise, to their employees, including via standard machine configs</li><li>Via membership organization which can convince its members to install app/plugin</li><li>Via social graph, using &#x201C;help protect your community/friends&#x201D; pitch</li><li>Implement in browser</li><li>Implement in platform</li></ul>
+    <p></p>
+    <p>[ Talk about funding. &#xA0;Maybe there should be grant and investment and bootcamp programs around these interventions. ]</p>
 </section>
 <section>
     <h1 id="h.2weumcgoexza">Promising Technical Solutions: What Can Be Done?</h1>
@@ -230,7 +236,7 @@
     </section>
     <section>
         <h2 id="h.mtw2w6x2rcjp">Corroboration</h2>
-        <p>See issues and discussion at <a href="https://www.google.com/url?q=https://github.com/w3c/cred-claims&amp;sa=D&amp;ust=1535302534311000">https://github.com/w3c/cred-claims</a></p>
+        <p>See issues and discussion at <a href="https://www.google.com/url?q=https://github.com/w3c/cred-claims&amp;sa=D&amp;ust=1535307140759000">https://github.com/w3c/cred-claims</a></p>
         <p></p>
         <ol start="1"><li>Allow professional fact-checks to be published in machine readable form so they can more easily be matched, used in automated assessments, and shown to users when appropriate. (Already being done using claimreview)</li><li>Allow claim-extraction processes to publish their output for broad consumption. This would be a feed of claims found in the media and judged to be of relatively high value for checking.</li><li>Allow users to express their desire for specific claims in some content to be checked. Might include offer to pay for results.</li><li>Allow relationships between claims to be expressed, such as rephrasings to be more precise and context-free vs more terse and context-sensitive, more in agreement vs disagreement with the claim itself, making a broader vs narrower claim, between natural languages, and opposites.</li><li>Allow structure of a fact-check to be exposed as machine-readable, showing argumentation and secure links to the evidence</li><li>Allow end-users to express what they feel or know relevant to a claim&#x2019;s accuracy, in a way that might be reasonable aggregated toward accurate credibility assessment. It&apos;s important this not be simply popularity polling; important ideas, when they start, are usually believed by exactly one person.</li><li>Make it easy to view reviews of related claims from many sources at once, including some data about the sources, such as assessed bias</li></ol>
         <p></p>
@@ -293,7 +299,7 @@
 </section>
 <section>
     <h1 id="h.wpcxeg3cugmx">Potential New Web Standards</h1>
-    <p>Each of the below potential standards is intended to allow systems to interoperate by sharing data with common syntax and semantics. &#xA0;The expectation is that data sharing will be done in a manner compatible with of <a href="https://www.google.com/url?q=https://schema.org/&amp;sa=D&amp;ust=1535302534318000">schema.org</a>&#xA0;using W3C standard data technologies like <a href="https://www.google.com/url?q=https://www.w3.org/TR/json-ld/&amp;sa=D&amp;ust=1535302534318000">JSON-LD</a>. These build on the underlying general graph model of <a href="https://www.google.com/url?q=https://www.w3.org/TR/rdf11-concepts/&amp;sa=D&amp;ust=1535302534319000">RDF</a>&#xA0;and support related technologies like the <a href="https://www.google.com/url?q=https://www.w3.org/TR/sparql11-overview/&amp;sa=D&amp;ust=1535302534319000">SPARQL</a>&#xA0;query language, but can usually be used as ordinary JSON embedded in web pages. In each case, the purpose is to allow various independent systems to provide data feeds which can be easily and unambiguously understood by other systems across the Web.</p>
+    <p>Each of the below potential standards is intended to allow systems to interoperate by sharing data with common syntax and semantics. &#xA0;The expectation is that data sharing will be done in a manner compatible with of <a href="https://www.google.com/url?q=https://schema.org/&amp;sa=D&amp;ust=1535307140769000">schema.org</a>&#xA0;using W3C standard data technologies like <a href="https://www.google.com/url?q=https://www.w3.org/TR/json-ld/&amp;sa=D&amp;ust=1535307140769000">JSON-LD</a>. These build on the underlying general graph model of <a href="https://www.google.com/url?q=https://www.w3.org/TR/rdf11-concepts/&amp;sa=D&amp;ust=1535307140769000">RDF</a>&#xA0;and support related technologies like the <a href="https://www.google.com/url?q=https://www.w3.org/TR/sparql11-overview/&amp;sa=D&amp;ust=1535307140769000">SPARQL</a>&#xA0;query language, but can usually be used as ordinary JSON embedded in web pages. In each case, the purpose is to allow various independent systems to provide data feeds which can be easily and unambiguously understood by other systems across the Web.</p>
     <section>
         <h2 id="h.gy5qpmoxmiff">Inspection</h2>
         <p>Standard for expressing features of web pages and their content which bear on credibility and which are relatively expensive to fake. When humans are recognizing the features, this would allow their work to be shared. &#xA0;When software is recognizing the features, it would allow a more standard API between modules. &#xA0;Standardization would also allow people to be trained to work with these features in creating content and in mentally assessing credibility.</p>
@@ -306,27 +312,27 @@
     <section>
         <h2 id="h.snmhmyeu59cm">Reputation</h2>
         <p>Standards&#xA0;for reputation of providers:</p>
-        <ul><li>Expressing a list of approved members of an organization (eg <a href="https://www.google.com/url?q=https://github.com/IFCN/verified-signatories/blob/master/list&amp;sa=D&amp;ust=1535302534322000">IFCN</a>, <a href="https://www.google.com/url?q=https://www.w3.org/Consortium/Member/List&amp;sa=D&amp;ust=1535302534322000">W3C</a>, or AP)</li><li>Expressing a list of employees, students, or other vetted individuals</li><li>Expressing that an organization or individual or some content has been vetted and approved for some particular quality/credential/certificate.</li><li>Expressing the identity of the people behind a site </li><li>Expressing the partisan leanings of a provider, or other bias</li><li>Expressing the belief that a provider acts in good faith in the service of accurate content, or fails to do so</li><li>&#x2026; other reputational information</li></ul>
+        <ul><li>Expressing a list of approved members of an organization (eg <a href="https://www.google.com/url?q=https://github.com/IFCN/verified-signatories/blob/master/list&amp;sa=D&amp;ust=1535307140772000">IFCN</a>, <a href="https://www.google.com/url?q=https://www.w3.org/Consortium/Member/List&amp;sa=D&amp;ust=1535307140772000">W3C</a>, or AP)</li><li>Expressing a list of employees, students, or other vetted individuals</li><li>Expressing that an organization or individual or some content has been vetted and approved for some particular quality/credential/certificate.</li><li>Expressing the identity of the people behind a site </li><li>Expressing the partisan leanings of a provider, or other bias</li><li>Expressing the belief that a provider acts in good faith in the service of accurate content, or fails to do so</li><li>&#x2026; other reputational information</li></ul>
         <p></p>
         <p>Standards for reputation of content:</p>
         <ul><li>Expressing engagement metrics, allowing 3rd parties to see indicators of virality </li></ul>
     </section>
     <section>
         <h2 id="h.1zfuop38heni">Transparency</h2>
-        <p>Some work already done with the <a href="https://www.google.com/url?q=https://thetrustproject.org/&amp;sa=D&amp;ust=1535302534324000">Trust Project</a>&#xA0;and schema.org. &#xA0;Unclear what else might be valuable.</p>
+        <p>Some work already done with the <a href="https://www.google.com/url?q=https://thetrustproject.org/&amp;sa=D&amp;ust=1535307140774000">Trust Project</a>&#xA0;and schema.org. &#xA0;Unclear what else might be valuable.</p>
     </section>
     <section>
         <h2 id="h.sckyfsyg61hc">Other</h2>
-        <p>Define a way for one provider to embed content from another without endorsement. This would be for credibility a bit like <a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Nofollow&amp;sa=D&amp;ust=1535302534325000">nofollow</a>&#xA0;was for SEO. &#xA0;An iframe would be the natural web way to do this, but 3rd party content on social media doesn&#x2019;t currently work that way. There is also the question whether the visited site can be entirely blameless for harmful 3rd party content; perhaps it can embed it with indicators about what editorial/review process it followed, if any.</p>
+        <p>Define a way for one provider to embed content from another without endorsement. This would be for credibility a bit like <a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Nofollow&amp;sa=D&amp;ust=1535307140775000">nofollow</a>&#xA0;was for SEO. &#xA0;An iframe would be the natural web way to do this, but 3rd party content on social media doesn&#x2019;t currently work that way. There is also the question whether the visited site can be entirely blameless for harmful 3rd party content; perhaps it can embed it with indicators about what editorial/review process it followed, if any.</p>
     </section>
 </section>
 <section>
     <h1 id="h.44v9zb7xawl2">Reading List</h1>
     <section>
         <h2 id="h.9h9dwq5xozdh">Getting Started</h2>
-        <p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/1OPghC4ra6QLhaHhW8QvPJRMKGEXT7KaZtG_7s5-UQrw/edit%23heading%3Dh.l3iqngk38nap&amp;sa=D&amp;ust=1535302534326000">Design Solutions for Fake News</a>&#xA0;is a sprawling (200+ page) crowd-sourced Google-Doc, initiated by Eli Pariser after the 2016 election of Donald Trump. &#xA0;It approaches many of the same ideas as this document, from some different angles.</p>
+        <p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/1OPghC4ra6QLhaHhW8QvPJRMKGEXT7KaZtG_7s5-UQrw/edit%23heading%3Dh.l3iqngk38nap&amp;sa=D&amp;ust=1535307140776000">Design Solutions for Fake News</a>&#xA0;is a sprawling (200+ page) crowd-sourced Google-Doc, initiated by Eli Pariser after the 2016 election of Donald Trump. &#xA0;It approaches many of the same ideas as this document, from some different angles.</p>
         <p></p>
-        <p><a href="https://www.google.com/url?q=https://crestresearch.ac.uk/comment/pereira-partisan-brain-fake-news/&amp;sa=D&amp;ust=1535302534326000">The Partisan Brain: Why People Are Attracted To Fake News And What To Do About It</a></p>
+        <p><a href="https://www.google.com/url?q=https://crestresearch.ac.uk/comment/pereira-partisan-brain-fake-news/&amp;sa=D&amp;ust=1535307140776000">The Partisan Brain: Why People Are Attracted To Fake News And What To Do About It</a></p>
     </section>
     <section>
         <h2 id="h.d461wikn28pg">Books</h2>
@@ -336,8 +342,8 @@
     </section>
     <section>
         <h2 id="h.j5cokdvcfbc">Ongoing: Newsletters, Blogs, Podcasts, &#x2026;</h2>
-        <ul><li>The <a href="https://www.google.com/url?q=https://www.poynter.org/channels/fact-checking&amp;sa=D&amp;ust=1535302534327000">&#xA0;International Fact-Checking Network @ Poynter (IFNC)</a>&#xA0;has a weekly <a href="https://www.google.com/url?q=http://go.pardot.com/l/273262/2018-05-29/5jcnr&amp;sa=D&amp;ust=1535302534327000">newsletter</a></li></ul>
-        <ul><li>The <a href="https://www.google.com/url?q=http://www.niemanlab.org/&amp;sa=D&amp;ust=1535302534327000">Nieman Journalism Lab</a>&#xA0;at Harvard has a weekly <a href="https://www.google.com/url?q=http://www.niemanlab.org/subscribe/&amp;sa=D&amp;ust=1535302534328000">newsletter</a>.</li></ul>
+        <ul><li>The <a href="https://www.google.com/url?q=https://www.poynter.org/channels/fact-checking&amp;sa=D&amp;ust=1535307140777000">&#xA0;International Fact-Checking Network @ Poynter (IFNC)</a>&#xA0;has a weekly <a href="https://www.google.com/url?q=http://go.pardot.com/l/273262/2018-05-29/5jcnr&amp;sa=D&amp;ust=1535307140778000">newsletter</a></li></ul>
+        <ul><li>The <a href="https://www.google.com/url?q=http://www.niemanlab.org/&amp;sa=D&amp;ust=1535307140778000">Nieman Journalism Lab</a>&#xA0;at Harvard has a weekly <a href="https://www.google.com/url?q=http://www.niemanlab.org/subscribe/&amp;sa=D&amp;ust=1535307140779000">newsletter</a>.</li></ul>
         <p></p>
     </section>
 </section>
@@ -348,8 +354,9 @@
     </section>
     <section>
         <h2 id="h.12uyfco0h36d">Review Comments</h2>
-        <p>Please add yourself here if submitting review comments</p>
-        <ul><li>Amy Guy</li></ul>
+        <p>We are grateful for review comments from these individuals. &#xA0;These people <b>do not necessarily endorse this document.</b>&#xA0; Please add your name/affiliation here if submitting review comments.</p>
+        <p></p>
+        <ul><li>Amy Guy</li><li>George Linzer</li></ul>
         <p></p>
     </section>
 </section>
