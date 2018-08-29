@@ -27,7 +27,7 @@ Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5e
 
 ---
 
-* 2018-08-29 Wed Main group *canceled* [Agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0013.html)
+* 2018-08-29 Wed Main group *canceled* [Agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0013.html), [Cancelation](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0014.html)
 * 2018-08-22 Wed Main group [Agenda](agenda/20180822.md), [Summary](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0009.html)
 * 2018-08-16 Area-1 Inspection subgroup (with CredCo) Noon US/Eastern, [agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0003.html), [minutes](https://docs.google.com/document/d/1kjb7_qHhW1m2GMDPxnedcrJVyMSPSIQPMnxpgsU6lus)
 * 2018-08-15 Wed Main group [Agenda](agenda/20180815.md), [minutes](./minutes/20180815.md)
