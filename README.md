@@ -23,7 +23,7 @@ Regulary weekly meetings are Wednesdays 1705-1830 UTC (based on [Weekly meeting 
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
 * Upcoming face-to-face: [f2f3](f2f3) (October in Lyon, France)
-* 2018-09-05 Wed Main group AgendaTBD
+* 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
 
 ---
 
