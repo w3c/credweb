@@ -23,10 +23,12 @@ Regulary weekly meetings are Wednesdays 1705-1830 UTC (based on [Weekly meeting 
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
 * Upcoming face-to-face: [f2f3](f2f3) (October in Lyon, France)
-* 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
+* next weekly meeting TBD
 
 ---
 
+* 2018-09-12 Wed Main group *no meeting*
+* 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
 * 2018-08-29 Wed Main group *canceled* [Agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0013.html), [Cancelation](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0014.html)
 * 2018-08-22 Wed Main group [Agenda](agenda/20180822.md), [Summary](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0009.html)
 * 2018-08-16 Area-1 Inspection subgroup (with CredCo) Noon US/Eastern, [agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0003.html), [minutes](https://docs.google.com/document/d/1kjb7_qHhW1m2GMDPxnedcrJVyMSPSIQPMnxpgsU6lus)
