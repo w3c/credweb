@@ -10,7 +10,7 @@ Group website at <https://credweb.org> (driven by [github pages](https://github.
 
 ### Documents
 
-* See [Community Group Report: Technological Approaches to Improving Credibility Assessment on the Web](report)
+* See [Community Group Report: Technological Approaches to Improving Credibility Assessment on the Web](report/)
 * [2018-05 Presentation to W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
 * [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
 
