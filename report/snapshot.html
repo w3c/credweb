@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Technological Approaches to Improving Credibility Assessment on the Web</title>
- <style type="text/css">table { border-collapse: collapse; } td, th { border: 1px solid #aaaaaa; padding: 0.5em;  } td p { margin: 0 } </style>
+6 <style type="text/css">table { border-collapse: collapse; } td, th { border: 1px solid #aaaaaa; padding: 0.5em;  } td p { margin: 0 } </style>
   <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove">
   </script>
   <script class="remove">
@@ -20,16 +20,16 @@
     ],
     "github": "https://github.com/w3c/credweb",
     "shortName": "not-published-as-TR",
-    wg: 'Credible Web Community Group',
-    wgURI: 'https://www.w3.org/community/credibility/',
+    "wg": "Credible Web Community Group",
+    "wgURI": "https://www.w3.org/community/credibility/",
     "abstractHTML": "This document is a primer for developing and improving technological methods to help promote trust and accuracy, especially on the web and involving news reporting. While not always comprehensive, it attempts to guide people away from overly simplistic designs and reveal a wide array of potential solutions. Impatient readers may want to start with <a href=\"#heading=h.32pkwj5grlt3\">section 10 (Promising Technical Approaches)</a> or <a href=\"#heading=h.wpcxeg3cugmx\">section 11 (Potential New Web Standards)</a>.",
     "sotdHTML": "\n    <div id=\"real-sotd\" style=\"margin: 1em; border: 4px solid blue; padding: 1em\">\n    <p>This is an Internal Review Draft (an \"Editors Draft\").  Members of the Community Group, please use <a href=\"https://www.w3.org/2002/09/wbs/103073/report/\">this form</a> to express your view on whether this should published for Public Review.</p>\n\n    <p>This snapshot version is made from time to time, but is not necessarily more stable or authoritative than the <a href=\"https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8\">Google Docs version of this document</a>, where edits are made.</p>\n\n    <hr/>\n\n<p>This document summarizes and expands discussions from mid-2018 within the <a href=\"\">W3C Credible Web Community Group</a>. It contains ideas and other content contributed by group members, often in discussion with the wider community.\n</p>\n\n<p>Comments are welcome and are especially useful if they offer specific improvements which can be incorporated into future versions.  Please comment either by <a href=\"https://github.com/w3c/credweb/issues\">raising a github issue</a> or making inline comments on the <a href=\"https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8\">Google Docs version of this document</a>.  If neither of those options work for you, please email your comments to <a href=\"mailto:public-credibility-comments@w3.org\">public-credibility-comments@w3.org</a> (<a href=\"https://lists.w3.org/Archives/Public/public-credibility-comments/\">archive</a>, <a href=\"mailto:public-credibility-comments-request@w3.org?subject=subscribe\">subscribe</a>).\n</p>\n\n    </div>\n",
-    "title": "Technological Approaches to Improving Credibility Assessment on the Web"
+    "title": "Technological Approaches to Improving Credibility Assessment on the Web"
 }
   </script>
 </head>
 <body>
-  <div id="abstract">This document is a primer for developing and improving technological methods to help promote trust and accuracy, especially on the web and involving news reporting. While not always comprehensive, it attempts to guide people away from overly simplistic designs and reveal a wide array of potential solutions.  Impatient readers may want to start with <a href="#heading=h.32pkwj5grlt3">section 10 (Promising Technical Approaches)</a> or <a href="#heading=h.wpcxeg3cugmx">section 11 (Potential New Web Standards)</a>.</div>
+  <div id="abstract">This document is a primer for developing and improving technological methods to help promote trust and accuracy, especially on the web and involving news reporting. While not always comprehensive, it attempts to guide people away from overly simplistic designs and reveal a wide array of potential solutions. Impatient readers may want to start with <a href="#heading=h.32pkwj5grlt3">section 10 (Promising Technical Approaches)</a> or <a href="#heading=h.wpcxeg3cugmx">section 11 (Potential New Web Standards)</a>.</div>
   <div id="sotd">
     <div id="real-sotd" style="margin: 1em; border: 4px solid blue; padding: 1em">
     <p>This is an Internal Review Draft (an "Editors Draft").  Members of the Community Group, please use <a href="https://www.w3.org/2002/09/wbs/103073/report/">this form</a> to express your view on whether this should published for Public Review.</p>
@@ -246,7 +246,7 @@
         <h2 id="h.5logre8458bk">Technological Attack Vectors</h2>
         <p>There are numerous ways to scam people online and a vast array of weaknesses in computer security systems which can help. A few are particularly relevant in credibility assessment:</p>
         <p></p>
-        <ol start="1"><li><a href="https://en.wikipedia.org/wiki/Sockpuppet_(Internet)">Sock puppets</a>&#xA0;- online accounts with deceptive identity features, such as a foreign agent who masquerades as a concerned citizen or member of relatively trusted identity group, to increase their credibility</li><li>Bot armies - by having large numbers of automatically managed accounts (eg fake followers) one can sometimes make a message appear popular or unpopular, as desired, and trick algorithms and people about what &#x201C;everybody&#x201D; thinks. &#xA0;A variation is to create many websites, which can seem like many independent voices saying the same thing, which can be falsely highly credible. (SEO link farms are an instance if this.)</li><li>Copied Websites - People often recognize a website and mentally track its reputation based on how the site looks, not it&apos;s actually domain name. Copying a site&#x2019;s appearance and content, then perhaps changing a few key details, is relatively easy.</li><li>Email impersonation - because email doesn&apos;t authenticate senders, consumers can potentially be tricked with borrowed reputation and misinformed, perhaps via a copied (and altered) site. This is a variant on phishing and spear phishing where harm can be done without involving user credentials (where most anti-phishing defences are arranged).</li></ol>
+        <ol start="1"><li><a href="https://en.wikipedia.org/wiki/Sockpuppet_(Internet)">Sock puppets</a>&#xA0;- online accounts with deceptive identity features, such as a foreign agent who masquerades as a concerned citizen or member of relatively trusted identity group, to increase their credibility</li><li>Bot armies - by having large numbers of automatically managed accounts (eg fake followers) one can sometimes make a message appear popular or unpopular, as desired, and trick algorithms and people about what &#x201C;everybody&#x201D; thinks. &#xA0;A variation is to create many websites, which can seem like many independent voices saying the same thing, which can be falsely highly credible. (SEO link farms are an instance if this.)</li><li>Copied Websites - People often recognize a website and mentally track its reputation based on how the site looks, not it&apos;s actually domain name. Copying a site&#x2019;s appearance and content, then perhaps changing a few key details, is relatively easy.</li><li>Email impersonation - because email doesn&apos;t authenticate senders, consumers can potentially be tricked with borrowed reputation and misinformed, perhaps via a copied (and altered) site. This is a variant on phishing and spear phishing where harm can be done without involving user credentials (where most anti-phishing defenses are arranged).</li></ol>
     </section>
 </section>
 <section>
@@ -338,7 +338,7 @@
     </section>
 </section>
 <section>
-    <h1 id="h.32pkwj5grlt3">Promising Technical Solutions: What Can Be Done?</h1>
+    <h1 id="h.32pkwj5grlt3">Promising Technical Approaches: What Can Be Done?</h1>
     <p>This section enumerates proposals for technological approaches to reduce the risk of being misled. &#xA0;Items are organized primarily by <a href="https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8/edit?disco%3DuiAAAACI72FCc%26ts%3D5bab89c2%23heading%3Dh.4nvodw32hqjj">credibility assessment strategies</a>. Our hope is to promote the development and adoption of effective tools, as well as &#xA0;interoperation between related tools where that would benefit users. In time, this list might evolve to include links to relevant research and available products. In the meantime, we hope it will inspire and guide students, startups, hackathons, incubators, social investment funds, and other people who want to help.</p>
     <p></p>
     <p>It should be noted that if credibility tools start to become effective at scale, or look like they might do so, they will themselves come under attack from parties that benefit from higher levels of distrust and deception. </p>
@@ -510,16 +510,15 @@
 </section>
 <section>
     <h1 id="h.x3gfy680s059">Change Log</h1>
-    <ul><li>2018-10-08</li>
+    <p>2018-10-08</p>
     <ul><li>Extended review period to Oct 10</li><li>Added a little text under Browser Features / Standards, somewhat copied from Scope</li><li>Added a little more about Transparency in Standards</li><li>Added brief discussion of incubation for vocabulary standards</li><li>Moved discussion of Aggregation in Granularity to its own section</li><li>Added explanation of contrast with FirstDraft&#x2019;s definition of Misinfo/Disinfo</li></ul>
-</ul>    <ul><li>2018-10-07</li>
+    <p>2018-10-07</p>
     <ul><li>Many small wording changes to increase consistency and readability</li></ul>
-</ul>    <ul><li>2018-10-06</li>
+    <p>2018-10-06</p>
     <ul><li>Removed strong signal-vs-indicator distinction and removed section about it, following discussion in and around <a href="https://github.com/w3c/credweb/issues/3">CredWeb Issue 3</a></li><li>Removed &#x201C;tribal&#x201D; metaphorical language, in favor of &#x201C;ingroup&#x201D; terminology</li></ul>
-</ul>    <ul><li>2018-10-04</li>
+    <p>2018-10-04</p>
     <ul><li>Added paragraph about &#x201C;intrusiveness&#x201D; spectrum under Low-Effort UX</li><li>Rewrote defn of credibility around &#x201C;nonmisleading&#x201D;, since people found use of &#x201C;trustworthy&#x201D; problematic.</li><li>Changed threat enumerations to be numbered, for easier reference</li></ul>
-</ul>    <ul><li>2018-10-01</li>
+    <p>2018-10-01</p>
     <ul><li>Changed defn of &#x201C;Credibility Score&#x201D; from proposing probability-of-trustworthiness as the scale to just giving that as an example and saying there&#x2019;s no standard scale yet</li><li>Added a paragraph about goals and context before &#x201C;Credibility and Trust&#x201D; terms</li><li>Added link to voting form for CG members, in header</li><li>Added phrase &quot;to a certain group of people&quot; to definition of Credibility, and other wording changes to explanation of the term</li><li>Added link to Issue-3 for Signal/Indicator terms</li><li>Removed &quot;statistically&quot; from &quot;associated&quot; in defn of Inspection</li><li>Added two CredCo resources to Getting Started</li><li>Added this Change Log section. Previous version, which these are all changes to, is tagged &#x201C;Internal Review 2&#x201D; in Google docs history and &#x201C;intrev2&#x201D; in github.</li></ul>
-    </ul>
 </section>
 </body></html>
