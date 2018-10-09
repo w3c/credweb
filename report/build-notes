@@ -2,5 +2,6 @@ To convert the google doc to the HTML:
 
 1. if necessary, install nodejs
 2. if necessary, do: npm install
-3. node report.js > snapshot.html
+3. sh build.sh
+(this includes commit & push to the repo)
 
