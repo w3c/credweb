@@ -2,7 +2,7 @@
 
 ## Public Review Version
 
-* Not yet released
+* [Technological Approaches to Improving Credibility Assessment on the Web](./20181011) - first release, 11 October 2018.
 
 ## Internal Review Version
 
