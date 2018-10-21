@@ -4,7 +4,7 @@ Here's a way we can explore credibility assessment, together.  Basically, post y
 
 You can make an anonymous (throw-away) twitter account for this, if you like.
 
-To be precise:
+Step by step:
 
 1. Decide which item you want to assess.  Pick news article, news source, or anything visible on the web where it matter is people believe it. Or you can use a bit of text, such as a claim people are repeating. This excercise will probably be much more interesting if you have strong feelings about the thing you pick.  It may also help to think about (and maybe tag) someone else who has strong feelings about it.
 1. Start a thread with a tweet which includes the URL of that item, and explain what you're doing.  Link here if you want.  Make your following tweets in the same assessment be replies in a chain.
