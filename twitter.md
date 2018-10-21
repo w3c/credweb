@@ -1,4 +1,4 @@
-# Using Twitter as for Credibility Assessment exercises
+# Credibility assessment exercises on Twitter
 
 * Decide which item you want to assess (usually some news article or news source), then start a thread with a tweet which includes the URL of that item.  Make your following tweets in the same assessment be replies in a chain.
 * Optionally, start the first tweet with @cred_web so that your followers wont see it unless they also follow @cred_web.  This is probably good for now.
