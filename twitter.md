@@ -10,6 +10,7 @@ Step by step:
 1. Start a thread with a tweet which includes the URL of that item, and explain what you're doing.  Link here if you want.  Make your following tweets in the same assessment be replies in a chain.
 1. Optionally, start the first tweet with @cred_web so that your followers wont see this thread unless they also follow @cred_web.  This is probably good for now.
 1. Try to make simple, factual statements, recording your observations about your chosen subject.  Say things you observe about it that might influence whether you believe the subject or not. This can include your judgements, as observations of your mental state and mental process.
+1. Separate the observation ("There are 95 ads on this page") from how you think it might affect credibility. Let's try #lesscred and #morecred for that.
 1. Don't say anything sarcastic.  Yes, this is Twitter, but that's probably not helpful in this context.
 1. Don't @ people for now, unless you're sure you want to draw them into this.  You can refer to twitter users (and users of other social media) using the URL of their main/profile page.  For example, use https://twitter.com/sandhawke not @sandhawke.
 1. If you run out of ideas for things to say about your subject, look in [Credibility Signals](/signals) for more ideas.  You could even try some of the template statements (filled in), if they seem right.
