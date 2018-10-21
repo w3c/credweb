@@ -2,9 +2,11 @@
 
 Here's a way we can explore credibility assessment, together.  Basically, post your signal data as tweets, in natural language.  Make it up as you go, and lets see what we end up with.
 
+You can make an anonymous (throw-away) twitter account for this, if you like.
+
 To be precise:
 
-1. Decide which item you want to assess.  Pick news article, news source, or anything visible on the web, where it matter is people believe it. This excercise will probably be much more interesting if you have strong feelings about the thing you pick.  It may also help to think about (and tag) someone else who has strong feelings about it.
+1. Decide which item you want to assess.  Pick news article, news source, or anything visible on the web where it matter is people believe it. Or you can use a bit of text, such as a claim people are repeating. This excercise will probably be much more interesting if you have strong feelings about the thing you pick.  It may also help to think about (and maybe tag) someone else who has strong feelings about it.
 1. Start a thread with a tweet which includes the URL of that item, and explain what you're doing.  Link here if you want.  Make your following tweets in the same assessment be replies in a chain.
 1. Optionally, start the first tweet with @cred_web so that your followers wont see it unless they also follow @cred_web.  This is probably good for now.
 1. Try to make simple, factual statements, recording your observations. This can include your judgements, as observations of your mental state and mental process.
