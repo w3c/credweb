@@ -2,7 +2,7 @@
 
 Here's a way we can explore credibility assessment, together.  Basically, post your signal data as tweets, in natural language.  Make it up as you go, and lets see what we end up with.
 
-You can make an anonymous (throw-away) twitter account for this, if you like.
+You can make an anonymous (throw-away) twitter account for this, if you like.  (Maybe use a [gmail feature](https://gmail.googleblog.com/2008/03/2-hidden-ways-to-get-more-from-your.html) for this.)
 
 Step by step:
 
@@ -10,7 +10,7 @@ Step by step:
 1. Start a thread with a tweet which includes the URL of that item, and explain what you're doing.  Link here if you want.  Make your following tweets in the same assessment be replies in a chain.
 1. Optionally, start the first tweet with @cred_web so that your followers wont see this thread unless they also follow @cred_web.  This is probably good for now.
 1. Try to make simple, factual statements, recording your observations about your chosen subject.  Say things you observe about it that might influence whether you believe the subject or not. This can include your judgements, as observations of your mental state and mental process.
-1. Separate the observation ("There are 95 ads on this page") from how you think it might affect credibility. Let's try #lesscred and #morecred for that.
+1. Separate the observation ("There are 95 ads on this page") from how you think it might affect credibility. Let's try #lesscred and #morecred for that.  So "The typeface seems professional #morecred" and "I see several typos #lesscred".
 1. Don't say anything sarcastic.  Yes, this is Twitter, but that's probably not helpful in this context.
 1. Don't @ people for now, unless you're sure you want to draw them into this.  You can refer to twitter users (and users of other social media) using the URL of their main/profile page.  For example, use https://twitter.com/sandhawke not @sandhawke.
 1. If you run out of ideas for things to say about your subject, look in [Credibility Signals](/signals) for more ideas.  You could even try some of the template statements (filled in), if they seem right.
