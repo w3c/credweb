@@ -10,30 +10,27 @@ Group website at <https://credweb.org> (driven by [github pages](https://github.
 
 ### Documents
 
-* See [Community Group Report: Technological Approaches to Improving Credibility Assessment on the Web](report/)
-* [2018-05 Presentation to W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
-* [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
+* **Draft Report**: [Technological Approaches to Improving Credibility Assessment on the Web](report/)
+* **Draft Spec**: [Credibility Signals](/signals) replacing [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
+* Slides: [2018-05 Presentation to W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
 
 ### Meetings
 
 Most meetings use <https://zoom.us/j/988170706>. Please try to be on-camera, if possible. For more, see [how to connect](how-to-connect.md)
 
-Regulary weekly meetings are Wednesdays 1705-1830 UTC (based on [Weekly meeting time poll](https://doodle.com/poll/n5udgwf3vrm3q2sw))
-
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
 * Upcoming face-to-face: [f2f3](f2f3) (October in Lyon, France)
-* next weekly meeting TBD
+* Weekly meetings currently paused; please participate via comments on documents)
 
 ---
 
-* 2018-09-12 Wed Main group *no meeting*
 * 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
 * 2018-08-29 Wed Main group *canceled* [Agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0013.html), [Cancelation](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0014.html)
 * 2018-08-22 Wed Main group [Agenda](agenda/20180822.md), [Summary](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0009.html)
 * 2018-08-16 Area-1 Inspection subgroup (with CredCo) Noon US/Eastern, [agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0003.html), [minutes](https://docs.google.com/document/d/1kjb7_qHhW1m2GMDPxnedcrJVyMSPSIQPMnxpgsU6lus)
 * 2018-08-15 Wed Main group [Agenda](agenda/20180815.md), [minutes](./minutes/20180815.md)
-* 2018-07-26 / 2018-07-27 **Face to Face meeting SF**, [Agenda](f2f2.md), [DRAFT minutes](./minutes/f2f2.md)
+* 2018-07-26 / 2018-07-27 **Face to Face meeting SF**, [Agenda](f2f2.md), [minutes](./minutes/f2f2.md)
 * 2018-07-25 Wed _No Main group meeting_ (day before F2F)
 * 2018-07-23 Mon _No Subgroup-1 group meeting_ 
 * 2018-07-18 Wed Main group [Agenda](agenda/20180718.md), [minutes](./minutes/20180718.md)
