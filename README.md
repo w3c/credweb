@@ -10,8 +10,8 @@ Group website at <https://credweb.org> (driven by [github pages](https://github.
 
 ### Documents
 
-* **Draft Report**: [Technological Approaches to Improving Credibility Assessment on the Web](report/)
-* **Draft Spec**: [Credibility Signals](/signals) replacing [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
+* **Draft Report**: [Technological Approaches to Improving Credibility Assessment on the Web](https://credweb.org/report/)
+* **Draft Spec**: [Credibility Signals](https://credweb.org/signals/) replacing [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
 * Slides: [2018-05 Presentation to W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
 
 ### Meetings
