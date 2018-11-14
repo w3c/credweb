@@ -1,0 +1,965 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 23.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>Credibility Signals</title>
+<style type="text/css">
+  table { border-collapse: collapse; } 
+  td, th { border: 1px solid #aaaaaa; padding: 0.5em;  } 
+  td p { margin: 0 } 
+  table.inner { border: 1px solid red; padding: 0 }
+  .science { background: 
+</style>
+
+  
+  
+<style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+#references :target {
+  background: #eaf3ff;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd>p:first-child {
+  margin-top: 0;
+}
+
+.section dd>p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary>ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details>* {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: 0.3em;
+  background-color: white;
+  padding-bottom: 0.5em;
+}
+
+details.respec-tests-details[open]>summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details>ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details>li {
+  padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+h2>a.self-link,
+h3>a.self-link,
+h4>a.self-link,
+h5>a.self-link,
+h6>a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: .5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity .2s;
+  width: 2em;
+}
+
+h2>a.self-link::before,
+h3>a.self-link::before,
+h4>a.self-link::before,
+h5>a.self-link::before,
+h6>a.self-link::before {
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
+    left: auto;
+    top: auto;
+  }
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"><link rel="canonical" href="https://www.w3.org/TR/not-published-as-TR/"><script id="initialUserConfig" type="application/json">{
+  "gdocID": "1IzC6HrYaO3XNHAtXHsviZLEumhJDPl_S1--w_IYa68s",
+  "publishDate": "2018-10-21",
+  "noRecTrack": true,
+  "edDraftURI": "https://credweb.org/signals",
+  "specStatus": "ED",
+  "editors": [
+    {
+      "name": "TBD (initial version by Sandro Hawke)"
+    }
+  ],
+  "github": "https://github.com/w3c/credweb",
+  "shortName": "not-published-as-TR",
+  "wg": "Credible Web Community Group",
+  "wgURI": "https://www.w3.org/community/credibility/",
+  "extraHead": "\n<style type=\"text/css\">\n  table { border-collapse: collapse; } \n  td, th { border: 1px solid #aaaaaa; padding: 0.5em;  } \n  td p { margin: 0 } \n  table.inner { border: 1px solid red; padding: 0 }\n  .science { background: \n</style>\n",
+  "abstractHTML": "This document specifies various types of information, called credibility signals, which are considered potentially useful in assessing credibility of online information.",
+  "sotdHTML": "\n    <div id=\"real-sotd\" style=\"margin: 1em; border: 4px solid blue; padding: 1em\">\n    <p>This document is automatically assembled from a <strong>world-writable <a href=\"https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0\">Google doc</a></strong> and various data sources.  It may contain completely bogus content.  When this becomes a problem, we'll implement stable releases and/or access control.</p>\n    <hr/>\n\n<p>Comments are welcome and are especially useful if they offer specific improvements which can be incorporated into future versions.  Please comment either by <a href=\"https://github.com/w3c/credweb/issues\">raising a github issue</a> or making inline comments on the google doc.  If neither of those options work for you, please email your comments to <a href=\"mailto:public-credibility-comments@w3.org\">public-credibility-comments@w3.org</a> (<a href=\"https://lists.w3.org/Archives/Public/public-credibility-comments/\">archive</a>, <a href=\"mailto:public-credibility-comments-request@w3.org?subject=subscribe\">subscribe</a>).\n</p>\n\n    </div>\n",
+  "title": "Credibility Signals",
+  "publishISODate": "2018-10-21T00:00:00.000Z",
+  "generatedSubtitle": "Editor's Draft 21 October 2018"
+}</script></head>
+<body class="h-entry"><div class="head">
+      <a href="https://www.w3.org/" class="logo">
+      <img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48">
+  </a> <h1 id="title" class="title p-name">Credibility Signals</h1>
+      
+      <h2>
+        <abbr title="World Wide Web Consortium">W3C</abbr> Editor's Draft
+        <time class="dt-published" datetime="2018-10-21">21 October 2018</time>
+      </h2>
+      <dl>
+        <dt>This version:</dt><dd>
+                  <a class="u-url" href="https://credweb.org/signals-20181021">https://credweb.org/signals-20181021</a>
+        </dd>
+
+        <dt>Latest editor's draft:</dt><dd><a href="https://credweb.org/signals">https://credweb.org/signals</a></dd>
+        
+        <dt>Editor:</dt>
+        <dd class="p-author h-card vcard"><span class="p-name fn">TBD (initial version by Sandro Hawke)</span></dd>
+        
+        
+        <dt>Participate:</dt><dd>
+      <a href="https://github.com/w3c/credweb/">GitHub w3c/credweb</a>
+    </dd><dd>
+      <a href="https://github.com/w3c/credweb/issues/">File a bug</a>
+    </dd><dd>
+      <a href="https://github.com/w3c/credweb/commits/gh-pages">Commit history</a>
+    </dd><dd>
+      <a href="https://github.com/w3c/credweb/pulls/">Pull requests</a>
+    </dd>
+      </dl>
+      
+      
+      
+      <p class="copyright">
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+                        ©
+                        2018
+                        
+                        <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+                        <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+                        <a href="http://ev.buaa.edu.cn/">Beihang</a>).
+                        
+                        <abbr title="World Wide Web Consortium">W3C</abbr>
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+                        <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a>
+                        and
+                        <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a>
+                        rules apply.
+                      </p>
+      <hr title="Separator for header">
+    </div>
+  <div id="abstract" class="introductory"><h2>Abstract</h2>This document specifies various types of information, called credibility signals, which are considered potentially useful in assessing credibility of online information.</div>
+  <div id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p>
+                                              This document was published by
+                                              the <a href="https://www.w3.org/community/credibility/">Credible Web Community Group</a> as an
+                                              Editor's Draft.
+                                              
+                                            </p><p>
+                                                      <a href="https://github.com/w3c/credweb/issues/">GitHub
+                                                                Issues</a>
+                                                              are preferred for
+                                                              discussion of this
+                                                              specification.
+                                                            
+                                                      
+                                                    </p><p>
+                                              Publication as an
+                                              Editor's Draft does not imply
+                                              endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership.
+                                              This is a draft document and may
+                                              be updated, replaced or obsoleted
+                                              by other documents at any time. It
+                                              is inappropriate to cite this
+                                              document as other than work in
+                                              progress.
+                                            </p><p>
+                                      
+                                              This document was produced by
+                                              a group
+                                              operating under the
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+                                            
+                                      
+                                      
+                                                      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                                                      <a rel="disclosure" href="">public list of any
+                                                        patent disclosures</a>
+                                              made in connection with the
+                                              deliverables of
+                                              the group; that page also includes
+                                              instructions for disclosing a
+                                              patent. An individual who has
+                                              actual knowledge of a patent which
+                                              the individual believes contains
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+                                              must disclose the information in
+                                              accordance with
+                                              <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent
+                                                Policy</a>.
+                                            
+                                      
+                                    </p><p>
+                                      This document is governed by the
+                                      <a id="w3c_process_revision" href="https://www.w3.org/2018/Process-20180201/">1 February 2018 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                                    </p></div><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a href="#h.sqvm5wdqp8cz" class="tocxref"><span class="secno">1. </span>Introduction</a><ol class="toc"><li class="tocline"><a href="#h.4u9corwqzqo3" class="tocxref"><span class="secno">1.1 </span>Purpose</a></li><li class="tocline"><a href="#h.94xsck7qz3ho" class="tocxref"><span class="secno">1.2 </span>Credibility Data</a></li><li class="tocline"><a href="#h.wynojzlz503a" class="tocxref"><span class="secno">1.3 </span>Example</a></li><li class="tocline"><a href="#h.w3tz5a9u4eov" class="tocxref"><span class="secno">1.4 </span>Factors in Selecting Signals</a><ol class="toc"><li class="tocline"><a href="#h.j50fvf979mdx" class="tocxref"><span class="secno">1.4.1 </span>Measurement Challenges </a></li><li class="tocline"><a href="#h.fmi5ig47b9q" class="tocxref"><span class="secno">1.4.2 </span>Value in Credibility Assessment</a></li><li class="tocline"><a href="#h.4prgy7sgptjb" class="tocxref"><span class="secno">1.4.3 </span>Feedback Risks (“Gameability”)</a></li><li class="tocline"><a href="#h.yob5ckwl66hw" class="tocxref"><span class="secno">1.4.4 </span>Interoperability</a></li></ol></li><li class="tocline"><a href="#h.8th5kctcxqu" class="tocxref"><span class="secno">1.5 </span>Publishing Credibility Data</a></li><li class="tocline"><a href="#h.uut3ibti7e9p" class="tocxref"><span class="secno">1.6 </span>Consuming Credibility Data</a></li><li class="tocline"><a href="#h.1czhdtl0zd3z" class="tocxref"><span class="secno">1.7 </span>Organization of this document</a></li><li class="tocline"><a href="#h.gspkln3r92qo" class="tocxref"><span class="secno">1.8 </span>Template Statements</a></li><li class="tocline"><a href="#h.mor7t1b8hqnj" class="tocxref"><span class="secno">1.9 </span>Instructions for editing this document</a><ol class="toc"><li class="tocline"><a href="#h.qrlhmics5rn9" class="tocxref"><span class="secno">1.9.1 </span>Expand discussion</a></li><li class="tocline"><a href="#h.24e7qc4br9tl" class="tocxref"><span class="secno">1.9.2 </span>Add new template statements</a></li><li class="tocline"><a href="#h.m3yfslb55ujd" class="tocxref"><span class="secno">1.9.3 </span>Add new signals</a></li></ol></li><li class="tocline"><a href="#h.igosi6fm6cxo" class="tocxref"><span class="secno">1.10 </span>Contributors</a></li></ol></li><li class="tocline"><a href="#h.oxlj9wwlrxlk" class="tocxref"><span class="secno">2. </span>Subject type: Claim</a><ol class="toc"><li class="tocline"><a href="#h.nf6ves3oihme" class="tocxref"><span class="secno">2.1 </span>Claim Review</a></li></ol></li><li class="tocline"><a href="#h.o0v67exatnlj" class="tocxref"><span class="secno">3. </span>Subject type: Text</a></li><li class="tocline"><a href="#h.ebbxkfays3v3" class="tocxref"><span class="secno">4. </span>Subject type: Image</a></li><li class="tocline"><a href="#h.rd3u7xxoozfz" class="tocxref"><span class="secno">5. </span>Subject type: Audio</a></li><li class="tocline"><a href="#h.jflgz5f9hyic" class="tocxref"><span class="secno">6. </span>Subject type: Video</a></li><li class="tocline"><a href="#h.o0v67exatnlj-1" class="tocxref"><span class="secno">7. </span>Subject type: Article</a><ol class="toc"><li class="tocline"><a href="#h.rlt5zll5ko74" class="tocxref"><span class="secno">7.1 </span>Originality</a><ol class="toc"><li class="tocline"><a href="#h.4g8e318kcm6" class="tocxref"><span class="secno">7.1.1 </span>Signal: Is Original</a></li><li class="tocline"><a href="#h.9hpkxchbfata" class="tocxref"><span class="secno">7.1.2 </span>Signal: Attribution of Non-Original Content</a></li></ol></li><li class="tocline"><a href="#h.8vh02rgqsuv8" class="tocxref"><span class="secno">7.2 </span>Rhetoric</a><ol class="toc"><li class="tocline"><a href="#h.509n2k3j1arm" class="tocxref"><span class="secno">7.2.1 </span>Rhetoric Proportionality </a></li><li class="tocline"><a href="#h.q2nh0k52eyjo" class="tocxref"><span class="secno">7.2.2 </span>Signal: Proportional Rhetoric</a></li><li class="tocline"><a href="#h.rqej1d5covm" class="tocxref"><span class="secno">7.2.3 </span></a></li><li class="tocline"><a href="#h.aaaba7ghjvsb" class="tocxref"><span class="secno">7.2.4 </span>Signal: Extreme Exaggerating Rhetoric</a></li><li class="tocline"><a href="#h.gxouu7poe7c1" class="tocxref"><span class="secno">7.2.5 </span>Signal: Extreme Minimizing Rhetoric</a></li><li class="tocline"><a href="#h.f83v4wv0uw12" class="tocxref"><span class="secno">7.2.6 </span>Signal: Calibrating Confidence - Level of Confidence</a></li><li class="tocline"><a href="#h.nvlgcrm3kwwo" class="tocxref"><span class="secno">7.2.7 </span>Signal: Emotionally Charged Tone</a></li><li class="tocline"><a href="#h.e0i5s67k1zk1" class="tocxref"><span class="secno">7.2.8 </span>Signal: Emotional Valence</a></li><li class="tocline"><a href="#h.itb0xfd9oyam" class="tocxref"><span class="secno">7.2.9 </span>Signal: Emotional Valence</a></li></ol></li><li class="tocline"><a href="#h.dpx28pltw582" class="tocxref"><span class="secno">7.3 </span>Logic/Reasoning</a><ol class="toc"><li class="tocline"><a href="#h.kgmf5mejlgi" class="tocxref"><span class="secno">7.3.1 </span>Signal: Appeal to Fear Fallacy</a></li><li class="tocline"><a href="#h.ae9pysupliey" class="tocxref"><span class="secno">7.3.2 </span>Signal: Causal Claim Types</a></li><li class="tocline"><a href="#h.au2pwgkb3anh" class="tocxref"><span class="secno">7.3.3 </span>Signal: False Dilemma</a></li><li class="tocline"><a href="#h.qp18h3ajpzo" class="tocxref"><span class="secno">7.3.4 </span>Signal: Slippery Slope Fallacy</a></li></ol></li><li class="tocline"><a href="#h.p41bf87yw70g" class="tocxref"><span class="secno">7.4 </span>Outbound References</a><ol class="toc"><li class="tocline"><a href="#h.385jt0oslh7f" class="tocxref"><span class="secno">7.4.1 </span>Signal: Source Types</a></li><li class="tocline"><a href="#h.pezn1j5vyegi" class="tocxref"><span class="secno">7.4.2 </span>Signal: Contains Link to Scientific Journals</a></li><li class="tocline"><a href="#h.pajed1om5kg" class="tocxref"><span class="secno">7.4.3 </span>Signal: Accuracy of representation of source article</a></li><li class="tocline"><a href="#h.mbrrroe0k5qv" class="tocxref"><span class="secno">7.4.4 </span>Signal: Academic Journal Impact Factor</a></li></ol></li></ol></li><li class="tocline"><a href="#h.tmzmkbxu9bxp" class="tocxref"><span class="secno">8. </span>Subject type: Title</a><ol class="toc"><li class="tocline"><a href="#h.xaoxbvlpye4n" class="tocxref"><span class="secno">8.1 </span>Quality</a><ol class="toc"><li class="tocline"><a href="#h.5kr1p3cc3lzw" class="tocxref"><span class="secno">8.1.1 </span>Clickbait</a><ol class="toc"><li class="tocline"><a href="#h.1sw0skoxwud0" class="tocxref"><span class="secno">8.1.1.1 </span>Signal: Listicle</a></li><li class="tocline"><a href="#h.94jyag5bibcd" class="tocxref"><span class="secno">8.1.1.2 </span>Signal: Cliffhanger</a></li><li class="tocline"><a href="#h.pgbfqbvnbask" class="tocxref"><span class="secno">8.1.1.3 </span>Signal: Provoking emotions</a></li><li class="tocline"><a href="#h.3dx235bvnoo" class="tocxref"><span class="secno">8.1.1.4 </span>Signal: Provoking emotions</a></li></ol></li><li class="tocline"><a href="#h.55a3oig9b7tn" class="tocxref"><span class="secno">8.1.2 </span></a><ol class="toc"><li class="tocline"><a href="#h.4mc4g1eldeh6" class="tocxref"><span class="secno">8.1.2.1 </span>Signal: Curiosity Gap (Hidden Secret or Trick)</a></li></ol></li><li class="tocline"><a href="#h.d4ig9zy8vtub" class="tocxref"><span class="secno">8.1.3 </span></a><ol class="toc"><li class="tocline"><a href="#h.t48fhxvcec9" class="tocxref"><span class="secno">8.1.3.1 </span>Signal: Challenge to the Ego</a></li><li class="tocline"><a href="#h.d0oat58fjr6k" class="tocxref"><span class="secno">8.1.3.2 </span>Signal: Defying Convention</a></li><li class="tocline"><a href="#h.gzziarpz1l9r" class="tocxref"><span class="secno">8.1.3.3 </span>Signal: Inducing Fear</a></li></ol></li></ol></li><li class="tocline"><a href="#h.1oziygd4sr3u" class="tocxref"><span class="secno">8.2 </span>Misleading about content</a><ol class="toc"><li class="tocline"><a href="#h.hwbvs7r75s8r" class="tocxref"><span class="secno">8.2.1 </span>Signal: Title Representativeness</a><ol class="toc"><li class="tocline"><a href="#h.mn7wxd9f25w3" class="tocxref"><span class="secno">8.2.1.1 </span>Signal: Differs from body topic</a></li><li class="tocline"><a href="#h.mn7wxd9f25w3-2" class="tocxref"><span class="secno">8.2.1.2 </span>Signal: Emphasizes different information than the body topic</a></li><li class="tocline"><a href="#h.mn7wxd9f25w3-3" class="tocxref"><span class="secno">8.2.1.3 </span>Signal: Carries little information about the body</a></li><li class="tocline"><a href="#h.mn7wxd9f25w3-4" class="tocxref"><span class="secno">8.2.1.4 </span>Signal: Takes a different stance than the body</a></li><li class="tocline"><a href="#h.mn7wxd9f25w3-5" class="tocxref"><span class="secno">8.2.1.5 </span>Signal: Overstates claims or conclusions in the body</a></li><li class="tocline"><a href="#h.gu3qftpt5t8m" class="tocxref"><span class="secno">8.2.1.6 </span>6 Signal: Understates claims or conclusions in the body</a></li></ol></li></ol></li><li class="tocline"><a href="#h.luo104c6lu7n" class="tocxref"><span class="secno">8.3 </span>Misleading about the world</a></li><li class="tocline"><a href="#h.w3anxxq8kvpk" class="tocxref"><span class="secno">8.4 </span>Nonmisleading consumer manipulation</a><ol class="toc"><li class="tocline"><a href="#h.jnosqa5iudy6" class="tocxref"><span class="secno">8.4.1 </span></a></li></ol></li></ol></li><li class="tocline"><a href="#h.lub1njgvolel" class="tocxref"><span class="secno">9. </span>Subject type: Web Page</a><ol class="toc"><li class="tocline"><a href="#h.mdi3zpygozdd" class="tocxref"><span class="secno">9.1 </span>Layout</a><ol class="toc"><li class="tocline"><a href="#h.hyg1ducygkrw" class="tocxref"><span class="secno">9.1.1 </span>Signal: Framed with navigation</a></li></ol></li><li class="tocline"><a href="#h.hl21hx11zts2" class="tocxref"><span class="secno">9.2 </span>Typefaces</a></li><li class="tocline"><a href="#h.3xpkob26wc2d" class="tocxref"><span class="secno">9.3 </span>Metadata in transmission headers</a></li><li class="tocline"><a href="#h.3xpkob26wc2d-6" class="tocxref"><span class="secno">9.4 </span>Metadata in page head</a></li><li class="tocline"><a href="#h.3xpkob26wc2d-7" class="tocxref"><span class="secno">9.5 </span>Metadata inline in body</a></li></ol></li><li class="tocline"><a href="#h.1glenquz5x0v" class="tocxref"><span class="secno">10. </span>Subject type: Website</a><ol class="toc"><li class="tocline"><a href="#h.6x0lo7l55ql1" class="tocxref"><span class="secno">10.1 </span>Advertisements</a><ol class="toc"><li class="tocline"><a href="#h.dcxuburvtcgj" class="tocxref"><span class="secno">10.1.1 </span>Signal: Ads.txt Exists</a></li><li class="tocline"><a href="#h.8d294ijoqvoc" class="tocxref"><span class="secno">10.1.2 </span>Signal: Spam or Clickbait Advertisements</a></li><li class="tocline"><a href="#h.cdxsi6f5k7ya" class="tocxref"><span class="secno">10.1.3 </span>Signal: Number of Advertisements</a></li></ol></li></ol></li><li class="tocline"><a href="#h.2afczo1l5buv" class="tocxref"><span class="secno">11. </span>Subject type: Aggregation</a></li><li class="tocline"><a href="#h.3d3rw8hardr8" class="tocxref"><span class="secno">12. </span>Subject type: Venue</a></li><li class="tocline"><a href="#h.8lk9jx3uhrn9" class="tocxref"><span class="secno">13. </span>Subject type: Provider</a></li><li class="tocline"><a href="#h.ta1p2wq07w75" class="tocxref"><span class="secno">14. </span>Subject type: Creator</a></li><li class="tocline"><a href="#h.udd9lw471gyb" class="tocxref"><span class="secno">15. </span>Subject type: Person</a></li><li class="tocline"><a href="#h.9mlr23oex9z1" class="tocxref"><span class="secno">16. </span>Subject type: Organization</a></li></ol></nav>
+
+<section>
+    <!--OddPage--><h2 id="h.sqvm5wdqp8cz"><span class="secno">1. </span>Introduction<a class="self-link" aria-label="§" href="#h.sqvm5wdqp8cz"></a></h2>
+    <section>
+        <h3 id="h.4u9corwqzqo3"><span class="secno">1.1 </span>Purpose<a class="self-link" aria-label="§" href="#h.4u9corwqzqo3"></a></h3>
+        <p>This document is intended to support an ecosystem of interoperable credibility tools. &nbsp;These software tools, which may be components of familiar existing systems, will gather, process, and use relevant data to help people more accurately decide what information they can trust online and protect themselves from being misled. We expect that an open data-sharing architecture will facilitate efficient research and development, as well as an overall system which is more visibly trustworthy.</p>
+        <p>The document has three primary audiences:</p>
+        <ol start="1"><li>Software developers and computer science researchers wanting to build systems which work with credibility data. &nbsp;For them, the document aims to be a precise technical specification, stating&nbsp;what&nbsp;they need for their software to interoperate with any other software which conforms to this specification. </li><li>People who work in journalism and want to review and contribute to this technology sphere, to help make sure it is beneficial and practical.</li><li>Non-computer-science researchers, interested in helping develop and improve the science behind this work.</li></ol>
+        <p>In general, we intend for this document to be:</p>
+        <ul><li>Welcoming for implementers of systems using credibility data</li><li>Easy for non-tech folks to understand the proposed signals &amp; contribute</li><li>Practical to maintain by the editors</li><li>Practical to contribute to, for a wide audience</li><li>A source of accurate guidance about signal quality and adoption</li></ul>
+    </section>
+    <section>
+        <h3 id="h.94xsck7qz3ho"><span class="secno">1.2 </span>Credibility Data<a class="self-link" aria-label="§" href="#h.94xsck7qz3ho"></a></h3>
+        <p>The document builds on concepts and terminology explained in <a href="https://www.google.com/url?q=https://credweb.org/report/&amp;sa=D&amp;ust=1542212506022000">Technological Approaches to Improving Credibility Assessment on the Web</a>. &nbsp;Our basic model is that an entity (human and/or machine) is attempting to make a credibility assessment — to predict whether something will mislead them or others — by carefully examining many different observable features of that thing and things connected with it, as well as information provided by various related or trusted sources. </p>
+        <p>To simplify and unify this complex situation, with its many different roles, we model the situation as a set of observers, each using imperfect instruments to learn about the situation and then recording their observations using simple declarative statements agreed upon in advance. Because those statements are inputs to a credibility assessment process, we call them <b>credibility signals.</b>&nbsp; (The term <b>credibility indicators</b>&nbsp;is sometimes also used.)</p>
+        <p>This document, then, is a guide to these signals. &nbsp;It states what each observer might say and exactly how to say it, along with other relevant information to help people choose among the possible signals and understand what it means when they are used.</p>
+        <p>Because this is a new and constantly-changing field, we do not simply state which signals should be used. &nbsp;Instead, we list possible signals that one might reasonably consider using, along with information we expect to be helpful in making the decision.</p>
+    </section>
+    <section>
+        <h3 id="h.wynojzlz503a"><span class="secno">1.3 </span>Example<a class="self-link" aria-label="§" href="#h.wynojzlz503a"></a></h3>
+        <p>[explain]</p>
+        <p></p>
+        <p>Assessing credibility of https://news.example/article-1</p>
+        <p>&nbsp; &nbsp;Looking at title</p>
+        <p>&nbsp; &nbsp; &nbsp; I consider it to be clickbait</p>
+        <p>&nbsp; &nbsp; &nbsp; It's clickbait because it's a cliffhanger</p>
+        <p>&nbsp; &nbsp;Looking at article</p>
+        <p>&nbsp; &nbsp; &nbsp; It cites scientific research</p>
+        <p>&nbsp; &nbsp;Looking at provider</p>
+        <p>&nbsp; &nbsp; &nbsp; Established in 1974</p>
+        <p>&nbsp; &nbsp; &nbsp; Owned domain since 2006</p>
+    </section>
+    <section>
+        <h3 id="h.w3tz5a9u4eov"><span class="secno">1.4 </span>Factors in Selecting Signals<a class="self-link" aria-label="§" href="#h.w3tz5a9u4eov"></a></h3>
+        <p>When building systems which use credibility signals and trying to decide which signals to use, there are different factors to weigh. &nbsp;This section is aspirational; we hope this document will in time provide guidance on all these factors. &nbsp; </p>
+        <section>
+            <h4 id="h.j50fvf979mdx"><span class="secno">1.4.1 </span>Measurement Challenges <a class="self-link" aria-label="§" href="#h.j50fvf979mdx"></a></h4>
+            <p>There are factors about how difficult it is to get an accurate value&nbsp;for the signal:</p>
+            <ol start="1"><li>Do people independently observing it get approximately the same value? &nbsp;</li><li>Do observations vary with the culture, location, language, age, beliefs, etc, of the people doing the observation?</li><li>Would the same people make the same observation in future months or years?</li><li>How much time and effort does it take people to make the observation?</li><li>Do people need to be trained to make this specific observation?</li><li>What kind of general training do people need (eg a journalism degree) to do it?</li><li>How do machines compare to humans in making this observation, in terms of cost, quality, types of errors, and susceptibility to being tricked.</li></ol>
+            <p>Many of these factors can be measured using inter-rater reliability (IRR) techniques. &nbsp;When studies have made such measurements, our intent is to include that data in this document.</p>
+        </section>
+        <section>
+            <h4 id="h.fmi5ig47b9q"><span class="secno">1.4.2 </span>Value in Credibility Assessment<a class="self-link" aria-label="§" href="#h.fmi5ig47b9q"></a></h4>
+            <p>Another important set of factors relates to how useful the measurement is in assessing credibility, assuming the observation itself is accurate. </p>
+            <ol start="1"><li>Does the signal have a strong correlation to content accuracy, itself determined by consensus among experts?</li><li>Is it particularly indicative of credibility when used in combination with other signals? &nbsp;(For example, as part of computing the value of a latent variable.)</li><li>Is it conceptually easy for people to understand?</li><li>Do professionals in the field think it's likely to be a useful signal?</li><li>How dependent are these characteristics on the culture or time period being considered?</li><li>How dependent are these characteristics on the subject matter of the information being assessed for credibility? </li></ol>
+        </section>
+        <section>
+            <h4 id="h.4prgy7sgptjb"><span class="secno">1.4.3 </span>Feedback Risks (“Gameability”)<a class="self-link" aria-label="§" href="#h.4prgy7sgptjb"></a></h4>
+            <p>One should also consider how the overall ecosystem of content producers and consumers might be changed by credibility tools adopting the signal. Once attackers see it’s being used, a signal that works well today might stop working, or even be used to make things worse. See <a href="https://www.google.com/url?q=https://credweb.org/report/20181011%23feedback-risks&amp;sa=D&amp;ust=1542212506029000">Feedback Risks</a>.</p>
+            <ol start="1"><li>Is it disproportionately useful for attackers (eg viral call to action) ? &nbsp;If so, making this a negative credibility signal should generally be beneficial</li><li>Is it disproportionately expensive for attackers (eg journalistic language) ? &nbsp;If so, making this a positive credibility signal should generally be beneficial.</li><li>Who might get impacted by “friendly fire”? &nbsp;Even if adopting a signal might — on average — harm attackers more than everyone else, certain individuals or communities who have done nothing wrong might be penalized. &nbsp;Tradeoffs must be carefully made, ideally in a consensus process with the impacted people.</li></ol>
+        </section>
+        <section>
+            <h4 id="h.yob5ckwl66hw"><span class="secno">1.4.4 </span>Interoperability<a class="self-link" aria-label="§" href="#h.yob5ckwl66hw"></a></h4>
+            <p>The value of sharing signal data depends on how that signal is used by other systems.</p>
+            <ol start="1"><li>Are others producing data using this signal?</li><li>Are there useful data sets available?</li><li>Are others consuming data, paying attention to this signal?</li><li>Are there tools which work with it, eg running statistics?</li><li>Is the definition clear and unambiguous, so people using it mean the same thing?</li><li>Are there clear examples?</li><li>Is there an open history of commentary, with questions and answers, and issues being addressed by various implementers?</li><li>Is documentation available in multiple languages?</li><li>If the definition is under development, how can one participate?</li><li>If the definition could possibly change, who might change it, and under what circumstances?</li><li>Are there any intellectual property considerations? See <a href="https://www.google.com/url?q=https://www.w3.org/Consortium/Patent/&amp;sa=D&amp;ust=1542212506031000"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.</li><li>Is there a test suite / validation system for helping confirm that an implementation is working properly?</li><li>Are there implementation reports, confirming that tools are functioning properly, according to the testing system? (For an example, see <a href="https://www.google.com/url?q=https://activitypub.rocks/implementation-report/&amp;sa=D&amp;ust=1542212506032000">ActivityPub</a>).</li></ol>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.8th5kctcxqu"><span class="secno">1.5 </span>Publishing Credibility Data<a class="self-link" aria-label="§" href="#h.8th5kctcxqu"></a></h3>
+        <p>TBD, basically follow schema.org technique using json-ld.</p>
+    </section>
+    <section>
+        <h3 id="h.uut3ibti7e9p"><span class="secno">1.6 </span>Consuming Credibility Data<a class="self-link" aria-label="§" href="#h.uut3ibti7e9p"></a></h3>
+        <p>TBD, point to some tools and the relevant specs. &nbsp;Basically JSON-LD.</p>
+    </section>
+    <section>
+        <h3 id="h.1czhdtl0zd3z"><span class="secno">1.7 </span>Organization of this document<a class="self-link" aria-label="§" href="#h.1czhdtl0zd3z"></a></h3>
+        <p>Section 1 (“Introduction”) provides instructions for how to use and help maintain this document, along with general background information. </p>
+        <p>The rest of this document, after the introduction, is a list of signals and information about them, as discussed in the introduction. &nbsp;The signals are organized into related groups, in hierarchical sections. &nbsp;The lowest level of the hierarchy is the signals themselves; all the higher levels provide grouping of the signals, to help people understand them.</p>
+        <p>One important level of the hierarchy identifies the <b>subject type</b>&nbsp;of the signal. &nbsp;This is the conceptual entity being examined, considered, or inspected, when one makes the observation being recorded in the signal data. &nbsp;This could be imagined in different ways: when you are observing a claim made in the 3rd paragraph of an article published in some newspaper, are you observing the claim, the paragraph, the article, the newspaper, or even the author of the article? &nbsp;In general, we aim for the smallest <a href="https://www.google.com/url?q=https://credweb.org/report/20181011%23h.ij0k32jlsndm&amp;sa=D&amp;ust=1542212506034000">granularity</a>&nbsp;that makes sense, which in this case would probably be the claim.</p>
+        <p>At times, it may not be obvious to which subject type a signal belongs, or it could sensibly belong with several different ones. &nbsp;In this case, it might be moved around in the document as people come to understand it better. &nbsp;When it’s not clear, there should be links from the places a signal could reasonably be to the place it actually is.</p>
+        <p>this may require discussion, and might remain open for debate. &nbsp;When a signal or group of signals makes sense in two places, consider linking it from the places it isn’t, to help people find it.</p>
+        <p>In many cases, a signal could be seen as a set of similar signals which are not strictly identical. This can be handled by adding additional signal headings with the finer distinction, when necessary. In this case, template statements might appear under more than one signal. </p>
+        <p></p>
+        <p>Note that sections may be moved and renumbered. &nbsp;Do not rely on section numbers remaining the same. &nbsp;For linking to a part of the document, consider using the gdocs h.xxxxxx fragment ids, provided by the Table of Contents; those should remain stable. &nbsp;Also, whenever changing a heading, especially a signal heading, if someone might be referring to it by name, please move there old text into a paragraph starting “Also called:”. &nbsp;</p>
+    </section>
+    <section>
+        <h3 id="h.gspkln3r92qo"><span class="secno">1.8 </span>Template Statements<a class="self-link" aria-label="§" href="#h.gspkln3r92qo"></a></h3>
+        <p>The most important thing about a signal definition is to be clear what observation the signal data is recording. If the signal heading is “Article length”, does that mean length in words or bytes or characters or some other metric? Does it include the title? For each signal, we want an easy way to communicate its definition that is short but clear, while being as detailed as necessary. </p>
+        <p>The technique we use here is to express the semantics of the signal using plain and simple sentences in natural language which convey the same knowledge as the signal data. If you imagine people using credibility software exchanging these statements (perhaps in text messages or on Twitter), you should get the right semantics. You can assume metadata, like who sent it and when it was sent is available, so the statements include terms like “I” and “now”.</p>
+        <p>For machine-to-machine data Interoperability, these template sentences and the signal heading are turned into a data schema, after which the JSON-LD/schema.org/sematic web/linked data technology stack can be used.</p>
+        <p>The statements we use are <b>templates</b>&nbsp;because they abstract over a variety of similar sentences which differ in specific limited ways. &nbsp;For example, these statements:</p>
+        <p></p>
+        <ol start="1"><li>I have examined the article at https://example.com/alice and find it highly credible</li><li>I have examined the article at https://example.com/brian and find it highly credible</li><li>I have examined the article at https://example.com/casey and find it highly credible</li></ol>
+        <p>are all the same, except in the URL. &nbsp; We convey this using a template statement, which has a <b>variable</b>&nbsp;portion in square brackets, like:</p>
+        <ul><li>I have examined the article at [subject] and find it highly credible</li></ul>
+        <p></p>
+        <a id="t.fff74a8c69832a720ceb13e09c6d162bc3052f2c"></a>
+        <a id="t.1"></a>
+        <table><tbody><tr><td colspan="1" rowspan="1"><p>Tech note</p></td><td colspan="1" rowspan="1"><p>If we (automatically or manually) map this template to a property with the pname :iHaveExaminedHighlyCredible, then the sentence number 2 above would be encoded in turtle as </p><ul><li>{ &lt;https://example.com/brian&gt; :iHaveExaminedHighlyCredible true }.</li></ul><p>Alternatively, we could make it a class, but boolean valued properties may be better, so that all signals remain as properties.. </p></td></tr></tbody></table>
+        <p></p>
+        <p>The bracketed template expression “[subject]” is is required in every template, to indicate what entity is being observed. &nbsp;Additional bracket expressions can be used when there are other elements of the statement to make variable. &nbsp;In particular, [string] (for text in quotes) and [number].</p>
+        <p>(For now, try to just use those three. &nbsp;Software and documentation is being developed to allow more features. If you find this too restrictive, go ahead and write something else inside the square brackets and we'll deal with it later, but include a question mark so it's clear you knew you were making it up.)</p>
+        <p>An example needing multiple variables:</p>
+        <ol start="1"><li>https://example.com/alice took 4.75 seconds to load, just now.</li><li>https://example.com/brian took 5.9 seconds to load, just now.</li></ol>
+        <p>could be matched by:</p>
+        <ul><li>[subject] took [number] seconds to load, just now.</li></ul>
+    </section>
+    <section>
+        <h3 id="h.mor7t1b8hqnj"><span class="secno">1.9 </span>Instructions for editing this document<a class="self-link" aria-label="§" href="#h.mor7t1b8hqnj"></a></h3>
+        <p>As an experiment, this document is currently set so everyone can edit it, like Wikipedia. It is the <a href="https://www.google.com/url?q=https://drive.google.com/open?id%3D16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0&amp;sa=D&amp;ust=1542212506040000">Google docs version</a>&nbsp;that is editable. We suggest you change the “Editing Mode” to “Suggesting” (using the pencil icon in the upper-right) until you are quite familiar with this document. You may also comment using the usual Google Docs commenting features.</p>
+        <p><b>If you make or suggest any edits to this document, you are agreeing to the </b><b><a href="https://www.google.com/url?q=https://www.w3.org/community/about/agreements/cla/&amp;sa=D&amp;ust=1542212506040000"><abbr title="World Wide Web Consortium">W3C</abbr> Community Contributor License Agreement</a></b><b>&nbsp;which has significant copyright and patent implications.</b></p>
+        <p>The subsections below give some advice for how to make edits which are helpful.</p>
+        <section>
+            <h4 id="h.qrlhmics5rn9"><span class="secno">1.9.1 </span>Expand discussion<a class="self-link" aria-label="§" href="#h.qrlhmics5rn9"></a></h4>
+            <p>Each section should begin with a short introduction written with a neutral point of view, reflecting consensus about why the signal might be useful and what the risks might be. To enable consensus among a broad community, the intent is for this text to be developed iteratively, with each contributor adding their perspective while respecting what is already present.</p>
+            <p>Questions and minor concerns should generally be added as annotations using the “Add a Comment” function, without editing the document. If they become issues requiring back-and-forth discussion, they should be turned into github issues and linked from the most relevant place in this document with a paragraph starting “Issue:”</p>
+            <p>These discussion sections are intended to be nonnormative. That is, they do not say how software using the signal is required to behave for interoperability. The normative content of this specification is the template statements and the mapping of the statements to RDF.</p>
+        </section>
+        <section>
+            <h4 id="h.24e7qc4br9tl"><span class="secno">1.9.2 </span>Add new template statements<a class="self-link" aria-label="§" href="#h.24e7qc4br9tl"></a></h4>
+            <p>If you are confident you understand what a signal is intended to measure, and think you can provide a template statement which expresses it more clearly and simply, with little ambiguity, please add a new row to the bottom of the “Proposed template statements” table and add your entry. &nbsp;Please also put the next higher number in the <b>Key</b>&nbsp;field for reference, and your name in the <b>By</b>&nbsp;field. This “by” field is optional; it is intended to help simplify discussion, telling people who to talk to, and to give some credit. Listing the name of a large group in this field is not particularly useful. &nbsp;</p>
+            <p>After adding an entry, for a short time (perhaps a few hours, guided by any comments on it) it’s okay to edit it if you change your mind. After that, please leave it, and just add a new row for the new version. You can put new versions in the middle of the table and use keys like 1a.</p>
+        </section>
+        <section>
+            <h4 id="h.m3yfslb55ujd"><span class="secno">1.9.3 </span>Add new signals<a class="self-link" aria-label="§" href="#h.m3yfslb55ujd"></a></h4>
+            <p>Once you’re familiar with the structure of this document and all the signals in your area of interest, you may add new signal sections at heading level 3, or even new group sections at heading level 2. &nbsp;(For heading numbering, you can use the “Table of contents” add-on from LumApps to number the headers, do it by hand, or just leave the numbering for someone else using the add-on.)</p>
+            <p>When you add a new signal, please copy this table to the new section, and then fill in at least one row to clarify what the signal data conveys.</p>
+            <p></p>
+            <a id="t.21148e98bf953a49e91b8302d57d57c553e0d008"></a>
+            <a id="t.2"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr></tbody></table>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.igosi6fm6cxo"><span class="secno">1.10 </span>Contributors<a class="self-link" aria-label="§" href="#h.igosi6fm6cxo"></a></h3>
+        <p>Folks who add content to this document are encouraged to add themselves in this section, potentially with some affiliation &amp; credential information. &nbsp;This also allows the “By” column to stay short, as people can use short forms of names (eg only first or last name, if unique in this doc).</p>
+        <ul><li>Entries marked as by “Credibility Coalition” are <b>prior work</b>&nbsp;by members of the <a href="https://www.google.com/url?q=https://credibilitycoalition.org/about/&amp;sa=D&amp;ust=1542212506047000">Credibility Coalition</a>. At the time, individual authorship information was not maintained. Moving forward, specific authorship detail is welcome.</li><li>Entries marked as by “Public Editor” are <b>prior work</b>&nbsp;by members of <a href="https://www.google.com/url?q=https://goodlylabs.org/pe.html&amp;sa=D&amp;ust=1542212506047000">Public Editor</a>. At the time, individual authorship information was not maintained. Moving forward, specific authorship detail is welcome.</li><li>(add yourself here...)</li></ul>
+        <p></p>
+    </section>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.oxlj9wwlrxlk"><span class="secno">2. </span>Subject type: Claim<a class="self-link" aria-label="§" href="#h.oxlj9wwlrxlk"></a></h2>
+    <p>This section is for signals about claims.</p>
+    <p>A claim is “an assertion that is open to disagreement; equivalently, a meaningful declarative sentence which is logically either true or false (to some degree); equivalently, a proposition in<a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Propositional_calculus&amp;sa=D&amp;ust=1542212506049000">&nbsp;</a><a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Propositional_calculus&amp;sa=D&amp;ust=1542212506049000">propositional logic</a>.” [<a href="https://www.google.com/url?q=https://credweb.org/report/20181011%23h.k3a5bxg8k9ru&amp;sa=D&amp;ust=1542212506049000">credweb report</a>]</p>
+    <p>Claims can be stated (with various decree of clarity) in some content or implied by the content (even non-textual content, like a photograph).</p>
+    <p>Claims are usually the smallest practical granularity. Credibility data about claims is largely focussed on what other sources have said about that claim, as in fact checking, but could also involve relationships between claims and textual analysis of claim text. </p>
+    <section>
+        <h3 id="h.nf6ves3oihme"><span class="secno">2.1 </span>Claim Review<a class="self-link" aria-label="§" href="#h.nf6ves3oihme"></a></h3>
+        <p>The “ClaimReview” model developed at schema.org grows out of the tradition of independent, external fact-checking, as in <a href="https://www.google.com/url?q=https://www.politifact.com/&amp;sa=D&amp;ust=1542212506051000">PolitiFact</a>. &nbsp;With this model, a fact-checker reviews a claim, typically made by a public figure, and then publishes a review of that claim, a “claim review”. Within schema.org, this parallels other reviews, like restaurant reviews.</p>
+        <p>[ Can we fit claimreview neatly into this observer/signal model? &nbsp;It’s a bit of a stretch. &nbsp;TBD. ]</p>
+    </section>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.o0v67exatnlj"><span class="secno">3. </span>Subject type: Text<a class="self-link" aria-label="§" href="#h.o0v67exatnlj"></a></h2>
+    <p>Includes: phrase, sentence, paragraph, document, document fragment</p>
+    <p>A text, in this sense, is a sequence of words, with the usual punctuation, and sometimes embedded multimedia content or meaningful layout, like tables. &nbsp;That is, it’s a document or portion of a document. As examples, a phrase, sentence, paragraph, document section, book chapter, book, and complete book series would typically each count as a text. &nbsp;</p>
+    <p>Signals here concern properties of the text, itself, separate from how it might be published (eg on a <a href="#h.lub1njgvolel">Web Page</a>, on a billboard, spoken at a rally) or where it might be published (in some <a href="#h.3d3rw8hardr8">Venue)</a>. &nbsp;The text should be considered immutable: a text (in this sense) doesn't change. &nbsp;If you take a text and change it, you are making a new text, which needs to be reexamined, to see which observations (and thus which signal data) applies to this other, new text.</p>
+    <p>Issue: (tech) How to represent texts in RDF? &nbsp;Options include annotation URL with secure hash, annotation object URL with secure hash, data: URI, etc.</p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.ebbxkfays3v3"><span class="secno">4. </span>Subject type: Image<a class="self-link" aria-label="§" href="#h.ebbxkfays3v3"></a></h2>
+    <p>Includes: Picture, Photograph, Drawing, Illustration</p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.rd3u7xxoozfz"><span class="secno">5. </span>Subject type: Audio<a class="self-link" aria-label="§" href="#h.rd3u7xxoozfz"></a></h2>
+    <p>Also called: Audio Clip, Sound Clip, Audio Recording</p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.jflgz5f9hyic"><span class="secno">6. </span>Subject type: Video<a class="self-link" aria-label="§" href="#h.jflgz5f9hyic"></a></h2>
+    <p>Also called: Video Clip, Video Recording, Movie</p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.o0v67exatnlj-1"><span class="secno">7. </span>Subject type: Article<a class="self-link" aria-label="§" href="#h.o0v67exatnlj-1"></a></h2>
+    <p>Includes: News Story, News Article, Scientific Paper, Blog Post</p>
+    <p>An article is a collection of information intended to convey some information, usually factual, usually created by one or more identifier people, and usually released at a specific point in time in some venue. It consists of elements like a body, a title, a publication date, and an author list. &nbsp; Unlike Texts, where any change makes it a different Text, an Article may be revised over time and still be considered the same Article (albeit a different version). &nbsp;Usually only minor changes are socially appropriate, however. Consumers of credibility data may need to be cautious of which version an observation applies to.</p>
+    <p>If an article appears on a web page, or in a portion of a web page, we can use its URL to identify the article.</p>
+    <p><b>Differentiation between Article and Text. </b>Consider whether the signal data would be the same if the text were moved to a different article, perhaps published in a different venue, with a different title, at a different time, and with other text before or after it in some article. If the observation would be the same, then the signal is a property of the text, not the article. In that case it be in <a href="#h.o0v67exatnlj">3. Subject type: Text</a>&nbsp;not here.&nbsp; </p>
+    <section>
+        <h3 id="h.rlt5zll5ko74"><span class="secno">7.1 </span>Originality<a class="self-link" aria-label="§" href="#h.rlt5zll5ko74"></a></h3>
+        <section>
+            <h4 id="h.4g8e318kcm6"><span class="secno">7.1.1 </span>Signal: Is Original<a class="self-link" aria-label="§" href="#h.4g8e318kcm6"></a></h4>
+            <p></p>
+            <a id="t.3aaeeeb891c516ff486b8788100892e8cb2da131"></a>
+            <a id="t.3"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has appeared in exactly the same words or very similar words in another publication.</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Credibility Coalition</a></p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.9hpkxchbfata"><span class="secno">7.1.2 </span>Signal: Attribution of Non-Original Content<a class="self-link" aria-label="§" href="#h.9hpkxchbfata"></a></h4>
+            <p></p>
+            <a id="t.cd1babe8efda3a4d385bd88888522a24acf37987"></a>
+            <a id="t.4"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[subject article] is not original content, and it includes accurate attribution, pointing to the original.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.8vh02rgqsuv8"><span class="secno">7.2 </span>Rhetoric<a class="self-link" aria-label="§" href="#h.8vh02rgqsuv8"></a></h3>
+        <p>Issue: Are these really about the article, or at they about the text? Would the observations be the same if the same text appeared in a different article? &nbsp;Unclear. &nbsp;Leave in Article for now.</p>
+        <section>
+            <h4 id="h.509n2k3j1arm"><span class="secno">7.2.1 </span>Rhetoric Proportionality <a class="self-link" aria-label="§" href="#h.509n2k3j1arm"></a></h4>
+        </section>
+        <section>
+            <h4 id="h.q2nh0k52eyjo"><span class="secno">7.2.2 </span>Signal: Proportional Rhetoric<a class="self-link" aria-label="§" href="#h.q2nh0k52eyjo"></a></h4>
+            <p></p>
+            <a id="t.1edb9b2986ac7e0f08e0991cdb5207aa677ae2bc"></a>
+            <a id="t.5"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The rhetoric used in [subject article] is proportional to the event or situation described.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.rqej1d5covm"><span class="secno">7.2.3 </span><a class="self-link" aria-label="§" href="#h.rqej1d5covm"></a></h4>
+        </section>
+        <section>
+            <h4 id="h.aaaba7ghjvsb"><span class="secno">7.2.4 </span>Signal: Extreme Exaggerating Rhetoric<a class="self-link" aria-label="§" href="#h.aaaba7ghjvsb"></a></h4>
+            <a id="t.e9f7e9f4bde17d65dce4d25e10b457cca5ad88bb"></a>
+            <a id="t.6"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The rhetoric used&nbsp;in [subject article] is an extreme exaggeration of the event or situation described.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.gxouu7poe7c1"><span class="secno">7.2.5 </span>Signal: Extreme Minimizing Rhetoric<a class="self-link" aria-label="§" href="#h.gxouu7poe7c1"></a></h4>
+            <a id="t.e9f7e9f4bde17d65dce4d25e10b457cca5ad88bb"></a>
+            <a id="t.7"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The rhetoric used in [subject article] is an extreme exaggeration of the event or situation described.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.f83v4wv0uw12"><span class="secno">7.2.6 </span>Signal: Calibrating Confidence - Level of Confidence<a class="self-link" aria-label="§" href="#h.f83v4wv0uw12"></a></h4>
+            <p></p>
+            <a id="t.7a6523358114e7e20988f28f6ab2cbdf49fea99b"></a>
+            <a id="t.8"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[subject article] acknowledges uncertainty or the possibility that things might be otherwise</p></td><td colspan="1" rowspan="1"><p>Public Editor</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.nvlgcrm3kwwo"><span class="secno">7.2.7 </span>Signal: Emotionally Charged Tone<a class="self-link" aria-label="§" href="#h.nvlgcrm3kwwo"></a></h4>
+            <p></p>
+            <a id="t.21dbea79b8e89b084c8c6e4b4c30c3ceebf58f3e"></a>
+            <a id="t.9"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[subject article] has an emotionally charged tone (i.e, outrage, snark, celebration, horror, etc.).</p></td><td colspan="1" rowspan="1"><p>Public Editor</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.e0i5s67k1zk1"><span class="secno">7.2.8 </span>Signal: Emotional Valence<a class="self-link" aria-label="§" href="#h.e0i5s67k1zk1"></a></h4>
+            <p></p>
+            <p>Could be measured by VADER (Valence Aware Dictionary and sEntiment Reasoner) Natural Language Processing library</p>
+            <p></p>
+            <a id="t.1877cddd143b469c96f8cc490d9cd9c61c10cb05"></a>
+            <a id="t.10"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The language is extremely negative. </p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.itb0xfd9oyam"><span class="secno">7.2.9 </span>Signal: Emotional Valence<a class="self-link" aria-label="§" href="#h.itb0xfd9oyam"></a></h4>
+            <p></p>
+            <p></p>
+            <a id="t.cb7736c847e3c776199c264bb01ccd0c3de428a3"></a>
+            <a id="t.11"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The language is extremely positive.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+            <p></p>
+            <p></p>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.dpx28pltw582"><span class="secno">7.3 </span>Logic/Reasoning<a class="self-link" aria-label="§" href="#h.dpx28pltw582"></a></h3>
+        <section>
+            <h4 id="h.kgmf5mejlgi"><span class="secno">7.3.1 </span>Signal: Appeal to Fear Fallacy<a class="self-link" aria-label="§" href="#h.kgmf5mejlgi"></a></h4>
+            <p></p>
+            <a id="t.4567d06298f4bc705113acf4b9f2ea675c1a1e0c"></a>
+            <a id="t.12"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Does the author exaggerate the dangers of a situation and use scare tactics to persuade (the appeal to fear fallacy)?</p></td><td colspan="1" rowspan="1"><p>Public Editor</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.ae9pysupliey"><span class="secno">7.3.2 </span>Signal: Causal Claim Types<a class="self-link" aria-label="§" href="#h.ae9pysupliey"></a></h4>
+            <p></p>
+            <a id="t.43bc3b02d529c81f5a9c6c0a25162c66c83962a8"></a>
+            <a id="t.13"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Is a general or singular causal claim made? Highlight the section(s) that supports your answer.</p></td><td colspan="1" rowspan="1"><p>Public Editor</p></td></tr></tbody></table>
+            <p></p>
+            <ul><li>7.2.2.1 General Causal Claim </li><li>7.2.2.2 Singular Causal Claim </li><li>7.2.2.3 No Causal Claim</li></ul>
+        </section>
+        <section>
+            <h4 id="h.au2pwgkb3anh"><span class="secno">7.3.3 </span>Signal: False Dilemma<a class="self-link" aria-label="§" href="#h.au2pwgkb3anh"></a></h4>
+            <p></p>
+            <a id="t.8face49f240abe328db15fa25dd308852aa5db5d"></a>
+            <a id="t.14"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Does the author present a complicated choice as if it were binary (construct a false dilemma)? [If so, highlight the relevant section(s).]</p></td><td colspan="1" rowspan="1"><p>Public Editor</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.qp18h3ajpzo"><span class="secno">7.3.4 </span>Signal: Slippery Slope Fallacy<a class="self-link" aria-label="§" href="#h.qp18h3ajpzo"></a></h4>
+            <p></p>
+            <a id="t.e07d5ac558e62c298219ed887b07e189f9b08703"></a>
+            <a id="t.15"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Does the author say that one small change will lead to a major change (use a slippery slope argument)? [Highlight the relevant section(s).]</p><p></p></td><td colspan="1" rowspan="1"><p>Public Editor</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.p41bf87yw70g"><span class="secno">7.4 </span>Outbound References<a class="self-link" aria-label="§" href="#h.p41bf87yw70g"></a></h3>
+        <section>
+            <h4 id="h.385jt0oslh7f"><span class="secno">7.4.1 </span>Signal: Source Types<a class="self-link" aria-label="§" href="#h.385jt0oslh7f"></a></h4>
+            <p></p>
+            <a id="t.db94e1604677531dcf129abef483be429e2e37d2"></a>
+            <a id="t.16"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Which of the following types of sources are cited in the article? Check all that apply. If Other, please highlight.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+            <ul><li>None </li><li>Experts </li><li>Studies </li><li>Organizations </li><li>Other</li></ul>
+        </section>
+        <section>
+            <h4 id="h.pezn1j5vyegi"><span class="secno">7.4.2 </span>Signal: Contains Link to Scientific Journals<a class="self-link" aria-label="§" href="#h.pezn1j5vyegi"></a></h4>
+            <p></p>
+            <a id="t.f7e57a64dc44b547db79e42502a41ae37615885e"></a>
+            <a id="t.17"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Is a link provided in the article to where the original content came from?</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.pajed1om5kg"><span class="secno">7.4.3 </span>Signal: Accuracy of representation of source article<a class="self-link" aria-label="§" href="#h.pajed1om5kg"></a></h4>
+            <p></p>
+            <a id="t.affa6801ac827c6889e0ac992406c1ad6bf1e20c"></a>
+            <a id="t.18"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Does this article properly characterize the methods and conclusions of the original source?</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.mbrrroe0k5qv"><span class="secno">7.4.4 </span>Signal: Academic Journal Impact Factor<a class="self-link" aria-label="§" href="#h.mbrrroe0k5qv"></a></h4>
+            <p></p>
+            <a id="t.653a704ad9b8f691311b71a75b2b113ad4280620"></a>
+            <a id="t.19"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>What is the impact factor of the journal or conference cited?</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </section>
+    </section>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.tmzmkbxu9bxp"><span class="secno">8. </span>Subject type: Title<a class="self-link" aria-label="§" href="#h.tmzmkbxu9bxp"></a></h2>
+    <p>Also called: Headline</p>
+    <p>A Title is an immutable association of an Article and some short Text which is typically presented first. When a Title text changes, that's a different Title. An article may have many different titles at different points in time and in different contexts, although social practice is usually against this. </p>
+    <p>The same title text may used for many different articles, but those are considered different Titles here. &nbsp;For example, many of the signals about a Title with the text, “Local man dies”, will depend on which Article it's associated with.</p>
+    <section>
+        <h3 id="h.xaoxbvlpye4n"><span class="secno">8.1 </span>Quality<a class="self-link" aria-label="§" href="#h.xaoxbvlpye4n"></a></h3>
+        <p>These are general quality signals, not containing many details about why something might be high or low quality.</p>
+        <section>
+            <h4 id="h.5kr1p3cc3lzw"><span class="secno">8.1.1 </span>Clickbait<a class="self-link" aria-label="§" href="#h.5kr1p3cc3lzw"></a></h4>
+            <p>A measure of how much the title of the article conforms to a predetermined set of clickbait genres. See also specific signals below that might be considered kinds of clickbait, like “Listicle”.</p>
+            <section>
+                <h5 id="h.1sw0skoxwud0"><span class="secno">8.1.1.1 </span>Signal: Listicle<a class="self-link" aria-label="§" href="#h.1sw0skoxwud0"></a></h5>
+                <p></p>
+                <a id="t.b45f3f9b072d167530d25c8ba42767b250a39481"></a>
+                <a id="t.20"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title is a listicle (“6 Tips on …”)</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.94jyag5bibcd"><span class="secno">8.1.1.2 </span>Signal: Cliffhanger<a class="self-link" aria-label="§" href="#h.94jyag5bibcd"></a></h5>
+                <p></p>
+                <a id="t.d77980b08581dca61e9190103fd55da9e4d05ecf"></a>
+                <a id="t.21"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title is a cliffhanger (“You Won’t Believe What Happens Next”, “Man Divorces His Wife After Overhearing This Conversation”)</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.pgbfqbvnbask"><span class="secno">8.1.1.3 </span>Signal: Provoking emotions<a class="self-link" aria-label="§" href="#h.pgbfqbvnbask"></a></h5>
+                <p></p>
+                <a id="t.41b39de19f1d0405cd090c472f54c363e221b1f0"></a>
+                <a id="t.22"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title provokes emotions (“...Shocking Result”, “...Leave You in Tears”)</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.3dx235bvnoo"><span class="secno">8.1.1.4 </span>Signal: Provoking emotions<a class="self-link" aria-label="§" href="#h.3dx235bvnoo"></a></h5>
+                <p></p>
+                <a id="t.41b39de19f1d0405cd090c472f54c363e221b1f0"></a>
+                <a id="t.23"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title provokes emotions (“...Shocking Result”, “...Leave You in Tears”)</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            </section>
+        </section>
+        <section>
+            <h4 id="h.55a3oig9b7tn"><span class="secno">8.1.2 </span><a class="self-link" aria-label="§" href="#h.55a3oig9b7tn"></a></h4>
+            <section>
+                <h5 id="h.4mc4g1eldeh6"><span class="secno">8.1.2.1 </span>Signal: Curiosity Gap (Hidden Secret or Trick)<a class="self-link" aria-label="§" href="#h.4mc4g1eldeh6"></a></h5>
+                <p></p>
+                <a id="t.cba0cbe2b18323b0752a3718efd672e5704eb128"></a>
+                <a id="t.24"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title creates a curiosity gap through a hidden secret or trick (“Fitness Companies Hate Him...”, “Experts are Dying to Know Their Secret”, “You’ll never guess…”)</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            </section>
+        </section>
+        <section>
+            <h4 id="h.d4ig9zy8vtub"><span class="secno">8.1.3 </span><a class="self-link" aria-label="§" href="#h.d4ig9zy8vtub"></a></h4>
+            <section>
+                <h5 id="h.t48fhxvcec9"><span class="secno">8.1.3.1 </span>Signal: Challenge to the Ego<a class="self-link" aria-label="§" href="#h.t48fhxvcec9"></a></h5>
+                <p></p>
+                <a id="t.b7212eafcb15841cdec021e9bb00a02a37362651"></a>
+                <a id="t.25"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title contains challenges to the ego (“Only People with IQ Above 160 Can Solve This”)</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.d0oat58fjr6k"><span class="secno">8.1.3.2 </span>Signal: Defying Convention<a class="self-link" aria-label="§" href="#h.d0oat58fjr6k"></a></h5>
+                <p></p>
+                <a id="t.f1d8bafbef1175933e58ff6414fed4aabd3a5598"></a>
+                <a id="t.26"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title defies convention (“Think Orange Juice is Good for you? Think Again!”, “Here are 5 Foods You Never Thought Would Kill You”)</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.gzziarpz1l9r"><span class="secno">8.1.3.3 </span>Signal: Inducing Fear<a class="self-link" aria-label="§" href="#h.gzziarpz1l9r"></a></h5>
+                <p></p>
+                <a id="t.c265dfca75648d766349102781a8f15974d4618e"></a>
+                <a id="t.27"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title induces fear (“Is Your Boyfriend Cheating on You?”) </p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+                <p></p>
+            </section>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.1oziygd4sr3u"><span class="secno">8.2 </span>Misleading about content<a class="self-link" aria-label="§" href="#h.1oziygd4sr3u"></a></h3>
+        <p></p>
+        <section>
+            <h4 id="h.hwbvs7r75s8r"><span class="secno">8.2.1 </span>Signal: Title Representativeness<a class="self-link" aria-label="§" href="#h.hwbvs7r75s8r"></a></h4>
+            <p></p>
+            <a id="t.30fabb24e61e9d258203f30f4611db0b3c85c495"></a>
+            <a id="t.28"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title is representative of the content of the article.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p>See also specific signals below that encapsulate what might be considered unrepresentative.</p>
+            <section>
+                <h5 id="h.mn7wxd9f25w3"><span class="secno">8.2.1.1 </span>Signal: Differs from body topic<a class="self-link" aria-label="§" href="#h.mn7wxd9f25w3"></a></h5>
+                <p></p>
+                <a id="t.939020852d4ebb46f21f5fa1868fc80488f8cfa2"></a>
+                <a id="t.29"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title differs from the primary content of the article body.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.mn7wxd9f25w3-2"><span class="secno">8.2.1.2 </span>Signal: Emphasizes different information than the body topic<a class="self-link" aria-label="§" href="#h.mn7wxd9f25w3-2"></a></h5>
+                <p></p>
+                <a id="t.7f22bff629f399cbafbeefdac2dc5b42833c215e"></a>
+                <a id="t.30"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title emphasizes different information from the primary content of the article body.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.mn7wxd9f25w3-3"><span class="secno">8.2.1.3 </span>Signal: Carries little information about the body<a class="self-link" aria-label="§" href="#h.mn7wxd9f25w3-3"></a></h5>
+                <p></p>
+                <a id="t.5c284dec948a29eb7b8dd8adf7e4fa8c36eb64db"></a>
+                <a id="t.31"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title carries little information about the primary content of the article body.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.mn7wxd9f25w3-4"><span class="secno">8.2.1.4 </span>Signal: Takes a different stance than the body<a class="self-link" aria-label="§" href="#h.mn7wxd9f25w3-4"></a></h5>
+                <p></p>
+                <a id="t.97106782128837ae9db7061daadccd328f9360d2"></a>
+                <a id="t.32"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title takes a different stance from the primary content of the article body.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+            <section>
+                <h5 id="h.mn7wxd9f25w3-5"><span class="secno">8.2.1.5 </span>Signal: Overstates claims or conclusions in the body<a class="self-link" aria-label="§" href="#h.mn7wxd9f25w3-5"></a></h5>
+                <p></p>
+                <a id="t.154379709f47f452a31afd41deb743f537659a3f"></a>
+                <a id="t.33"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title over states claims or conclusions from the primary content of the article body.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            </section>
+            <section>
+                <h5 id="h.gu3qftpt5t8m"><span class="secno">8.2.1.6 </span>6 Signal: Understates claims or conclusions in the body<a class="self-link" aria-label="§" href="#h.gu3qftpt5t8m"></a></h5>
+                <p></p>
+                <a id="t.71b8149dcee2553d5e5199ca0eb73453e633b7a8"></a>
+                <a id="t.34"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Title understates claims from the primary content of the article body.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.luo104c6lu7n"><span class="secno">8.3 </span>Misleading about the world<a class="self-link" aria-label="§" href="#h.luo104c6lu7n"></a></h3>
+        <p></p>
+    </section>
+    <section>
+        <h3 id="h.w3anxxq8kvpk"><span class="secno">8.4 </span>Nonmisleading consumer manipulation<a class="self-link" aria-label="§" href="#h.w3anxxq8kvpk"></a></h3>
+        <section>
+            <h4 id="h.jnosqa5iudy6"><span class="secno">8.4.1 </span><a class="self-link" aria-label="§" href="#h.jnosqa5iudy6"></a></h4>
+        </section>
+    </section>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.lub1njgvolel"><span class="secno">9. </span>Subject type: Web Page<a class="self-link" aria-label="§" href="#h.lub1njgvolel"></a></h2>
+    <section>
+        <h3 id="h.mdi3zpygozdd"><span class="secno">9.1 </span>Layout<a class="self-link" aria-label="§" href="#h.mdi3zpygozdd"></a></h3>
+        <p></p>
+        <p>Issue: Should this be a Heading1 like Title? &nbsp;Probably no, because the statements naturally get phrased with the subject of the statements being a web page. Most people wouldn't conceptualize the page layout as its own entity.</p>
+        <section>
+            <h4 id="h.hyg1ducygkrw"><span class="secno">9.1.1 </span>Signal: Framed with navigation<a class="self-link" aria-label="§" href="#h.hyg1ducygkrw"></a></h4>
+            <p>Also called: topnav, sidenav, framenav</p>
+            <p></p>
+            <p></p>
+            <a id="t.9e7251ceb203aa13c14dff174123914556747c5c"></a>
+            <a id="t.35"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[subject] has obvious navigation elements at one or more edges of the content, providing a way to reach other content on the same website</p></td><td colspan="1" rowspan="1"><p>Sandro Hawke (as example)</p></td></tr><tr><td colspan="1" rowspan="1"><p>2</p></td><td colspan="1" rowspan="1"><p>[subject] has a prominent top or side menu structure or buttons or links, taking user to other parts of site</p></td><td colspan="1" rowspan="1"><p>Sandro Hawke (as example)</p></td></tr></tbody></table>
+            <p></p>
+            <p>(Consensus discussion including benefits and risks goes here)</p>
+            <p></p>
+            <p>(External data from studies and implementation reports gets inserted here, matched by heading text, “also called” text, and the template text.)</p>
+        </section>
+    </section>
+    <section>
+        <h3 id="h.hl21hx11zts2"><span class="secno">9.2 </span>Typefaces<a class="self-link" aria-label="§" href="#h.hl21hx11zts2"></a></h3>
+    </section>
+    <section>
+        <h3 id="h.3xpkob26wc2d"><span class="secno">9.3 </span>Metadata in transmission headers<a class="self-link" aria-label="§" href="#h.3xpkob26wc2d"></a></h3>
+    </section>
+    <section>
+        <h3 id="h.3xpkob26wc2d-6"><span class="secno">9.4 </span>Metadata in page head<a class="self-link" aria-label="§" href="#h.3xpkob26wc2d-6"></a></h3>
+    </section>
+    <section>
+        <h3 id="h.3xpkob26wc2d-7"><span class="secno">9.5 </span>Metadata inline in body<a class="self-link" aria-label="§" href="#h.3xpkob26wc2d-7"></a></h3>
+    </section>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.1glenquz5x0v"><span class="secno">10. </span>Subject type: Website<a class="self-link" aria-label="§" href="#h.1glenquz5x0v"></a></h2>
+    <section>
+        <h3 id="h.6x0lo7l55ql1"><span class="secno">10.1 </span>Advertisements<a class="self-link" aria-label="§" href="#h.6x0lo7l55ql1"></a></h3>
+        <section>
+            <h4 id="h.dcxuburvtcgj"><span class="secno">10.1.1 </span>Signal: Ads.txt Exists<a class="self-link" aria-label="§" href="#h.dcxuburvtcgj"></a></h4>
+            <p></p>
+            <a id="t.c92eaad65ba6641ad636a68e00ca95ce17aa8030"></a>
+            <a id="t.36"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The domain contains an ads.txt file.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.8d294ijoqvoc"><span class="secno">10.1.2 </span>Signal: Spam or Clickbait Advertisements<a class="self-link" aria-label="§" href="#h.8d294ijoqvoc"></a></h4>
+            <p></p>
+            <a id="t.df8f63098254d735f3e90ee8cc83fba4983d9f34"></a>
+            <a id="t.37"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The page of the article has spammy or clickbaity advertisements. This is limited to a subjective assessment at this time.</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+        </section>
+        <section>
+            <h4 id="h.cdxsi6f5k7ya"><span class="secno">10.1.3 </span>Signal: Number of Advertisements<a class="self-link" aria-label="§" href="#h.cdxsi6f5k7ya"></a></h4>
+            <p></p>
+            <a id="t.1cb0811444a6a0872880cae9a549ae4848b37a0f"></a>
+            <a id="t.38"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Number of ads that appear on the article page. This includes display ads, content recommendation engines, sponsored content and call for social sharing</p></td><td colspan="1" rowspan="1"><p>Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+            <p></p>
+        </section>
+    </section>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.2afczo1l5buv"><span class="secno">11. </span>Subject type: Aggregation<a class="self-link" aria-label="§" href="#h.2afczo1l5buv"></a></h2>
+    <p>Includes: news feed, content portal, site using syndicated content</p>
+    <p>&nbsp;</p>
+    <p>An aggregation is a collection of content from other providers. &nbsp;As such, attribution and related trust issues require special consideration.</p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.3d3rw8hardr8"><span class="secno">12. </span>Subject type: Venue<a class="self-link" aria-label="§" href="#h.3d3rw8hardr8"></a></h2>
+    <p>A Venue is a branded content channel, which might be separable from the provider of that channel. &nbsp;For instance a particular newspaper’s “Lifestyle” and “Sports” sections would typically be considered distinct Venues with distinct reputations. In this case, they would be sub-Venues of the newspaper itself.</p>
+    <p>The distinction between Venue and Provider is not always clear in people’s mind; it is essentially the distinction between a brand and the brand’s owner. &nbsp;We try to make the distinction in order to be able to understand the impacts on reputation when, for example, one company sells a content brand to another company.</p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.8lk9jx3uhrn9"><span class="secno">13. </span>Subject type: Provider<a class="self-link" aria-label="§" href="#h.8lk9jx3uhrn9"></a></h2>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.ta1p2wq07w75"><span class="secno">14. </span>Subject type: Creator<a class="self-link" aria-label="§" href="#h.ta1p2wq07w75"></a></h2>
+    <p>Also called: author, writer, reporter, byline</p>
+    <p></p>
+    <p>A Creator (in this context) is a Person is a person who creates content, such as by writing articles. All the signals which apply to a Person also apply to a Creator. &nbsp;Signals are listed here if they only really make sense for content creators. &nbsp;Even if every Person was a Creator, this grouping could still be convenient.</p>
+    <p></p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.udd9lw471gyb"><span class="secno">15. </span>Subject type: Person<a class="self-link" aria-label="§" href="#h.udd9lw471gyb"></a></h2>
+    <p></p>
+</section>
+<section>
+    <!--OddPage--><h2 id="h.9mlr23oex9z1"><span class="secno">16. </span>Subject type: Organization<a class="self-link" aria-label="§" href="#h.9mlr23oex9z1"></a></h2>
+    <p></p>
+    <p><b></b></p>
+    <a id="t.a8edd1eb985e51a25f5dc36980fac9b192003d5a"></a>
+    <a id="t.39"></a>
+    <table><tbody><tr><td colspan="1" rowspan="1"><p><b>If you make or suggest any edits to this document, you are agreeing to the </b><b><a href="https://www.google.com/url?q=https://www.w3.org/community/about/agreements/cla/&amp;sa=D&amp;ust=1542212506191000"><abbr title="World Wide Web Consortium">W3C</abbr> Community Contributor License Agreement</a></b><b>&nbsp;which has significant copyright and patent implications.</b></p><p><b>Please also read </b><b><a href="#h.mor7t1b8hqnj">1.9. Instructions for editing this document</a></b><b>&nbsp;before making any changes.</b></p></td></tr></tbody></table>
+    <p></p>
+</section>
+
+
+<p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
