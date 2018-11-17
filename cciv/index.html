@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Content Credibility Indicators Vocabulary (CCIV)</title>
+    <script 
+     src='https://www.w3.org/Tools/respec/respec-w3c-common' 
+     class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+        publishDate: '2018-10-21',
+        specStatus: "ED",
+        editors: [{
+          name: "An Xiao Mina" ,
+          // url: "http://your-site.com",
+        }],
+        processVersion: 2017,
+        edDraftURI: "https://credweb.org/cciv",
+        shortName: "not-yet-published",
+        "otherLinks": [
+        {
+          "key": "Repository",
+          "data": [{
+            "value": "Github",
+            "href": "https://github.com/w3c/cciv"
+          },
+          {
+             "value": "Issues",
+             "href": "https://github.com/w3c/cciv/issues"
+             }]
+        }]
+      };
+    </script>
+  </head>
+  <body>
+    <div style="border: 3px solid blue; padding: 1em; margin-top: 1em;">
+      <p>This document was never reviewed by <a
+      href="https://credweb.org">the Credible Web group.</a></p>
+
+      <p><strong>This document is archival. Please as <a href="/signals">Credibility Signals</a> instead.</strong></p>
+
+      <p>This version includes all documented indicators.  You may want <a href="./r/1">Release 1 Candidates</a>.</p>
+    </div>
+
+    <section id='abstract'>
+      <p>
+        This document aims to increase interoperability among systems
+        cooperating to make the web more trustworthy.  The approach
+        taken here is to exchange "indicators" which potentially show
+        which items of web content (initially news articles) are
+        worthy of greater trust.
+      </p>
+    </section>
+    <section id='sotd'>
+      <p>
+        <b>This is a dynamic draft, with content which refreshes from
+        <a
+        href="https://airtable.com/tblsFKP8KlrUmJ6wI/viwQde4eElUaD3V8F">master
+        data</a> at every reload.</b>
+      </p>
+    </section>
+
+    <section>
+      <h2>Intro</h2>
+
+      <p>@@@ TODO</p>
+    </section>
+
+    <section>
+  <h2>Article Structure</h2>
+<section><h3>Subject Area</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice (though I think one is default)</dd><dt>Definition</dt><dd>Indicates a subject of an item: Sports, Entertainment</dd><dt>Frame as a Question</dt><dd>What is the article&#39;s genre?</dd><dt>Good Toy Example</dt><dd>Technology</dd><dt>Interoperability</dt><dd>NewsCodes (IPTC)</dd><dt>Interoperability Example</dt><dd>http:&#x2F;&#x2F;show.newscodes.org&#x2F;index.html?newscodes&#x3D;subj&amp;lang&#x3D;en-GB&amp;startTo&#x3D;Show</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Problematic Toy Example</dt><dd>Sports and Entertainment (just highlighting varying classifications)</dd></dl>
+</section>
+<section><h3>Source Language (if translation)</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Frame as a Question</dt><dd>If the article is a translation, what is the source language?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Shows versions and changes</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice (How rigorous the changes are. Is there a Newsdiff-type thing)</dd><dt>Definition</dt><dd>Shows versions, changes, diffs of an article.</dd><dt>Frame as a Question</dt><dd>Does this article show revisions&#x2F;diffs? (Most places do not)</dd><dt>Potential Markup Effort</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication (site)</h3><dl>
+<dt>Definition</dt><dd>Parent of the Article. </dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd><dt>Tags</dt><dd>@</dd></dl>
+</section>
+<section><h3>Length</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How many words does the article contain?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Language</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Frame as a Question</dt><dd>What language is the article written in?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Is Translation</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Is the article a translation?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Is Original</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>(A) Most likely original
+(B) Appears to be a copy of one or more articles, with some portions different or remixed
+(C) Extensive quoting from another source, with some original content
+(D) A wholesale duplicate of another article</dd><dt>Frame as a Question</dt><dd>Has the text of this article appeared in exactly the same words or very similar words in another publication?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Like doing a reverse image search, knowing that the article is original does not by itself guarantee credibility. However, knowing if it&#39;s *not* original can be a flag that the site is either duplicating content or running content from a newswire service. We might want to set this as scalar, as there might be slight modifications to original content.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>Sometimes article texts get repurposed in new publications. This can be due to licensing agreements from a wire service or the article can simply be stolen without crediting the original article. Sometimes the article is copied wholesale while other times some words are changed or a new article is created that copies from multiple articles. Finally, some articles will quote extensively from one or more other articles with only a small amount of original reporting or writing.</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Headline</h3><dl>
+<dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What title or headline does this article offer for itself?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Genre</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice (should include Unknown&#x2F;Unspecified)</dd><dt>Definition</dt><dd>Opinion, Feature, Biography  -- but it will not always be labeled and i am not sure this will be defined consistently </dd><dt>Frame as a Question</dt><dd>What is the state genre, if available?</dd><dt>Good Toy Example</dt><dd>Opinion</dd><dt>Interoperability</dt><dd>NewsCodes (IPTC)</dd><dt>Interoperability Example</dt><dd>http:&#x2F;&#x2F;show.newscodes.org&#x2F;index.html?newscodes&#x3D;genre&amp;lang&#x3D;en-GB&amp;startTo&#x3D;Show</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Problematic Toy Example</dt><dd>Quote (see IPTC genre) or, unknown</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Factual assertions</h3><dl>
+<dt>Data Type</dt><dd>Boolean or multiple choice
+
+</dd><dt>Definition</dt><dd>Complements the Genre (is the content actually opinion piece? or verifiable information?)
+</dd><dt>Frame as a Question</dt><dd>Does the article contain factual, verifiable assertions or is entirely opinion based?</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Dateline (Location)</h3><dl>
+<dt>Data Type</dt><dd>Geolocation</dd><dt>Frame as a Question</dt><dd>Where does the article claim it was published?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Dateline (Date)</h3><dl>
+<dt>Data Type</dt><dd>Date and Time</dd><dt>Definition</dt><dd>From An: &quot;i think technically this states both the date and location of the article’s publication. in which case it needs two forms of operationalization</dd><dt>Frame as a Question</dt><dd>When does the article claim it was published?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Correction&#x2F;Redaction</h3><dl>
+<dt>Data Type</dt><dd>Boolean or Multiple Choice</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>Does the article contain a stated correction or redaction?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Author</h3><dl>
+<dt>Article Example URL</dt><dd>https:&#x2F;&#x2F;www.newscientist.com&#x2F;article&#x2F;mg23631503-200-is-modern-life-making-todays-teenagers-more-depressed&#x2F;</dd><dt>Data Type</dt><dd>Text</dd><dt>Definition</dt><dd>Articles 1:M authorship. Note that not all articles have bylines, even in traditional news sources.  Bylines also don&#39;t always start with &#39;by&#39;  (https:&#x2F;&#x2F;medium.com&#x2F;@rchang&#x2F;advice-for-new-and-junior-data-scientists-2ab02396cf5b)</dd><dt>Frame as a Question</dt><dd>Who is the author of the article?</dd><dt>Good Toy Example</dt><dd>&quot;By Abigail Beall&quot; (https:&#x2F;&#x2F;www.newscientist.com&#x2F;article&#x2F;2151823-bitcoin-mining-uses-more-energy-than-ecuador-but-theres-a-fix&#x2F;)</dd><dt>Interoperability</dt><dd>Schema.orgNewsML-G2 (IPTC)</dd><dt>Interoperability Example</dt><dd>http:&#x2F;&#x2F;schema.org&#x2F;author, http:&#x2F;&#x2F;www.iptc.org&#x2F;std&#x2F;NewsML-G2&#x2F;2.25&#x2F;specification&#x2F;XML-Schema-Doc-Power&#x2F;NewsItem.html#Link60</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Problematic Toy Example</dt><dd>No known author [author is &#39;the publication&#39;]</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Attribution of Non-Original Content</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>(A) Attribution was not given
+(B) Attribution was given but was inaccurate
+(C) Attribution was given and was accurate
+(D) Unclear which is the original</dd><dt>Frame as a Question</dt><dd>If the content of the article is not original, was attribution given and if so, was the attribution accurate?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>Originality or non-originality is not by itself a sufficient condition for measuring credibility. Understanding the attribution of non-original content is going to be key.</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Article Locator</h3><dl>
+<dt>Definition</dt><dd>URL, DOI, </dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Article Awards</h3><dl>
+<dt>Definition</dt><dd>Awards are also assigned to specific Articles (but rarely)
+</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Article&#x2F;Site Metadata</h2>
+<section><h3>Subhead&#x2F;Dek</h3><dl>
+<dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>Just a note that this can be critical; people don&#39;t always read the articles they forward, they do depend a lot on this Dek&#x2F;summary hook
+</dd></dl>
+</section>
+<section><h3>Publication Domain Registration Location</h3><dl>
+<dt>Data Type</dt><dd>Date</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication Domain Registration Date</h3><dl>
+<dt>Data Type</dt><dd>Date</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Photo&#x2F;Video Geotags</h3><dl>
+<dt>Data Type</dt><dd>Geolocation</dd><dt>Frame as a Question</dt><dd>What are the geolocations for the photos and videos on the article?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Article Rights</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>Explicit Copyright, Creative Commons, Unstated, etc.</dd><dt>Frame as a Question</dt><dd>What are the rights for this article?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Ads.txt Exists</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Definition</dt><dd>ads.txt (Authorized Digital Sellers) is an Interactive Advertising Bureau initiative. It specifies a text file that companies can host on their web servers, listing the other companies authorized to sell their products or services. This is designed to allow online buyers to check the validity of the sellers from whom they buy, for the purposes of internet fraud prevention. (from https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Ads.txt)
+</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>Does an ads.txt file exist on the domain?</dd><dt>Good Toy Example</dt><dd>https:&#x2F;&#x2F;www.huffingtonpost.com&#x2F;ads.txt</dd><dt>Known Weakness</dt><dd>Standards still under development</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Notes</dt><dd>Status: DRAFTING</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Problematic Toy Example</dt><dd>https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;adops&#x2F;comments&#x2F;703k4s&#x2F;is_there_a_legitimate_reason_to_accept_an_adstxt&#x2F; </dd><dt>Rationale for Inclusion</dt><dd>Evolving standard. some initial brainstorming on other potential features: &#x60;&#x60;&#x60;- the number of sellers in given file (could consider SSPs and seller accounts separately) - the balance of DIRECT vs. RESELLER flags - which SSPs are included (some are more quality&#x2F;stringent than others) - weighting SSPs included by the number of accounts per SSP.&#x60;&#x60;&#x60;  I’m not sure that any of those would be strong misinfo signals especially since it seems like publishers are still figuring out how to handle ads.txt, but could be things to explore.</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: June 2018</dd><dt>Supporting Evidence</dt><dd>https:&#x2F;&#x2F;wiki.appnexus.com&#x2F;display&#x2F;industry&#x2F;AppNexus+Support+for+Ads.txt</dd><dt>Tags</dt><dd>Revenue Model</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Author Reputation</h2>
+<section><h3>Track record</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.lse.ac.uk&#x2F;GranthamInstitute&#x2F;news&#x2F;uk-newspaper-regulator-acts-against-fake-news-story-about-climate-change-which-fooled-us-congressman&#x2F;, https:&#x2F;&#x2F;climatefeedback.org&#x2F;authors&#x2F;david-rose&#x2F;</dd><dt>Data Type</dt><dd>scale
+</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>Has the author already published articles containing misleading or credible information?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>A track record of credible or misleading reporting can be a very strong indicator of the author&#39;s current article. It may also be very difficult to reproduce at scale.</dd><dt>Problematic Toy Example</dt><dd>Daily Mail journalist David Rose has published a number of misleading articles on the topic of climate change as shown by IPSO, the UK MetOffice, Climate Feedback...</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Public Accessibility</h3><dl>
+<dt>Data Type</dt><dd>scale, or set of booleans</dd><dt>Definition</dt><dd>How accessible is this author to the public. Do they have a website? Does this author have a publicly available email address? Are they on Twitter or Facebook? Do they often respond to readers?</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How accessible&#x2F;responsive is this author to the public?</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menKVnNV4RtZwePOP&quot;&gt;@Amy Zhang&lt;&#x2F;airtable:mention&gt; Can you fill in some details here?</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Occupation</h3><dl>
+<dt>Data Type</dt><dd>Category</dd><dt>Definition</dt><dd>What is the occupation of the author. Are they a full-time journalist or something else</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What is the occupation of the author?</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Number of publications</h3><dl>
+<dt>Data Type</dt><dd>integers tied with categories (publication names)</dd><dt>Definition</dt><dd>How many publications does this author have and in which venues.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How many publications does this author have and in which venues?</dd><dt>Notes</dt><dd>I feel like &quot;which publications&quot; rather than number is a stronger indicator (you can have both, but if I had one, I&#39;d go with which). Also like where would you get &quot;number?&quot; That&#39;s hard to track. 
+J8L
+</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Has Author Bio</h3><dl>
+<dt>Notes</dt><dd>Has author bio, or author bio?
+</dd></dl>
+</section>
+<section><h3>Followers&#x2F;Listeners</h3><dl>
+<dt>Data Type</dt><dd>scale</dd><dt>Definition</dt><dd>How many people follow this author (on social media). How many other journalists follow this author? What speaking engagements does this author command?</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What degree of attention does this author command from other individuals?</dd><dt>Known Weakness</dt><dd>clearly can be gamed, by raw twitter follower count by bots or by other strategies like state-sponsored ecosystems</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;meno2pYeEX76tMUGi&quot;&gt;@Amy Zhang&lt;&#x2F;airtable:mention&gt; can you fill in rationale here?</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Kind of vague and could be broken down. I don&#39;t know if raw Twitter follower count is quite right but some idea of who listens to or associates with this author.</dd></dl>
+</section>
+<section><h3>Education Credentials</h3><dl>
+<dt>Data Type</dt><dd>category or series of booleans?</dd><dt>Definition</dt><dd>What is the educational background of the author. Do they have a degree in journalism? Do they have any post-grad education?</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What is the educational background of the author?</dd><dt>Notes</dt><dd>I don&#39;t know we should narrowly frame it as &quot;education&quot; as a top level indicator, rather as &quot;expertise&quot; or which education can be a key subpart? </dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Claim</h2>
+<section><h3>Fact-check results of claim</h3><dl>
+<dt>Data Type</dt><dd>Single Choice</dd><dt>Definition</dt><dd>A) Most likely not fact-checked
+B) Fact-checked and determined false
+C) Fact-checked and determined true
+D) Fact-checked with unclear results
+E) Fact-checked with mixed results</dd><dt>Frame as a Question</dt><dd> What are the results of the fact check of the central claim in this article?</dd><dt>Notes</dt><dd>One of two indicators replacing https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#claim-has-been-fact-checked</dd><dt>Rationale for Inclusion</dt><dd>Modification of https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#claim-has-been-fact-checked used in Web Conference 2018 study above.</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd></dl>
+</section>
+<section><h3>Claim has been fact checked</h3><dl>
+<dt>Data Type</dt><dd>Single Choice</dd><dt>Definition</dt><dd>A) Most likely not fact-checked by an IFCN Verified Signatory 
+B) Most likely not fact-checked by an approved source 
+C) Fact-checked and determined false
+D) Fact-checked and determined true
+E) Fact-checked with unclear results
+F) Fact-checked with mixed results</dd><dt>Frame as a Question</dt><dd> Has the central claim in this article been fact-checked by an IFCN Verified Signatory?</dd><dt>Location</dt><dd>Article Context</dd><dt>Notes</dt><dd>Deprecated for Credibility Coalition Study: Summer 2018</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>As many IFCN signatories use the ClaimReview schema, understanding correlations between fact checks and credibility can help us understand how best to utilize the schema or improve it.</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Claim contains misleading assertion</h3><dl>
+</dl>
+</section>
+<section><h3>Claim contains logical fallacy</h3><dl>
+</dl>
+</section>
+<section><h3>Claim contains false assertion</h3><dl>
+</dl>
+</section>
+<section><h3>Claim contains false and misleading assertion</h3><dl>
+</dl>
+</section>
+<section><h3>Claim contains bad data</h3><dl>
+</dl>
+</section>
+</section>
+<section>
+  <h2>Inbound References</h2>
+<section><h3>Verdict from fact-checking websites</h3><dl>
+<dt>Definition</dt><dd>If the page (or one with the same claim) has been fact-checked by one of the signatory organisations, show this inlink with the fact-checking verdict. </dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>Has a trusted fact-checking organisation verified it? </dd><dt>Known Weakness</dt><dd>N&#x2F;A</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Most reliable 3rd party validation, should be included for sure. </dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>We should show any existing fact-checks from trusted organisations. This is a form of 3rd party validation. </dd></dl>
+</section>
+<section><h3>Ratio of comments to likes &lt;10%</h3><dl>
+<dt>Definition</dt><dd>Ratio of comments to likes on Facebook. Indicative of bot-promoted content. </dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>Does it have many more likes than comments?</dd><dt>Known Weakness</dt><dd>Can be easily gamed by posting dummy comments. </dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menvPR5vY15x0DrQt&quot;&gt;@Cameron Hickey&lt;&#x2F;airtable:mention&gt; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Indicative of bot networks? (NY meeting)
+</dd></dl>
+</section>
+<section><h3>Number of links in Wikipedia</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Definition</dt><dd>Number of inbound links from Wikipedia main namespace. </dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How many links on Wikipedia articles point to the article?</dd><dt>Known Weakness</dt><dd>Context-dependent. E.g. the link might be coming from a list of fake news websites, would require some contextual filtering. Also, in principle anyone can add a link albeit in all likelihood for only a brief period of time before it is reverted. </dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>Links to the article in Wikipedia indicate a level of social relevance that is more enduring than inlinks from social in a given moment. This can easily be gamed, but this also relies on the immune systems that Wikipedia has set up.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>Wikipedia is the highest quality reference material on the internet, and links to articles (outside of writing about fake news, or lists of fake news websites) would be a form of third party validation. </dd></dl>
+</section>
+<section><h3>Links from social media</h3><dl>
+<dt>Definition</dt><dd>What social media accounts have shared the URL? Do they include credible accounts? 
+</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What are the 5 most liked (Twitter, Facebook), upvoted (Reddit) social accounts that shared this link</dd><dt>Known Weakness</dt><dd>Depends on a catalogue of &quot;trusted accounts&quot;</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;mencvUniaucJ7PaTC&quot;&gt;@Cameron Hickey&lt;&#x2F;airtable:mention&gt; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Assumes that low-quality social accounts link to low-quality content. </dd></dl>
+</section>
+<section><h3>Links from other news sites</h3><dl>
+<dt>Definition</dt><dd>What other news sites are linking to this URL? Does it include credible sites or not? </dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What are the 5 most popular (Alexa rating) news sites linking to this article?</dd><dt>Known Weakness</dt><dd>Depends on a catalogue of &quot;trusted websites&quot;.</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menz50fBqZ3NmhpA9&quot;&gt;@Cameron Hickey&lt;&#x2F;airtable:mention&gt; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Assumes that low-quality content links to other low-quality content. </dd></dl>
+</section>
+<section><h3>Facebook shares</h3><dl>
+<dt>Definition</dt><dd>Number of times shared on facebook. Important to estimate the reach of the news article. 
+</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How many facebook shares?</dd><dt>Known Weakness</dt><dd>Not directly related to credibility</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menIqOs8wrxKXUbS3&quot;&gt;@Cameron Hickey&lt;&#x2F;airtable:mention&gt; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Not directly related to credibility, but to reach. </dd></dl>
+</section>
+<section><h3>Facebook engagement</h3><dl>
+<dt>Definition</dt><dd>Number of facebook engagement. Important to estimate the reach of articles.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How many people engaged on facebook? </dd><dt>Known Weakness</dt><dd>Not directly related to credibility</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Engagements is a composite of comments, likes and shares.  As a total number, it potentially reflects popularity of a given article on social media.  This value, or any of the elements that comprise it could be used in conjunction with other indicators to try and extract the credibility (or lack-thereof) of the source or article. For example: if an article has a high value for engagement but the domain </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Not directly related to credibility, but to reach. </dd></dl>
+</section>
+<section><h3>Facebook comments</h3><dl>
+<dt>Definition</dt><dd>Number and content of facebook comments. Important to estimate the reach and sentiment of articles. </dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How many facebook comments?</dd><dt>Known Weakness</dt><dd>Can be gamed with communities with a strong agenda or bots. </dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menjtGf3vGrlsWiwF&quot;&gt;@Cameron Hickey&lt;&#x2F;airtable:mention&gt; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Not directly related to credibility, but to reach. </dd></dl>
+</section>
+<section><h3>Facebook comment sentiment</h3><dl>
+<dt>Definition</dt><dd>Sentiment analysis on Facebook comments. Important to gauge the attitudes towards the news, and types of reactions they invoke. </dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What is the sentiment of the facebook comments? </dd><dt>Known Weakness</dt><dd>Can be gamed with communities with a strong agenda or bots. </dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menOQnaAgtpSwpezx&quot;&gt;@Cameron Hickey&lt;&#x2F;airtable:mention&gt; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>Not directly related to credibility, but to reach. </dd></dl>
+</section>
+</section>
+<section>
+  <h2>Journalistic Rigor</h2>
+<section><h3>Shares any documents cited in piece</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice or Boolean
+</dd><dt>Frame as a Question</dt><dd>Does this article publish any important documents cited in the article?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Rationale for Inclusion</dt><dd>&quot;Show your work.&quot; Also allows readers to judge for themselves.</dd></dl>
+</section>
+<section><h3>Represents scientific process</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Does the content rigorously represent the scientific process?</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>Not simply regurgitating scientific findings but setting them in the context of the scientific method might be the mark of a paid science writer, who offers a critical perspective for the reader. This may be difficult to reproduce by misinformation agents?</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd></dl>
+</section>
+<section><h3>Represents scientific literature</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Frame as a Question</dt><dd>Does the content fairly represent scientific literature on the issue at hand?</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Accurate representation of scientific literature reflects a certain level of knowledge of the literature that can be difficult to replicate. Presumably, only scientists and full-time science writers with some subject matter knowledge can do this effectively?</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd></dl>
+</section>
+<section><h3>Primary subjects of article have opportunity to respond</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice or Boolean
+</dd><dt>Frame as a Question</dt><dd>Do the main subjects of the article have a chance to respond?</dd><dt>Known Weakness</dt><dd>Can be made up.</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Problematic Toy Example</dt><dd>https:&#x2F;&#x2F;thehill.com&#x2F;homenews&#x2F;administration&#x2F;332132-fcc-probing-colberts-trump-putin-joke</dd><dt>Rationale for Inclusion</dt><dd>Giving subjects a chance to respond or say &quot;no comment&quot; is basic journalism rigor. Many articles spiral because premise is taken out of context.</dd></dl>
+</section>
+<section><h3>Presents multiple perspectives</h3><dl>
+<dt>Data Type</dt><dd>Boolean?</dd><dt>Frame as a Question</dt><dd>Does the content fairly represent multiple perspectives on an issue?</dd><dt>Known Weakness</dt><dd>False balance. Enforcing a &quot;multiple perspectives&quot; approach to science topics can lead to pathological results over-representing fringes, eg vaccines and climate change.</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Premise of article is disputed by primary subjects</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice or Boolean</dd><dt>Known Weakness</dt><dd>Dispute could possible be in the article, or afterwards in &quot;fallout&quot;, which would not be captured in the original article.</dd><dt>Problematic Toy Example</dt><dd>https:&#x2F;&#x2F;www.bloomberg.com&#x2F;news&#x2F;features&#x2F;2018-10-04&#x2F;the-big-hack-how-china-used-a-tiny-chip-to-infiltrate-america-s-top-companies</dd><dt>Rationale for Inclusion</dt><dd>Disputed does not mean not credible. In fact may be more credible. Again interplay. But worth noting. Dispute can also be internal or external to the article. </dd></dl>
+</section>
+<section><h3>Gives motivation of anonymous sources for revealing information</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice or Boolean
+</dd><dt>Frame as a Question</dt><dd>Does this article explain the motivation of any of the anonymous sources reveal information?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>Knowing the motivation of the anonymous source is important to assessing the credibility of the article. Was this a purposeful leak? Was it only confirmed after reporters approached them. Examples: &quot;Sexual assault victim,&quot; &quot;fears for safety,&quot; &quot;government official revealing secret information.&quot;</dd></dl>
+</section>
+<section><h3>Dependency on anonymous sources</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice (premise of article is based on anonymous sources to more mild) or Boolean
+</dd><dt>Definition</dt><dd>Does this premise of this article rest on anonymous sources. This can be made more nuanced depending on how many sources, and how critical it is to the main premise of the article.
+</dd><dt>Frame as a Question</dt><dd>Does this article cite anonymous sources for the premise of the article?</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Rationale for Inclusion</dt><dd>Critical factor in &quot;showing your work&quot; or &quot;replicability.&quot; This will likely interplay with the institution that publishes it. Should likely have different statuses of how critical the anonymous source is. &quot;Rape victim&quot; vs. &quot;government official.&quot; Also can be multiple choice. &quot;Premise based entirely on single anonymous source.&quot; Premise based on two anonymous source.&quot;  &quot;Premise based on two more more anonymous sources.&quot;</dd></dl>
+</section>
+<section><h3>Corroboration?</h3><dl>
+</dl>
+</section>
+<section><h3>Cites wire services</h3><dl>
+<dt>Data Type</dt><dd>Boolean?</dd><dt>Frame as a Question</dt><dd>Does the article clearly state if the content comes from a known wire service?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Logic&#x2F;Reasoning</h2>
+<section><h3>Use of conspiratorial thinking</h3><dl>
+<dt>Article Example URL</dt><dd>https:&#x2F;&#x2F;www.naturalnews.com&#x2F;2017-10-02-lone-gunman-theory-of-las-vegas-shooter-is-complete-nonsense-stephen-paddock.html</dd><dt>Data Type</dt><dd>boolean
+</dd><dt>Frame as a Question</dt><dd>Does the article suggest a conspiracy?</dd><dt>Known Weakness</dt><dd>Corruption does exist, not all conspiracy theories are BS</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;men7jP0Rb7kY8wT7i&quot;&gt;@ADITYA RANGANATHAN&lt;&#x2F;airtable:mention&gt; &lt;airtable:mention id&#x3D;&quot;menSXr8Q1m59hn4Ls&quot;&gt;@Emlen Metz&lt;&#x2F;airtable:mention&gt; </dd><dt>Problematic Toy Example</dt><dd>&quot;It’s all hogwash. The “official” narrative of how things went down...&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Supporting Claim Types</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>Types of evidence for a claim:
+
+Correlation 
+Cause precedes effect
+The correlation appears across multiple independent contexts
+A plausible mechanism is proposed
+An experimental study was conducted (natural experiments OK)
+Experts are cited
+Other kind of evidence
+No evidence given</dd><dt>Frame as a Question</dt><dd>What evidence is given for the primary claim? Select all that apply.</dd></dl>
+</section>
+<section><h3>Straw Man Argument</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Presentation of a counterargument as a weaker, more foolish version of the real counteargument</dd><dt>Frame as a Question</dt><dd>Does the author present the counterargument as a weaker, more foolish version of the real counterargument (use a Straw Man Argument)? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;Proponents of nuclear energy have argued that it is safer than it used to be. But we don’t want energy that is barely safer than Chernobyl.&quot; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Slippery Slope Argument</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Argument that one small change will lead to a major change</dd><dt>Frame as a Question</dt><dd>Does the author say that one small change will lead to a major change (use a slippery slope argument)? Highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;If we allow human cloning, we will soon be overrun by armies of human clones.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Orders of Understanding</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Good Toy Example</dt><dd>&quot;We need to do a better job exploring the complex set of causes that produced 9&#x2F;11, among them the rise of Islamic fundamentalism and postcolonial nationalism, as well as the spread of globalism and regional conflicts.&quot;</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menvnpLZMNWoUIwoO&quot;&gt;@Emlen Metz&lt;&#x2F;airtable:mention&gt;  &lt;airtable:mention id&#x3D;&quot;menpfHH6DZC5QnE70&quot;&gt;@ADITYA RANGANATHAN&lt;&#x2F;airtable:mention&gt; </dd><dt>Problematic Toy Example</dt><dd>&quot;The Hurricane Harvey disaster was caused entirely by society creating and perpetuating vulnerability to these natural events.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Numbers of Argument Components</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How complex is the argumentation and logic in the article?</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Low</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Number of Supporting Premises</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How far does the article back up arguments with clear hypotheses</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Number of Enthymemes (Arguments with Missing Premises)</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature: http:&#x2F;&#x2F;aclweb.org&#x2F;anthology&#x2F;W&#x2F;W16&#x2F;W16-2804.pdf</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Number of Claims</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How far could this article go wrong?</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Low</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Number of Attacking Premises</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How far does the article contradict itself</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Number of Arguments For</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How biased is the article towards one set of premises</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Number of Arguments Against</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How biased is the article towards one set of premises</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Naturalistic Fallacy</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Suggestion that something is good because it is natural or bad because it is not natural</dd><dt>Frame as a Question</dt><dd>Does the author suggest that something is good because it is natural, or bad because it is not natural (the naturalistic fallacy)?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Problematic Toy Example</dt><dd>&quot;Vaccines aren&#39;t natural; they&#39;re full of all kinds of lab-manufactured chemicals. That stuff can&#39;t possibly be good for you.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Mistaking Noise for Signal</h3><dl>
+<dt>Article Example URL</dt><dd>https:&#x2F;&#x2F;www.sbnation.com&#x2F;lookit&#x2F;2016&#x2F;11&#x2F;2&#x2F;13506174&#x2F;2014-tweet-predicts-world-series-ninth-inning-game-7-cubs-indians</dd><dt>Data Type</dt><dd>Scale</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menvnpLZMNWoUIwoO&quot;&gt;@Emlen Metz&lt;&#x2F;airtable:mention&gt;  &lt;airtable:mention id&#x3D;&quot;menpfHH6DZC5QnE70&quot;&gt;@ADITYA RANGANATHAN&lt;&#x2F;airtable:mention&gt; </dd><dt>Problematic Toy Example</dt><dd>&quot;The seemingly miraculous Twitter prediction isn’t new, but normally we see it from some never-used account that is kept private and meticulously stocked with every possible permutation — only to be made public and get attention at a later date. That’s not the case for @RaysFanGio. He uses his account all the time — this was a one-off prediction and we should all be scared.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Just World Fallacy</h3><dl>
+</dl>
+</section>
+<section><h3>Identifiable Victim Effect</h3><dl>
+</dl>
+</section>
+<section><h3>False Dilemma</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Presentation of a complicated choice as if it is binary</dd><dt>Frame as a Question</dt><dd>Does the author present a complicated choice as if it were binary (construct a false dilemma)? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;America; love it or leave it! If you&#39;re not happy with U.S. policies, you should just  move somewhere else.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Draws sound conclusions from available evidence</h3><dl>
+<dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>&lt;airtable:mention id&#x3D;&quot;menvnpLZMNWoUIwoO&quot;&gt;@Emlen Metz&lt;&#x2F;airtable:mention&gt;  &lt;airtable:mention id&#x3D;&quot;menpfHH6DZC5QnE70&quot;&gt;@ADITYA RANGANATHAN&lt;&#x2F;airtable:mention&gt; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Confirmation Bias</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Good Toy Example</dt><dd>“Lots of bad things have happened in the last month. Since bad things have happened under every president, maybe we shouldn’t count that as additional evidence that the current president is awful.”</dd><dt>Known Weakness</dt><dd>Difficult to assess</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>@Emlen Metz  @ADITYA RANGANATHAN </dd><dt>Problematic Toy Example</dt><dd>“I think the world is getting worse. So many bad things have happened in the last few years; just think about it! Famine, mass murder, hurricanes, wildfires. Everything is going wrong.”</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Causal Claim Types</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>General Causal Claim
+Singular Causal Claim
+No Causal Claim</dd><dt>Frame as a Question</dt><dd>Is a general or singular causal claim made? Highlight the section(s) that supports your answer.</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Calibrating Confidence - Level of Confidence</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.theblaze.com&#x2F;news&#x2F;2017&#x2F;09&#x2F;02&#x2F;scientist-shuts-down-climate-change-alarmists-with-new-report-about-hurricane-harvey&#x2F;</dd><dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Expressed confidence in a claim</dd><dt>Frame as a Question</dt><dd>Do they acknowledge uncertainty or the possibility that things might be otherwise? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;According to Mass, the idea that human-caused climate change had any effect on Harvey is more than far-fetched — it’s downright not true.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Calibrating Confidence - Justification</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.theblaze.com&#x2F;news&#x2F;2017&#x2F;09&#x2F;02&#x2F;scientist-shuts-down-climate-change-alarmists-with-new-report-about-hurricane-harvey&#x2F;</dd><dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Expressed confidence in a claim, with justification</dd><dt>Frame as a Question</dt><dd>To what extent does their confidence in their claims seem justified? </dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;According to Mass, the idea that human-caused climate change had any effect on Harvey is more than far-fetched — it’s downright not true.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Begging the Question</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;Capital punishment is wrong because it is immoral to inflict death as a punishment for a crime.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Average Number of Premises Per Claim</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Good Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Known Weakness</dt><dd>Argument mining is relatively recent as an ML technique</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Impact</dt><dd>Low</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Not sure about the priority here but I would say very difficult for WebConf</dd><dt>Problematic Toy Example</dt><dd>N&#x2F;A - has to include example URLs</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>From argument mining literature</dd><dt>Source Team</dt><dd>Factmata</dd></dl>
+</section>
+<section><h3>Appeal to Fear Fallacy</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Exaggeration of the dangers of a situation and use of scare tactics in an attempt to persuade</dd><dt>Frame as a Question</dt><dd>Does the author exaggerate the dangers of a situation and use scare tactics to persuade (the appeal to fear fallacy)?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Outbound References</h2>
+<section><h3>Source Types</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>None 
+Experts
+Studies
+Organizations
+Other</dd><dt>Frame as a Question</dt><dd> Which of the following types of sources are cited in the article? Check all that apply. If Other, please highlight.</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Quotes reputable scientists</h3><dl>
+<dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Quotes outside experts</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Does the article quote experts who are not part of the study but are part of the field?</dd><dt>Known Weakness</dt><dd>Quotes or experts could be fabricated</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>A good science writer should make sure to quote experts in the field who are not the original authors. This is a miniature reflection of the peer review system. Quotes could be fabricated, of course.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd></dl>
+</section>
+<section><h3>Number of quoted sources</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How many sources does the article quote?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Number of links</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How many URLs does the article link out to?</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Databases</h3><dl>
+<dt>Definition</dt><dd>Databases as a &#39;Publication&#39; owned by a Publisher</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Contains original quotes</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Does the article contain original quotes that appear to be sourced directly by the reporter?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Original quotes could be fabricated, but if they are not, they show an attention to getting opinions from subject matter experts. However, they could also just indicate a competent mid-level blogger who doesn&#39;t have the resources to seek outside perspectives.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd></dl>
+</section>
+<section><h3>Contains Video Embeds</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>List of embeddable video sites (YouTube, Vimeo, etc.)</dd><dt>Frame as a Question</dt><dd>Does the article embed content from video sites?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Contains Link to Scientific Journals</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Definition</dt><dd>A simple link to the a scientific journal article that backs up the assertion made. This may also be paired with a URL to the specific article.</dd><dt>Frame as a Question</dt><dd>Is a link provided in the article to where the original content came from?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Contains Image Macros</h3><dl>
+<dt>Data Type</dt><dd>Boolean?</dd><dt>Definition</dt><dd>Image Macro</dd><dt>Frame as a Question</dt><dd>Does the article contain content with image macros?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>Image macros reflect that the site might be focused more on driving clicks. That said, they might also be an effort to make difficult concepts more accessible to a general interest audience.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Contains Attributed images</h3><dl>
+<dt>Data Type</dt><dd>Boolean?</dd><dt>Frame as a Question</dt><dd>Does the article contain images attributed to a photographer or other source?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Contain Original Images</h3><dl>
+<dt>Data Type</dt><dd>Boolean?</dd><dt>Frame as a Question</dt><dd>Does the article contain original images?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Agencies for Authority</h3><dl>
+<dt>Definition</dt><dd>I think that Agencies could also be considered Publishers. 
+ But Publisher captures I think the relationship to the Article
+</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Accuracy of representation of source article</h3><dl>
+<dt>Article Example URL</dt><dd>https:&#x2F;&#x2F;climatefeedback.org&#x2F;evaluation&#x2F;breitbart-misrepresents-research-58-scientific-papers-falsely-claim-disprove-human-caused-global-warming-james-delingpole&#x2F;</dd><dt>Data Type</dt><dd>Likert, with Multiple Choice</dd><dt>Definition</dt><dd>This article properly characterizes the methods and conclusions of the cited or quoted source. In addition to a Likert measure, two other options are possible: (A) Unable to find source, (B) Source is behind a paywall</dd><dt>Frame as a Question</dt><dd>Does this article properly characterize the methods and conclusions of the original source?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Ability to accurately reflect the source articles in outbound references requires a good deal of knowledge of the field and of the scientific method in general and may be difficult to replicate.</dd><dt>Problematic Toy Example</dt><dd>&quot;It’s sad that the blogger did not understand what this study is about...&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>This ideally would be done per source article</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Academic Journal Impact Factor</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Definition</dt><dd>From Wikipedia: The impact factor (IF) or journal impact factor (JIF) of an academic journal is a measure reflecting the yearly average number of citations to recent articles published in that journal. It is frequently used as a proxy for the relative importance of a journal within its field; journals with higher impact factors are often deemed to be more important than those with lower ones. https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Impact_factor</dd><dt>Frame as a Question</dt><dd>What is the impact factor of the journal or conference cited?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Release Target</dt><dd>1</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Publication</h2>
+<section><h3>Working Phone Number</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Is there a phone number and does calling the phone number lead someone to a representative of the publication?</dd><dt>Known Weakness</dt><dd>Over time, this could be gamed easily with VOIP services, such that someone outside the region can still operate a number.</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>Having a working phone number is de rigeur for a genuine news outlet. Simply calling the number and seeing if someone representing the outlet responds can indicate if it at least has the resources to operate a phone line. A few questions of the person on the line can also yield insights.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>Context is for something representing itself as a news publisher</dd><dt>Tags</dt><dd>phone number</dd></dl>
+</section>
+<section><h3>Trust Project Metadata</h3><dl>
+<dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Site Analytics</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Frame as a Question</dt><dd>Does the publication use an analytics platform? Which one?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publisher (Publication Owner)</h3><dl>
+<dt>Data Type</dt><dd>Free Text</dd><dt>Definition</dt><dd>Publishers: Individuals or group entities -- see Publisher Table for more related attributes
+
+
+</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What is the name of the person or organization that published the publication under review?</dd><dt>Good Toy Example</dt><dd>Arthur Ochs Sulzberger, Jr.</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication Type</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>One of the following: Media Outlet, Governmental Agency, Non-profit, Private Corporation
+</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication Start Date</h3><dl>
+<dt>Data Type</dt><dd>Date</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication Name</h3><dl>
+<dt>Article Example URL</dt><dd>https:&#x2F;&#x2F;www.nytimes.com&#x2F;section&#x2F;t-magazine</dd><dt>Data Type</dt><dd>Free Text</dd><dt>Definition</dt><dd>Publications are parents of articles. 
+Publishers may have 1:M Publications. Publications newsline magazines, series, newspapers, etc.  </dd><dt>Frame as a Question</dt><dd>What is the name of the magazine, newspaper, journal, book that the article appeared within?</dd><dt>Good Toy Example</dt><dd>New York Times Style Magazine Online</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Problematic Toy Example</dt><dd>New York Times -- the NYT has several versions , a print version that&#39;s  Metro (different section, US general,  international, that&#39;s digital for starters.  There is the NYT also available via podcast.  So I think that perhaps Publication name must have space to think about media channel (which also might be an attribute to add to this table) </dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication Identifier </h3><dl>
+<dt>Definition</dt><dd>Publishers may have 1:M Publications</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication End Date</h3><dl>
+<dt>Data Type</dt><dd>Date</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication Domain</h3><dl>
+<dt>Data Type</dt><dd>URL</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Publication CMS</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice (with option for Other)</dd><dt>Frame as a Question</dt><dd>What is the CMS that the publication uses?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Niche Topic</h3><dl>
+<dt>Data Type</dt><dd>Free Text?</dd><dt>Frame as a Question</dt><dd>Is the publication focused on a niche topic? If so, what is the topic?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Masthead (Nameplate)</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Does the publication have a masthead&#x2F;nameplate?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Masthead (Imprint)</h3><dl>
+<dt>Data Type</dt><dd>Boolean
+</dd><dt>Frame as a Question</dt><dd>Does the publication have a clear and logical masthead&#x2F;imprint?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Links to Relevant Articles</h3><dl>
+<dt>Data Type</dt><dd>Boolean?</dd><dt>Frame as a Question</dt><dd>Does the publication regularly link to other relevant articles on its own site?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Language</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Frame as a Question</dt><dd>What language(s) does the publication publish in?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Is Part of Press Corps</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Is the publication part of the press corps?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Has a Wikipedia Entry</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Does the publication have an entry in Wikipedia?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Code of Principles of fact checking organization</h3><dl>
+<dt>Data Type</dt><dd>Single Choice</dd><dt>Definition</dt><dd>A) IFCN Signatory
+B) Not IFCN signatory but organization&#x2F;institution with similar standards and commitments
+C) Unknown, not discernable</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>If the publication is from a fact-checking organization, what are its commitments to accuracy and other standards? </dd><dt>Good Toy Example</dt><dd>Africa Check (https:&#x2F;&#x2F;africacheck.org&#x2F;)</dd><dt>Notes</dt><dd>Replaces https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#claim-has-been-fact-checked</dd><dt>Priority Rationale</dt><dd>One of two indicators replacing https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#claim-has-been-fact-checked</dd><dt>Rationale for Inclusion</dt><dd>One of two indicators replacing https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#claim-has-been-fact-checked</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd></dl>
+</section>
+<section><h3>Clear Editorial Policy</h3><dl>
+<dt>Data Type</dt><dd>Free Text?</dd><dt>Frame as a Question</dt><dd>Where does it state on any of the pages of the website a clear editorial policy?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Awards</h3><dl>
+<dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Reader Behavior</h2>
+<section><h3>Volume of readership over time</h3><dl>
+<dt>Definition</dt><dd>What is the nature of the volume of readership over time. Is it spiky? How many spikes are there? Is there a long tail?</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What is the nature of the volume of readership over time?</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Emotional comment shared in response</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.independent.co.uk&#x2F;news&#x2F;uk&#x2F;politics&#x2F;manfred-weber-angela-merkel-theresa-may-brexit-will-cause-damage-a8057311.html see comments</dd><dt>Data Type</dt><dd>boolean or integer with valence(+&#x2F;-)</dd><dt>Definition</dt><dd>The direction and weight of reader interaction with this article.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>Did the article provoke emotional -- positive or negative --  comments and response (in the discussion space around its content)?</dd><dt>Good Toy Example</dt><dd>&quot;It would be good if brexiteers would be the first to be let go when jobs go.and the last in the NHS waiting lists due to loss of skilled people. Of course the would deny being so stupid to vote brexit then.&quot;</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Common Referrers</h3><dl>
+<dt>Data Type</dt><dd>category</dd><dt>Definition</dt><dd>From where did readers come from to read this article. Social media&#x2F;unknown&#x2F;news org page&#x2F;search result page.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>What is driving traffic to this article?</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Average time spent on page</h3><dl>
+<dt>Data Type</dt><dd>decimal number</dd><dt>Definition</dt><dd>Amount of time people spend reading the article on average</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How much time do people spend on this page?</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>A very low value could be signal of clickbait. This needs to be balanced against article length, i.e., we should expect a certain amount of time on a page relative to its length. This requires resources we will not have access to for the WebConf paper.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Revenue Model</h2>
+<section><h3>Top Call to Action for Donations</h3><dl>
+<dt>Frame as a Question</dt><dd>Does the site or article have a topline call to action for donations?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Rationale for Inclusion</dt><dd>Sometimes this is a flag
+</dd></dl>
+</section>
+<section><h3>Spam or Clickbait Advertisements</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>The page of the article has spammy or clickbaity advertisements. This is limited to a subjective assessment at this time.</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has spammy or clickbaity advertisements?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Advertisements that the reader feels, subjectively, are spammy or clickbaity could indicate a site that prioritizes clicks and shares over useful content and therefore represents financially-motivated misinformation.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Presence of Sponsors</h3><dl>
+<dt>Frame as a Question</dt><dd>Are the sponsors clearly stated and reputable?</dd><dt>Potential Markup Effort</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Presence of Paywall or Subscription</h3><dl>
+<dt>Frame as a Question</dt><dd>Does the site contain a paywall or subscription type? If so, what?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Rationale for Inclusion</dt><dd>This is actually at the Publication Level, right? not on the Article level
+
+</dd></dl>
+</section>
+<section><h3>Presence of Freemium Content</h3><dl>
+<dt>Frame as a Question</dt><dd>Does the site contain selectively free content outside of its paywall?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Presence of Donors</h3><dl>
+<dt>Frame as a Question</dt><dd>Are the donors clearly stated and reputable?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Rationale for Inclusion</dt><dd>At the publication level</dd></dl>
+</section>
+<section><h3>Number of Advertisements</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Definition</dt><dd>There are multiple types of ads to look for. (1) Display ads. These are boxes that are clearly advertisements, typically in the form of a graphic image or, in the case of Google Adwords, a box with text. (2) Content recommendation engines, specifically, Taboola, Outbrain, Tivo, RevContent. A box of content recommendations on a page counts as one. (3) Sponsored content. This is content recommended on the site with a clear label: “Sponsored.” (4) Call for social sharing. (5) Call to subscribe to a mailing list</dd><dt>Frame as a Question</dt><dd>How many ads appears on the article page?</dd><dt>Location</dt><dd>Article Context</dd><dt>Notes</dt><dd>Credibility Coalition Study note: intention to split post Summer 2018</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>The number of ads can be an indicator of a site that is focused on financially-motivated misinformation. A simple tally of ads can reveal a lot, if there’s an unusual number of ads on the page.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Aggressive Social Shares</h3><dl>
+<dt>Definition</dt><dd>The page of the article has aggressive social shares, which may include calls to share the article within the text. This is limited to a subjective assessment at this time.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has aggressive social shares?</dd><dt>Good Toy Example</dt><dd>A call to share in the content of the article text itself.</dd><dt>Notes</dt><dd>One of two replacing https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares</dd><dt>Rationale for Inclusion</dt><dd>Replaces https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares which is double barreled.</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd><dt>Supporting Evidence</dt><dd>Credibility Coalition Study: Web Conference 2018 examples</dd></dl>
+</section>
+<section><h3>Aggressive Advertisements or Social Shares</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>The page of the article has aggressive advertisements. This is limited to a subjective assessment at this time.</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has aggressive advertisements?</dd><dt>Location</dt><dd>Article Context</dd><dt>Notes</dt><dd>Deprecated for Credibility Coalition Study: Summer 2018</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Advertisements that the reader feels, subjectively, are aggressive could indicate a site that prioritizes clicks and shares over useful content and therefore represents financially-motivated misinformation.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Aggressive Advertisements</h3><dl>
+<dt>Definition</dt><dd>The page of the article has aggressive advertisements. This is limited to a subjective assessment at this time.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has aggressive advertisements, including calls to join a mailing list?</dd><dt>Good Toy Example</dt><dd>An ad that follows you around as you scroll.</dd><dt>Notes</dt><dd>One of two replacing https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares</dd><dt>Rationale for Inclusion</dt><dd>Replaces https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares which is double barreled.</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd><dt>Supporting Evidence</dt><dd>Credibility Coalition Study: Web Conference 2018 examples</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Rhetoric</h2>
+<section><h3>Title Representativeness Types</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>Types of title representativeness
+
+(A) Title is on a different topic than the body
+(B) Title emphasizes different information than the body
+(C) Title carries little information about the body
+(D) Title takes a different stance than the body
+(E) Title overstates claims or conclusions in the body
+(F) Title understates claims or conclusions in the body</dd><dt>Frame as a Question</dt><dd>How is the title unrepresentative of the content of the article? (Select all that apply).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Title Representativeness</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>A measure of how representative the content of the title is with the content of the body copy.</dd><dt>Frame as a Question</dt><dd>Does the title of the article accurately reflect the content of the article?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Spelling Errors</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How many spelling errors does the article have?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Reading Level</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Proportion (Exaggeration - Minimization Spectrum)</h3><dl>
+<dt>Article Example URL</dt><dd>Examples taken from https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Exaggeration, https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Minimisation_(psychology)</dd><dt>Data Type</dt><dd>Scale</dd><dt>Definition</dt><dd>The extent to which language in the text is proportional to the situation, or exaggerates or minimizes events. Exaggeration as defined in Webster 1913, &quot;...the act of doing or representing in an excessive manner;...&quot; and Minimization as defined in Oxford Living Dictionary accessed June 2018, &quot;1.1 Represent or estimate at less than the true value or importance&quot; </dd><dt>Frame as a Question</dt><dd>Is the description an extreme exaggeration, an extreme minimization, or proportional to the event or situation described?</dd><dt>Good Toy Example</dt><dd>&quot;[Certain people group] are either all good or all bad,&quot; or &quot;It&#39;s just a flesh wound&quot; (_Monty Python and the Holy Grail_ Black Knight&#39;s response to his having his left arm severed) </dd><dt>Location</dt><dd>Article Content</dd><dt>Notes</dt><dd>DRAFT. Replacing part of https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#exaggeration for Credibility Coalition study
+</dd><dt>Rationale for Inclusion</dt><dd>Refining &#39;overly emotional language&#39; indicator into multiple</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd></dl>
+</section>
+<section><h3>Politicizing Tone</h3><dl>
+<dt>Data Type</dt><dd>Scale
+</dd><dt>Frame as a Question</dt><dd>Does the content of the article politicize an issue unrelated to politics?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Overly Emotional Language</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.thedailybeast.com&#x2F;gop-senators-to-sick-americans-drop-dead</dd><dt>Data Type</dt><dd>Scale</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Problematic Toy Example</dt><dd>&quot;Ted Cruz emitted a string of meaningless slime.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Number of Exclamation Points</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>How many exclamation marks appear in the article?</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Low</dd></dl>
+</section>
+<section><h3>Hyperpartisanship &#x2F; Political bias</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Definition</dt><dd>Extreme political bias, e.g. unconstructive political discourse</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Priority Rationale</dt><dd>This needs to be operationalized further, but evidence of hyperpartisanship can indicate a political agenda. That said, it&#39;s important to consider this in the context of genre, e.g., sports and opinion sections we might allow for a certain degree of partisan language.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Hate speech</h3><dl>
+<dt>Data Type</dt><dd>Boolean, possibly categorical</dd><dt>Definition</dt><dd>Usage of abusive or toxic language, e.g. racism, sexism, etc. </dd><dt>Known Weakness</dt><dd>people seem able to somewhat get around the existing algorithms, with some thought</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>Discussion of the challenges in doing this via machines: https:&#x2F;&#x2F;www.technologyreview.com&#x2F;s&#x2F;603735&#x2F;its-easy-to-slip-toxic-language-past-alphabets-toxic-comment-detector&#x2F;</dd></dl>
+</section>
+<section><h3>Grammatical Rules</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Frame as a Question</dt><dd>Does the article follow rules of US or UK English grammar?</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>We have limited scope to US and UK English; will need to expand this with other forms of English.For this and spelling errors you could use a ratio to the number of words.</dd></dl>
+</section>
+<section><h3>Exaggeration</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.thedailybeast.com&#x2F;gop-senators-to-sick-americans-drop-dead</dd><dt>Data Type</dt><dd>Scale</dd><dt>Notes</dt><dd>Deprecated for Credibility Coalition Study: Summer 2018</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;Republicans in Congress are pushing a bill that literally no one wants.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Exaggerated Claims</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Claims are exaggerated, as indicated by the tone</dd><dt>Frame as a Question</dt><dd>1.21 mc Does the author exaggerate any claims? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd></dl>
+</section>
+<section><h3>Emotionally Charged Tone</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Article has an emotionally charged tone</dd><dt>Frame as a Question</dt><dd>Does the article have an emotionally charged tone? (i.e, outrage, snark, celebration, horror, etc.). If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Emotional Valence</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Frame as a Question</dt><dd>Is the language extremely negative, extremely positive, or somewhere in the middle? </dd><dt>Good Toy Example</dt><dd>&quot;VADER is VERY SMART, handsome, and FUNNY!!!&quot;</dd><dt>Location</dt><dd>Article Content</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Rationale for Inclusion</dt><dd>Refining &#39;overly emotional language&#39; indicator into multiple</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition</dd><dt>Supporting Evidence</dt><dd>VADER (Valence Aware Dictionary and sEntiment Reasoner) Natural Language Processing library, available at https:&#x2F;&#x2F;github.com&#x2F;cjhutto&#x2F;vaderSentiment</dd></dl>
+</section>
+<section><h3>Contains Profanity</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Does the article contain profanity?</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>In the context of breaking news from citizen reporters, this can sometimes indicate credibility: http:&#x2F;&#x2F;www.bbc.com&#x2F;news&#x2F;magazine-33365782</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Rationale for Inclusion</dt><dd>This can sometimes indicate credibility: http:&#x2F;&#x2F;www.bbc.com&#x2F;news&#x2F;magazine-33365782</dd></dl>
+</section>
+<section><h3>Contains Hyperbolic Language</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Frame as a Question</dt><dd>Does the article contain hyperbolic language?</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Hyperbolic language could indicate a political bias or overt attempts to sway audiences without substantive evidence. This should always be considered in the context of genre, as we might expect more hyperbolic language in, for instance, the Sports and Style sections.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd></dl>
+</section>
+<section><h3>Cognitive Distortion</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Definition</dt><dd>(the representation of something in an excessive manner)</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd></dl>
+</section>
+<section><h3>Clickbait Headline</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>A measure of how much the title of the article conforms to a predetermined set of clickbait genres.</dd><dt>Frame as a Question</dt><dd>Is the headline clickbaity?</dd><dt>Known Weakness</dt><dd>Major news outlets are starting to borrow clickbait conventions to attract readership</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>High clikbaity-ness in a headline can indicate that the article is engineered for a surface-level virality. This may be particularly instructive when seen in the context of reader behavior.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Clickbait Genres</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>A typology of clickbait headlines:
+
+Listicle (“6 Tips on …”)
+Cliffhanger to a story (“You Won’t Believe What Happens Next”, “Man Divorces His Wife After Overhearing This Conversation”)
+Provoking emotions, such as shock or surprise (“...Shocking Result”, “...Leave You in Tears”)
+Hidden secret or trick (“Fitness Companies Hate Him...”, “Experts are Dying to Know Their Secret”)
+Challenges to the ego (“Only People with IQ Above 160 Can Solve This”)
+Defying convention (“Think Orange Juice is Good for you? Think Again!”, “Here are 5 Foods You Never Thought Would Kill You”)
+Inducing fear (“Is Your Boyfriend Cheating on You?”)
+Other </dd><dt>Frame as a Question</dt><dd>What clickbait techniques does this headline employ (select all that apply)?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Astroturfing</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Definition</dt><dd>the practice of the masking sponsors of a message</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>This seems miscategorised, to be honest. It&#39;s an attribute of the author&#x2F;publication, not the rhetoric. </dd></dl>
+</section>
+<section><h3>Apophasis</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Definition</dt><dd>A rhetorical device wherein  the writer brings up a subject by either denying it, or denying it should be brought up</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very Low</dd></dl>
+</section>
+</section>
+
+
+  </body>
+</html>

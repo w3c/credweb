@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Content Credibility Indicators Vocabulary (CCIV)</title>
+    <script 
+     src='https://www.w3.org/Tools/respec/respec-w3c-common' 
+     class='remove'></script>
+    <script class='remove'>
+      var respecConfig = {
+        publishDate: '2018-10-21',
+        specStatus: "ED",
+        editors: [{
+          name: "An Xiao Mina" ,
+          // url: "http://your-site.com",
+        }],
+        processVersion: 2017,
+        edDraftURI: "https://credweb.org/cciv",
+        shortName: "not-yet-published",
+        "otherLinks": [
+        {
+          "key": "Repository",
+          "data": [{
+            "value": "Github",
+            "href": "https://github.com/w3c/cciv"
+          },
+          {
+             "value": "Issues",
+             "href": "https://github.com/w3c/cciv/issues"
+             }]
+        }]
+      };
+    </script>
+  </head>
+  <body>
+    <div style="border: 3px solid blue; padding: 1em; margin-top: 1em;">
+  <p>This document was never reviewed by <a
+      href="https://credweb.org">the Credible Web group.</a></p>
+
+      <p><strong>This document is archival. Please as <a href="/signals">Credibility Signals</a> instead.</strong></p>
+
+      <p>This version shows only the Release 1 Candidates (29 indicators).  See <a href="..">version with all indicators</a>.</p>
+    </div>
+
+    <section id='abstract'>
+      <p>
+        This document aims to increase interoperability among systems
+        cooperating to make the web more trustworthy.  The approach
+        taken here is to exchange "indicators" which potentially show
+        which items of web content (initially news articles) are
+        worthy of greater trust.
+      </p>
+    </section>
+    <section id='sotd'>
+      <p>
+        <b>This is a dynamic draft, with content which refreshes from
+        <a
+        href="https://airtable.com/tblsFKP8KlrUmJ6wI/viwQde4eElUaD3V8F">master
+        data</a> at every reload.</b>
+      </p>
+    </section>
+
+    <section>
+      <h2>Intro</h2>
+
+      <p>@@@ TODO</p>
+    </section>
+
+    <section>
+  <h2>Article Structure</h2>
+<section><h3>Is Original</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>(A) Most likely original
+(B) Appears to be a copy of one or more articles, with some portions different or remixed
+(C) Extensive quoting from another source, with some original content
+(D) A wholesale duplicate of another article</dd><dt>Frame as a Question</dt><dd>Has the text of this article appeared in exactly the same words or very similar words in another publication?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Like doing a reverse image search, knowing that the article is original does not by itself guarantee credibility. However, knowing if it&#39;s *not* original can be a flag that the site is either duplicating content or running content from a newswire service. We might want to set this as scalar, as there might be slight modifications to original content.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>Sometimes article texts get repurposed in new publications. This can be due to licensing agreements from a wire service or the article can simply be stolen without crediting the original article. Sometimes the article is copied wholesale while other times some words are changed or a new article is created that copies from multiple articles. Finally, some articles will quote extensively from one or more other articles with only a small amount of original reporting or writing.</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Attribution of Non-Original Content</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>(A) Attribution was not given
+(B) Attribution was given but was inaccurate
+(C) Attribution was given and was accurate
+(D) Unclear which is the original</dd><dt>Frame as a Question</dt><dd>If the content of the article is not original, was attribution given and if so, was the attribution accurate?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Rationale for Inclusion</dt><dd>Originality or non-originality is not by itself a sufficient condition for measuring credibility. Understanding the attribution of non-original content is going to be key.</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Article&#x2F;Site Metadata</h2>
+<section><h3>Ads.txt Exists</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Definition</dt><dd>ads.txt (Authorized Digital Sellers) is an Interactive Advertising Bureau initiative. It specifies a text file that companies can host on their web servers, listing the other companies authorized to sell their products or services. This is designed to allow online buyers to check the validity of the sellers from whom they buy, for the purposes of internet fraud prevention. (from https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Ads.txt)
+</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>Does an ads.txt file exist on the domain?</dd><dt>Good Toy Example</dt><dd>https:&#x2F;&#x2F;www.huffingtonpost.com&#x2F;ads.txt</dd><dt>Known Weakness</dt><dd>Standards still under development</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Notes</dt><dd>Status: DRAFTING</dd><dt>Potential Markup Effort</dt><dd>Very Low</dd><dt>Problematic Toy Example</dt><dd>https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;adops&#x2F;comments&#x2F;703k4s&#x2F;is_there_a_legitimate_reason_to_accept_an_adstxt&#x2F; </dd><dt>Rationale for Inclusion</dt><dd>Evolving standard. some initial brainstorming on other potential features: &#x60;&#x60;&#x60;- the number of sellers in given file (could consider SSPs and seller accounts separately) - the balance of DIRECT vs. RESELLER flags - which SSPs are included (some are more quality&#x2F;stringent than others) - weighting SSPs included by the number of accounts per SSP.&#x60;&#x60;&#x60;  I’m not sure that any of those would be strong misinfo signals especially since it seems like publishers are still figuring out how to handle ads.txt, but could be things to explore.</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: June 2018</dd><dt>Supporting Evidence</dt><dd>https:&#x2F;&#x2F;wiki.appnexus.com&#x2F;display&#x2F;industry&#x2F;AppNexus+Support+for+Ads.txt</dd><dt>Tags</dt><dd>Revenue Model</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Claim</h2>
+<section><h3>Claim has been fact checked</h3><dl>
+<dt>Data Type</dt><dd>Single Choice</dd><dt>Definition</dt><dd>A) Most likely not fact-checked by an IFCN Verified Signatory 
+B) Most likely not fact-checked by an approved source 
+C) Fact-checked and determined false
+D) Fact-checked and determined true
+E) Fact-checked with unclear results
+F) Fact-checked with mixed results</dd><dt>Frame as a Question</dt><dd> Has the central claim in this article been fact-checked by an IFCN Verified Signatory?</dd><dt>Location</dt><dd>Article Context</dd><dt>Notes</dt><dd>Deprecated for Credibility Coalition Study: Summer 2018</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>As many IFCN signatories use the ClaimReview schema, understanding correlations between fact checks and credibility can help us understand how best to utilize the schema or improve it.</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Logic&#x2F;Reasoning</h2>
+<section><h3>Straw Man Argument</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Presentation of a counterargument as a weaker, more foolish version of the real counteargument</dd><dt>Frame as a Question</dt><dd>Does the author present the counterargument as a weaker, more foolish version of the real counterargument (use a Straw Man Argument)? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;Proponents of nuclear energy have argued that it is safer than it used to be. But we don’t want energy that is barely safer than Chernobyl.&quot; </dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Slippery Slope Argument</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Argument that one small change will lead to a major change</dd><dt>Frame as a Question</dt><dd>Does the author say that one small change will lead to a major change (use a slippery slope argument)? Highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;If we allow human cloning, we will soon be overrun by armies of human clones.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Naturalistic Fallacy</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Suggestion that something is good because it is natural or bad because it is not natural</dd><dt>Frame as a Question</dt><dd>Does the author suggest that something is good because it is natural, or bad because it is not natural (the naturalistic fallacy)?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Problematic Toy Example</dt><dd>&quot;Vaccines aren&#39;t natural; they&#39;re full of all kinds of lab-manufactured chemicals. That stuff can&#39;t possibly be good for you.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>False Dilemma</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Presentation of a complicated choice as if it is binary</dd><dt>Frame as a Question</dt><dd>Does the author present a complicated choice as if it were binary (construct a false dilemma)? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;America; love it or leave it! If you&#39;re not happy with U.S. policies, you should just  move somewhere else.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Causal Claim Types</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>General Causal Claim
+Singular Causal Claim
+No Causal Claim</dd><dt>Frame as a Question</dt><dd>Is a general or singular causal claim made? Highlight the section(s) that supports your answer.</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Calibrating Confidence - Level of Confidence</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.theblaze.com&#x2F;news&#x2F;2017&#x2F;09&#x2F;02&#x2F;scientist-shuts-down-climate-change-alarmists-with-new-report-about-hurricane-harvey&#x2F;</dd><dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Expressed confidence in a claim</dd><dt>Frame as a Question</dt><dd>Do they acknowledge uncertainty or the possibility that things might be otherwise? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;According to Mass, the idea that human-caused climate change had any effect on Harvey is more than far-fetched — it’s downright not true.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Calibrating Confidence - Justification</h3><dl>
+<dt>Article Example URL</dt><dd>http:&#x2F;&#x2F;www.theblaze.com&#x2F;news&#x2F;2017&#x2F;09&#x2F;02&#x2F;scientist-shuts-down-climate-change-alarmists-with-new-report-about-hurricane-harvey&#x2F;</dd><dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Expressed confidence in a claim, with justification</dd><dt>Frame as a Question</dt><dd>To what extent does their confidence in their claims seem justified? </dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Problematic Toy Example</dt><dd>&quot;According to Mass, the idea that human-caused climate change had any effect on Harvey is more than far-fetched — it’s downright not true.&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Appeal to Fear Fallacy</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Exaggeration of the dangers of a situation and use of scare tactics in an attempt to persuade</dd><dt>Frame as a Question</dt><dd>Does the author exaggerate the dangers of a situation and use scare tactics to persuade (the appeal to fear fallacy)?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Outbound References</h2>
+<section><h3>Source Types</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>None 
+Experts
+Studies
+Organizations
+Other</dd><dt>Frame as a Question</dt><dd> Which of the following types of sources are cited in the article? Check all that apply. If Other, please highlight.</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Contains Link to Scientific Journals</h3><dl>
+<dt>Data Type</dt><dd>Boolean</dd><dt>Definition</dt><dd>A simple link to the a scientific journal article that backs up the assertion made. This may also be paired with a URL to the specific article.</dd><dt>Frame as a Question</dt><dd>Is a link provided in the article to where the original content came from?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Accuracy of representation of source article</h3><dl>
+<dt>Article Example URL</dt><dd>https:&#x2F;&#x2F;climatefeedback.org&#x2F;evaluation&#x2F;breitbart-misrepresents-research-58-scientific-papers-falsely-claim-disprove-human-caused-global-warming-james-delingpole&#x2F;</dd><dt>Data Type</dt><dd>Likert, with Multiple Choice</dd><dt>Definition</dt><dd>This article properly characterizes the methods and conclusions of the cited or quoted source. In addition to a Likert measure, two other options are possible: (A) Unable to find source, (B) Source is behind a paywall</dd><dt>Frame as a Question</dt><dd>Does this article properly characterize the methods and conclusions of the original source?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>Very High</dd><dt>Priority Rationale</dt><dd>Ability to accurately reflect the source articles in outbound references requires a good deal of knowledge of the field and of the scientific method in general and may be difficult to replicate.</dd><dt>Problematic Toy Example</dt><dd>&quot;It’s sad that the blogger did not understand what this study is about...&quot;</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Rationale for Inclusion</dt><dd>This ideally would be done per source article</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Academic Journal Impact Factor</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Definition</dt><dd>From Wikipedia: The impact factor (IF) or journal impact factor (JIF) of an academic journal is a measure reflecting the yearly average number of citations to recent articles published in that journal. It is frequently used as a proxy for the relative importance of a journal within its field; journals with higher impact factors are often deemed to be more important than those with lower ones. https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Impact_factor</dd><dt>Frame as a Question</dt><dd>What is the impact factor of the journal or conference cited?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Medium</dd><dt>Release Target</dt><dd>1</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Revenue Model</h2>
+<section><h3>Spam or Clickbait Advertisements</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>The page of the article has spammy or clickbaity advertisements. This is limited to a subjective assessment at this time.</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has spammy or clickbaity advertisements?</dd><dt>Location</dt><dd>Article Context</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Advertisements that the reader feels, subjectively, are spammy or clickbaity could indicate a site that prioritizes clicks and shares over useful content and therefore represents financially-motivated misinformation.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Number of Advertisements</h3><dl>
+<dt>Data Type</dt><dd>Integer</dd><dt>Definition</dt><dd>There are multiple types of ads to look for. (1) Display ads. These are boxes that are clearly advertisements, typically in the form of a graphic image or, in the case of Google Adwords, a box with text. (2) Content recommendation engines, specifically, Taboola, Outbrain, Tivo, RevContent. A box of content recommendations on a page counts as one. (3) Sponsored content. This is content recommended on the site with a clear label: “Sponsored.” (4) Call for social sharing. (5) Call to subscribe to a mailing list</dd><dt>Frame as a Question</dt><dd>How many ads appears on the article page?</dd><dt>Location</dt><dd>Article Context</dd><dt>Notes</dt><dd>Credibility Coalition Study note: intention to split post Summer 2018</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Low</dd><dt>Priority Rationale</dt><dd>The number of ads can be an indicator of a site that is focused on financially-motivated misinformation. A simple tally of ads can reveal a lot, if there’s an unusual number of ads on the page.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Aggressive Social Shares</h3><dl>
+<dt>Definition</dt><dd>The page of the article has aggressive social shares, which may include calls to share the article within the text. This is limited to a subjective assessment at this time.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has aggressive social shares?</dd><dt>Good Toy Example</dt><dd>A call to share in the content of the article text itself.</dd><dt>Notes</dt><dd>One of two replacing https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares</dd><dt>Rationale for Inclusion</dt><dd>Replaces https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares which is double barreled.</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd><dt>Supporting Evidence</dt><dd>Credibility Coalition Study: Web Conference 2018 examples</dd></dl>
+</section>
+<section><h3>Aggressive Advertisements or Social Shares</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>The page of the article has aggressive advertisements. This is limited to a subjective assessment at this time.</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has aggressive advertisements?</dd><dt>Location</dt><dd>Article Context</dd><dt>Notes</dt><dd>Deprecated for Credibility Coalition Study: Summer 2018</dd><dt>Potential Impact</dt><dd>Medium</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>Advertisements that the reader feels, subjectively, are aggressive could indicate a site that prioritizes clicks and shares over useful content and therefore represents financially-motivated misinformation.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Aggressive Advertisements</h3><dl>
+<dt>Definition</dt><dd>The page of the article has aggressive advertisements. This is limited to a subjective assessment at this time.</dd><dt>Dynamic; Change over Time?</dt><dd>true</dd><dt>Frame as a Question</dt><dd>How strongly do you agree or disagree that the page of the article has aggressive advertisements, including calls to join a mailing list?</dd><dt>Good Toy Example</dt><dd>An ad that follows you around as you scroll.</dd><dt>Notes</dt><dd>One of two replacing https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares</dd><dt>Rationale for Inclusion</dt><dd>Replaces https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#aggressive-advertisements-or-social-shares which is double barreled.</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd><dt>Supporting Evidence</dt><dd>Credibility Coalition Study: Web Conference 2018 examples</dd></dl>
+</section>
+</section>
+<section>
+  <h2>Rhetoric</h2>
+<section><h3>Title Representativeness Types</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>Types of title representativeness
+
+(A) Title is on a different topic than the body
+(B) Title emphasizes different information than the body
+(C) Title carries little information about the body
+(D) Title takes a different stance than the body
+(E) Title overstates claims or conclusions in the body
+(F) Title understates claims or conclusions in the body</dd><dt>Frame as a Question</dt><dd>How is the title unrepresentative of the content of the article? (Select all that apply).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Title Representativeness</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>A measure of how representative the content of the title is with the content of the body copy.</dd><dt>Frame as a Question</dt><dd>Does the title of the article accurately reflect the content of the article?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Proportion (Exaggeration - Minimization Spectrum)</h3><dl>
+<dt>Article Example URL</dt><dd>Examples taken from https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Exaggeration, https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Minimisation_(psychology)</dd><dt>Data Type</dt><dd>Scale</dd><dt>Definition</dt><dd>The extent to which language in the text is proportional to the situation, or exaggerates or minimizes events. Exaggeration as defined in Webster 1913, &quot;...the act of doing or representing in an excessive manner;...&quot; and Minimization as defined in Oxford Living Dictionary accessed June 2018, &quot;1.1 Represent or estimate at less than the true value or importance&quot; </dd><dt>Frame as a Question</dt><dd>Is the description an extreme exaggeration, an extreme minimization, or proportional to the event or situation described?</dd><dt>Good Toy Example</dt><dd>&quot;[Certain people group] are either all good or all bad,&quot; or &quot;It&#39;s just a flesh wound&quot; (_Monty Python and the Holy Grail_ Black Knight&#39;s response to his having his left arm severed) </dd><dt>Location</dt><dd>Article Content</dd><dt>Notes</dt><dd>DRAFT. Replacing part of https:&#x2F;&#x2F;credweb.org&#x2F;cciv&#x2F;#exaggeration for Credibility Coalition study
+</dd><dt>Rationale for Inclusion</dt><dd>Refining &#39;overly emotional language&#39; indicator into multiple</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Summer 2018</dd></dl>
+</section>
+<section><h3>Exaggerated Claims</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Claims are exaggerated, as indicated by the tone</dd><dt>Frame as a Question</dt><dd>1.21 mc Does the author exaggerate any claims? If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>High</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd></dl>
+</section>
+<section><h3>Emotionally Charged Tone</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>Article has an emotionally charged tone</dd><dt>Frame as a Question</dt><dd>Does the article have an emotionally charged tone? (i.e, outrage, snark, celebration, horror, etc.). If so, highlight the relevant section(s).</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Markup Effort</dt><dd>High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Public Editor</dd></dl>
+</section>
+<section><h3>Emotional Valence</h3><dl>
+<dt>Data Type</dt><dd>Scale</dd><dt>Frame as a Question</dt><dd>Is the language extremely negative, extremely positive, or somewhere in the middle? </dd><dt>Good Toy Example</dt><dd>&quot;VADER is VERY SMART, handsome, and FUNNY!!!&quot;</dd><dt>Location</dt><dd>Article Content</dd><dt>Machine Generation from Article</dt><dd>true</dd><dt>Rationale for Inclusion</dt><dd>Refining &#39;overly emotional language&#39; indicator into multiple</dd><dt>Release Target</dt><dd>June 2018</dd><dt>Source Team</dt><dd>Credibility Coalition</dd><dt>Supporting Evidence</dt><dd>VADER (Valence Aware Dictionary and sEntiment Reasoner) Natural Language Processing library, available at https:&#x2F;&#x2F;github.com&#x2F;cjhutto&#x2F;vaderSentiment</dd></dl>
+</section>
+<section><h3>Clickbait Headline</h3><dl>
+<dt>Data Type</dt><dd>Likert</dd><dt>Definition</dt><dd>A measure of how much the title of the article conforms to a predetermined set of clickbait genres.</dd><dt>Frame as a Question</dt><dd>Is the headline clickbaity?</dd><dt>Known Weakness</dt><dd>Major news outlets are starting to borrow clickbait conventions to attract readership</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Potential Markup Effort</dt><dd>Medium</dd><dt>Priority Rationale</dt><dd>High clikbaity-ness in a headline can indicate that the article is engineered for a surface-level virality. This may be particularly instructive when seen in the context of reader behavior.</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+<section><h3>Clickbait Genres</h3><dl>
+<dt>Data Type</dt><dd>Multiple Choice</dd><dt>Definition</dt><dd>A typology of clickbait headlines:
+
+Listicle (“6 Tips on …”)
+Cliffhanger to a story (“You Won’t Believe What Happens Next”, “Man Divorces His Wife After Overhearing This Conversation”)
+Provoking emotions, such as shock or surprise (“...Shocking Result”, “...Leave You in Tears”)
+Hidden secret or trick (“Fitness Companies Hate Him...”, “Experts are Dying to Know Their Secret”)
+Challenges to the ego (“Only People with IQ Above 160 Can Solve This”)
+Defying convention (“Think Orange Juice is Good for you? Think Again!”, “Here are 5 Foods You Never Thought Would Kill You”)
+Inducing fear (“Is Your Boyfriend Cheating on You?”)
+Other </dd><dt>Frame as a Question</dt><dd>What clickbait techniques does this headline employ (select all that apply)?</dd><dt>Location</dt><dd>Article Content</dd><dt>Potential Impact</dt><dd>Very High</dd><dt>Proposed Priority for WebConf Paper</dt><dd>Very High</dd><dt>Release Target</dt><dd>1</dd><dt>Source Team</dt><dd>Credibility Coalition Study: Web Conference 2018</dd></dl>
+</section>
+</section>
+
+
+  </body>
+</html>
