@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Credibility Signals</title>
+<style type="text/css">
+  table { border-collapse: collapse; } 
+  td, th { border: 1px solid #aaaaaa; padding: 0.5em;  } 
+  td p { margin: 0 } 
+  table.inner { border: 1px solid red; padding: 0 }
+  .science { background: yellow }
+  a.edit[href] {
+    margin-right: -1em;
+    float: right;
+    text-decoration: none;
+    color: #555;
+    border: none;
+    padding: 0.3em;
+  }
+</style>
+<link href="https://unpkg.com/tabulator-tables@4.1.2/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.1.2/dist/js/tabulator.min.js"></script>
+
+  <script src="https://www.w3.org/Tools/respec/respec-w3c-common" class="remove">
+  </script>
+  <script class="remove">
+  var respecConfig = {
+    "noRecTrack": true,
+    "edDraftURI": "https://credweb.org/signals",
+    "specStatus": "ED",
+    "prevED": "https://credweb.org/signals-20181021",
+    "editors": [
+        {
+            "name": "TBD (initial version by Sandro Hawke)"
+        }
+    ],
+    "github": "https://github.com/w3c/credweb",
+    "shortName": "not-published-as-TR",
+    "wg": "Credible Web Community Group",
+    "wgURI": "https://www.w3.org/community/credibility/"
+}
+  </script>
+</head>
+<body>
+  <div id="abstract">This document specifies various types of information, called credibility signals, which are considered potentially useful in assessing credibility of online information.</div>
+  <div id="sotd">
+    <div id="real-sotd" style="margin: 1em; border: 4px solid blue; padding: 1em">
+    <p>This document is automatically assembled from a <strong><a href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0">crowd-source Google doc</a></strong> and various data sources.  It may contain completely bogus content.  You may prefer the <b><a href=https://credweb.org/signals-20181021>most recent stable release</a></b></p>
+    <hr/>
+
+<p>Comments are welcome and are especially useful if they offer specific improvements which can be incorporated into future versions.  Please comment either by <a href="https://github.com/w3c/credweb/issues">raising a github issue</a> or making inline comments on the google doc (easily reached using the pencil 🖉 link in the right margin).  If neither of those options work for you, please email your comments to <a href="mailto:public-credibility-comments@w3.org">public-credibility-comments@w3.org</a> (<a href="https://lists.w3.org/Archives/Public/public-credibility-comments/">archive</a>, <a href="mailto:public-credibility-comments-request@w3.org?subject=subscribe">subscribe</a>).
+</p>
+
+    </div>
+</div>
+
+<section>
+    <h1 id="h.sqvm5wdqp8cz">Introduction</h1>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.sqvm5wdqp8cz">🖉</a></div>
+    <section>
+        <h2 id="h.4u9corwqzqo3">Purpose</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.4u9corwqzqo3">🖉</a></div>
+        <p>This document is intended to support an ecosystem of interoperable credibility tools. &#xA0;These software tools, which may be components of familiar existing systems, will gather, process, and use relevant data to help people more accurately decide what information they can trust online and protect themselves from being misled. We expect that an open data-sharing architecture will facilitate efficient research and development, as well as an overall system which is more visibly trustworthy.</p>
+        <p>The document has three primary audiences:</p>
+        <ol start="1"><li>Software developers and computer science researchers wanting to build systems which work with credibility data. &#xA0;For them, the document aims to be a precise technical specification, stating&#xA0;what&#xA0;they need for their software to interoperate with any other software which conforms to this specification. </li><li>People who work in journalism and want to review and contribute to this technology sphere, to help make sure it is beneficial and practical.</li><li>Non-computer-science researchers, interested in helping develop and improve the science behind this work.</li></ol>
+        <p>In general, we intend for this document to be:</p>
+        <ul><li>Welcoming for implementers of systems using credibility data</li><li>Easy for non-tech folks to understand the proposed signals &amp; contribute</li><li>Practical to maintain by the editors</li><li>Practical to contribute to, for a wide audience</li><li>A source of accurate guidance about signal quality and adoption</li></ul>
+    </section>
+    <section>
+        <h2 id="h.94xsck7qz3ho">Credibility Data</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.94xsck7qz3ho">🖉</a></div>
+        <p>The document builds on concepts and terminology explained in <a href="https://www.google.com/url?q=https://credweb.org/report/&amp;sa=D&amp;ust=1542573925170000">Technological Approaches to Improving Credibility Assessment on the Web</a>. &#xA0;Our basic model is that an entity (human and/or machine) is attempting to make a credibility assessment &#x2014; to predict whether something will mislead them or others &#x2014; by carefully examining many different observable features of that thing and things connected with it, as well as information provided by various related or trusted sources. </p>
+        <p>To simplify and unify this complex situation, with its many different roles, we model the situation as a set of observers, each using imperfect instruments to learn about the situation and then recording their observations using simple declarative statements agreed upon in advance. Because those statements are inputs to a credibility assessment process, we call them <b>credibility signals.</b>&#xA0; (The term <b>credibility indicators</b>&#xA0;is sometimes also used.)</p>
+        <p>This document, then, is a guide to these signals. &#xA0;It states what each observer might say and exactly how to say it, along with other relevant information to help people choose among the possible signals and understand what it means when they are used.</p>
+        <p>Because this is a new and constantly-changing field, we do not simply state which signals should be used. &#xA0;Instead, we list possible signals that one might reasonably consider using, along with information we expect to be helpful in making the decision.</p>
+    </section>
+    <section>
+        <h2 id="h.wynojzlz503a">Example</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.wynojzlz503a">🖉</a></div>
+        <p>[explain]</p>
+        <p></p>
+        <p>Assessing credibility of https://news.example/article-1</p>
+        <p>&#xA0; &#xA0;Looking at title</p>
+        <p>&#xA0; &#xA0; &#xA0; I consider it to be clickbait</p>
+        <p>&#xA0; &#xA0; &#xA0; It&apos;s clickbait because it&apos;s a cliffhanger</p>
+        <p>&#xA0; &#xA0;Looking at article</p>
+        <p>&#xA0; &#xA0; &#xA0; It cites scientific research</p>
+        <p>&#xA0; &#xA0;Looking at provider</p>
+        <p>&#xA0; &#xA0; &#xA0; Established in 1974</p>
+        <p>&#xA0; &#xA0; &#xA0; Owned domain since 2006</p>
+    </section>
+    <section>
+        <h2 id="h.w3tz5a9u4eov">Factors in Selecting Signals</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.w3tz5a9u4eov">🖉</a></div>
+        <p>When building systems which use credibility signals and trying to decide which signals to use, there are different factors to weigh. &#xA0;This section is aspirational; we hope this document will in time provide guidance on all these factors. &#xA0; </p>
+        <section>
+            <h3 id="h.j50fvf979mdx">Measurement Challenges </h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.j50fvf979mdx">🖉</a></div>
+            <p>There are factors about how difficult it is to get an accurate value<sup><a href="#cmnt1" id="cmnt_ref1">[a]</a></sup><sup><a href="#cmnt2" id="cmnt_ref2">[b]</a></sup>&#xA0;for the signal<sup><a href="#cmnt3" id="cmnt_ref3">[c]</a></sup><sup><a href="#cmnt4" id="cmnt_ref4">[d]</a></sup>:</p>
+            <ol start="1"><li>Do people independently observing it get approximately the same value? &#xA0;</li><li>Do observations vary with the culture, location, language, age, beliefs, etc, of the people doing the observation?</li><li>Would the same people make the same observation in future months or years?</li><li>How much time and effort does it take people to make the observation?</li><li>Do people need to be trained to make this specific observation?</li><li>What kind of general training do people need (eg a journalism degree) to do it?</li><li>How do machines compare to humans in making this observation, in terms of cost, quality, types of errors, and susceptibility to being tricked.</li></ol>
+            <p>Many of these factors can be measured using inter-rater reliability (IRR) techniques. &#xA0;When studies have made such measurements, our intent is to include that data in this document.</p>
+            <p>Here is a table of the data we have. &#xA0;Excerpts are listed with the relevant signals.</p>
+            <p>Special: studies-table</p>
+
+<div id="studies-table-all"></div>
+<script>
+new Tabulator("#studies-table-all", {
+    height: "12em",
+    paginationSize: 5,
+    data: [
+  {
+    "seq": "3",
+    "signal": "Title Representativeness",
+    "study": "Zhang18",
+    "irr": "0.367",
+    "rel expts": "0.234",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "10",
+    "signal": "“Clickbait” Title",
+    "study": "Zhang18",
+    "irr": "0.581",
+    "rel expts": "-0.709",
+    "p<": "0.001",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "14",
+    "signal": "Quotes from Outside Experts",
+    "study": "Zhang18",
+    "irr": "0.673",
+    "rel expts": "0.327",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "15",
+    "signal": "Citation of Organizations",
+    "study": "Zhang18",
+    "irr": "0.283",
+    "rel expts": "0.145",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "16",
+    "signal": "Citatation of Studies",
+    "study": "Zhang18",
+    "irr": "0.763",
+    "rel expts": "0.107",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "17",
+    "signal": "Single Study Article",
+    "study": "Zhang18",
+    "irr": "0.877",
+    "rel expts": "0.031",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "18",
+    "signal": "Confidence - Extent Claims Justified",
+    "study": "Zhang18",
+    "irr": "-0.093",
+    "rel expts": "0.690",
+    "p<": "0.001",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "19",
+    "signal": "Confidence - Acknowledge Uncertainty",
+    "study": "Zhang18",
+    "irr": "0.534",
+    "rel expts": "-0.247",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "20",
+    "signal": "Logical Fallacies - Straw Man",
+    "study": "Zhang18",
+    "irr": "-0.096",
+    "rel expts": "-0.402",
+    "p<": "0.050",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "21",
+    "signal": "Logical Fallacies - False Dilemma",
+    "study": "Zhang18",
+    "irr": "0.102",
+    "rel expts": "-0.303",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "22",
+    "signal": "Logical Fallacies - Slippery Slope",
+    "study": "Zhang18",
+    "irr": "0.478",
+    "rel expts": "0.374",
+    "p<": "0.050",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "23",
+    "signal": "Logical Fallacies - Appeal to Fear",
+    "study": "Zhang18",
+    "irr": "0.314",
+    "rel expts": "-0.424",
+    "p<": "0.050",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "24",
+    "signal": "Logical Fallacies - Naturalistic",
+    "study": "Zhang18",
+    "irr": "0.377",
+    "rel expts": "-0.533",
+    "p<": "0.010",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "25",
+    "signal": "Tone - Emotionally Charged",
+    "study": "Zhang18",
+    "irr": "0.098",
+    "rel expts": "0.611",
+    "p<": "0.001",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "26",
+    "signal": "Tone - Exaggerated Claims",
+    "study": "Zhang18",
+    "irr": "0.235",
+    "rel expts": "0.606",
+    "p<": "0.001",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "27",
+    "signal": "Inference - Type of Claims",
+    "study": "Zhang18",
+    "irr": "0.154",
+    "rel expts": "0.029",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "28",
+    "signal": "Inference - Convincing Evidence",
+    "study": "Zhang18",
+    "irr": "0.540",
+    "rel expts": "0.764",
+    "p<": "0.001",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "29",
+    "signal": "Originality",
+    "study": "Zhang18",
+    "irr": "0.346",
+    "rel expts": "",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "30",
+    "signal": "Fact-checked",
+    "study": "Zhang18",
+    "irr": "0.303",
+    "rel expts": "",
+    "p<": "0.050",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "31",
+    "signal": "Representative Citations",
+    "study": "Zhang18",
+    "irr": "0.312",
+    "rel expts": "",
+    "p<": "0.001",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "32",
+    "signal": "Reputation of Citations",
+    "study": "Zhang18",
+    "irr": "0.852",
+    "rel expts": "",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "33",
+    "signal": "Number of Ads",
+    "study": "Zhang18",
+    "irr": "0.535",
+    "rel expts": "",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "34",
+    "signal": "Number of Content Recommendation",
+    "study": "Zhang18",
+    "irr": "-0.088",
+    "rel expts": "",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "35",
+    "signal": "Number of Sponsored Content",
+    "study": "Zhang18",
+    "irr": "0.422",
+    "rel expts": "",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "36",
+    "signal": "Number of Social Calls",
+    "study": "Zhang18",
+    "irr": "0.564",
+    "rel expts": "",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "37",
+    "signal": "Number of Mailing List or Email Calls",
+    "study": "Zhang18",
+    "irr": "0.375",
+    "rel expts": "",
+    "p<": "0.010",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "38",
+    "signal": "“Spammy” Ads",
+    "study": "Zhang18",
+    "irr": "0.554",
+    "rel expts": "",
+    "p<": "",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  },
+  {
+    "seq": "39",
+    "signal": "Placement of Ads and Social Calls",
+    "study": "Zhang18",
+    "irr": "0.326",
+    "rel expts": "",
+    "p<": "0.050",
+    "number of observers": "3",
+    "number of observations per observer": "50"
+  }
+],
+    columns: [
+  {
+    "title": "Study",
+    "field": "study"
+  },
+  {
+    "title": "Signal Called",
+    "field": "signal"
+  },
+  {
+    "title": "IRR",
+    "field": "irr"
+  },
+  {
+    "title": "Rel Expts",
+    "field": "rel expts",
+    "headerTooltip": "The correlation to a baseline truth established by expert consensus (only applicable when experts agree)"
+  },
+  {
+    "title": "p <",
+    "field": "p<",
+    "headerTooltip": "The maximimum probability value, indicating potential for statistical significance"
+  },
+  {
+    "title": "# obsr",
+    "field": "number of observers",
+    "headerTooltip": "The mean number of observers reporting for each signal"
+  },
+  {
+    "title": "obsv per",
+    "field": "number of observations per observer",
+    "headerTooltip": "The mean number of observations made by each observer"
+  }
+]
+});
+</script>
+
+        </section>
+        <section>
+            <h3 id="h.fmi5ig47b9q">Value in Credibility Assessment</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.fmi5ig47b9q">🖉</a></div>
+            <p>Another important set of factors relates to how useful the measurement is in assessing credibility, assuming the observation itself is accurate. </p>
+            <ol start="1"><li>Does the signal have a strong correlation to content accuracy, itself determined by consensus among experts<sup><a href="#cmnt5" id="cmnt_ref5">[e]</a></sup><sup><a href="#cmnt6" id="cmnt_ref6">[f]</a></sup>?</li><li>Is it particularly indicative of credibility when used in combination with other signals? &#xA0;(For example, as part of computing the value of a latent variable.)</li><li>Is it conceptually easy for people to understand?</li><li>Do professionals in the field think it&apos;s likely to be a useful signal?</li><li>How dependent are these characteristics on the culture or time period being considered?</li><li>How dependent are these characteristics on the subject matter of the information being assessed for credibility? </li></ol>
+        </section>
+        <section>
+            <h3 id="h.4prgy7sgptjb">Feedback Risks (&#x201C;Gameability&#x201D;)</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.4prgy7sgptjb">🖉</a></div>
+            <p>One should also consider how the overall ecosystem of content producers and consumers might be changed by credibility tools adopting the signal. Once attackers see it&#x2019;s being used, a signal that works well today might stop working, or even be used to make things worse. See <a href="https://www.google.com/url?q=https://credweb.org/report/20181011%23feedback-risks&amp;sa=D&amp;ust=1542573925177000">Feedback Risks</a>.</p>
+            <ol start="1"><li>Is it disproportionately useful for attackers (eg viral call to action) ? &#xA0;If so, making this a negative credibility signal should generally be beneficial</li><li>Is it disproportionately expensive for attackers (eg journalistic language) ? &#xA0;If so, making this a positive credibility signal should generally be beneficial.</li><li>Who might get impacted by &#x201C;friendly fire&#x201D;? &#xA0;Even if adopting a signal might &#x2014; on average &#x2014; harm attackers more than everyone else, certain individuals or communities who have done nothing wrong might be penalized. &#xA0;Tradeoffs must be carefully made, ideally in a consensus process with the impacted people.</li></ol>
+        </section>
+        <section>
+            <h3 id="h.yob5ckwl66hw">Interoperability</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.yob5ckwl66hw">🖉</a></div>
+            <p>The value of sharing signal data depends on how that signal is used by other systems.</p>
+            <ol start="1"><li>Are others producing data using this signal?</li><li>Are there useful data sets available?</li><li>Are others consuming data, paying attention to reported observations of this signal?</li><li>Are there tools which work with it, eg running statistics?</li><li>Is the definition clear and unambiguous, so people using it mean the same thing?</li><li>Are there clear examples?</li><li>Is there an open history of commentary, with questions and answers, and issues being addressed by various implementers?</li><li>Is documentation available in multiple languages?</li><li>If the definition is under development, how can one participate?</li><li>If the definition could possibly change, who might change it, and under what circumstances?</li><li>Are there any intellectual property considerations? See <a href="https://www.google.com/url?q=https://www.w3.org/Consortium/Patent/&amp;sa=D&amp;ust=1542573925181000">W3C Patent Policy</a>.</li><li>Is there a test suite / validation system for helping confirm that an implementation is working properly?</li><li>Are there implementation reports, confirming that tools are functioning properly, according to the testing system? (For an example, see <a href="https://www.google.com/url?q=https://activitypub.rocks/implementation-report/&amp;sa=D&amp;ust=1542573925182000">ActivityPub</a>).</li></ol>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.8th5kctcxqu">Publishing Credibility Data</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.8th5kctcxqu">🖉</a></div>
+        <p>TBD, basically follow schema.org technique using json-ld.</p>
+    </section>
+    <section>
+        <h2 id="h.uut3ibti7e9p">Consuming Credibility Data</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.uut3ibti7e9p">🖉</a></div>
+        <p>TBD, point to some tools and the relevant specs. &#xA0;Basically JSON-LD.</p>
+    </section>
+    <section>
+        <h2 id="h.1czhdtl0zd3z">Organization of this document</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.1czhdtl0zd3z">🖉</a></div>
+        <p>Section 1 (&#x201C;Introduction&#x201D;) provides instructions for how to use and help maintain this document, along with general background information. </p>
+        <p>The rest of this document, after the introduction, is a list of signals and information about them, as discussed in the introduction. &#xA0;The signals are organized into related groups, in hierarchical sections. &#xA0;At the lower levels of the hierarchy are the signals themselves, while the higher levels provide grouping of the signals, to help people understand them.</p>
+        <p>One important level of the hierarchy identifies the <b>subject type</b>&#xA0;of the signal. &#xA0;This is the conceptual entity being examined, considered, or inspected, when one makes the observation being recorded in the signal data. &#xA0;This could be imagined in different ways: when you are observing a claim made in the 3rd paragraph of an article published in some newspaper, are you observing the claim, the paragraph, the article, the newspaper, or even the author of the article? &#xA0;In general, we aim for the smallest <a href="https://www.google.com/url?q=https://credweb.org/report/20181011%23h.ij0k32jlsndm&amp;sa=D&amp;ust=1542573925184000">granularity</a>&#xA0;that makes sense, which in this case would probably be the claim.</p>
+        <p>At times, it may not be obvious to which subject type a signal belongs, or it could sensibly belong with several different ones. &#xA0;In this case, it might be moved to a different section in the document as people come to understand it better. &#xA0;When it&#x2019;s not clear, there should be links from the places a signal could reasonably be to the place it actually is.</p>
+        <p>This may require discussion, and might remain open for debate. &#xA0;When a signal or group of signals makes sense in two places, consider linking it from the places it isn&#x2019;t, to help people find it.</p>
+        <p>In many cases, a signal could be seen as a set of similar signals which are not strictly identical. This can be handled by adding additional signal headings with the finer distinction, when necessary. In this case, template statements might appear under more than one signal. </p>
+        <p>Note that sections may be moved and renumbered. &#xA0;Do not rely on section numbers remaining the same. &#xA0;For linking to a part of the document, consider using the gdocs h.xxxxxx fragment ids, provided by the Table of Contents; those should remain stable. &#xA0;Also, whenever changing a heading, especially a signal heading, if someone might be referring to it by name, please move the old text into a paragraph starting &#x201C;Also called:&#x201D;. &#xA0;</p>
+    </section>
+    <section>
+        <h2 id="h.gspkln3r92qo">Template Statements</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.gspkln3r92qo">🖉</a></div>
+        <p>The most important thing about a signal definition is to be clear what observation the signal data is recording. If the signal heading is &#x201C;Article length&#x201D;, does that mean length in words or bytes or characters or some other metric? Does it include the title? For each signal, we want an easy way to communicate its definition that is short but clear, while being as detailed as necessary. </p>
+        <p>The technique we use here is to express the semantics of the signal using plain and simple sentences in natural language which convey the same knowledge as the signal data. If you imagine people using credibility software exchanging these statements (perhaps in text messages or on Twitter), you should get the right semantics. You can assume metadata, like who sent it and when it was sent is available, so the statements can include terms like &#x201C;I&#x201D; and &#x201C;now&#x201D;.</p>
+        <p>For machine-to-machine data Interoperability, these template sentences and the signal heading are turned into a data schema, after which the JSON-LD/schema.org/sematic web/linked data technology stack can be used.</p>
+        <p>The statements we use are <b>templates</b>&#xA0;because they abstract over a variety of similar sentences which differ in specific limited ways. &#xA0;For example, these statements:</p>
+        <p></p>
+        <ol start="1"><li>I have examined the article at https://example.com/alice and find it highly credible</li><li>I have examined the article at https://example.com/brian and find it highly credible</li><li>I have examined the article at https://example.com/casey and find it highly credible</li></ol>
+        <p>are all the same, except in the URL. &#xA0; We convey this using a template statement, which has a <b>variable</b>&#xA0;portion in square brackets, like:</p>
+        <ul><li>I have examined the article at [subject] and find it highly credible</li></ul>
+        <p></p>
+        <a id="t.fff74a8c69832a720ceb13e09c6d162bc3052f2c"></a>
+        <a id="t.1"></a>
+        <table><tbody><tr><td colspan="1" rowspan="1"><p>Tech note</p></td><td colspan="1" rowspan="1"><p>If we (automatically or manually) map this template to a property with the pname :iHaveExaminedHighlyCredible, then the sentence number 2 above would be encoded in turtle as </p><ul><li>{ &lt;https://example.com/brian&gt; :iHaveExaminedHighlyCredible true }.</li></ul><p>Alternatively, we could make it a class, but boolean valued properties may be better, so that all signals remain as properties.. </p></td></tr></tbody></table>
+        <p></p>
+        <p>The bracketed template expression &#x201C;[subject]&#x201D; is required in every template, to indicate what entity is being observed. &#xA0;Additional bracket expressions can be used when there are other elements of the statement to make variable. &#xA0;In particular, [string] (for text in quotes) and [number].</p>
+        <p>(For now, try to just use those three. &#xA0;Software and documentation is being developed to allow more features. If you find this too restrictive, go ahead and write something else inside the square brackets and we&apos;ll deal with it later, but include a question mark so it&apos;s clear you knew you were making it up.)</p>
+        <p>An example needing multiple variables:</p>
+        <ol start="1"><li>https://example.com/alice took 4.75 seconds to load, just now.</li><li>https://example.com/brian took 5.9 seconds to load, just now.</li></ol>
+        <p>could be matched by:</p>
+        <ul><li>[subject] took [number] seconds to load, just now.</li></ul>
+    </section>
+    <section>
+        <h2 id="h.mor7t1b8hqnj">Instructions for editing this document</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.mor7t1b8hqnj">🖉</a></div>
+        <p>As an experiment, this document is currently set so everyone can edit it, like Wikipedia. It is the <a href="https://www.google.com/url?q=https://drive.google.com/open?id%3D16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0&amp;sa=D&amp;ust=1542573925191000">Google docs version</a>&#xA0;that is editable. We suggest you change the &#x201C;Editing Mode&#x201D; to &#x201C;Suggesting&#x201D; (using the pencil icon in the upper-right) until you are quite familiar with this document. You may also comment using the usual Google Docs commenting features.</p>
+        <p><b>If you make or suggest any edits to this document, you are agreeing to the </b><b><a href="https://www.google.com/url?q=https://www.w3.org/community/about/agreements/cla/&amp;sa=D&amp;ust=1542573925192000">W3C Community Contributor License Agreement</a></b><b>&#xA0;which has significant copyright and patent implications.</b></p>
+        <p>The subsections below give some advice for how to make edits which are helpful.</p>
+        <section>
+            <h3 id="h.qrlhmics5rn9">Expand discussion</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.qrlhmics5rn9">🖉</a></div>
+            <p>Each section should begin with a short introduction written with a neutral point of view, reflecting consensus about why the signal might be useful and what the risks might be. To enable consensus among a broad community, the intent is for this text to be developed iteratively, with each contributor adding their perspective while respecting what is already present.</p>
+            <p>Questions and minor concerns should generally be added as annotations using the &#x201C;Add a Comment&#x201D; function, without editing the document. If they become issues requiring back-and-forth discussion, they should be turned into github issues and linked from the most relevant place in this document with a paragraph starting &#x201C;Issue:&#x201D;</p>
+            <p>These discussion sections are intended to be nonnormative. That is, they do not say how software using the signal is required to behave for interoperability. The normative content of this specification is the template statements and the mapping of the statements to RDF.</p>
+        </section>
+        <section>
+            <h3 id="h.24e7qc4br9tl">Add new template statements</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.24e7qc4br9tl">🖉</a></div>
+            <p>If you are confident you understand what a signal is intended to measure, and think you can provide a template statement which expresses it more clearly and simply, with little ambiguity, please add a new row to the bottom of the &#x201C;Proposed template statements&#x201D; table and add your entry. &#xA0;Please also put the next higher number in the <b>Key</b>&#xA0;field for reference, and your name in the <b>By</b>&#xA0;field. This &#x201C;by&#x201D; field is optional; it is intended to help simplify discussion, telling people who to talk to, and to give some credit. Listing the name of a large group in this field is not particularly useful. &#xA0;</p>
+            <p>After adding an entry, for a short time (perhaps a few hours, guided by any comments on it) it&#x2019;s okay to edit it if you change your mind. After that, please leave it, and just add a new row for the new version. You can put new versions in the middle of the table and use keys like 1a.</p>
+        </section>
+        <section>
+            <h3 id="h.m3yfslb55ujd">Add new signals</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.m3yfslb55ujd">🖉</a></div>
+            <p>Once you&#x2019;re familiar with the structure of this document and all the signals in your area of interest, you may add new signal sections (with a title starting &#x201C;Signal:&#x201D; or even new group sections. &#xA0;(For heading numbering, you can use the &#x201C;Table of contents&#x201D; add-on from LumApps to number the headers. Or just leave the numbering for someone else using the add-on.)</p>
+            <p>When you add a new signal, please copy this table to the new section, and then fill in at least one row to clarify what the signal data conveys.</p>
+            <p></p>
+            <a id="t.21148e98bf953a49e91b8302d57d57c553e0d008"></a>
+            <a id="t.2"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr></tbody></table>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.igosi6fm6cxo">Contributors</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.igosi6fm6cxo">🖉</a></div>
+        <p>Folks who add content to this document are encouraged to add themselves in this section, potentially with some affiliation &amp; credential information. &#xA0;This also allows the &#x201C;By&#x201D; column to stay short, as people can use short forms of names (eg only first or last name, if unique in this doc).</p>
+        <ul><li>Entries marked as by &#x201C;Credibility Coalition&#x201D; are <b>prior work</b>&#xA0;by members of the <a href="https://www.google.com/url?q=https://credibilitycoalition.org/about/&amp;sa=D&amp;ust=1542573925199000">Credibility Coalition</a>. At the time, individual authorship information was not maintained. Moving forward, specific authorship detail is welcome.</li><li>(add yourself here...)</li></ul>
+        <p></p>
+    </section>
+</section>
+<section>
+    <h1 id="h.oxlj9wwlrxlk">Subject type: Claim</h1>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.oxlj9wwlrxlk">🖉</a></div>
+    <p>This section is for signals about claims.</p>
+    <p>A claim is &#x201C;an assertion that is open to disagreement; equivalently, a meaningful declarative sentence which is logically either true or false (to some degree); equivalently, a proposition in<a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Propositional_calculus&amp;sa=D&amp;ust=1542573925200000">&#xA0;</a><a href="https://www.google.com/url?q=https://en.wikipedia.org/wiki/Propositional_calculus&amp;sa=D&amp;ust=1542573925200000">propositional logic</a>.&#x201D; [<a href="https://www.google.com/url?q=https://credweb.org/report/20181011%23h.k3a5bxg8k9ru&amp;sa=D&amp;ust=1542573925201000">credweb report</a>]</p>
+    <p>Claims can be stated (with various decree of clarity) in some content or implied by the content (even non-textual content, like a photograph).</p>
+    <p>Claims are usually the smallest practical granularity. Credibility data about claims is largely focussed on what other sources have said about that claim, as in fact checking, but could also involve relationships between claims and textual analysis of claim text. </p>
+    <section>
+        <h2 id="h.nf6ves3oihme">Claim Review</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.nf6ves3oihme">🖉</a></div>
+        <p>The &#x201C;ClaimReview&#x201D; model developed at schema.org grows out of the tradition of independent, external fact-checking, as in <a href="https://www.google.com/url?q=https://www.politifact.com/&amp;sa=D&amp;ust=1542573925202000">PolitiFact</a>. &#xA0;With this model, a fact-checker reviews a claim, typically made by a public figure, and then publishes a review of that claim, a &#x201C;claim review&#x201D;. Within schema.org, this parallels other reviews, like restaurant reviews.</p>
+        <p>[ Can we fit claimreview neatly into this observer/signal model? &#xA0;It&#x2019;s a bit of a stretch. &#xA0;TBD. ]</p>
+    </section>
+</section>
+<section>
+    <h1 id="h.o0v67exatnlj">Subject type: Text</h1>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.o0v67exatnlj">🖉</a></div>
+    <p>Includes: phrase, sentence, paragraph, document, document fragment</p>
+    <p>A text, in this sense, is a sequence of words, with the usual punctuation, and sometimes embedded multimedia content or meaningful layout, like tables. &#xA0;That is, it&#x2019;s a document or portion of a document. As examples, a phrase, sentence, paragraph, document section, book chapter, book, and complete book series would typically each count as a text. &#xA0;</p>
+    <p>Signals here concern properties of the text, itself, separate from how it might be published (eg on a <a href="#h.lub1njgvolel">Web Page</a>, on a billboard, spoken at a rally) or where it might be published (in some <a href="#h.3d3rw8hardr8">Venue)</a>. &#xA0;The text should be considered immutable: a text (in this sense) doesn&apos;t change. &#xA0;If you take a text and change it, you are making a new text, which needs to be reexamined, to see which observations (and thus which signal data) applies to this other, new text.</p>
+    <p>Issue: (tech) How to represent texts in RDF? &#xA0;Options include annotation URL with secure hash, annotation object URL with secure hash, data: URI, etc.</p>
+    <section>
+        <h2 id="h.vfqf1716ordj">Formality</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.vfqf1716ordj">🖉</a></div>
+        <p>Texts adopt a tone to appeal to their audience and/or attempt to convey how the text should be used. For instance, an academic study is written in formal, verbose and grammatically correct language, while a listicle is short, informal and often humorous. The academic study uses these characteristics to convey authority, while the listicle is intentionally unauthoritative. &#xA0;</p>
+        <section>
+            <h3 id="h.ltfs3lopw59m">Signal: Formal tone</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ltfs3lopw59m">🖉</a></div>
+            <p></p>
+            <a id="t.a174ba50fcde17b9d1c4ba01aa595de4259d08d3"></a>
+            <a id="t.3"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has a formal tone.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+            <section>
+                <h4 id="h.kmu47cxmm326"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.kmu47cxmm326">🖉</a></div>
+            </section>
+            <section>
+                <h4 id="h.6yx5ivmttkls">Signal: Correct Spelling</h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.6yx5ivmttkls">🖉</a></div>
+                <p></p>
+                <a id="t.2d246de487d1a27f4f9fc7975de062ca6dba2919"></a>
+                <a id="t.4"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has a formal tone, as measured by correct spelling.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+            </section>
+            <section>
+                <h4 id="h.1gswpy82ekc9"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.1gswpy82ekc9">🖉</a></div>
+            </section>
+            <section>
+                <h4 id="h.zae8ihai94s3">Signal: Correct Grammar</h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.zae8ihai94s3">🖉</a></div>
+                <p></p>
+                <a id="t.8ba8b8bdcdf5fa9e3fc5f4f1a840637a6930f34a"></a>
+                <a id="t.5"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has a formal tone, as measured by correct grammar.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+            </section>
+            <section>
+                <h4 id="h.kbncfstrv97x"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.kbncfstrv97x">🖉</a></div>
+            </section>
+        </section>
+        <section>
+            <h3 id="h.8p9wkb9d3i88">Signal: Informal tone</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.8p9wkb9d3i88">🖉</a></div>
+            <p>Incorrect or colloquial grammar, slang, and humor are some indications of informal tone.</p>
+            <p></p>
+            <a id="t.2d026d086eef6e1898091b5451d229289568a444"></a>
+            <a id="t.6"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has an informal tone.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+            <section>
+                <h4 id="h.evigge1uhm0o">Signal: Slang</h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.evigge1uhm0o">🖉</a></div>
+                <p></p>
+                <a id="t.4302594670830c6e468a0f172168bde55d33d261"></a>
+                <a id="t.7"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has an informal tone, as measured by slang.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+            </section>
+            <section>
+                <h4 id="h.vblp3f9dcojt"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.vblp3f9dcojt">🖉</a></div>
+            </section>
+            <section>
+                <h4 id="h.dkmzcvp0syoh">Signal: Informal grammar</h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.dkmzcvp0syoh">🖉</a></div>
+                <p></p>
+                <a id="t.b2eb73b54848c7325592cf738960db81f945fbb7"></a>
+                <a id="t.8"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has an informal tone, as measured by incorrect, casual or colloquial grammar.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+            </section>
+            <section>
+                <h4 id="h.b08l1h116vpn"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.b08l1h116vpn">🖉</a></div>
+                <p>Example sentence: &quot;If you&apos;re a Friends fan, you probably know that Ross and Rachel&apos;s relationship was...kind of a disaster 95% of the time.&quot; (<a href="https://www.google.com/url?q=https://www.buzzfeed.com/andyneuenschwander/this-friends-detail-explains-ross-and-rachels-t&amp;sa=D&amp;ust=1542573925228000">Source</a>)</p>
+            </section>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.ueca6rn0m5sf">References or citations</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ueca6rn0m5sf">🖉</a></div>
+        <section>
+            <h3 id="h.xb8agbye6dx">Signal: Uses standardized references or citations</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.xb8agbye6dx">🖉</a></div>
+            <p>These standards are required and enforced by professions that demand accuracy, and are typically found in highly researched, and therefore more authoritative, texts. Examples: Legal, academic, or scientific citations, e.g., MLA, APA.</p>
+            <p></p>
+            <a id="t.aec1b1caf6b8b0b53ff71fd485735d2a3d267a54"></a>
+            <a id="t.9"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] uses standardized references or citations.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+            <p></p>
+            <p></p>
+            <p>Example sentence: &quot;Changes in body temperature have long been used as an indicator of injury, inflammation or infection in veterinary medicine (George et al., 2014), however, the use of</p>
+            <p>temperature devices such as rectal thermometers and thermal microchips can be both invasive</p>
+            <p>and time consuming (Johnson et al., 2011).&quot; (<a href="https://www.google.com/url?q=https://watermark.silverchair.com/txy126.pdf?token%3DAQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAlEwggJNBgkqhkiG9w0BBwagggI-MIICOgIBADCCAjMGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMHXzGa1PDHjP83tDBAgEQgIICBEglbYsKs9Jf3dITF9jUnd8_7nKv0ht5_deUtt3INEhIsNXIs-UBZ6_FlAD7oZBq-Kuvvq6hYc3oaque7CWJcWrSN09Jdeitdoc1EVMf_manIkDZz-TBvVFRfJnK8HKz2WkklQXtVeQNypF1fk6_7-aTCHaUSRmlr5JQtBEZ5Z2IirQrqqZ7P5KZuDUGjhfeXZvZwvM6QAo5eSoeBJX6pTHzjj78ImO3ofeAHp38rzGMbxMqsDParOgLJTdC8zSXj5geCF2XL1ondNca-yHv88465Wofhosb7XvObJPNzPCogGe-lr51aP-dSdHIEXLPWOiSaWIFLzUNliwSJouJblUpdUmeIkiAOR3keNy1pv4xBdJ_4xqLLtSqXi71kSa4O6NJpdXNrIeUfLvR8-bpF-OVw0XRNcdoXhyAeqHV40ixBXJdbu5__VvFp6-oVpjiJzT91SfOF5cnd9oA59x-sGNZWiYOxRkcymkBKD92wOPGc0dnf50uIfhcVv3CPdQD_6Rk04MlFlLsAOA-zTsyEWO2yKzs13tQalDf8zd_VS0QhomDipAcktHt3vsArFa06IaqPRbwoLO4C-a_bXkUGmqq_C0DcI0Y-K_89_eO0Xqs5ZJHdCaxm4mOQkDfUXVTa9PpV5TK4unCOsZVIrcvGIibXksUWvKTvAaVnT6ByIgBAwdz2g&amp;sa=D&amp;ust=1542573925235000">Source</a>)</p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.ysvfbesv4b89">Signal: Uses formal but not standardized references or citations</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ysvfbesv4b89">🖉</a></div>
+            <p>Examples: Journalism, nonfiction or explanatory material</p>
+            <p></p>
+            <p>Some texts use references extensively, even if they are not written according to a rigid structure. These texts tend to be authoritative but not as authoritative as the texts using the rigidly structured citations. The content of the references is also extremely influential.</p>
+            <p></p>
+            <a id="t.0b9ce3d0b165a905d07adc55e7ef0d60b57b44e2"></a>
+            <a id="t.10"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] uses references or citations that are not recorded according to professional standards.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+            <p></p>
+            <p></p>
+            <p>Example sentence: &quot;Families that receive benefits are now over $2,600 worse off every year, according to an analysis by the Child Poverty Action Group, an advocacy group.&quot; (<a href="https://www.google.com/url?q=https://www.nytimes.com/2018/11/16/world/europe/uk-un-poverty-austerity.html?rref%3Dcollection%252Fsectioncollection%252Fworld%26action%3Dclick%26contentCollection%3Dworld%26region%3Dstream%26module%3Dstream_unit%26version%3Dlatest%26contentPlacement%3D5%26pgtype%3Dsectionfront&amp;sa=D&amp;ust=1542573925242000">Source</a>)</p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.uapbh3oc5h2m">Signal: Few to zero references or citations</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.uapbh3oc5h2m">🖉</a></div>
+            <p></p>
+            <p>A text with no references to other materials is original content, which often means it is opinion, personal experience, or even fiction. These tend to be less authoritative than texts with references.</p>
+            <p></p>
+            <a id="t.5068eff734ca25dcdbe2df9d249bc7d8f44d89c7"></a>
+            <a id="t.11"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has few or no references or citations.</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+            <p></p>
+            <p>One exception is a first-hand account, which can become a primary document for later research. These personal accounts, however, should be vetted and cross-referenced with other sources to evaluate its accuracy.</p>
+            <p></p>
+            <p>Example sentence: &quot;The shrine is the work of SUNY Purchase sophomore Phillip Hosang, who, like a lot of students at the school, had long heard rumors about a secret room in a men&apos;s bathroom somewhere in the visual arts building.&quot; (<a href="https://www.google.com/url?q=https://www.vice.com/en_us/article/59vgj3/danny-devito-shrine-school-bathroom-interview-guy-who-made-it-suny-purchase-vgtrn&amp;sa=D&amp;ust=1542573925247000">Source</a>)</p>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.ytdas3gvnkim">Pronouns</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ytdas3gvnkim">🖉</a></div>
+        <section>
+            <h3 id="h.7qmf08nar3z">Signal: Many or multiple instances of the pronouns &quot;I&quot; or &quot;you&quot;</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.7qmf08nar3z">🖉</a></div>
+            <p></p>
+            <p>Texts that use the pronouns &quot;I&quot; or &quot;you&quot; are typically opinion, correspondence or personal account. These texts are usually not trying to be authoritative or explanatory, however, they sometimes form a primary document that is used in secondary research.</p>
+            <p></p>
+            <a id="t.38d959d6d0fc67bae76ad995ac13869672b48ecd"></a>
+            <a id="t.12"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has many instances of the words &quot;I&quot; or &quot;you.&quot;</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+            <p>Example sentence: &quot;After paying close attention to many of your campaigns, I believe you are united by a desire to get things done to help a lot of people who&#x2019;ve been left behind.&quot; (<a href="https://www.google.com/url?q=https://www.washingtonpost.com/outlook/2018/11/15/an-open-letter-new-house-democrats/?utm_term%3D.a517956f2f7e&amp;sa=D&amp;ust=1542573925252000">Source</a>)</p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.v9ghluq7uhn0">Signal: Few or no instances of &quot;I&quot; or &quot;you&quot;</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.v9ghluq7uhn0">🖉</a></div>
+            <p></p>
+            <p>Texts that do not use first or second person are less likely to be opinion content. However, this is no indication of credibility.</p>
+            <p></p>
+            <a id="t.32aea9c6d72e31ef8805f2b9c22eb12d488f0f37"></a>
+            <a id="t.13"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] has few or no instances of the words &quot;I&quot; or &quot;you.&quot;</p></td><td colspan="1" rowspan="1"><p>Samantha Sunne</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+            <section>
+                <h4 id="h.68jlnb6wbzom"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.68jlnb6wbzom">🖉</a></div>
+                <p>&quot;President Trump said he would not overrule his acting attorney general, Matthew G. Whitaker, if he decides to curtail the special counsel probe being led by Robert S. Mueller III into Russian interference in the 2016 election campaign.&quot; (<a href="https://www.google.com/url?q=https://www.washingtonpost.com/politics/trump-says-he-wouldnt-stop-acting-attorney-general-from-curtailing-mueller-probe/2018/11/18/a749e10c-eb3c-11e8-96d4-0d23f2aaad09_story.html?utm_term%3D.f9ca5e3384f9&amp;sa=D&amp;ust=1542573925257000">Source</a>)</p>
+            </section>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.n8mixjullm7p">Signal: Vocabulary or reading level</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.n8mixjullm7p">🖉</a></div>
+        <p>Texts with a wide and varied vocabulary, which may include jargon or uncommon words, is an indicator of formal tone.</p>
+<p>No definitions provided yet.</p>
+    </section>
+    <section>
+        <h2 id="h.26mw6awldj3">Incivility and impoliteness</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.26mw6awldj3">🖉</a></div>
+        <section>
+            <h3 id="h.jgqt8v75tb9">Signal: Incivility</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.jgqt8v75tb9">🖉</a></div>
+            <p></p>
+            <a id="t.ea0a9a92fe7017364c0434c6b08f3b4421022ef1"></a>
+            <a id="t.14"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] contains verbalized threat to democracy, such as a proposal to overthrow democratic government by force or undemocratic way (e.g. &#x201C;Obama is a Muslim Agent with Brotherhood Ties. American people must take him down.&#x201D;)</p><p></p></td><td colspan="1" rowspan="1"><p>Tamar Willner</p></td></tr><tr><td colspan="1" rowspan="1"><p>2</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] contains stereotypes, such as calling a person a &#x201C;faggot,&#x201D; &#x201C;terrorist,&#x201D; or &#x201C;backward&#x201D; (e.g. &#x201C;Muslims are terrorist sympathizers&#x201D;)</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr><tr><td colspan="1" rowspan="1"><p>3</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] contains threats to people&#x2019;s individual rights, such as freedom of speech or personal freedom (e.g. &#x201C;You foolish Republicans better shut up&#x201D;)</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr></tbody></table>
+            <p>Source: Oz, M., Zheng, P., Chen, G. M., &amp; Park, R. H. (2018). Twitter versus Facebook: Comparing incivility, impoliteness, and deliberative attributes. <i>New Media &amp; Society</i>, <i>20</i>(9), 3400&#x2013;3419. http://doi.org/10.1177/1461444817749516&#xA0;</p>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.sqa4tatv5z7s">Signal: Impoliteness</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.sqa4tatv5z7s">🖉</a></div>
+            <p></p>
+            <a id="t.83250d2f3c4a6755c973e4ae55a6d9e9c36b067f"></a>
+            <a id="t.15"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] contains words in all capital letters (e.g. &#x201C;Who flew the planes into the towers on 9/11? ILLEGAL IMMIGRANTS!&#x201D;)</p></td><td colspan="1" rowspan="1"><p>Tamar Willner</p></td></tr><tr><td colspan="1" rowspan="1"><p>2</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] contains profanity (e.g. &#x201C;hell&#x201D; and &#x201C;damn&#x201D;)</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr><tr><td colspan="1" rowspan="1"><p>3</p></td><td colspan="1" rowspan="1"><p>Text of [subject article] contain insults or name-calling (e.g. &#x201C;stupid&#x201D; or &#x201C;moron&#x201D;)</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr></tbody></table>
+            <p>Source: Oz, M., Zheng, P., Chen, G. M., &amp; Park, R. H. (2018). Twitter versus Facebook: Comparing incivility, impoliteness, and deliberative attributes. <i>New Media &amp; Society</i>, <i>20</i>(9), 3400&#x2013;3419. http://doi.org/10.1177/1461444817749516&#xA0;</p>
+            <p></p>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+    </section>
+</section>
+<section>
+    <h1 id="h.ebbxkfays3v3">Subject type: Image</h1>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ebbxkfays3v3">🖉</a></div>
+    <p>Includes: Picture, Photograph, Drawing, Illustration</p>
+    <section>
+        <h2 id="h.1zumi24gu18z">Implied association or tone</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.1zumi24gu18z">🖉</a></div>
+        <p>When pictures of people are used, there are often choices about which image to use, and how to manipulate it, to make the person look better/worse or associate them with some positive or negative concept. &#xA0;Some people have pointed out how media gets to choose, when someone is arrested, whether to use flattering photos provided by supporters or a mug shot provided by the police.</p>
+        <section>
+            <h3 id="h.d93oxv6682dm">Signal: Flattering image</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.d93oxv6682dm">🖉</a></div>
+<p>No definitions provided yet.</p>
+        </section>
+        <section>
+            <h3 id="h.mq05tdrojdxa">Signal: Unflattering image</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.mq05tdrojdxa">🖉</a></div>
+            <p></p>
+<p>No definitions provided yet.</p>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.5b74pftcbtot">Originality of Photo Used in an Article</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.5b74pftcbtot">🖉</a></div>
+        <p>These signals are designed with the assumption that the image is used in the broader context of a journalistic article.</p>
+        <section>
+            <h3 id="h.ypdskwvqfo19">Originality Types</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ypdskwvqfo19">🖉</a></div>
+            <section>
+                <h4 id="h.f8r86yvihu4w">Signal: Most Likely Original</h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.f8r86yvihu4w">🖉</a></div>
+                <p></p>
+                <a id="t.c814e752b2713f9658c0618280e7f70eac11f348"></a>
+                <a id="t.16"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Image&#xA0;is mostly likely original. </p></td><td colspan="1" rowspan="1"><p>Megan Duncan</p></td></tr></tbody></table>
+                <p></p>
+<p>No available data sources found</p>
+            </section>
+            <section>
+                <h4 id="h.gxqe3zu9xyol">Signal: Appears to be a Copy, with Some Modifications</h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.gxqe3zu9xyol">🖉</a></div>
+                <p></p>
+                <a id="t.9058fb05b1d0968492f05b88788c02aedd4511d7"></a>
+                <a id="t.17"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Image&#xA0;appears to be a copy of one or more articles, with some portions different&#xA0;or remixed</p></td><td colspan="1" rowspan="1"><p>Megan Duncan</p></td></tr></tbody></table>
+                <p></p>
+                <p>Draft typology of modifications</p>
+                <ul><li>Cropping</li><li>Changing the lighting</li></ul>
+                <ul><li>Adding contrast</li></ul>
+                <ul><li>Change the colors</li><li>Color saturation</li><li>Merging images</li><li>Object or image has been removed or obscured</li><li></li></ul>
+<p>No available data sources found</p>
+            </section>
+            <section>
+                <h4 id="h.z60evpt8nae0">Signal: Quotes Extensively From Another Source</h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.z60evpt8nae0">🖉</a></div>
+                <p></p>
+                <a id="t.856ad769f9b8bb8015713d2724dc0ceebac6713f"></a>
+                <a id="t.18"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Text&#xA0;of [quotes extensively from another source, with some original content</p></td><td colspan="1" rowspan="1"><p>Megan Duncan</p></td></tr></tbody></table>
+                <p></p>
+<p>No available data sources found</p>
+            </section>
+        </section>
+        <section>
+            <h3 id="h.epck1abpzcny"></h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.epck1abpzcny">🖉</a></div>
+        </section>
+        <section>
+            <h3 id="h.ckvhakk943t0">Attribution of Non-Original Image</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ckvhakk943t0">🖉</a></div>
+            <ul><li>Contains a hashtag</li><li></li></ul>
+        </section>
+    </section>
+</section>
+<section>
+    <h1 id="h.rd3u7xxoozfz">Subject type: Audio</h1>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.rd3u7xxoozfz">🖉</a></div>
+    <p>Also called: Audio Clip, Sound Clip, Audio Recording</p>
+    <section>
+        <h2 id="h.ryt6k09eah0t">Audio type</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ryt6k09eah0t">🖉</a></div>
+        <p>Editor note: This should probably be abstracted to all different types of contents.</p>
+        <section>
+            <h3 id="h.o31wi1f3ss4c">Signal: Audio type is news</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.o31wi1f3ss4c">🖉</a></div>
+            <p></p>
+            <a id="t.67faf1c1dd7d310b49d1d663bb1ea59a4727b563"></a>
+            <a id="t.19"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] appears to be news.</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Tamar Wilner</a></p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.hk7q61xs8l6g">Signal: Audio type is opinion</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.hk7q61xs8l6g">🖉</a></div>
+            <a id="t.3b9845d7ed914e6ef4aa0ca4b22b13b989ea2a06"></a>
+            <a id="t.20"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] appears to be an opinion piece</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Tamar Wilner</a></p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.2td75jqy46o6">Signal: Audio type is advertising or marketing.</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.2td75jqy46o6">🖉</a></div>
+            <a id="t.fe505900e31b09a113c85d40d63b0abd044ae3ce"></a>
+            <a id="t.21"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] appears to be advertising or marketing.</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Tamar Wilner</a></p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.ryavgs5j56up">4 Signal: Audio roles - host</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.ryavgs5j56up">🖉</a></div>
+            <a id="t.1d870071891bc347cd4dd9f880c0f1c49b238430"></a>
+            <a id="t.22"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] has an in-studio host.</p></td><td colspan="1" rowspan="1"><p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit?disco%3DAAAACWxCJZE%26ts%3D5bf1a9da%23heading%3Dh.igosi6fm6cxo&amp;sa=D&amp;ust=1542573925297000">Tamar Wilner</a></p></td></tr></tbody></table>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.8nf5xsy7jf35"></h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.8nf5xsy7jf35">🖉</a></div>
+        </section>
+        <section>
+            <h3 id="h.2wa4p9cig4b0">5 Signal: Audio roles - reporter</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.2wa4p9cig4b0">🖉</a></div>
+            <a id="t.ae0b823a5e0e9d2e853c3af3574acc11dec13c67"></a>
+            <a id="t.23"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] has a reporter.</p></td><td colspan="1" rowspan="1"><p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit?disco%3DAAAACWxCJZE%26ts%3D5bf1a9da%23heading%3Dh.igosi6fm6cxo&amp;sa=D&amp;ust=1542573925300000">Tamar Wilner</a></p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.n1iooaqkxo6c">6 Signal: Audio roles - members of the public</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.n1iooaqkxo6c">🖉</a></div>
+            <a id="t.e6ebca30bd45dd560719c680a26096c5d1b7d504"></a>
+            <a id="t.24"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] has interviews with members of the public. </p></td><td colspan="1" rowspan="1"><p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit?disco%3DAAAACWxCJZE%26ts%3D5bf1a9da%23heading%3Dh.igosi6fm6cxo&amp;sa=D&amp;ust=1542573925303000">Tamar Wilner</a></p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.8dpbyw1vdxwx">7 Signal: Audio roles - experts and/or officials</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.8dpbyw1vdxwx">🖉</a></div>
+            <a id="t.2dc27f31586b89314eda79ded68beb09187c38c7"></a>
+            <a id="t.25"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] has interviews with expert and/or official sources</p></td><td colspan="1" rowspan="1"><p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit?disco%3DAAAACWxCJZE%26ts%3D5bf1a9da%23heading%3Dh.igosi6fm6cxo&amp;sa=D&amp;ust=1542573925305000">Tamar Wilner</a></p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.di2pv66m8tk2">8 Signal: Studio conversation</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.di2pv66m8tk2">🖉</a></div>
+            <a id="t.85400edfc94a49a7752046f2c6f7cc06281cb77b"></a>
+            <a id="t.26"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] has conversation between host and interviewee who is not a reporter.</p></td><td colspan="1" rowspan="1"><p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit?disco%3DAAAACWxCJZE%26ts%3D5bf1a9da%23heading%3Dh.igosi6fm6cxo&amp;sa=D&amp;ust=1542573925308000">Tamar Wilner</a></p></td></tr></tbody></table>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.qrb18kbcsnk0">9 Signal: Call-ins</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.qrb18kbcsnk0">🖉</a></div>
+            <a id="t.be2e56c0126bf63918b821b1ea14ab47d52dd99e"></a>
+            <a id="t.27"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] has call-ins from members of the public.</p></td><td colspan="1" rowspan="1"><p><a href="https://www.google.com/url?q=https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit?disco%3DAAAACWxCJZE%26ts%3D5bf1a9da%23heading%3Dh.igosi6fm6cxo&amp;sa=D&amp;ust=1542573925310000">Tamar Wilner</a></p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.4ydvc7me0qx8">10 Signal: Studio</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.4ydvc7me0qx8">🖉</a></div>
+            <p></p>
+            <a id="t.b020528d86dce803b370b89a2087baf49ebfebec"></a>
+            <a id="t.28"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] sounds like it was at least partially recorded in a studio.</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.53dvuzo2j2ss"></h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.53dvuzo2j2ss">🖉</a></div>
+        </section>
+        <section>
+            <h3 id="h.onss3weswb37">11 Signal: Outside</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.onss3weswb37">🖉</a></div>
+            <p></p>
+            <a id="t.a6fd8dc9c10a17d179ed1defc9a24ef2ecd573ce"></a>
+            <a id="t.29"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] sounds like it was at least partially recorded outdoors.</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.kmsbecyl43qq"></h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.kmsbecyl43qq">🖉</a></div>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.4mnha5qyx1t6">Signal: Station/company identification</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.4mnha5qyx1t6">🖉</a></div>
+        <a id="t.2db79337b6a7ce72b96552fc55c95f92180ab6d4"></a>
+        <a id="t.30"></a>
+        <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Station or company that produced the [audio] is identified.</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Tamar Wilner</a></p></td></tr></tbody></table>
+        <p></p>
+<p>No available data sources found</p>
+    </section>
+    <section>
+        <h2 id="h.p670lngprdb6">Signal: Host/reporter identification</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.p670lngprdb6">🖉</a></div>
+        <a id="t.69118924c8854b0c77fe1dfeb3643fce315fd199"></a>
+        <a id="t.31"></a>
+        <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Host of [audio] identifies themselves.</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Tamar Wilner</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>2</p></td><td colspan="1" rowspan="1"><p>Reporter of [audio] identifies themselves</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr></tbody></table>
+        <p></p>
+<p>No available data sources found</p>
+    </section>
+    <section>
+        <h2 id="h.9kfwetwm5n4i">Signal: Quoted individuals are identified.</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.9kfwetwm5n4i">🖉</a></div>
+        <p></p>
+        <a id="t.3a8e9eb6e1e65bf9e200a0c7debde9897c80a84d"></a>
+        <a id="t.32"></a>
+        <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>Individuals quoted in [audio] are identified by name.</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Tamar Wilner</a></p></td></tr><tr><td colspan="1" rowspan="1"><p>2</p></td><td colspan="1" rowspan="1"><p>Individuals quoted in [audio] are identified by affiliation, if being quoted in a professional capacity.</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner</p></td></tr></tbody></table>
+        <p></p>
+<p>No available data sources found</p>
+    </section>
+    <section>
+        <h2 id="h.bf5l42jigmcr">Signal: Attribution</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.bf5l42jigmcr">🖉</a></div>
+        <p></p>
+        <a id="t.fe175ad843e22e5e815ca181c57efc6a5df9d101"></a>
+        <a id="t.33"></a>
+        <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>[Audio] does not include attribution for the claims made.</p></td><td colspan="1" rowspan="1"><p><a href="#h.igosi6fm6cxo">Tamar Wilner</a></p></td></tr></tbody></table>
+        <p></p>
+<p>No available data sources found</p>
+    </section>
+    <section>
+        <h2 id="h.seqey4tkq532">Rhetoric</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.seqey4tkq532">🖉</a></div>
+        <section>
+            <h3 id="h.lrlkjhh2y507">Signal: Proportional rhetoric </h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.lrlkjhh2y507">🖉</a></div>
+            <p>Editor: These should go to some category that includes both text and audio and video. &#xA0; Linguistic content.</p>
+            <p></p>
+            <a id="t.b41a4dc33ca2c90d3cefe4ca718cf7d63ad407e2"></a>
+            <a id="t.34"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The rhetoric used in [audio] is proportional to the event or situation described.</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner, adapting Credibility Coalition</p></td></tr></tbody></table>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.kicd9io33lyn">Signal: Extreme Exaggerating Rhetoric</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.kicd9io33lyn">🖉</a></div>
+<p>No definitions provided yet.</p>
+            <section>
+                <h4 id="h.d9g7jt6zjxb6"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.d9g7jt6zjxb6">🖉</a></div>
+                <a id="t.9e92653de250a2484b35aca7e5bebaca6b176b04"></a>
+                <a id="t.35"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The rhetoric used in [audio] is an extreme exaggeration of the event or situation described.</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner, adapting Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+        </section>
+        <section>
+            <h3 id="h.8kl4h798tx3a">Signal: Extreme Minimizing Rhetoric</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.8kl4h798tx3a">🖉</a></div>
+<p>No definitions provided yet.</p>
+            <section>
+                <h4 id="h.oftax2vgtcwf"></h4>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.oftax2vgtcwf">🖉</a></div>
+                <a id="t.858a2157f398d31f1c044ca65b424bc04afe60bd"></a>
+                <a id="t.36"></a>
+                <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The rhetoric used in [audio] is an extreme minimization of the event or situation described.</p></td><td colspan="1" rowspan="1"><p>Tamar Wilner, adapting Credibility Coalition</p></td></tr></tbody></table>
+                <p></p>
+            </section>
+        </section>
+    </section>
+    <section>
+        <h2 id="h.aacgc81gcf3b">Emotional valence</h2>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.aacgc81gcf3b">🖉</a></div>
+        <section>
+            <h3 id="h.7ycna9j1q7mg">Signal: Extremely negative valence</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#heading=h.7ycna9j1q7mg">🖉</a></div>
+            <p></p>
+            <p></p>
+            <a id="t.7a4c1e52e7f65a741932f3b2e4de08104d5e0c17"></a>
+            <a id="t.37"></a>
+            <table><tbody><tr><td colspan="1" rowspan="1"><p>Key</p></td><td colspan="1" rowspan="1"><p>Proposed Template Statement</p></td><td colspan="1" rowspan="1"><p>By</p></td></tr><tr><td colspan="1" rowspan="1"><p>1</p></td><td colspan="1" rowspan="1"><p>The language of the reporter or main speaker in the [audio] is extremely negative. </p></td><td colspan="1" rowspan="1"><p>Tamar Wilner, adapting Credibility Coalition</p></td></tr></tbody></table>
+            <p></p>
+<p>No available data sources found</p>
+        </section>
+        <section>
+            <h3 id="h.sxypg1yox65i">Signal: Extremely positive valence</h3>
+<div><a class="edit" href="https://docs.google.com/document/d/16xLtANKeVp6FVi_zU8JaCLiHImR_kq1K2B2ebwMP2k0/edit#headin
