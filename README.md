@@ -20,11 +20,10 @@ Most meetings use <https://zoom.us/j/988170706>. Please try to be on-camera, if 
 
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
-* Upcoming face-to-face: [f2f3](f2f3) (October in Lyon, France)
-* Weekly meetings currently paused; please participate via comments on documents)
+* No general meetings currently scheduled; please participate via comments on documents
 
 ---
-
+* 2018-10-23 / 2018-10-26: Face-to-face meeting [f2f3](f2f3) (Lyon, France)
 * 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
 * 2018-08-29 Wed Main group *canceled* [Agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0013.html), [Cancelation](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0014.html)
 * 2018-08-22 Wed Main group [Agenda](agenda/20180822.md), [Summary](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0009.html)
