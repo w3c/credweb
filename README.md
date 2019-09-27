@@ -2,9 +2,11 @@
 
 ## W3C Credible Web Community Group
 
-See mission, members, and how to join at [W3C group page](https://www.w3.org/community/credibility/)
+[How to join](joining)
 
-Group website at <https://credweb.org> (driven by [github pages](https://github.com/w3c/credweb)).
+See mission, blog, and list of members at our [W3C group page](https://www.w3.org/community/credibility/)
+
+Group website at <https://credweb.org> (underlying content on [github](https://github.com/w3c/credweb)).
 
 [Mailing list archives](https://lists.w3.org/Archives/Public/public-credibility/) - mostly just for announcements about meetings and significant group news
 
@@ -12,7 +14,7 @@ Group website at <https://credweb.org> (driven by [github pages](https://github.
 
 * **Draft Report**: [Technological Approaches to Improving Credibility Assessment on the Web](https://credweb.org/report/)
 * **Draft Spec**: [Credibility Signals](https://credweb.org/signals/) replacing [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
-* Slides: [2018-05 Presentation to W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
+* Slides: [2019-05 Web Conference](https://docs.google.com/presentation/d/17-Of0UWivD7q61fm1SQJcaJUcHMQ1lJxrqMK5PZQeCM), [2018-05 W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
 
 ### Meetings
 
@@ -20,8 +22,10 @@ Most meetings use <https://zoom.us/j/988170706>. Please try to be on-camera, if 
 
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
-* No general meetings currently scheduled; please participate via comments on documents
-
+* 2019-10-29: TBD
+* 2019-10-22: Presentation on [AM!TT](https://github.com/credcoalition/community-site/wiki/MisinfoSec-(The-Intersection-of-Misinformation-and-InfoSec))
+* 2019-10-15: Presentation on [JTI](https://jti-rsf.org/)
+* **2019-10-08: Presentation on [NewsQA](https://newsqa.org/)**
 ---
 * 2018-10-23 / 2018-10-26: Face-to-face meeting [f2f3](f2f3) (Lyon, France)
 * 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
