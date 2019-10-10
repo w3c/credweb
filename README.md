@@ -24,9 +24,9 @@ Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5e
 
 * 2019-10-29: TBD
 * 2019-10-22: Presentation on [AM!TT](https://github.com/credcoalition/community-site/wiki/MisinfoSec-(The-Intersection-of-Misinformation-and-InfoSec))
-* 2019-10-15: Presentation on [JTI](https://jti-rsf.org/)
-* **2019-10-08: Presentation on [NewsQA](https://newsqa.org/)**
+* **2019-10-15: Presentation on [JTI](https://jti-rsf.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Bj_l0fR7k4-3pyVK5iaKnAz0_LMUBBNDoS8Lh57Hf20/edit)**
 ---
+* 2019-10-08: Presentation on [NewsQA](https://newsqa.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1hng3ceAUBuyT-x1Ny-PqtO5YFrWMwZ1SoxBf7JSOXUE) 
 * 2018-10-23 / 2018-10-26: Face-to-face meeting [f2f3](f2f3) (Lyon, France)
 * 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
 * 2018-08-29 Wed Main group *canceled* [Agenda](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0013.html), [Cancelation](https://lists.w3.org/Archives/Public/public-credibility/2018Aug/0014.html)
