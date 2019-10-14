@@ -18,7 +18,7 @@ Group website at <https://credweb.org> (underlying content on [github](https://g
 
 ### Meetings
 
-Most meetings use <https://zoom.us/j/988170706>. Please try to be on-camera, if possible. For more, see [how to connect](how-to-connect.md)
+Most meetings use <https://zoom.us/j/706868147>. Please try to be on-camera, if possible. For more, see [how to connect](how-to-connect.md)
 
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 

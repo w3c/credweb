@@ -23,15 +23,15 @@ Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5e
 
 ### Zoom
 
-Zoom app for most platforms: <https://zoom.us/j/988170706>
+Zoom app for most platforms: <https://zoom.us/j/706868147>
 
 Or Telephone:
-* Meeting ID: 988 170 706, All dial-ins: <https://zoom.us/u/xglThTko>
-* Brazil: +55 11 4680 6788 tap: +551146806788,,,988170706# 
-* France: +33 (0) 1 8288 0188 tap: +330182880188,,,988170706# 
-* Germany: +49 (0) 30 3080 6188 tap:  +4903030806188,,,988170706# 
-* UK: +44 (0) 20 3695 0088 tap:+4402036950088,,,988170706# 
-* US: +1 669 900 6833 tap: +16699006833,,,988170706# 
+* Meeting ID: 706 868 147, All dial-ins: <https://zoom.us/u/xglThTko>
+* Brazil: +55 11 4680 6788 tap: +551146806788,,,706868147#
+* France: +33 (0) 1 8288 0188 tap: +330182880188,,,706868147#
+* Germany: +49 (0) 30 3080 6188 tap:  +4903030806188,,,706868147#
+* UK: +44 (0) 20 3695 0088 tap:+4402036950088,,,706868147#
+* US: +1 669 900 6833 tap: +16699006833,,,706868147#
 
 ### IRC
 
