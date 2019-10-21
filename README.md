@@ -22,10 +22,14 @@ Most meetings use <https://zoom.us/j/706868147>. Please try to be on-camera, if 
 
 Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
-* 2019-10-29: TBD
-* 2019-10-22: Presentation on [AM!TT](https://github.com/credcoalition/community-site/wiki/MisinfoSec-(The-Intersection-of-Misinformation-and-InfoSec))
-* **2019-10-15: Presentation on [JTI](https://jti-rsf.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Bj_l0fR7k4-3pyVK5iaKnAz0_LMUBBNDoS8Lh57Hf20/edit)**
+
+* 2019-11-19: TBD. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1bPVcan7bMI6vL7dM4-v3_hop3e05ptgNtbJqqVlROdk/edit)
+* 2019-11-12: IPTC. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1KFQ7rGf63v3SyK_vffhHLfFlm5DGGiHKtaJ5YQSqc48/edit)
+* 2019-11-05: TBD. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1_eOOdvgYrIVEw6Ug2eiSqPjPPfKy0pE2djyUk1pqkcA/edit)
+* 2019-10-29: TBD. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Va2TmDAH70ugm0h7l-Z14IztSbHe2v7PpZ34BMhTXio/edit)
+* **2019-10-22: Presentation on [AM!TT](https://github.com/misinfosecproject/amitt_framework/wiki). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1jbUzm7jBcZBl5FLfVFH5bi-3x4_e1eOBBBmH-ON9Rp0/edit)**
 ---
+* 2019-10-15: Presentation on [JTI](https://jti-rsf.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Bj_l0fR7k4-3pyVK5iaKnAz0_LMUBBNDoS8Lh57Hf20/edit)
 * 2019-10-08: Presentation on [NewsQA](https://newsqa.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1hng3ceAUBuyT-x1Ny-PqtO5YFrWMwZ1SoxBf7JSOXUE) 
 * 2018-10-23 / 2018-10-26: Face-to-face meeting [f2f3](f2f3) (Lyon, France)
 * 2018-09-05 Wed Main group [Agenda](agenda/20180905.md)
