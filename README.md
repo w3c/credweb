@@ -2,13 +2,9 @@
 
 ## W3C Credible Web Community Group
 
-[How to join](joining)
+[How to join](joining).
 
-See mission, blog, and list of members at our [W3C group page](https://www.w3.org/community/credibility/)
-
-Group website at <https://credweb.org> (underlying content on [github](https://github.com/w3c/credweb)).
-
-[Mailing list archives](https://lists.w3.org/Archives/Public/public-credibility/) - mostly just for announcements about meetings and significant group news
+Our [mission, blog, and list of members](https://www.w3.org/community/credibility/) is hosted at W3C.  Also, [Mailing list archives](https://lists.w3.org/Archives/Public/public-credibility/), mostly for announcements.  Nearly Everything else is at <https://credweb.org>.
 
 ### Documents
 
@@ -18,17 +14,25 @@ Group website at <https://credweb.org> (underlying content on [github](https://g
 
 ### Meetings
 
-Most meetings use <https://zoom.us/j/706868147>. Please try to be on-camera, if possible. For more, see [how to connect](how-to-connect.md)
+Most meetings use <https://zoom.us/j/706868147>. Please try to be
+on-camera, if possible. For more, see [how to
+connect](how-to-connect.md). Calendars: [Meetings
+(gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com),
+[Meetings
+(ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),
+[Related
+events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
 
-Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),  [Related events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
+Upcoming:
 
+* 2019-11-19: (tenative) NewsQA Signals. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1bPVcan7bMI6vL7dM4-v3_hop3e05ptgNtbJqqVlROdk/edit)
+* 2019-11-12: (tenative) IPTC. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1KFQ7rGf63v3SyK_vffhHLfFlm5DGGiHKtaJ5YQSqc48/edit)
+* 2019-11-05: ClaimReview. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1_eOOdvgYrIVEw6Ug2eiSqPjPPfKy0pE2djyUk1pqkcA/edit)
+* **2019-10-29: Credibility scores; and consider revising our [report](https://credweb.org/report/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Va2TmDAH70ugm0h7l-Z14IztSbHe2v7PpZ34BMhTXio/edit)**
 
-* 2019-11-19: TBD. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1bPVcan7bMI6vL7dM4-v3_hop3e05ptgNtbJqqVlROdk/edit)
-* 2019-11-12: IPTC. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1KFQ7rGf63v3SyK_vffhHLfFlm5DGGiHKtaJ5YQSqc48/edit)
-* 2019-11-05: TBD. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1_eOOdvgYrIVEw6Ug2eiSqPjPPfKy0pE2djyUk1pqkcA/edit)
-* 2019-10-29: TBD. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Va2TmDAH70ugm0h7l-Z14IztSbHe2v7PpZ34BMhTXio/edit)
-* **2019-10-22: Presentation on [AM!TT](https://github.com/misinfosecproject/amitt_framework/wiki). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1jbUzm7jBcZBl5FLfVFH5bi-3x4_e1eOBBBmH-ON9Rp0/edit)**
----
+Past:
+
+* 2019-10-22: Presentation on [AM!TT](https://github.com/misinfosecproject/amitt_framework/wiki). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1jbUzm7jBcZBl5FLfVFH5bi-3x4_e1eOBBBmH-ON9Rp0/edit) and [slides](/slides/20191022-amitt.pdf) 
 * 2019-10-15: Presentation on [JTI](https://jti-rsf.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Bj_l0fR7k4-3pyVK5iaKnAz0_LMUBBNDoS8Lh57Hf20/edit)
 * 2019-10-08: Presentation on [NewsQA](https://newsqa.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1hng3ceAUBuyT-x1Ny-PqtO5YFrWMwZ1SoxBf7JSOXUE) 
 * 2018-10-23 / 2018-10-26: Face-to-face meeting [f2f3](f2f3) (Lyon, France)
