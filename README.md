@@ -29,13 +29,13 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2020-01-06: Agenda TBD
+* **2020-01-06: Agenda TBD**
 * 2019-12-31: No meeting
 * 2019-12-24: No meeting
-* **2019-12-17: Adoption (update on [Report section 8](https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8/edit#heading=h.rmx3ty7g6ge9)); Cred scores/Aviv. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1LgR_b_8Q_LtP1eeBU2Rggldu6sg303yG4JYYpojcPH4/edit#heading=h.3qvsza8ot2e9)**
 
 Past:
 
+* 2019-12-17: Revisit [Attaining Adoption](https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8/edit#heading=h.rmx3ty7g6ge9)); [Credibility Scoring](https://docs.google.com/document/d/1x3TytIJU-bsyGfNdqx8yWybESlyQaQEDhhJf73tNI_c/edit#heading=h.cz6d6op6saw2). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1LgR_b_8Q_LtP1eeBU2Rggldu6sg303yG4JYYpojcPH4/edit#heading=h.3qvsza8ot2e9)
 * 2019-12-10: NewsQ Signals Continued. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1YJdO32HOG_O0iA5m0fqIc5ikekYSCUGMacCkKmHLd64/edit#)
 * 2019-12-03: NewsQ Signals. [Selected](https://credweb.org/signals-beta/#newsq-highlight). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1FpBZL6lbdfMclCJ-4lI_mPdGfIbSc2zrOjtmeiwkpPw/edit)
 * 2019-11-26: No meeting - US Thanksgiving Week 
