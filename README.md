@@ -2,9 +2,13 @@
 
 ## W3C Credible Web Community Group
 
-[How to join](joining).
-
-Our [mission, blog, and list of members](https://www.w3.org/community/credibility/) is hosted at W3C.  Also, [Mailing list archives](https://lists.w3.org/Archives/Public/public-credibility/), mostly for announcements.  Nearly Everything else is at <https://credweb.org>.
+About:
+* See our [mission, blog, and list of members](https://www.w3.org/community/credibility/)
+* This is a [Community Group](https://www.w3.org/community/) of the [W3C](https://www.w3.org), the web standards organization
+* [How to join](joining).
+* [Mailing list archives](https://lists.w3.org/Archives/Public/public-credibility/), mostly for announcements
+* [Website: credweb.org](https://credweb.org) backed by [this repo](https://github.com/w3c/credweb)
+* [Issues](https://github.com/w3c/credweb/issues) for discussion, on GitHub
 
 ### Documents
 
@@ -25,13 +29,20 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2019-11-19: (tenative) NewsQA Signals. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1bPVcan7bMI6vL7dM4-v3_hop3e05ptgNtbJqqVlROdk/edit)
-* 2019-11-12: (tenative) IPTC. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1KFQ7rGf63v3SyK_vffhHLfFlm5DGGiHKtaJ5YQSqc48/edit)
-* 2019-11-05: ClaimReview. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1_eOOdvgYrIVEw6Ug2eiSqPjPPfKy0pE2djyUk1pqkcA/edit)
-* **2019-10-29: Credibility scores; and consider revising our [report](https://credweb.org/report/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Va2TmDAH70ugm0h7l-Z14IztSbHe2v7PpZ34BMhTXio/edit)**
+* 2020-01-06: Agenda TBD
+* 2019-12-31: No meeting
+* 2019-12-24: No meeting
+* **2019-12-17: Adoption (update on [Report section 8](https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8/edit#heading=h.rmx3ty7g6ge9)); Cred scores/Aviv. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1LgR_b_8Q_LtP1eeBU2Rggldu6sg303yG4JYYpojcPH4/edit#heading=h.3qvsza8ot2e9)**
 
 Past:
 
+* 2019-12-10: NewsQ Signals Continued. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1YJdO32HOG_O0iA5m0fqIc5ikekYSCUGMacCkKmHLd64/edit#)
+* 2019-12-03: NewsQ Signals. [Selected](https://credweb.org/signals-beta/#newsq-highlight). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1FpBZL6lbdfMclCJ-4lI_mPdGfIbSc2zrOjtmeiwkpPw/edit)
+* 2019-11-26: No meeting - US Thanksgiving Week 
+* 2019-11-19: Revising the Report ([this document](https://credweb.org/report/)): [gdoc](https://docs.google.com/document/d/1bPVcan7bMI6vL7dM4-v3_hop3e05ptgNtbJqqVlROdk/edit)
+* 2019-11-12: IPTC. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1KFQ7rGf63v3SyK_vffhHLfFlm5DGGiHKtaJ5YQSqc48/edit)
+* 2019-11-05: ClaimReview. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1_eOOdvgYrIVEw6Ug2eiSqPjPPfKy0pE2djyUk1pqkcA/edit)
+* 2019-10-29: Credibility scores. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Va2TmDAH70ugm0h7l-Z14IztSbHe2v7PpZ34BMhTXio/edit)
 * 2019-10-22: Presentation on [AM!TT](https://github.com/misinfosecproject/amitt_framework/wiki). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1jbUzm7jBcZBl5FLfVFH5bi-3x4_e1eOBBBmH-ON9Rp0/edit) and [slides](/slides/20191022-amitt.pdf) 
 * 2019-10-15: Presentation on [JTI](https://jti-rsf.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1Bj_l0fR7k4-3pyVK5iaKnAz0_LMUBBNDoS8Lh57Hf20/edit)
 * 2019-10-08: Presentation on [NewsQA](https://newsqa.org/). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1hng3ceAUBuyT-x1Ny-PqtO5YFrWMwZ1SoxBf7JSOXUE) 
