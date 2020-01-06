@@ -29,9 +29,9 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* **2020-01-06: Agenda TBD**
-* 2019-12-31: No meeting
-* 2019-12-24: No meeting
+* 2020-01-21: TBD
+* 2020-01-14: No meeting (conflict with NewsQ event)
+* 2020-01-07: No meeting (cancelled)
 
 Past:
 
