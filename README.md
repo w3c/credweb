@@ -29,12 +29,14 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2020-01-21: TBD
-* 2020-01-14: No meeting (conflict with NewsQ event)
-* 2020-01-07: No meeting (cancelled)
+* 2020-02-??: See [scheduling poll](https://doodle.com/poll/c3v8nthtakru6a8m)
+* 2020-01-28: Approving some signal definitions. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1VvIMSa-vc7Wt6AYAhQ3MrcZTJvuW8kv-QaNWWgbU7Vo/edit#).
 
 Past:
 
+* 2020-01-21: Group planning; Endorsing a few signals. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1Zegy2ASbsRtkz8vNVYUXHopZjjXbZweJ5Co8TEW_8w0/edit#).
+* 2020-01-14: No meeting (conflict with NewsQ event)
+* 2020-01-07: No meeting (cancelled)
 * 2019-12-17: Revisit [Attaining Adoption](https://docs.google.com/document/d/1WWYQ33Y9ENcueiFnrb3hJzD2rxKCRw9ok8T3PrDLOB8/edit#heading=h.rmx3ty7g6ge9)); [Credibility Scoring](https://docs.google.com/document/d/1x3TytIJU-bsyGfNdqx8yWybESlyQaQEDhhJf73tNI_c/edit#heading=h.cz6d6op6saw2). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1LgR_b_8Q_LtP1eeBU2Rggldu6sg303yG4JYYpojcPH4/edit#heading=h.3qvsza8ot2e9)
 * 2019-12-10: NewsQ Signals Continued. Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1YJdO32HOG_O0iA5m0fqIc5ikekYSCUGMacCkKmHLd64/edit#)
 * 2019-12-03: NewsQ Signals. [Selected](https://credweb.org/signals-beta/#newsq-highlight). Agenda and meeting record: [gdoc](https://docs.google.com/document/d/1FpBZL6lbdfMclCJ-4lI_mPdGfIbSc2zrOjtmeiwkpPw/edit)
