@@ -1,4 +1,4 @@
-<img style="float: right" src="./photos/people-2018-04-15-500.png" alt="group phroto" />
+<img style="float: right" src="./photos/people-2020-01-28.png" alt="group photo" />
 
 ## W3C Credible Web Community Group
 
@@ -29,9 +29,10 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2020-02-19: discuss/approve publication of "Promising Signals" draft
+* 2020-02-19: discuss/approve publication of "Reviewed Signals" draft
 * 2020-02-12: discuss/approve more signal defintions
-* 2020-02-05: discuss/approve more signal defintions
+* 2020-02-06: (data access task force - rdf mapping) [gdoc](https://docs.google.com/document/d/1UnQNpgAfY80-KvmLtredvbyhvhHHCPP6teQfTKdXQ94/edit)
+* 2020-02-05: review signals: corrections policy, journalism awards [gdoc](https://docs.google.com/document/d/1KCcgASPLnBBQ9XCqDY2L-T0_41HFjbQ0AUi06Ppv2dU/edit)
 
 Past:
 
