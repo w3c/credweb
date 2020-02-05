@@ -30,12 +30,12 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 Upcoming:
 
 * 2020-02-19: discuss/approve publication of "Reviewed Signals" draft
-* 2020-02-12: discuss/approve more signal defintions
+* 2020-02-12: review signals: journalism awards, ...
 * 2020-02-06: (data access task force - rdf mapping) [gdoc](https://docs.google.com/document/d/1UnQNpgAfY80-KvmLtredvbyhvhHHCPP6teQfTKdXQ94/edit)
-* 2020-02-05: review signals: corrections policy, journalism awards [gdoc](https://docs.google.com/document/d/1KCcgASPLnBBQ9XCqDY2L-T0_41HFjbQ0AUi06Ppv2dU/edit)
 
 Past:
 
+* 2020-02-05: review signals: corrections policy, journalism awards [gdoc](https://docs.google.com/document/d/1KCcgASPLnBBQ9XCqDY2L-T0_41HFjbQ0AUi06Ppv2dU/edit)
 * 2020-01-28: Approving some signal definitions. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1VvIMSa-vc7Wt6AYAhQ3MrcZTJvuW8kv-QaNWWgbU7Vo/edit#).
 * 2020-01-21: Group planning; Endorsing a few signals. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1Zegy2ASbsRtkz8vNVYUXHopZjjXbZweJ5Co8TEW_8w0/edit#).
 * 2020-01-14: No meeting (conflict with NewsQ event)
