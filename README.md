@@ -13,7 +13,7 @@ About:
 ### Documents
 
 * **Draft Report**: [Technological Approaches to Improving Credibility Assessment on the Web](https://credweb.org/report/)
-* **Draft Spec**: [Credibility Signals](https://credweb.org/signals/) replacing [CCIV (Content Credibility Indicators Vocabulary)](https://credweb.org/cciv)
+* **Draft Spec**: [Credibility Signals](https://credweb.org/signals/) 
 * Slides: [2019-05 Web Conference](https://docs.google.com/presentation/d/17-Of0UWivD7q61fm1SQJcaJUcHMQ1lJxrqMK5PZQeCM), [2018-05 W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
 * [Google drive folder](https://drive.google.com/drive/u/0/folders/1BIXNJb7ggBUBBNS76-WRvMmGR4vC6ijt)
 
