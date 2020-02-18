@@ -30,12 +30,12 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2020-02-19: Discuss/Approve publication of "Reviewed Signals" draft
-* 2020-02-13: DATF: Options for RDF [gdoc](https://docs.google.com/document/d/1a9g6AKFjWffmmnmKyCD7upVIZRt0B18V1GlMXlPoo_0/edit)
-* 2020-02-12: Review Signal "Journalism Award" [gdoc](https://docs.google.com/document/d/187x-c07QibjS7NLHFmdlhMhFv0IG2jx6bH9sCGvAM1w/edit)
+* 2020-02-19: Publication decisions; More review of Journalism Award. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1-KcB121I6D6J2ZdQET-qatqCaqv3ttlZkfhgyWEk7nM/edit)
 
 Past:
 
+* 2020-02-13: DATF: Options for RDF [gdoc](https://docs.google.com/document/d/1a9g6AKFjWffmmnmKyCD7upVIZRt0B18V1GlMXlPoo_0/edit)
+* 2020-02-12: Review Signal "Journalism Award" [gdoc](https://docs.google.com/document/d/187x-c07QibjS7NLHFmdlhMhFv0IG2jx6bH9sCGvAM1w/edit)
 * 2020-02-06: (data access task force - rdf mapping) [gdoc](https://docs.google.com/document/d/1UnQNpgAfY80-KvmLtredvbyhvhHHCPP6teQfTKdXQ94/edit)
 * 2020-02-05: review signals: corrections policy, journalism awards [gdoc](https://docs.google.com/document/d/1KCcgASPLnBBQ9XCqDY2L-T0_41HFjbQ0AUi06Ppv2dU/edit)
 * 2020-01-28: Approving some signal definitions. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1VvIMSa-vc7Wt6AYAhQ3MrcZTJvuW8kv-QaNWWgbU7Vo/edit#).
