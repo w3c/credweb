@@ -13,7 +13,7 @@ About:
 ### Documents
 
 * **Credibility Tech**: [Final 2018 Report](https://www.w3.org/2018/10/credibility-tech/), [Versions](https://credweb.org/credibility-tech)
-* **Credibility Signals**: [Versions](https://credweb.org/signals/) 
+* **Credibility Signals**: [Reviewed Signals (Public Draft)](https://credweb.org/reviewed-signals/), [Versions](https://credweb.org/signals/), [Review Process Tracking](https://docs.google.com/document/d/1i6lCJPaJLQwrDUknnzWW5ixgWb8xp54KdLu2mam206Q/edit)
 * Slides: [2019-05 Web Conference](https://docs.google.com/presentation/d/17-Of0UWivD7q61fm1SQJcaJUcHMQ1lJxrqMK5PZQeCM), [2018-05 W3C Advisory Committee](http://hawke.org/talk-ac-2018/)
 * [Google drive folder](https://drive.google.com/drive/u/0/folders/1BIXNJb7ggBUBBNS76-WRvMmGR4vC6ijt)
 
@@ -31,10 +31,11 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2020-02-26: Adobe & the Content Authenticity Initiative. Agenda and meeting records [gdoc](https://docs.google.com/document/d/1DwTkZBYeX3yLFvz38eCjOvxR8dlxgsdFMlHoIjlCBm4/edit)
+* 2020-02-11: Signals review TDB
 
 Past:
 
+* 2020-02-26: Adobe & the Content Authenticity Initiative. Agenda and meeting records [gdoc](https://docs.google.com/document/d/1DwTkZBYeX3yLFvz38eCjOvxR8dlxgsdFMlHoIjlCBm4/edit)
 * 2020-02-19: Publication decisions; More review of Journalism Award. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1-KcB121I6D6J2ZdQET-qatqCaqv3ttlZkfhgyWEk7nM/edit)
 * 2020-02-13: DATF: Options for RDF [gdoc](https://docs.google.com/document/d/1a9g6AKFjWffmmnmKyCD7upVIZRt0B18V1GlMXlPoo_0/edit)
 * 2020-02-12: Review Signal "Journalism Award" [gdoc](https://docs.google.com/document/d/187x-c07QibjS7NLHFmdlhMhFv0IG2jx6bH9sCGvAM1w/edit)
