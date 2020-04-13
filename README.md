@@ -31,10 +31,15 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2020-02-11: Signals review. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1mWqxtHDKi1Hcx7zbqhLjLXTIcYT4DCYP9s0CJ65sRXA/edit#)
+* 2020-04-15: DeepTrust Alliance; JournalList . [agenda+record](https://docs.google.com/document/d/1N5hxKcBzoyGqHQwWRbU10YR3qrhwkn1G5Pr1qb1HBTM/edit#heading=h.7g34rh5357yb)
 
 Past:
 
+* 2020-04-08: Credibility Networks for COVID-19 response. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1kBQcgLekhcvvsm7Hotoy60bYqUziP1ID-xp4Y-ukaIE/edit)
+* 2020-04-01: Credibility Networks for COVID-19 response. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1SAH4u21D16oGtP2CVKnxgd6h4gGcSyJxHsuGtolujpM/edit)
+* 2020-03-25: Reputation graph for COVID-19 response. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1wD71FRI3LXCUVbS2ZFxyZXcj8ZqWMJR92cM5otsO-KE/edit#)
+* 2020-03-18: Brainstorming covid-19 response. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1wD71FRI3LXCUVbS2ZFxyZXcj8ZqWMJR92cM5otsO-KE/edit#)
+* 2020-03-11: Signals review. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1mWqxtHDKi1Hcx7zbqhLjLXTIcYT4DCYP9s0CJ65sRXA/edit#)
 * 2020-02-26: Adobe & the Content Authenticity Initiative. [slides PDF](slides/20200226-cai.pdf) Agenda and meeting record [gdoc](https://docs.google.com/document/d/1DwTkZBYeX3yLFvz38eCjOvxR8dlxgsdFMlHoIjlCBm4/edit)
 * 2020-02-19: Publication decisions; More review of Journalism Award. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1-KcB121I6D6J2ZdQET-qatqCaqv3ttlZkfhgyWEk7nM/edit)
 * 2020-02-13: DATF: Options for RDF [gdoc](https://docs.google.com/document/d/1a9g6AKFjWffmmnmKyCD7upVIZRt0B18V1GlMXlPoo_0/edit)
