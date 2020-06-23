@@ -31,10 +31,15 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* 2020-04-15: DeepTrust Alliance; JournalList . [agenda+record](https://docs.google.com/document/d/1N5hxKcBzoyGqHQwWRbU10YR3qrhwkn1G5Pr1qb1HBTM/edit#heading=h.7g34rh5357yb)
+* TBD - email Sandro if you have topic / presentation to share
+* 2020-06-24 General discussion on group member's activities [agenda+record](https://docs.google.com/document/d/1SZ8gMJ23v9FyvceFcSUxNkrH1R2lyzRMKO78xhbabBI/edit)
 
 Past:
 
+* 2020-05-27 Daniel Schwabe, [on Claim Checking and Trust](/slides/20200527-schwabe.pdf). [agenda+record](https://docs.google.com/document/d/11_NeoIwxQDJulB8CZcTqMmuJYxz2roDYWTOXVSkxlB4/edit#)
+* 2020-05-13 Arjun Moorthy, [The Factual](https://www.thefactual.com/), [slides](https://credweb.org/slides/20200513.pdf), [agenda+record](https://docs.google.com/document/d/1DhEJbQDgWeXp_AMdQcmdo2sI6ZV_RH7zNKp_OElNw-4/edit#) 
+* 2020-04-29: Credibility Networks for Content Warnings. [agenda+record](https://docs.google.com/document/d/1Rm0Eny3JuO5sKdUrqtQLop8mmKZOqiGXw21YyIiI3b0/edit)
+* 2020-04-15: DeepTrust Alliance; JournalList . [agenda+record](https://docs.google.com/document/d/1N5hxKcBzoyGqHQwWRbU10YR3qrhwkn1G5Pr1qb1HBTM/edit#heading=h.7g34rh5357yb)
 * 2020-04-08: Credibility Networks for COVID-19 response. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1kBQcgLekhcvvsm7Hotoy60bYqUziP1ID-xp4Y-ukaIE/edit)
 * 2020-04-01: Credibility Networks for COVID-19 response. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1SAH4u21D16oGtP2CVKnxgd6h4gGcSyJxHsuGtolujpM/edit)
 * 2020-03-25: Reputation graph for COVID-19 response. Agenda and meeting record [gdoc](https://docs.google.com/document/d/1wD71FRI3LXCUVbS2ZFxyZXcj8ZqWMJR92cM5otsO-KE/edit#)
