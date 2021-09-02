@@ -19,7 +19,7 @@ About:
 
 ### Meetings
 
-Most meetings use <https://zoom.us/j/706868147>. Please try to be
+Most meetings use [this zoom link (changed Aug 2021)](https://us02web.zoom.us/j/87526152790?pwd=cHdKZ0tmWjh2OUxsUEh2eE5Nck8xQT09). Please try to be
 on-camera, if possible. For more, see [how to
 connect](how-to-connect.md). Calendars: [Meetings
 (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com),
@@ -31,11 +31,13 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* TBD - email Sandro if you have topic / presentation to share
-* 2020-06-24 General discussion on group member's activities [agenda+record](https://docs.google.com/document/d/1SZ8gMJ23v9FyvceFcSUxNkrH1R2lyzRMKO78xhbabBI/edit)
+* TBD
 
 Past:
 
+* 2021-08-26 1pm ET Election discussion [agenda+record](https://docs.google.com/document/d/1aKcFSVZne98AMgdJQk-M6SQLcItQQNQgN-PdCDXePaE/edit#)
+* 2021-08-16 3pm ET General discussion on group and member activities [agenda+record](https://docs.google.com/document/d/1fZNExB1LyZ-J274C3fuParU9ClnjjbDf_ljKYP3JlG0/edit)
+* 2020-06-24 General discussion on group member's activities [agenda+record](https://docs.google.com/document/d/1SZ8gMJ23v9FyvceFcSUxNkrH1R2lyzRMKO78xhbabBI/edit)
 * 2020-05-27 Daniel Schwabe, [on Claim Checking and Trust](/slides/20200527-schwabe.pdf). [agenda+record](https://docs.google.com/document/d/11_NeoIwxQDJulB8CZcTqMmuJYxz2roDYWTOXVSkxlB4/edit#)
 * 2020-05-13 Arjun Moorthy, [The Factual](https://www.thefactual.com/), [slides](https://credweb.org/slides/20200513.pdf), [agenda+record](https://docs.google.com/document/d/1DhEJbQDgWeXp_AMdQcmdo2sI6ZV_RH7zNKp_OElNw-4/edit#) 
 * 2020-04-29: Credibility Networks for Content Warnings. [agenda+record](https://docs.google.com/document/d/1Rm0Eny3JuO5sKdUrqtQLop8mmKZOqiGXw21YyIiI3b0/edit)

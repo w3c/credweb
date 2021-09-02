@@ -10,20 +10,11 @@ Please join using both zoom (for video and/or audio) and irc
 try connecting 5-10 minutes early to make sure your camera,
 microphone, headset, etc is working properly. <b>Being on camera is
 helpful</b> in assessing agreement and making consensus decisions.
-    
-### Start Time
-
-Meetings start promptly at 10:00am San Francisco, 1:00pm New York,
-6:00pm London, 7:00pm Paris, and runs for up to 60 minutes, depending
-on business. After the meeting, people sometimes remain connected
-online to continue conversation.
-
-Calendars: [Meetings (gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com), [Meetings (ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics)
 
 
 ### Zoom
 
-Zoom app for most platforms: <https://zoom.us/j/706868147>
+Zoom app for most platforms: < https://us02web.zoom.us/j/87526152790?pwd=cHdKZ0tmWjh2OUxsUEh2eE5Nck8xQT09>
 
 Or Telephone:
 * Meeting ID: 706 868 147, All dial-ins: <https://zoom.us/u/xglThTko>
@@ -35,7 +26,7 @@ Or Telephone:
 
 ### IRC
 
-We use channel #credweb on the W3C irc server. If you don't have an irc client, you can just connect with http://irc.w3.org.
+Sometimes we use channel #credweb on the W3C irc server. If you don't have an irc client, you can just connect with http://irc.w3.org.
 
 If you have difficulties or questions, see the [W3C guide to IRC](https://www.w3.org/wiki/IRC).
 
