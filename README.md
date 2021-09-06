@@ -95,4 +95,4 @@ Past:
 * 2017-11-10 [Agenda](https://www.w3.org/wiki/File:Credibility-2017-11-10-agenda.pdf), [Minutes](https://www.w3.org/community/credibility/wiki/2017-11-10-minutes)
 * 2017-11-08 [TPAC Breakout Minutes](https://www.w3.org/community/credibility/wiki/2017-11-08-minutes)
 
-[Related activities & organizations](https://docs.google.com/spreadsheets/d/1vWE3iOn6yxUsRJyS_mks83m0Gwv_7cK0WtVt-SNsYzY/edit#gid=0)
+[Related activities & organizations](https://docs.google.com/spreadsheets/d/1vWE3iOn6yxUsRJyS_mks83m0Gwv_7cK0WtVt-SNsYzY/edit#gid=0).
