@@ -17,7 +17,7 @@ member organizations](https://www.w3.org/Consortium/Member/List).)
 2. If you're just representing yourself, then use a non-work email address to make a non-work W3C account, then follow the (part A) instructions above.
 3. If you'll be representing your organization, you'll need approval from your organization's W3C representative.  Begin the the above (part A) instructions. After a few steps, you should hit a point where the system says your representative will be contacted for approval. Some reps respond more quickly than others; you may want to contact them directly. Hopefully you can see this access-controlled [list of representatives ("ac reps")](https://www.w3.org/Member/ACList) to find out who yours is.
 
-If this isn't working, please contact Sandro Hawke (sandro@w3.org).
+If this isn't working, please contact Scott Yates (scott@journallist.net) or Sandro Hawke (sandro@hawke.org).
 
 
 
