@@ -31,7 +31,7 @@ events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition
 
 Upcoming:
 
-* TBD
+* 2021-10-15 1:30pm ET Open meeting to talk about new direction and building of a test suite for anti-misinformation initiatives
 
 Past:
 
