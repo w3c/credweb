@@ -21,12 +21,7 @@ About:
 
 Most meetings use [this zoom link (changed Aug 2021)](https://us02web.zoom.us/j/87526152790?pwd=cHdKZ0tmWjh2OUxsUEh2eE5Nck8xQT09). Please try to be
 on-camera, if possible. For more, see [how to
-connect](how-to-connect.md). Calendars: [Meetings
-(gcal)](https://calendar.google.com/calendar/embed?src=iq5eb1hefes165c7es0krrflno%40group.calendar.google.com),
-[Meetings
-(ics)](https://calendar.google.com/calendar/ical/iq5eb1hefes165c7es0krrflno%40group.calendar.google.com/public/basic.ics),
-[Related
-events](https://calendar.google.com/calendar/embed?src=certifiedcontentcoalition.org_9cd49bitubv0sicvpt6gvf9km0%40group.calendar.google.com),
+connect](how-to-connect.md). 
 
 
 Upcoming:
