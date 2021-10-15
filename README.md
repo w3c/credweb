@@ -26,7 +26,7 @@ connect](how-to-connect.md).
 
 Upcoming:
 
-* 2021-10-15 1:30pm ET Open meeting to talk about building of a test suite for anti-misinformation initiatives [calendar invite with zoom link](https://calendar.google.com/event?action=TEMPLATE&tmeid=N3J0MHNicGs3bjg5Y21hNXBrdWVuMjRncGsgY18ycjhmMTY0MTRyMzFtdjVnZWRjc24ybjBlc0Bn&tmsrc=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com)
+* 2021-10-15 1:30pm ET Open meeting to talk about building of a test suite for anti-misinformation initiatives [calendar invite with zoom link](https://calendar.google.com/event?action=TEMPLATE&tmeid=N3J0MHNicGs3bjg5Y21hNXBrdWVuMjRncGsgY18ycjhmMTY0MTRyMzFtdjVnZWRjc24ybjBlc0Bn&tmsrc=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com).  [agenda+record](https://docs.google.com/document/d/1713YbAEbQ4qz-9NJbtF9PiDay7ZNzOrD-j7ZR0w_te0/edit?usp=sharing)
 
 Past:
 
