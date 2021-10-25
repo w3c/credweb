@@ -23,13 +23,15 @@ Most meetings use [this zoom link (changed Aug 2021)](https://us02web.zoom.us/j/
 on-camera, if possible. For more, see [how to
 connect](how-to-connect.md). 
 
+[Calander link for all meetings](https://calendar.google.com/calendar/embed?src=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com)
+
 
 Upcoming:
-
-* 2021-10-15 1:30pm ET Open meeting to talk about building of a test suite for anti-misinformation initiatives [calendar invite with zoom link](https://calendar.google.com/event?action=TEMPLATE&tmeid=N3J0MHNicGs3bjg5Y21hNXBrdWVuMjRncGsgY18ycjhmMTY0MTRyMzFtdjVnZWRjc24ybjBlc0Bn&tmsrc=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com).  [agenda+record](https://docs.google.com/document/d/1713YbAEbQ4qz-9NJbtF9PiDay7ZNzOrD-j7ZR0w_te0/edit?usp=sharing)
+* 2021-11-03 11am ET First of six meetings to develop a rubric to evaluate anti-misinformation initiatitves. [calendar invite with zoom link](https://calendar.google.com/event?action=TEMPLATE&tmeid=MHNwOWEwMzFydjAwb2picm1saTU1bjgzb2tfMjAyMTExMDNUMTUwMDAwWiBjXzJyOGYxNjQxNHIzMW12NWdlZGNzbjJuMGVzQGc&tmsrc=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com&scp=ALL) [agenda](https://docs.google.com/document/d/1DdnnKuIFfVpkqVluPl4RGhgVCI602lGN8jO5ZZjxcXo/edit?usp=sharing)
 
 Past:
 
+* 2021-10-15 1:30pm ET Open meeting to talk about building of a test suite for anti-misinformation initiatives.  [agenda+record](https://docs.google.com/document/d/1713YbAEbQ4qz-9NJbtF9PiDay7ZNzOrD-j7ZR0w_te0/edit?usp=sharing)
 * 2021-08-26 1pm ET Election discussion [agenda+record](https://docs.google.com/document/d/1aKcFSVZne98AMgdJQk-M6SQLcItQQNQgN-PdCDXePaE/edit#)
 * 2021-08-16 3pm ET General discussion on group and member activities [agenda+record](https://docs.google.com/document/d/1fZNExB1LyZ-J274C3fuParU9ClnjjbDf_ljKYP3JlG0/edit)
 * 2020-06-24 General discussion on group member's activities [agenda+record](https://docs.google.com/document/d/1SZ8gMJ23v9FyvceFcSUxNkrH1R2lyzRMKO78xhbabBI/edit)
