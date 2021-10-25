@@ -27,7 +27,7 @@ connect](how-to-connect.md).
 
 
 Upcoming:
-* 2021-11-03 11am ET First of six meetings to develop a rubric to evaluate anti-misinformation initiatitves. [calendar invite with zoom link](https://calendar.google.com/event?action=TEMPLATE&tmeid=MHNwOWEwMzFydjAwb2picm1saTU1bjgzb2tfMjAyMTExMDNUMTUwMDAwWiBjXzJyOGYxNjQxNHIzMW12NWdlZGNzbjJuMGVzQGc&tmsrc=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com&scp=ALL) [agenda](https://docs.google.com/document/d/1DdnnKuIFfVpkqVluPl4RGhgVCI602lGN8jO5ZZjxcXo/edit?usp=sharing)
+* 2021-11-03 11am ET First of six meetings to develop a rubric to evaluate anti-misinformation initiatitves. [calendar invite with zoom link](https://calendar.google.com/event?action=TEMPLATE&tmeid=MHNwOWEwMzFydjAwb2picm1saTU1bjgzb2tfMjAyMTExMDNUMTUwMDAwWiBjXzJyOGYxNjQxNHIzMW12NWdlZGNzbjJuMGVzQGc&tmsrc=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com&scp=ALL) and [agenda](https://docs.google.com/document/d/1DdnnKuIFfVpkqVluPl4RGhgVCI602lGN8jO5ZZjxcXo/edit?usp=sharing)
 
 Past:
 
