@@ -23,8 +23,6 @@ Most meetings use [this zoom link (changed Aug 2021)](https://us02web.zoom.us/j/
 on-camera, if possible. For more, see [how to
 connect](how-to-connect.md). 
 
-[Calander link for all meetings](https://calendar.google.com/calendar/embed?src=c_2r8f16414r31mv5gedcsn2n0es%40group.calendar.google.com)
-
 Next:
 * TBD
 
