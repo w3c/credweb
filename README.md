@@ -27,7 +27,7 @@ connect](how-to-connect.md).
 
 Next:
 * TBD
-* 
+
 Prev:
 * 2022-03-02 cancelled
 * 2022-02-02 (missing details)
