@@ -1,1 +1,1 @@
-@@ In the place of this page, display to content currently at ./reviewed-signals-20200224
+@@ In the place of this page, display the content currently at ./reviewed-signals-20200224
