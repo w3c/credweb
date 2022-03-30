@@ -1,4 +1,4 @@
-<img style="float: right" src="./photos/people-2020-01-28.png" alt="group photo" />
+<img style="float: right; max-width: 40vw" src="./photos/people-2020-01-28.png" alt="group photo" />
 
 ## W3C Credible Web Community Group
 
