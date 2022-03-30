@@ -1,0 +1,22 @@
+/* from respect */
+
+table { border-collapse: collapse; } 
+td, th { border: 1px solid #aaaaaa; padding: 0.5em;  } 
+td p { margin: 0 } 
+table.inner { border: 1px solid red; padding: 0 }
+.science { background: yellow }
+a.edit[href] {
+    margin-right: -1em;
+    float: right;
+    text-decoration: none;
+    color: #555;
+    border: none;
+    padding: 0.3em;
+}
+
+.pending {
+    color: red;
+    font-weight: bold:
+    margin-left: 1em;
+    margin-right: 1em;
+}

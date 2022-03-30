@@ -1,0 +1,404 @@
+<!DOCTYPE html><html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Reviewed Credibility Signals</title>
+  <link rel="canonical" href="0" />
+  <script src="./openup.js"></script>
+  <link rel="stylesheet" href="./part1.css" />
+  <link rel="stylesheet" href="respec-mainstyle.css" />
+  <link rel="stylesheet" href="./part2.css" />
+  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/base" />
+  <link rel="stylesheet" href="./spinner.css" />
+  <link rel="stylesheet" href="./tooltip.css" />
+  <link rel="stylesheet" href="./part3.css" />
+</head>
+    <body class="h-entry informative">
+
+  <div class="head">
+  <a class="logo" href="https://www.w3.org/"><img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48" /></a> <h1 id="title" class="title p-name">Reviewed Credibility Signals</h1>
+      
+      <h2>
+        W3C <u>Internal</u> Draft Community Group Report,
+        <time class="dt-published" datetime="2020-02-19">19 February 2020</time>
+      </h2>
+      <dl>
+
+        <!--
+        <dt>This version:</dt><dd>
+                <a class="u-url" href="https://www.w3.org/TR/2019/UN-credweb-20191124/">https://www.w3.org/TR/2019/UN-credweb-20191124/</a>
+              </dd><dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/credweb/">https://www.w3.org/TR/credweb/</a>
+              </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://credweb.org/signals">https://credweb.org/signals</a></dd>
+        
+        
+        
+        
+        <dt>Previous version:</dt><dd><a href=""></a></dd>
+        -->
+        <dt>Editor:</dt>
+        <dd class="p-author h-card vcard"><span class="p-name fn">Sandro Hawke</span></dd>
+        
+        
+        <dt>Participate:</dt><dd>
+      <a href="https://github.com/w3c/credweb/">GitHub w3c/credweb</a>
+    </dd><dd>
+      <a href="https://github.com/w3c/credweb/issues/">File a bug</a>
+    </dd>
+<dt>Document data source</dt><dd><a href="https://docs.google.com/document/d/1z2vU7g_VzDBezPYDfQg3kivSnn4xEZ6zy3NEIzmMGP4/edit" target="_blank">https://docs.google.com/document/d/1z2vU7g_VzDBezPYDfQg3kivSnn4xEZ6zy3NEIzmMGP4/edit</a></dd>
+      </dl>
+      
+      
+      
+      <p class="copyright">
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
+      ©
+      2020
+      
+      <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+      <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
+      <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
+      W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+      <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a> rules
+      apply.
+    </p>
+      <hr title="Separator for header" />
+    </div>
+  <div id="abstract" class="introductory"><h2>Abstract</h2>
+<p>Credibility signals are observations, made by humans or machines, which are used in deciding how much to trust some information. This document specifies some types of these observations which seem particularly useful in online credibility assessments, especially when assisted by machine processing and a network of people and systems making related observations.</p>
+
+<p>
+In this release, we include only the handful of signals which have been reviewed and approved as “promising” by the W3C Credible Web Community Group, following a process started in late January 2020. The contents of this document are expected to be expanded and revised over time.  Feedback and participation are encouraged.</p></div>
+  <div id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision of this technical report can be found in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at https://www.w3.org/TR/.</em></p><p><b>This document was produced by the <a href="https://credweb.org/">W3C CredWeb CG</a>. This version is meant for <u>internal review</u> and has not been approved or endorsed by anyone.</b></p>
+      
+    <p>
+      <a href="https://github.com/w3c/credweb/issues/">GitHub Issues</a> are preferred for
+            discussion of this specification.
+          
+    </p><p>
+      Publication as a  does not imply endorsement by the
+      <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or
+      obsoleted by other documents at any time. It is inappropriate to cite this
+      document as other than work in progress.
+    </p><p>
+      
+        This document was produced by a group
+        operating under the
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+       The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
+      
+                  <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
+                  <a rel="disclosure" href="">public list of any patent disclosures</a>
+            made in connection with the deliverables of
+            the group; that page also includes
+            instructions for disclosing a patent. An individual who has actual
+            knowledge of a patent which the individual believes contains
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#def-essential">Essential Claim(s)</a>
+            must disclose the information in accordance with
+            <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+          
+      
+    </p><p>
+                  This document is governed by the
+                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+  </p></div>
+  <nav id="toc">
+    <h2 class="introductory" id="table-of-contents">Table of Contents</h2>
+    <ol class="toc" id="toc-ol"><li class="tocline">
+<a href="#introduction"><bdi class="secno">1. </bdi>Introduction</a>
+</li>
+<li class="tocline">
+<a href="#signals"><bdi class="secno">2. </bdi>Signals</a>
+<ol class="toc">
+<li class="tocline">
+<a href="#date-website-first-archived"><bdi class="secno">2.1. </bdi>Date Website First Archived</a>
+<ol class="toc">
+<li class="tocline">
+<ol class="toc">
+<li class="tocline">
+</li>
+<li class="tocline">
+</li>
+<li class="tocline">
+</li></ol>
+</li>
+<li class="tocline">
+</li></ol>
+<a href="#corrections-policy"><bdi class="secno">2.2. </bdi>Corrections Policy</a>
+<ol class="toc">
+<li class="tocline">
+<ol class="toc">
+<li class="tocline">
+</li></ol>
+</li>
+<li class="tocline">
+</li></ol>
+<a href="#any-award-span-class-pending-pending-span"><bdi class="secno">2.3. </bdi>Any Award<span class="pending"> (pending)</span></a>
+<ol class="toc">
+<li class="tocline">
+<ol class="toc">
+<li class="tocline">
+</li></ol>
+</li>
+<li class="tocline">
+</li></ol>
+<a href="#pulitzer-prize-recognition-span-class-pending-pending-span"><bdi class="secno">2.4. </bdi>Pulitzer Prize Recognition<span class="pending"> (pending)</span></a>
+<ol class="toc">
+<li class="tocline">
+<ol class="toc">
+<li class="tocline">
+</li></ol>
+</li>
+<li class="tocline">
+</li></ol>
+</li></ol></ol>
+  </nav>
+  <div id="main">
+
+<section>
+<h1><span id="introduction"><a class="subtle" href="#introduction"><span style="font-size:75%">§</span> <bdi class="secno">1. </bdi>Introduction</a></span></h1>
+<p>This document is a small step toward a world where software “credibility tools” let people know which online information is trustworthy. In this small step, we present a handful of observations a human or machine can make about web sites and web content which seem likely to be useful in deciding how trustworthy the information might be. These observations, which we call “credibility signals” are selected for having several desirable features:</p>
+
+<ul>
+
+<li><b>Verifiable</b>: When given a report of one of these observations, it is feasible to confirm the observation yourself without doing a prohibitive amount of work in comparison to the likely value of a correct credibility assessment.</li>
+
+<li><b>Interoperable</b>: If multiple independent parties make these observations, guided just by this document, they will generally produce data that is effectively the same. This enables an efficient market of data-producing systems and data-consuming systems working together automatically (“interoperating”).</li>
+
+<li><b>Hard to game</b>: While it seems likely that every signal could be artificially synthesized as part of a disinformation attack, for these signals the cost or difficulty in doing so seems sufficiently high to make use of the signal a net benefit. </li>
+
+<li><b>Available</b>: Signal data is available now, or is likely to be soon, for a large number of websites. When desired, it is generally possible for individuals or small organizations to make these observations and produce this data themselves. </li>
+
+<li><b>Scalable</b>: Machines can make this observation now or could be programmed or trained to do so in the near future, with no need for a technical breakthrough.</li>
+
+<li><b>Promising</b>: In short, while we have insufficient data to say with certainty that these signals will be useful in making accurate credibility assessments, based on the information we have, we expect their use will often be worthwhile. </li>
+
+</ul>
+
+
+<p>We expect many more potential credibility signals also meet these criteria. We are publishing this small set to get community feedback early in the process. If the feedback is sufficiently positive, we may proceed to document additional signals. In <b>earlier work</b> we gathered <a href="https://credweb.org/signals-20191126">a crowdsourced list of potential credibility signals</a> and documented <a href="https://credweb.org/report/20181011">technologies for making credibility assessments</a>.
+</p>
+
+<p>The focus of this document is on the meaning of signals, not the <b>data protocols and formats</b> for exchanging data. That is expected to be the subject of a related document. For now, to give a flavor of how the data might potentially be exchanged, we include potential examples of specific data along with the signal examples. For more details on the design issues in using Semantic technologies for this data interchange, see <a href="https://docs.google.com/document/d/1-Z5gsTiqlJf7SGdyJ0N8ZesgOVurwGB_sdrmMAcnZ2g/edit">Options for RDF Expression of Credibility Data</a>.</p>
+
+</section>
+
+
+<section>
+<h1><span id="signals"><a class="subtle" href="#signals"><span style="font-size:75%">§</span> <bdi class="secno">2. </bdi>Signals</a></span></h1>
+
+<p>These signals have been reviewed and approved as "promising" by the <a href="https://credweb.org/">W3C Credible Web Community Group</a>, following a process started in January 2020. This initial release contains only the signals the group decided to document and approve during its initial few weeks of this process.</p>
+
+<p>These signals were <b>not necessarily</b> selected for being the most promising or the best in any other way. Later signals may turn out to be superior. These were reviewed first largely because they seemed likely to help clarify the review process. In particular, we intend no endorsement of the Pulitzer Prize as being necessarily more credible than any other prize. </p>
+
+
+
+<section>
+<h2><span id="date-website-first-archived"><a class="subtle" href="#date-website-first-archived"><span style="font-size:75%">§</span> <bdi class="secno">2.1. </bdi>Date Website First Archived</a></span></h2><p>Assessed by CredWeb CG to be: Reasonably verifiable, Interoperable, Promising.</p><table><tr><th>Definition</th><td>There was a website operational at URL [   ] as early as isodate [  ], as shown in the archive page at URL [   ]</td></tr><tr><th>Review Date</th><td>2020-01-28</td></tr><tr><th>Other Label</th><td><ul><li>Website Existed As Of Date</li><li>Website Age</li><li>First Known Website Archive</li><li>Website Release Date</li></ul></td></tr><tr><th>Similar to</th><td>Domain registration date</td></tr></table>
+
+<section>
+<h3><span id="examples"><a class="subtle" href="#examples"><span style="font-size:75%">§</span> <bdi class="secno">2.1.1. </bdi>Examples</a></span></h3>
+
+<section>
+<h4><span id="example"><a class="subtle" href="#example"><span style="font-size:75%">§</span> <bdi class="secno">2.1.1.1. </bdi>Example</a></span></h4><table><tr><th>Statement</th><td>There was a website operational at URL  https:&#x2F;&#x2F;news.mit.edu   as early as isodate 2015-09-02 as shown in the archive page at URL https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20150902023223&#x2F;http:&#x2F;&#x2F;news.mit.edu&#x2F;</td></tr><tr><th>CSV</th><td><pre>site,operationalAsEarlyAs,evidence
+https:&#x2F;&#x2F;news.mit.edu,2015-09-02,https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20150902023223&#x2F;http:&#x2F;&#x2F;news.mit.edu&#x2F;
+</pre></td></tr><tr><th><label for="toggleTurtle" class="labelForToggleTurtle">Turtle</label></th><td><pre class="expandTurtle">_:a cred:site &lt;https:&#x2F;&#x2F;news.mit.edu&gt;  .
+_:a cred:operationalAsEarlyAs &quot;2015-09-02&quot;^^xs:dateTimeStamp  .
+_:a cred:evidence &lt;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20150902023223&#x2F;http:&#x2F;&#x2F;news.mit.edu&#x2F;&gt;  .
+_:a rdf:type cred:ObservationOfDateWebsiteFirstArchived  .
+</pre></td></tr><tr><th>JSON-LD</th><td><pre>{
+  &quot;@context&quot;: &quot;https:&#x2F;&#x2F;jsonld.example&quot;,
+  &quot;@id&quot;: &quot;_:a&quot;,
+  &quot;@type&quot;: &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;credweb#ObservationOfDateWebsiteFirstArchived&quot;,
+  &quot;evidence&quot;: &quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20150902023223&#x2F;http:&#x2F;&#x2F;news.mit.edu&#x2F;&quot;,
+  &quot;operationalAsEarlyAs&quot;: &quot;2015-09-02&quot;,
+  &quot;site&quot;: &quot;https:&#x2F;&#x2F;news.mit.edu&quot;
+}</pre></td></tr></table>
+</section>
+
+
+<section>
+<h4><span id="example-2"><a class="subtle" href="#example-2"><span style="font-size:75%">§</span> <bdi class="secno">2.1.1.2. </bdi>Example</a></span></h4><table><tr><th>Statement</th><td>There was a website operational at URL https:&#x2F;&#x2F;nytimes.com as early as isodate 1996-11-12 as shown in the archive page at URL https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;19961112181513&#x2F;http:&#x2F;&#x2F;www.nytimes.com:80&#x2F;</td></tr><tr><th>CSV</th><td><pre>site,operationalAsEarlyAs,evidence
+https:&#x2F;&#x2F;nytimes.com,1996-11-12,https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;19961112181513&#x2F;http:&#x2F;&#x2F;www.nytimes.com:80&#x2F;
+</pre></td></tr><tr><th><label for="toggleTurtle" class="labelForToggleTurtle">Turtle</label></th><td><pre class="expandTurtle">_:a cred:site &lt;https:&#x2F;&#x2F;nytimes.com&gt;  .
+_:a cred:operationalAsEarlyAs &quot;1996-11-12&quot;^^xs:dateTimeStamp  .
+_:a cred:evidence &lt;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;19961112181513&#x2F;http:&#x2F;&#x2F;www.nytimes.com:80&#x2F;&gt;  .
+_:a rdf:type cred:ObservationOfDateWebsiteFirstArchived  .
+</pre></td></tr><tr><th>JSON-LD</th><td><pre>{
+  &quot;@context&quot;: &quot;https:&#x2F;&#x2F;jsonld.example&quot;,
+  &quot;@id&quot;: &quot;_:a&quot;,
+  &quot;@type&quot;: &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;credweb#ObservationOfDateWebsiteFirstArchived&quot;,
+  &quot;evidence&quot;: &quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;19961112181513&#x2F;http:&#x2F;&#x2F;www.nytimes.com:80&#x2F;&quot;,
+  &quot;operationalAsEarlyAs&quot;: &quot;1996-11-12&quot;,
+  &quot;site&quot;: &quot;https:&#x2F;&#x2F;nytimes.com&quot;
+}</pre></td></tr></table>
+</section>
+
+
+<section>
+<h4><span id="example-3"><a class="subtle" href="#example-3"><span style="font-size:75%">§</span> <bdi class="secno">2.1.1.3. </bdi>Example</a></span></h4><p>Here we see one website with two different observations, each with a different date.</p><table><tr><th>Statement</th><td>There was a website operational at URL [https:&#x2F;&#x2F;news.example] as early as isodate [2010-01-01] as shown in the archive page at URL [https:&#x2F;&#x2F;archive.example&#x2F;1234]. There was a website operational at URL [https:&#x2F;&#x2F;news.example] as early as isodate [2015-01-01] as shown in the archive page at URL [https:&#x2F;&#x2F;archive.example&#x2F;abcd].</td></tr><tr><th>CSV</th><td><pre>site,operationalAsEarlyAs,evidence
+https:&#x2F;&#x2F;news.example,2010-01-01,https:&#x2F;&#x2F;archive.example&#x2F;1234
+https:&#x2F;&#x2F;news.example,2015-01-01,https:&#x2F;&#x2F;archive.example&#x2F;abcd
+</pre></td></tr><tr><th><label for="toggleTurtle" class="labelForToggleTurtle">Turtle</label></th><td><pre class="expandTurtle">_:a cred:site &lt;https:&#x2F;&#x2F;news.example&gt;  .
+_:a cred:operationalAsEarlyAs &quot;2010-01-01&quot;^^xs:dateTimeStamp  .
+_:a cred:evidence &lt;https:&#x2F;&#x2F;archive.example&#x2F;1234&gt;  .
+_:a rdf:type cred:ObservationOfDateWebsiteFirstArchived  .
+_:b cred:site &lt;https:&#x2F;&#x2F;news.example&gt;  .
+_:b cred:operationalAsEarlyAs &quot;2015-01-01&quot;^^xs:dateTimeStamp  .
+_:b cred:evidence &lt;https:&#x2F;&#x2F;archive.example&#x2F;abcd&gt;  .
+_:b rdf:type cred:ObservationOfDateWebsiteFirstArchived  .
+</pre></td></tr><tr><th>JSON-LD</th><td><pre>{
+  &quot;@context&quot;: &quot;https:&#x2F;&#x2F;jsonld.example&quot;,
+  &quot;@graph&quot;: [
+    {
+      &quot;@id&quot;: &quot;_:a&quot;,
+      &quot;@type&quot;: &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;credweb#ObservationOfDateWebsiteFirstArchived&quot;,
+      &quot;evidence&quot;: &quot;https:&#x2F;&#x2F;archive.example&#x2F;1234&quot;,
+      &quot;operationalAsEarlyAs&quot;: &quot;2010-01-01&quot;,
+      &quot;site&quot;: &quot;https:&#x2F;&#x2F;news.example&quot;
+    },
+    {
+      &quot;@id&quot;: &quot;_:b&quot;,
+      &quot;@type&quot;: &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;credweb#ObservationOfDateWebsiteFirstArchived&quot;,
+      &quot;evidence&quot;: &quot;https:&#x2F;&#x2F;archive.example&#x2F;abcd&quot;,
+      &quot;operationalAsEarlyAs&quot;: &quot;2015-01-01&quot;,
+      &quot;site&quot;: &quot;https:&#x2F;&#x2F;news.example&quot;
+    }
+  ]
+}</pre></td></tr></table>
+</section>
+
+</section>
+
+
+<section>
+<h3><span id="motivation"><a class="subtle" href="#motivation"><span style="font-size:75%">§</span> <bdi class="secno">2.1.2. </bdi>Motivation</a></span></h3><dl><dt>Why is this signal hard to game?</dt><dd><ul><li>New attackers will have to acquire a pre-existing website with a site identity suited to their attack. Since there are not likely to be many such sites, they will likely be expensive. Older attackers can be &quot;sleeper&quot; sites, waiting for the time to attack, but this is also expensive, and there will be more time for them to be discovered and unmasked. It is likely this signal will decrease in value if adopted, as more sleeper sites are created.</li></ul></dd><dt>Connection to quality</dt><dd><ul><li>Sites that have been around a long time have probably had more of a chance to develop good internal quality controls.</li><li>Sites that have been around a long time, if they are problematic, are more likely to have been flagged as such, all other things being equal.</li><li>Sites that have been around a long time have generated enough content&#x2F;information upon which an assessment of quality can be rendered.</li></ul></dd><dt>motivationReason</dt><dd><ul><li>Over the years, these aspects of a site will tend to be exposed, even if efforts are made to hide them.</li></ul></dd><dt>Potential side effects</dt><dd><ul><li>Newer sites will have an even harder time reaching an audience</li><li>Reduced innovation on the web, as ranking on this signal presents an additional barrier-to-entry</li></ul></dd></dl>
+</section>
+
+
+<section>
+<h3><span id="availability"><a class="subtle" href="#availability"><span style="font-size:75%">§</span> <bdi class="secno">2.1.3. </bdi>Availability</a></span></h3><dl><dt>Methods for obtaining</dt><dd><ul><li>Enter the URL of the site into the wayback machine at archive.org and look for the earliest snapshot that looks like a real website, not a placeholder &quot;coming soon&quot; site.</li></ul></dd><dt>Issues with availability</dt><dd><ul><li>It is limited by the practices of available and trustworthy archiving services. If none of them archived your site, you&#39;re out of luck. If one of them is compromised, that will devalue use of this signal from that archive.</li></ul></dd><dt>Currently requires humans because</dt><dd><ul><li>It requires some human judgement to exclude initial placeholder websites</li></ul></dd><dt>Expected to become cheap because</dt><dd><ul><li>Machines can probably be trained to recognize and exclude placeholder websites</li></ul></dd></dl>
+</section>
+
+</section>
+
+
+<section>
+<h2><span id="corrections-policy"><a class="subtle" href="#corrections-policy"><span style="font-size:75%">§</span> <bdi class="secno">2.2. </bdi>Corrections Policy</a></span></h2><p>Assessed by CredWeb CG to be: Promising, Reasonably verifiable, Interoperable.</p><table><tr><th>Definition</th><td>The news website with its main page at URL [  ] provides a corrections policy at URL [  ] and evidence of the policy being implemented is visible at URL [  ]</td></tr><tr><th>Review Date</th><td>2020-02-05</td></tr><tr><th>Other Label</th><td><ul><li>Corrections Policy Claimed</li><li>Corrections Policy Present</li></ul></td></tr></table>
+
+<section>
+<h3><span id="examples-2"><a class="subtle" href="#examples-2"><span style="font-size:75%">§</span> <bdi class="secno">2.2.1. </bdi>Examples</a></span></h3>
+
+<section>
+<h4><span id="example-4"><a class="subtle" href="#example-4"><span style="font-size:75%">§</span> <bdi class="secno">2.2.1.1. </bdi>Example</a></span></h4><table><tr><th>Statement</th><td>The news website with its main page at URL http:&#x2F;&#x2F;thestar.com provides a corrections policy at URL https:&#x2F;&#x2F;www.thestar.com&#x2F;about&#x2F;statementofprinciples.html and evidence of the policy being implemented is visible at URL https:&#x2F;&#x2F;www.thestar.com&#x2F;opinion&#x2F;corrections.html</td></tr><tr><th>CSV</th><td><pre>site,correctionsPolicy,evidence
+http:&#x2F;&#x2F;thestar.com,https:&#x2F;&#x2F;www.thestar.com&#x2F;about&#x2F;statementofprinciples.html,https:&#x2F;&#x2F;www.thestar.com&#x2F;opinion&#x2F;corrections.html
+</pre></td></tr><tr><th><label for="toggleTurtle" class="labelForToggleTurtle">Turtle</label></th><td><pre class="expandTurtle">_:a cred:site &lt;http:&#x2F;&#x2F;thestar.com&gt;  .
+_:a cred:correctionsPolicy &lt;https:&#x2F;&#x2F;www.thestar.com&#x2F;about&#x2F;statementofprinciples.html&gt;  .
+_:a cred:evidence &lt;https:&#x2F;&#x2F;www.thestar.com&#x2F;opinion&#x2F;corrections.html&gt;  .
+_:a rdf:type cred:ObservationOfCorrectionsPolicy  .
+</pre></td></tr><tr><th>JSON-LD</th><td><pre>{
+  &quot;@context&quot;: &quot;https:&#x2F;&#x2F;jsonld.example&quot;,
+  &quot;@id&quot;: &quot;_:a&quot;,
+  &quot;@type&quot;: &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;credweb#ObservationOfCorrectionsPolicy&quot;,
+  &quot;correctionsPolicy&quot;: &quot;https:&#x2F;&#x2F;www.thestar.com&#x2F;about&#x2F;statementofprinciples.html&quot;,
+  &quot;evidence&quot;: &quot;https:&#x2F;&#x2F;www.thestar.com&#x2F;opinion&#x2F;corrections.html&quot;,
+  &quot;site&quot;: &quot;http:&#x2F;&#x2F;thestar.com&quot;
+}</pre></td></tr></table>
+</section>
+
+</section>
+
+
+<section>
+<h3><span id="motivation-2"><a class="subtle" href="#motivation-2"><span style="font-size:75%">§</span> <bdi class="secno">2.2.2. </bdi>Motivation</a></span></h3><dl><dt>Why is this signal hard to game?</dt><dd><ul><li>setting up a plausible corrections policy and showing evidence of implementation requires work that legitimate news organizations will need to do anyway but will be extra work for attackers</li></ul></dd><dt>Connection to quality</dt><dd><ul><li>sites that provide a corrections policy and implement it are indicating an openness to scrutiny around their mistakes, which seems likely to lead to greater accuracy</li><li>sites that show a record of corrections over a period of time indicate commitment to principles of accuracy and good journalistic practice.</li></ul></dd><dt>Potential side effects</dt><dd><ul><li>sites might be downranked for keeping their corrections policies private, possibly for legitimate reasons</li><li>sites that are mistakenly identified as news outlets, such as organizations which issue press releases about themselves, might be downranked for not following this journalistic practice</li><li>a bias towards larger, professional news organizations that have the resources to maintain a visible corrections practice</li><li>a bias against organizations that have not provided online visibility to some of their practices</li><li>a bias against sites that are exceedingly careful to never need corrections, and thus have little or no evidence of implementing their corrections policy</li></ul></dd></dl>
+</section>
+
+
+<section>
+<h3><span id="availability-2"><a class="subtle" href="#availability-2"><span style="font-size:75%">§</span> <bdi class="secno">2.2.3. </bdi>Availability</a></span></h3><dl><dt>Methods for obtaining</dt><dd><ul><li>manually browsing a site, looking for any corrections policy and evidence of it being used</li><li>newsQ plans to offer a feed</li></ul></dd><dt>Issues with availability</dt><dd><ul><li>some sites mention their corrections policy non-obviously on one paragraph on a general ethics&#x2F;journalism policies page, or a public engagement page. This may lead observers to mistakenly think there is no available corrections policy.</li><li>it may be hard to find evidence of corrections being done, even when they are, especially if the site does not offer a corrections &quot;feed&quot; page.</li></ul></dd><dt>Expected to become cheap because</dt><dd><ul><li>machines can probably be programmed&#x2F;trained to observe this signal most of the time</li><li>sites may start to announce this information in a machine-readable form (which raises some risk of gaming)</li></ul></dd></dl>
+</section>
+
+</section>
+
+
+<section>
+<h2><span id="any-award-span-class-pending-pending-span"><a class="subtle" href="#any-award-span-class-pending-pending-span"><span style="font-size:75%">§</span> <bdi class="secno">2.3. </bdi>Any Award<span class="pending"> (pending)</span></a></span></h2><p>Assessed by CredWeb CG to be: Interoperable, Reasonably verifiable.</p><table><tr><th>Definition</th><td>The website with main page URL [  ] was honored as part of an awards process for the year [  ] for the prize with main page URL [  ]</td></tr><tr><th>Review Date</th><td>2020-02-19</td></tr></table>
+
+<section>
+<h3><span id="examples-3"><a class="subtle" href="#examples-3"><span style="font-size:75%">§</span> <bdi class="secno">2.3.1. </bdi>Examples</a></span></h3>
+
+<section>
+<h4><span id="example-5"><a class="subtle" href="#example-5"><span style="font-size:75%">§</span> <bdi class="secno">2.3.1.1. </bdi>Example</a></span></h4><p>This shows a Pulitzer Prize signal being conveyed as this more general &quot;Any Award&quot; signal attached to the Pulitzer website.</p><table><tr><th>Statement</th><td>The website with main page URL https:&#x2F;&#x2F;www.propublica.org&#x2F; was honored as part of an awards process for the year 2017 for the prize with main page URL https:&#x2F;&#x2F;www.pulitzer.org&#x2F;</td></tr><tr><th>CSV</th><td><pre>site,awardsYear,prizeSite
+https:&#x2F;&#x2F;www.propublica.org&#x2F;,2017,https:&#x2F;&#x2F;www.pulitzer.org&#x2F;
+</pre></td></tr><tr><th><label for="toggleTurtle" class="labelForToggleTurtle">Turtle</label></th><td><pre class="expandTurtle">_:a cred:site &lt;https:&#x2F;&#x2F;www.propublica.org&#x2F;&gt;  .
+_:a cred:awardsYear &quot;2017&quot;^^xs:dateTimeStamp  .
+_:a cred:prizeSite &lt;https:&#x2F;&#x2F;www.pulitzer.org&#x2F;&gt;  .
+</pre></td></tr><tr><th>JSON-LD</th><td><pre>{
+  &quot;@context&quot;: &quot;https:&#x2F;&#x2F;jsonld.example&quot;,
+  &quot;@id&quot;: &quot;_:a&quot;,
+  &quot;awardsYear&quot;: &quot;2017&quot;,
+  &quot;prizeSite&quot;: &quot;https:&#x2F;&#x2F;www.pulitzer.org&#x2F;&quot;,
+  &quot;site&quot;: &quot;https:&#x2F;&#x2F;www.propublica.org&#x2F;&quot;
+}</pre></td></tr></table>
+</section>
+
+</section>
+
+
+<section>
+<h3><span id="motivation-3"><a class="subtle" href="#motivation-3"><span style="font-size:75%">§</span> <bdi class="secno">2.3.2. </bdi>Motivation</a></span></h3><dl><dt>Why is this signal hard to game?</dt><dd><ul><li>The effort in establishing an award process&#x2F;system takes time and resources</li><li>Establishing a reputable award requires socialization, which is likely to involve a variety of trust evaluations and uncover most attackers.</li></ul></dd><dt>Connection to quality</dt><dd><ul><li>Outlets that have been awarded journalism awards, especially many over time, probably have internal quality controls and an organizational structure that supports good journalism.</li></ul></dd><dt>Potential side effects</dt><dd><ul><li>A bias towards older outlets that have had more time to accumulate awards</li><li>Increased pressure to subvert an existing awards process.</li><li>A surge in fake awards.</li><li>A need for determining which prize-granting sites are trustworthy</li><li>A bias in favor of outlets who campaign for awards or otherwise shift effort toward winning awards.</li></ul></dd></dl>
+</section>
+
+
+<section>
+<h3><span id="availability-3"><a class="subtle" href="#availability-3"><span style="font-size:75%">§</span> <bdi class="secno">2.3.3. </bdi>Availability</a></span></h3><dl><dt>Methods for obtaining</dt><dd><ul><li>Determining authoritative websites or publications with awards lists, and then looking up the winners</li><li>Taking data for specific awards and converting them to this form</li></ul></dd><dt>Issues with availability</dt><dd><ul><li>There are many awards across many languages and cultures, and no central location to review all of them</li><li>Not all high-quality outlets win awards</li></ul></dd><dt>Currently requires humans because</dt><dd><ul><li>It requires judgement to know which awards are legitimate</li><li>Most awards do not provide data feeds or have available scrapers</li></ul></dd><dt>Expected to become cheap because</dt><dd><ul><li>Machines can probably scrape the information should some way of centralizing awards locations becomes possible</li><li>Awards-granting organizations might start to publish details of their awards in a machine-readable format</li></ul></dd></dl>
+</section>
+
+</section>
+
+
+<section>
+<h2><span id="pulitzer-prize-recognition-span-class-pending-pending-span"><a class="subtle" href="#pulitzer-prize-recognition-span-class-pending-pending-span"><span style="font-size:75%">§</span> <bdi class="secno">2.4. </bdi>Pulitzer Prize Recognition<span class="pending"> (pending)</span></a></span></h2><p>Assessed by CredWeb CG to be: Interoperable, Reasonably verifiable.</p><table><tr><th>Definition</th><td>The website with main page URL [  ] was honored as part of the Pulitzer Prize awards process for the year [  ] in the Pulitzer category [  ] as the website of a prize finalist or winner under the name [  ] as shown at URL [  ]</td></tr><tr><th>Review Date</th><td>2020-02-19</td></tr></table>
+
+<section>
+<h3><span id="examples-4"><a class="subtle" href="#examples-4"><span style="font-size:75%">§</span> <bdi class="secno">2.4.1. </bdi>Examples</a></span></h3>
+
+<section>
+<h4><span id="example-6"><a class="subtle" href="#example-6"><span style="font-size:75%">§</span> <bdi class="secno">2.4.1.1. </bdi>Example</a></span></h4><p>This shows two organizations sharing the prize.</p><table><tr><th>Statement</th><td>The website with main page URL https:&#x2F;&#x2F;www.nydailynews.com&#x2F; was honored as part of the Pulitzer Prize awards process for the year 2017 in the Pulitzer category Public Service as the website of a prize finalist or winner under the name New York Daily News as shown at URL [https:&#x2F;&#x2F;www.pulitzer.org&#x2F;winners&#x2F;new-york-daily-news-and-propublica].The website with main page URL https:&#x2F;&#x2F;www.propublica.org&#x2F; was honored as part of the Pulitzer Prize awards process for the year 2017 in the Pulitzer category Public Service as the website of a prize finalist or winner under the name ProPublica as shown at URL [https:&#x2F;&#x2F;www.pulitzer.org&#x2F;winners&#x2F;new-york-daily-news-and-propublica].</td></tr><tr><th>CSV</th><td><pre>site,awardsYear,pulitzerCategory,nameAccordingToPulitzer,evidence
+https:&#x2F;&#x2F;www.nydailynews.com&#x2F;,2017,Public Service,New York Daily News,https:&#x2F;&#x2F;www.pulitzer.org&#x2F;winners&#x2F;new-york-daily-news-and-propublica
+</pre></td></tr><tr><th><label for="toggleTurtle" class="labelForToggleTurtle">Turtle</label></th><td><pre class="expandTurtle">_:a cred:site &lt;https:&#x2F;&#x2F;www.nydailynews.com&#x2F;&gt;  .
+_:a cred:awardsYear &quot;2017&quot;^^xs:dateTimeStamp  .
+_:a cred:pulitzerCategory &quot;Public Service&quot;  .
+_:a cred:nameAccordingToPulitzer &quot;New York Daily News&quot;  .
+_:a cred:evidence &lt;https:&#x2F;&#x2F;www.pulitzer.org&#x2F;winners&#x2F;new-york-daily-news-and-propublica&gt;  .
+</pre></td></tr><tr><th>JSON-LD</th><td><pre>{
+  &quot;@context&quot;: &quot;https:&#x2F;&#x2F;jsonld.example&quot;,
+  &quot;@id&quot;: &quot;_:a&quot;,
+  &quot;awardsYear&quot;: &quot;2017&quot;,
+  &quot;evidence&quot;: &quot;https:&#x2F;&#x2F;www.pulitzer.org&#x2F;winners&#x2F;new-york-daily-news-and-propublica&quot;,
+  &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;credweb#nameAccordingToPulitzer&quot;: &quot;New York Daily News&quot;,
+  &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;ns&#x2F;credweb#pulitzerCategory&quot;: &quot;Public Service&quot;,
+  &quot;site&quot;: &quot;https:&#x2F;&#x2F;www.nydailynews.com&#x2F;&quot;
+}</pre></td></tr></table>
+</section>
+
+</section>
+
+
+<section>
+<h3><span id="motivation-4"><a class="subtle" href="#motivation-4"><span style="font-size:75%">§</span> <bdi class="secno">2.4.2. </bdi>Motivation</a></span></h3><dl><dt>Why is this signal hard to game?</dt><dd><ul><li>Winning or being a finalist for a Pulitzer Prize is extremely difficult, even for experienced and well-funded professionals</li></ul></dd><dt>Connection to quality</dt><dd><ul><li>The prize process reflects a mature and well-resourced effort to recognize quality.</li><li>Outlets that have been awarded journalism awards, especially many over time, probably have internal quality controls and an organizational structure that supports good journalism.</li></ul></dd><dt>Potential side effects</dt><dd><ul><li>A bias towards more traditional outlets</li><li>A bias towards older outlets that have had more time to accumulate awards</li><li>A bias matching whatever biases are brought in by the Pulitzer Prize process and individual prize jury members</li></ul></dd></dl>
+</section>
+
+
+<section>
+<h3><span id="availability-4"><a class="subtle" href="#availability-4"><span style="font-size:75%">§</span> <bdi class="secno">2.4.3. </bdi>Availability</a></span></h3><dl><dt>Methods for obtaining</dt><dd><ul><li>Visit pulitzer.org and browse for relevant entries</li><li>NewsQ plans to offer a feed</li><li>Use pulitzer.org&#39;s underlying JSON query API</li></ul></dd><dt>Issues with availability</dt><dd><ul><li>It doesn&#39;t cover very much of the news ecosystem, with many high quality sources never winning a Pulitzer Prize</li></ul></dd><dt>Expected to become cheap because</dt><dd><ul><li>The data is already available in JSON</li></ul></dd></dl>
+</section>
+
+</section>
+
+</section>
+</div>
+
+  <p role="navigation" id="back-to-top"><a href="#title"><abbr title="Back to Top">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
+</body></html>
