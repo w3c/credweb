@@ -27,6 +27,7 @@ Next:
 * TBD
 
 Prev:
+* 2022-04-06 Informal meeting, no agenda
 * 2022-03-02 cancelled
 * 2022-02-02 (missing details)
 * 2022-01-05 11am ET Third of six meetings, finish topics, begin discussion of tools. [agenda+record](https://docs.google.com/document/d/16GMmFdCIHP4J1IW9aXxxaXYAcgcMpKAfFGkwjujrx7k/edit?usp=sharing)
