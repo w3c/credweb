@@ -23,8 +23,10 @@ Most meetings use [this zoom link (changed Aug 2021)](https://us02web.zoom.us/j/
 on-camera, if possible. For more, see [how to
 connect](how-to-connect.md). 
 
-Next:
-* TBD
+Upcoming:
+* 2022-07-06
+* 2022-06-01
+* 2022-05-04
 
 Prev:
 * 2022-04-06 Informal meeting, no agenda
